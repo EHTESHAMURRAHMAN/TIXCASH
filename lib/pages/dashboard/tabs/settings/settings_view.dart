@@ -12,6 +12,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share/share.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tixcash/app_controller.dart';
 import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/shared.dart';
 import 'package:tixcash/shared/widgets/preference_cell.dart';
@@ -187,7 +188,7 @@ class SettingsView extends GetView<SettingsController> {
 
 class phrse extends StatelessWidget {
   phrse({Key? key}) : super(key: key);
-  SettingsController controller = Get.put(SettingsController());
+  AppController controller = Get.put(AppController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -271,7 +272,7 @@ class phrse extends StatelessWidget {
                                 Obx(() => Text(
                                     controller.isShowBalance.value
                                         ? '••••••'
-                                        : '${controller.backupPResponse1.value?.backuphrase}',
+                                        : '${controller.backupPResponse.value?.backuphrase}',
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                         fontWeight: FontWeight.w500,
@@ -306,7 +307,7 @@ class phrse extends StatelessWidget {
                                       onTap: () {
                                         Clipboard.setData(ClipboardData(
                                             text:
-                                                '${controller.backupPResponse1.value?.backuphrase}'));
+                                                '${controller.backupPResponse.value?.backuphrase}'));
                                         EasyLoading.showToast('Address Copied');
                                       },
                                       child: Container(
@@ -334,7 +335,7 @@ class phrse extends StatelessWidget {
                                     InkWell(
                                       onTap: () {
                                         Share.share(
-                                            '${controller.backupPResponse1.value?.backuphrase}');
+                                            '${controller.backupPResponse.value?.backuphrase}');
                                       },
                                       child: Container(
                                         width:
@@ -382,7 +383,7 @@ class phrse extends StatelessWidget {
                                         child: Obx(() => QrImageView(
                                               backgroundColor: Colors.white,
                                               data:
-                                                  '${controller.backupPResponse1.value?.backuphrase}',
+                                                  '${controller.backupPResponse.value?.backuphrase}',
                                               version: QrVersions.auto,
                                               size: 180.0,
                                             )),

@@ -9,6 +9,7 @@ import 'package:tixcash/pages/account/create_wallet/import_wallet_view.dart';
 import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/invite/controllers/invite_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/settings/settings_controller.dart';
+import 'package:tixcash/shared/constants/colors.dart';
 import 'package:tixcash/shared/constants/storage.dart';
 import 'package:tixcash/shared/widgets/select_profile.dart';
 
@@ -37,7 +38,7 @@ class _BottomSheetViewState extends State<BottomSheetView> {
     _users = val != null ? userResponseFromJson(val) : [];
     _users.sort((a, b) => a.active == b.active ? 1 : -1);
     if (mounted) setState(() {});
-    controller1.backupPharse1();
+    // controller1.backupPharse1();
     controller2.backupPharse();
     StackController().getwhiteliststatus();
   }
@@ -77,7 +78,7 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                         userInfo = user;
                         widget.onSelect();
                         controller.getsubs();
-                        controller1.backupPharse1();
+                        // controller1.backupPharse1();
                         controller2.backupPharse();
                         InviteController().inviteInits();
                         StackController().getwhiteliststatus();
@@ -112,8 +113,7 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                   // controller.subscriptionResponse.value?.pid == 0
                   //     ? EasyLoading.showToast('Get Premium Access First')
                   //     :
-                  paymentforNewWallet(context);
-                  controller1.backupPharse1();
+                  newWallet(context);
                 },
                 child: Text('Create New Account'.tr,
                     style: const TextStyle(fontSize: 14))),
@@ -122,7 +122,6 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                   Get.to(() => const ImportWalletView(
                         isImportWallet: true,
                       ));
-                  controller1.backupPharse1();
                 },
                 child: Text('Import an Account'.tr,
                     style: const TextStyle(fontSize: 14))),
@@ -132,7 +131,7 @@ class _BottomSheetViewState extends State<BottomSheetView> {
     );
   }
 
-  void paymentforNewWallet(context) {
+  void newWallet(context) {
     // BackupWordsController controller1 = Get.put(BackupWordsController());
 
     showDialog(
@@ -146,7 +145,7 @@ class _BottomSheetViewState extends State<BottomSheetView> {
             children: [
               const Icon(Icons.cancel, color: Colors.transparent),
               Text('Create New Account'.tr,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.black,
                       fontSize: 15,
                       fontWeight: FontWeight.bold)),
@@ -161,25 +160,6 @@ class _BottomSheetViewState extends State<BottomSheetView> {
               children: [
                 Column(
                   children: [
-                    // GridView.count(
-                    //   shrinkWrap: true,
-                    //   crossAxisCount: 3,
-                    //   mainAxisSpacing: 5,
-                    //   crossAxisSpacing: 5,
-                    //   childAspectRatio: (20 / 20),
-                    //   children: controller1.phraseList.mapIndexed((index, element) {
-                    //     return Container(
-                    //       decoration: BoxDecoration(
-                    //           color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(9)),
-                    //       child: Center(
-                    //         child: Text(
-                    //           '${index + 1}. $element',
-                    //           style: const TextStyle(color: Colors.white, fontSize: 13),
-                    //         ),
-                    //       ),
-                    //     );
-                    //   }).toList(),
-                    // ),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       height: 50,
@@ -190,7 +170,6 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                       child: TextFormField(
                         controller: controller.editingController,
                         style: const TextStyle(color: Colors.black),
-                        // obscureText: true,
                         decoration: InputDecoration(
                             hintText: 'Username'.tr,
                             hintStyle: const TextStyle(color: Colors.black26),
@@ -250,8 +229,17 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                             context, controller.editingController.text);
                         //  controller.editingController.clear();
                       },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: ColorConstants.secondaryDarkAppColor,
+                        // side: BorderSide(
+                        //     color: ColorConstants.secondaryDarkAppColor
+                        //         .withOpacity(.5)),
+                        shape: const BeveledRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        shadowColor: Colors.lightBlue,
+                      ),
                       child: Text('Create New Account'.tr),
-                      //    child: const Text('Pay \$5'),
                     ),
                   ],
                 ),

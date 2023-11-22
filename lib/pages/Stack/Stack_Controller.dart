@@ -12,7 +12,7 @@ import 'package:tixcash/models/stackingList.dart';
 import 'package:tixcash/models/stackingListHistory.dart';
 import 'package:tixcash/models/whiteList_Resp.dart';
 import 'package:tixcash/pages/Stack/Stack_Views.dart';
-import 'package:tixcash/pages/Stack_Income/Stackincome_views.dart';
+import 'package:tixcash/routes/app_pages.dart';
 
 class StackController extends GetxController {
   final selectStakeDays = ''.obs;
@@ -151,7 +151,7 @@ class StackController extends GetxController {
       controllerStakeAmount.clear();
       controllerRefral.clear();
       response.message == 'Staking Successfully'
-          ? Get.to(txhincome())
+          ? Get.toNamed(Routes.STACKINCOME)
           : Get.back();
     } else {
       Get.snackbar('Error', 'Something went wrong try again',

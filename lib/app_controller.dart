@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 //import 'package:local_auth/auth_strings.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:screenshot/screenshot.dart';
 //import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tixcash/models/BackupPhraseresponse.dart';
@@ -26,6 +27,8 @@ import 'package:local_auth_ios/local_auth_ios.dart';
 // }
 
 class AppController extends GetxController {
+  final isShowBalance = true.obs;
+  ScreenshotController screenshotController = ScreenshotController();
   final fundBalance = 0.0.obs;
   final fundBalanceUSDT = 0.0.obs;
   final isBackup = true.obs;

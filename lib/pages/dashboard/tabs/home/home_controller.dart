@@ -104,11 +104,10 @@ class HomeController extends GetxController {
   final editingController = TextEditingController();
 
   final accountName = ''.obs;
-  Timer? _timer;
+  //Timer? _timer;
   @override
   void onInit() {
     super.onInit();
-
     initValues();
   }
 
@@ -117,12 +116,11 @@ class HomeController extends GetxController {
     userFundBalance();
     getBalanceCurrencyList();
     getUsdBalance1();
-
+    getsubs();
     accountName.value = userInfo?.name ?? '';
-    _timer ??= Timer.periodic(const Duration(seconds: 10), (timer) {
-      getBalanceCurrencyList();
-      getsubs();
-    });
+    // _timer ??= Timer.periodic(const Duration(seconds: 10), (timer) {
+    //   getBalanceCurrencyList();
+    // });
   }
 
   @override
@@ -404,9 +402,8 @@ class HomeController extends GetxController {
         prefs.setString(StorageConstants.userPassword, userPassword);
         userInfo = response.data;
         EasyLoading.showToast(userResponse.message);
-        getsubs();
-        stngcontroller.backupPharse1();
-        //backupcontroller.createBackup1();
+
+        appController.backupPharse();
         Get.offAllNamed(Routes.Dashboard);
         editingController.clear();
       } else {

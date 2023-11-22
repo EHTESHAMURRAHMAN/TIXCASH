@@ -2,14 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:screenshot/screenshot.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
-import 'package:tixcash/api/apis.dart';
 import 'package:tixcash/app_controller.dart';
-import 'package:tixcash/models/BackupPhraseresponse.dart';
 import 'package:tixcash/models/common_model.dart';
 import 'package:tixcash/shared/shared.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -17,13 +13,6 @@ import 'package:webview_flutter/webview_flutter.dart';
 class SettingsController extends GetxController {
   final AppController appController = Get.find<AppController>();
   final switchValue = false.obs;
-  ScreenshotController screenshotController = ScreenshotController();
-  final isShowBalance = true.obs;
-  //backup Pharse
-  final backupPResponse1 = Rxn<BackupPResponse>();
-  final isbackupPResponse1 = false.obs;
-  //
-
   final List<PopupItem> securityOption = [
     PopupItem(title: 'Password', value: '0'),
     PopupItem(title: 'Fingerprint', value: '1'),
@@ -74,8 +63,8 @@ class SettingsController extends GetxController {
   void onInit() {
     super.onInit();
 
-    backupPharse1();
-    backupPResponse1.value;
+    //backupPharse1();
+
     var storage = Get.find<SharedPreferences>();
     securityValue.value =
         storage.getString(StorageConstants.securityVal) ?? 'Password'.tr;
@@ -85,15 +74,15 @@ class SettingsController extends GetxController {
         storage.getString(StorageConstants.autoLockVal) ?? '5_min'.tr;
   }
 
-  Future<void> backupPharse1() async {
-    ApiResponse response = await getbackuphrase();
-    if (response.message == 'success') {
-      backupPResponse1.value = response.data;
-      isbackupPResponse1.value = true;
-    } else {
-      print(response.message);
-    }
-  }
+  // Future<void> backupPharse1() async {
+  //   ApiResponse response = await getbackuphrase();
+  //   if (response.message == 'success') {
+  //     backupPResponse1.value = response.data;
+  //     isbackupPResponse1.value = true;
+  //   } else {
+  //     print(response.message);
+  //   }
+  // }
 
   void updateLocale(loc, country, language) {
     var locale = Locale(loc, country);

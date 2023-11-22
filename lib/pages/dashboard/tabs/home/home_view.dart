@@ -20,11 +20,7 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    HomeController homeController = Get.isRegistered<HomeController>()
-        ? Get.find()
-        : Get.put(HomeController());
     SizeConfig().init(context);
-    controller.getsubs();
     controller.refreshData();
 
     return Scaffold(

@@ -190,6 +190,7 @@ class CreateWalletController extends GetxController {
 
       if (isImportWallet) {
         Get.offAllNamed(Routes.Dashboard);
+        appController.backupPharse();
         HomeController().getsubs();
       } else {
         Get.toNamed(Routes.CREATE_ACCOUNT, arguments: [
@@ -214,6 +215,7 @@ class CreateWalletController extends GetxController {
       if (isImportWallet) {
         Get.offAllNamed(Routes.Dashboard);
         HomeController().getsubs();
+        appController.backupPharse();
       } else {
         Get.toNamed(Routes.CREATE_ACCOUNT, arguments: [
           {'change': true}

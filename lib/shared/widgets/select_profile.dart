@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -237,34 +234,27 @@ class _SelectProfileState extends State<SelectProfile> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        color: ColorConstants.secondaryDarkAppColor,
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(25),
-                            topRight: Radius.circular(25))),
-                    padding: const EdgeInsets.all(8),
-                    width: double.infinity,
-                    height: 70,
+                  Padding(
+                    padding: const EdgeInsets.all(10),
                     child: Center(
                       child: Text(
-                        'Delete Accout'.tr,
+                        'Delete Account'.tr,
                         style: GoogleFonts.roboto(
-                            fontSize: 18, fontWeight: FontWeight.w500),
+                            color: ColorConstants.secondaryDarkAppColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 36, horizontal: 8),
-                    child: Text(
-                      'Are you sure want to delete your account?\nHave you taken your backup?'
-                          .tr,
-                      style: GoogleFonts.roboto(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black),
-                    ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Are you sure want to delete your account?\nHave you taken your backup?'
+                        .tr,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.roboto(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
@@ -272,14 +262,38 @@ class _SelectProfileState extends State<SelectProfile> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton(
-                            onPressed: () => Get.back(),
-                            child: Text('CANCEL'.tr)),
+                          onPressed: () => Get.back(),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                ColorConstants.secondaryDarkAppColor,
+                            // side: BorderSide(
+                            //     color: ColorConstants.secondaryDarkAppColor
+                            //         .withOpacity(.5)),
+                            shape: const BeveledRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            shadowColor: Colors.lightBlue,
+                          ),
+                          child: Text('CANCEL'.tr),
+                        ),
                         const SizedBox(
                           width: 16,
                         ),
                         ElevatedButton(
-                            onPressed: () => onConfirm(),
-                            child: Text('Delete'.tr)),
+                          onPressed: () => onConfirm(),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                ColorConstants.secondaryDarkAppColor,
+                            // side: BorderSide(
+                            //     color: ColorConstants.secondaryDarkAppColor
+                            //         .withOpacity(.5)),
+                            shape: const BeveledRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            shadowColor: Colors.lightBlue,
+                          ),
+                          child: Text('Delete'.tr),
+                        ),
                       ],
                     ),
                   )

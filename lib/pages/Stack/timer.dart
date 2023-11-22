@@ -24,10 +24,12 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
 
   void setCountDown() {
     const reduceSecondsBy = 1;
-    setState(() {
-      final seconds = myDuration.inSeconds - reduceSecondsBy;
-      myDuration = Duration(seconds: seconds);
-    });
+    if (mounted) {
+      setState(() {
+        final seconds = myDuration.inSeconds - reduceSecondsBy;
+        myDuration = Duration(seconds: seconds);
+      });
+    }
   }
 
   @override
