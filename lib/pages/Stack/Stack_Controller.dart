@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:tixcash/api/apis.dart';
 import 'package:tixcash/models/SponCode.dart';
+import 'package:tixcash/models/StakeDashboardResp.dart';
 import 'package:tixcash/models/StakeDateRsp.dart';
 import 'package:tixcash/models/Stake_List_Resp.dart';
 import 'package:tixcash/models/common_model.dart';
@@ -41,6 +42,9 @@ class StackController extends GetxController {
   final iswhiteListResponse = false.obs;
   final stakeListModelResponse = RxList<StakeListModel>();
   final isstakeListModellResponse = false.obs;
+  final stakeDashboardResponse = Rxn<StakeDashboardResponse>();
+  final isstakeDashboardResponse = false.obs;
+
   final isListLoading = true.obs;
   @override
   void onInit() {
@@ -51,6 +55,16 @@ class StackController extends GetxController {
     getsponcode();
     getwhiteliststatus();
     getstakingDaylist();
+    stakedashboard();
+  }
+
+  Future<void> stakedashboard() async {
+    ApiResponse response = await getstakedashboardAPI(selectid.value);
+    if (response.data == '') {
+    } else {
+      stakeDashboardResponse.value = response.data;
+      isstakeDashboardResponse.value = true;
+    }
   }
 
   void getwhiteliststatus() async {
@@ -70,7 +84,7 @@ class StackController extends GetxController {
     if (response.data == '') {
       print(response.message);
     } else {
-      stakedateResponse.value = response.data;
+      stakedateResponse.value = response.data ?? '';
       isstakedateResponse.value = true;
     }
   }
@@ -173,7 +187,9 @@ class StackController extends GetxController {
 
       controllerStakeAmount.clear();
       controllerRefral.clear();
-      Get.to(stakingIncomeHistory());
+      response.message == 'Claim Successfully'
+          ? Get.to(stakingIncomeHistory())
+          : Get.back();
     } else {
       Get.snackbar('Error', 'Something went wrong try again',
           backgroundColor: Colors.red);

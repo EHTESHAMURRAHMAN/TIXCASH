@@ -1,5 +1,7 @@
 //import 'package:firebase_core/firebase_core.dart';
 
+import 'dart:async';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'di.dart';
 import 'routes/app_pages.dart';
@@ -31,6 +33,7 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> with WidgetsBindingObserver {
   bool isLocked = false;
+  Timer? _timer;
   @override
   void initState() {
     super.initState();
@@ -49,13 +52,6 @@ class _AppState extends State<App> with WidgetsBindingObserver {
       // App is in the foreground
       setState(() {
         var storage = Get.find<SharedPreferences>();
-        storage.setInt(
-            StorageConstants.pauseTime, DateTime.now().millisecondsSinceEpoch);
-      });
-    } else if (state == AppLifecycleState.paused) {
-      // App is in the background
-      setState(() {
-        var storage = Get.find<SharedPreferences>();
         var sUser = storage.getString(StorageConstants.userInfo);
         super.didChangeAppLifecycleState(state);
         int time = storage.getInt(StorageConstants.pauseTime) ?? 1800;
@@ -70,6 +66,13 @@ class _AppState extends State<App> with WidgetsBindingObserver {
             // Get.offAndToNamed(Routes.START);
           }
         }
+      });
+    } else {
+      // App is in the background
+      setState(() {
+        var storage = Get.find<SharedPreferences>();
+        storage.setInt(
+            StorageConstants.pauseTime, DateTime.now().millisecondsSinceEpoch);
       });
     }
   }

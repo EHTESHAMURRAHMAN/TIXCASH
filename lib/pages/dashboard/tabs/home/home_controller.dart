@@ -51,6 +51,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/sockets/src/socket_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -66,7 +67,7 @@ import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/constants/constants.dart';
 import 'package:tixcash/shared/widgets/sa_alert_dialog.dart';
 
-class HomeController extends GetxController {
+class HomeController extends GetxController with WidgetsBindingObserver {
   final AppController appController = Get.find<AppController>();
   BackupWordsController backupcontroller = Get.put(BackupWordsController());
   SettingsController stngcontroller = Get.put(SettingsController());
@@ -104,35 +105,56 @@ class HomeController extends GetxController {
   final editingController = TextEditingController();
 
   final accountName = ''.obs;
-  //Timer? _timer;
+
+  Timer? _timer;
   @override
   void onInit() {
     super.onInit();
+    WidgetsBinding.instance.addObserver(this);
     initValues();
   }
 
   initValues() {
     checkBackup();
     userFundBalance();
-    getBalanceCurrencyList();
     getUsdBalance1();
+    getBalanceCurrencyList();
     getsubs();
     accountName.value = userInfo?.name ?? '';
-    // _timer ??= Timer.periodic(const Duration(seconds: 10), (timer) {
-    //   getBalanceCurrencyList();
-    // });
   }
 
   @override
-  void onReady() {
-    super.onReady();
-    initValues();
+  void onClose() {
+    super.onClose();
+    WidgetsBinding.instance.removeObserver(this);
   }
 
-  refreshData() {
-    Timer(const Duration(milliseconds: 2000), () {
-      initValues();
-    });
+  @override
+  void dispose() {
+    super.dispose();
+    WidgetsBinding.instance.removeObserver(this);
+  }
+
+  // @override
+  // void onReady() {
+  //   super.onReady();
+  //   initValues();
+  // }
+
+  // refreshData() {
+  //   Timer(const Duration(seconds: 6), () {
+  //     initValues();
+  //   });
+  // }
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.resumed) {
+      _timer ??= Timer.periodic(const Duration(seconds: 10), (timer) {
+        getBalanceCurrencyList();
+      });
+    } else if (state == AppLifecycleState.inactive) {
+    } else if (state == AppLifecycleState.paused) {}
   }
 
   Future<void> checkBackup() async {

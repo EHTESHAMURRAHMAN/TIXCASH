@@ -21,7 +21,6 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    controller.refreshData();
 
     return Scaffold(
       appBar: AppBar(

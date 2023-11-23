@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:tixcash/main.dart';
 import 'package:tixcash/pages/Stack/Stack_Views.dart';
 import 'package:tixcash/pages/Stack/stack_Binding.dart';
 import 'package:tixcash/pages/Stack_Income/Stackincome_views.dart';
@@ -7,6 +8,8 @@ import 'package:tixcash/pages/account/auth_fingerprint/bindings/auth_fingerprint
 import 'package:tixcash/pages/account/auth_fingerprint/views/auth_fingerprint_view.dart';
 import 'package:tixcash/pages/dashboard/tabs/Wallet_Premium/Premium_Binding.dart';
 import 'package:tixcash/pages/dashboard/tabs/Wallet_Premium/Premium_Views.dart';
+import 'package:tixcash/pages/dashboard/tabs/invite/My_Referrals/bindings/myReferral_binding.dart';
+import 'package:tixcash/pages/dashboard/tabs/invite/My_Referrals/views/myReferralViews.dart';
 import 'package:tixcash/pages/dashboard/tabs/invite/bindings/invite_binding.dart';
 import 'package:tixcash/pages/dashboard/tabs/invite/views/invite_view.dart';
 import 'package:tixcash/pages/splash/Instruction.dart';
@@ -98,7 +101,7 @@ class AppPages {
     GetPage(
       name: Routes.STACKINCOME,
       page: () => const txhincome(),
-      binding: StackincomeBinding(),
+      binding: StackBinding(),
     ),
     GetPage(
       name: Routes.CREATE_WALLET,
@@ -212,8 +215,13 @@ class AppPages {
     ),
     GetPage(
       name: Routes.PREMIUM_VIEW,
-      page: () => PremiumViews(),
+      page: () => const PremiumViews(),
       binding: PremiumBinding(),
+    ),
+    GetPage(
+      name: Routes.MYREFERRAL,
+      page: () => const MyReferral(),
+      binding: MyReferralBinding(),
     ),
   ];
 }

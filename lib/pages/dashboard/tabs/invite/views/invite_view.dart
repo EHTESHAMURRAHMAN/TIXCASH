@@ -23,6 +23,7 @@ class InviteView extends GetView<InviteController> {
   @override
   Widget build(BuildContext context) {
     controller.inviteInits();
+    controller.pendingdirectincome();
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -38,204 +39,194 @@ class InviteView extends GetView<InviteController> {
         ),
         body: ListView(
           children: [
-            Stack(
-              children: [
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                  margin: const EdgeInsets.only(bottom: 20),
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(60),
-                          bottomRight: Radius.circular(60))),
-                  child: Column(
-                    children: [
-                      Screenshot(
-                          controller: controller.screenshotController,
-                          child: Obx(() => QrImageView(
-                                backgroundColor: Colors.white,
-                                data:
-                                    '${controller.usercodeResponse.value?.refrellcode}',
-                                version: QrVersions.auto,
-                                size: 100.0,
-                                // embeddedImage: const AssetImage(
-                                //     'assets/icons/gift_icon.png')
-                              ))),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 50),
+              margin: const EdgeInsets.only(bottom: 20),
+              decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(60),
+                      bottomRight: Radius.circular(60))),
+              child: Column(
+                children: [
+                  Screenshot(
+                      controller: controller.screenshotController,
+                      child: Obx(() => QrImageView(
+                            backgroundColor: Colors.white,
+                            data:
+                                '${controller.usercodeResponse.value?.refrellcode}',
+                            version: QrVersions.auto,
+                            size: 100.0,
+                            // embeddedImage: const AssetImage(
+                            //     'assets/icons/gift_icon.png')
+                          ))),
 
-                      // const SizedBox(
-                      //   height: 24,
-                      // ),
-                      // Text(
-                      //   'Your friend will get 1 USDT when completes his KYC and you will get 1 USDT when your friend completes first trade BUY or SELL',
-                      //   textAlign: TextAlign.center,
-                      //   style: Theme.of(context).textTheme.titleMedium,
-                      // ),
-                      const SizedBox(
-                        height: 16,
+                  // const SizedBox(
+                  //   height: 24,
+                  // ),
+                  // Text(
+                  //   'Your friend will get 1 USDT when completes his KYC and you will get 1 USDT when your friend completes first trade BUY or SELL',
+                  //   textAlign: TextAlign.center,
+                  //   style: Theme.of(context).textTheme.titleMedium,
+                  // ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  DottedBorder(
+                    color: Theme.of(context).textTheme.titleMedium?.color ??
+                        Colors.white,
+                    strokeWidth: 1,
+                    // borderType: BorderType.Rect,
+                    child: Container(
+                      width: 150,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        //borderRadius: BorderRadius.circular(8)
                       ),
-                      DottedBorder(
-                        color: Theme.of(context).textTheme.titleMedium?.color ??
-                            Colors.white,
-                        strokeWidth: 1,
-                        // borderType: BorderType.Rect,
-                        child: Container(
-                          width: 150,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 4),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
-                            //borderRadius: BorderRadius.circular(8)
-                          ),
-                          child: Row(
-                            children: [
-                              Obx(() => Text(
-                                    '${controller.usercodeResponse.value?.refrellcode}',
-                                    style:
-                                        Theme.of(context).textTheme.titleLarge,
-                                  )),
-                              const Spacer(),
-                              Container(
-                                color: Theme.of(context)
-                                        .textTheme
-                                        .titleMedium
-                                        ?.color ??
-                                    Colors.white,
-                                height: 30,
-                                width: 1,
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 8),
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  Clipboard.setData(
-                                    ClipboardData(
-                                        text:
-                                            '${controller.usercodeResponse.value?.refrellcode}'),
-                                  );
-                                  Get.snackbar('Copied',
-                                      '${controller.usercodeResponse.value?.refrellcode}',
-                                      backgroundColor: Colors.red);
-                                  // Get.snackbar('Copied', '',
-                                  //     snackPosition: SnackPosition.BOTTOM);
-                                },
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      'COPY',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleSmall,
-                                    ),
-                                    Text(
-                                      'CODE',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleSmall,
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 15),
-                      InkWell(
-                          onTap: () {
-                            shareQrCode();
-                          },
-                          child:
-                              const Center(child: Icon(Icons.share, size: 25))),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      child: Row(
                         children: [
-                          InkWell(
-                            onTap: () {
-                              Get.to(const AboutReferral());
-                            },
-                            child: Container(
-                                height: 35,
-                                width: 120,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.bottomLeft,
-                                    end: Alignment.topRight,
-                                    colors: [
-                                      Colors.yellow.shade400,
-                                      Colors.pink,
-                                    ],
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'About Referral'.tr,
-                                    style: const TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                )),
+                          Obx(() => Text(
+                                '${controller.usercodeResponse.value?.refrellcode}',
+                                style: Theme.of(context).textTheme.titleLarge,
+                              )),
+                          const Spacer(),
+                          Container(
+                            color: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium
+                                    ?.color ??
+                                Colors.white,
+                            height: 30,
+                            width: 1,
+                            margin: const EdgeInsets.symmetric(horizontal: 8),
                           ),
                           InkWell(
                             onTap: () {
-                              Get.to(ReferralIncomeHistory());
+                              Clipboard.setData(
+                                ClipboardData(
+                                    text:
+                                        '${controller.usercodeResponse.value?.refrellcode}'),
+                              );
+                              Get.snackbar('Copied',
+                                  '${controller.usercodeResponse.value?.refrellcode}',
+                                  backgroundColor: Colors.red);
+                              // Get.snackbar('Copied', '',
+                              //     snackPosition: SnackPosition.BOTTOM);
                             },
-                            child: Container(
-                                height: 35,
-                                width: 120,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.bottomLeft,
-                                    end: Alignment.topRight,
-                                    colors: [
-                                      Colors.yellow.shade400,
-                                      Colors.pink,
-                                    ],
-                                  ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'COPY',
+                                  style: Theme.of(context).textTheme.titleSmall,
                                 ),
-                                child: Center(
-                                  child: Text(
-                                    'History'.tr,
-                                    style: const TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                )),
-                          ),
+                                Text(
+                                  'CODE',
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
-                      const SizedBox(height: 20),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  InkWell(
+                      onTap: () {
+                        shareQrCode();
+                      },
+                      child: const Center(child: Icon(Icons.share, size: 25))),
+                  const SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Get.to(const AboutReferral());
+                        },
+                        child: Container(
+                            height: 35,
+                            width: 90,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              gradient: LinearGradient(
+                                begin: Alignment.bottomLeft,
+                                end: Alignment.topRight,
+                                colors: [
+                                  Colors.yellow.shade400,
+                                  Colors.pink,
+                                ],
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'About Referral'.tr,
+                                style: const TextStyle(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                            )),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(Routes.MYREFERRAL);
+                        },
+                        child: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              gradient: LinearGradient(
+                                begin: Alignment.bottomLeft,
+                                end: Alignment.topRight,
+                                colors: [
+                                  Colors.yellow.shade400,
+                                  Colors.pink,
+                                ],
+                              ),
+                            ),
+                            child: Center(
+                                child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image.network(
+                                'https://icons.veryicon.com/png/o/miscellaneous/my-icons/my-referral.png',
+                                color: Colors.white,
+                              ),
+                            ))),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Get.to(ReferralIncomeHistory());
+                        },
+                        child: Container(
+                            height: 35,
+                            width: 90,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              gradient: LinearGradient(
+                                begin: Alignment.bottomLeft,
+                                end: Alignment.topRight,
+                                colors: [
+                                  Colors.yellow.shade400,
+                                  Colors.pink,
+                                ],
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'History'.tr,
+                                style: const TextStyle(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                            )),
+                      ),
                     ],
                   ),
-                ),
-                // Positioned(
-                //     left: 0,
-                //     right: 0,
-                //     bottom: 0,
-                //     child: Align(
-                //       alignment: Alignment.center,
-                //       child: SizedBox(
-                //         height: 40,
-                //         width: 100,
-                //         child: ElevatedButton.icon(
-                //             icon: const Icon(Icons.share),
-                //             onPressed: () {
-                //               shareQrCode();
-                //             },
-                //             style: ButtonStyle(
-                //                 shape: MaterialStateProperty.all<
-                //                         RoundedRectangleBorder>(
-                //                     RoundedRectangleBorder(
-                //                         borderRadius: BorderRadius.circular(18.0),
-                //                         side: BorderSide(
-                //                           color: Colors.yellow.shade700,
-                //                         )))),
-                //             label: const Text('Share')),
-                //       ),
-                //     )),
-              ],
+                  const SizedBox(height: 20),
+                ],
+              ),
             ),
             const SizedBox(height: 10),
             Padding(

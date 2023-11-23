@@ -21,13 +21,13 @@ class StakedateResponse {
   final String enddate;
   final String currentdate;
 
-  factory StakedateResponse.fromJson(Map<String, dynamic> json) =>
-      StakedateResponse(
-        stardate: json["stardate"],
-        enddate: json["enddate"],
-        currentdate: json["currentdate"],
-      );
-
+  factory StakedateResponse.fromJson(Map<String, dynamic> json) {
+    return StakedateResponse(
+      stardate: json["stardate"],
+      enddate: json["enddate"],
+      currentdate: json["currentdate"],
+    );
+  }
   Map<String, dynamic> toJson() => {
         "stardate": stardate,
         "enddate": enddate,

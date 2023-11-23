@@ -106,7 +106,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                       color: Colors.black, size: 30)
                                 ])))),
                     const SizedBox(height: 10),
-                    Obx(() => controller.selectType.value == "Secrate Phrase"
+                    Obx(() => controller.selectType.value == "Secret Phrase"
                         ? TextFormField(
                             controller: controller.controllerWords,
                             style: GoogleFonts.roboto(
@@ -115,7 +115,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                               controller.searchWords(val);
                             },
                             decoration: InputDecoration(
-                                hintText: 'Enter 24 Word Secrate Phrase'.tr,
+                                hintText: 'Enter 24 Word Secret Phrase'.tr,
                                 hintStyle: const TextStyle(
                                     color: Colors.black, fontSize: 12),
                                 labelStyle: const TextStyle(
@@ -261,7 +261,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                   ))
             ],
           )),
-          Obx(() => controller.selectType.value == "Secrate Phrase"
+          Obx(() => controller.selectType.value == "Secret Phrase"
               ? Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Obx(() => SaveButton(
@@ -659,7 +659,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Enter 12 Word Secrate Phrase'.tr,
+                      'Enter 12 Word Secret Phrase'.tr,
                       style: GoogleFonts.roboto(
                           fontSize: 16, color: ColorConstants.black),
                     ),
@@ -674,7 +674,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                         controller.searchWords(val);
                       },
                       decoration: InputDecoration(
-                          hintText: 'Enter 12 Word Secrate Phrase'.tr,
+                          hintText: 'Enter 12 Word Secret Phrase'.tr,
                           hintStyle: const TextStyle(
                               color: Colors.black, fontSize: 12),
                           labelStyle: const TextStyle(
@@ -780,7 +780,7 @@ class RecoveryDropDown extends StatelessWidget {
   RecoveryDropDown({Key? key}) : super(key: key);
 
   final recovertype = [
-    ["Secrate Phrase"],
+    ["Secret Phrase"],
     ["Private Key"],
   ];
 

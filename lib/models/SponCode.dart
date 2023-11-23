@@ -14,10 +14,11 @@ class SponCode {
   });
 
   final String sponsorcode;
-
-  factory SponCode.fromJson(Map<String, dynamic> json) => SponCode(
-        sponsorcode: json["sponsorcode"],
-      );
+  factory SponCode.fromJson(Map<String, dynamic> json) {
+    return SponCode(
+      sponsorcode: json["sponsorcode"],
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         "sponsorcode": sponsorcode,

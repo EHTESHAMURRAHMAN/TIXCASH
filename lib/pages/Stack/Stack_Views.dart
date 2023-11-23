@@ -168,7 +168,7 @@ class StackViews extends GetView<StackController> {
                             controller.selectid.value = value['id'];
                             controller.getstakingDaylist();
                             controller.getstakedate();
-                            StackIncomeController().stakedashboard();
+                            controller.stakedashboard();
                           }
                         });
                       },
@@ -284,13 +284,13 @@ class StackViews extends GetView<StackController> {
                                   )
                                 : Row(
                                     children: [
-                                      Text(
-                                        '${StackIncomeController().stakeDashboardResponse.value?.remain}',
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 17),
-                                      ),
+                                      Obx(() => Text(
+                                            '${controller.stakeDashboardResponse.value?.remain}',
+                                            style: const TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black,
+                                                fontSize: 17),
+                                          )),
                                       const SizedBox(width: 10),
                                       const Text(
                                         'TXH',
@@ -776,7 +776,7 @@ class StackViews extends GetView<StackController> {
                                   fontSize: 14),
                             )
                           : Text(
-                              '${StackIncomeController().stakeDashboardResponse.value?.apy ?? '0'} %',
+                              '${controller.stakeDashboardResponse.value?.apy ?? '0'} %',
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.red,
@@ -1489,11 +1489,11 @@ class stakingIncome extends GetView {
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black)),
                                   const SizedBox(width: 15),
-                                  Text('${model.apy}%',
+                                  Obx(() => Text('${model.apy}%',
                                       style: GoogleFonts.roboto(
                                           fontSize: 13,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.black))
+                                          color: Colors.black)))
                                 ],
                               )
                             ],

@@ -4,18 +4,17 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/pages/Stack/Stack_Controller.dart';
-import 'package:tixcash/pages/Stack_Income/Stackincome_controller.dart';
 import 'package:tixcash/pages/Stack/timer.dart';
 import 'package:tixcash/pages/dashboard/tabs/send_tyv/send_tyv_controller.dart';
 import 'package:tixcash/shared/constants/colors.dart';
 import 'package:tixcash/shared/utils/common_widget.dart';
 
-class txhincome extends GetView<StackIncomeController> {
+class txhincome extends GetView<StackController> {
   const txhincome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    controller.stackcontroller.getstakingDaylist();
+    controller.stakedashboard();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -50,13 +49,11 @@ class txhincome extends GetView<StackIncomeController> {
                     onTap: () {
                       Get.to(ActiveStakeList())?.then((value) {
                         if (value != null) {
-                          controller.stackcontroller.selectStakeDays.value =
-                              value['plan'];
+                          controller.selectStakeDays.value = value['plan'];
                         }
                         if (value != null) {
-                          controller.stackcontroller.selectid.value =
-                              value['id'];
-                          controller.stackcontroller.getstakedate();
+                          controller.selectid.value = value['id'];
+                          controller.getstakedate();
                           controller.stakedashboard();
                           StackController().getstakingDaylist();
                         }
@@ -75,8 +72,7 @@ class txhincome extends GetView<StackIncomeController> {
                         child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 15),
                             child: Row(children: [
-                              Obx(() => controller.stackcontroller
-                                      .selectStakeDays.value.isEmpty
+                              Obx(() => controller.selectStakeDays.value.isEmpty
                                   ? Text(
                                       'Select Staking Plan'.tr,
                                       style: const TextStyle(
@@ -88,8 +84,7 @@ class txhincome extends GetView<StackIncomeController> {
                                       width:
                                           MediaQuery.of(context).size.width / 4,
                                       child: Text(
-                                        controller.stackcontroller
-                                            .selectStakeDays.value,
+                                        controller.selectStakeDays.value,
                                         style: const TextStyle(
                                             color: Colors.red,
                                             fontSize: 12,
@@ -109,7 +104,7 @@ class txhincome extends GetView<StackIncomeController> {
           height: MediaQuery.of(context).size.height / 1,
           margin: const EdgeInsets.symmetric(horizontal: 15),
           child: Obx(
-            () => controller.stackcontroller.selectid.value == 0
+            () => controller.selectid.value == 0
                 ? SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1255,9 +1250,7 @@ class txhincome extends GetView<StackIncomeController> {
                                                 color: Colors.black,
                                                 fontSize: 12),
                                           ),
-                                          controller.stackcontroller.selectid
-                                                      .value ==
-                                                  5
+                                          controller.selectid.value == 5
                                               ? const Text(
                                                   'No Limit',
                                                   style: TextStyle(
@@ -1653,7 +1646,7 @@ class txhincome extends GetView<StackIncomeController> {
 class StakeClaimDetails extends StatelessWidget {
   StakeClaimDetails({Key? key}) : super(key: key);
 
-  StackIncomeController controller = Get.put(StackIncomeController());
+  StackController controller = Get.put(StackController());
   SendTyvController sendController = Get.put(SendTyvController());
 
   @override
@@ -1811,7 +1804,7 @@ class StakeClaimDetails extends StatelessWidget {
           ),
         ),
         onTap: () {
-          controller.stackcontroller.claimStake();
+          controller.claimStake();
         },
       ),
     );

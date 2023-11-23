@@ -39,8 +39,8 @@ class _BottomSheetViewState extends State<BottomSheetView> {
     _users.sort((a, b) => a.active == b.active ? 1 : -1);
     if (mounted) setState(() {});
     // controller1.backupPharse1();
-    controller2.backupPharse();
-    StackController().getwhiteliststatus();
+    // controller2.backupPharse();
+    // StackController().getwhiteliststatus();
   }
 
   @override
@@ -82,6 +82,7 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                         controller2.backupPharse();
                         InviteController().inviteInits();
                         StackController().getwhiteliststatus();
+                        controller.getBalanceCurrencyList();
                       });
                     }
                   },

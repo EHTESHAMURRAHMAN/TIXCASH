@@ -33,4 +33,5 @@ abstract class Routes {
   static const STACKINCOME = '/stackincome';
   static const REFRAL = '/refral';
   static const START = '/start';
+  static const MYREFERRAL = '/myreferral';
 }

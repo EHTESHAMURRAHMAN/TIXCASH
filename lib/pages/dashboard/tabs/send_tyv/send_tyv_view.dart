@@ -886,7 +886,7 @@ class SendDetails extends StatelessWidget {
                               color: Colors.black)),
                       const Spacer(),
                       Obx(() => Text(
-                          '${int.parse(controller.controllerAmount.text.toString()) + controller.commissionAmount.value}',
+                          '${double.parse(controller.controllerAmount.text.toString()) + controller.commissionAmount.value}',
                           // '${controller.commissionAmount.value} LINE',
                           style: GoogleFonts.roboto(
                               fontSize: 15,
