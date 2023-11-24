@@ -119,11 +119,11 @@ class InviteView extends GetView<InviteController> {
                             child: Column(
                               children: [
                                 Text(
-                                  'COPY',
+                                  'Copy'.tr,
                                   style: Theme.of(context).textTheme.titleSmall,
                                 ),
                                 Text(
-                                  'CODE',
+                                  'Code'.tr,
                                   style: Theme.of(context).textTheme.titleSmall,
                                 ),
                               ],
@@ -772,7 +772,7 @@ class ReferralIncomeHistory extends GetView {
         body: Obx(
           () => controller.referralClaimlistModelResponse.isEmpty
               ? Center(
-                  child: Text('No Referral History',
+                  child: Text('No Referral History'.tr,
                       style: GoogleFonts.roboto(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -815,7 +815,7 @@ class ReferralIncomeHistory extends GetView {
                               ),
                               Row(
                                 children: [
-                                  Text('Transacton Date :'.tr,
+                                  Text('Transaction Date :'.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
@@ -831,14 +831,14 @@ class ReferralIncomeHistory extends GetView {
                               ),
                               Row(
                                 children: [
-                                  Text('Remark :'.tr,
+                                  Text('Remark'.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
                                           color:
                                               Theme.of(context).primaryColor)),
                                   const SizedBox(width: 17),
-                                  Text(model.remark,
+                                  Text(': ${model.remark.tr}',
                                       style: GoogleFonts.roboto(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
@@ -875,14 +875,14 @@ class ReferralIncomeHistory extends GetView {
                               //         color: Colors.black)),],),
                               Row(
                                 children: [
-                                  Text('Status:'.tr,
+                                  Text('Status :'.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
                                           color:
                                               Theme.of(context).primaryColor)),
                                   const SizedBox(width: 17),
-                                  Text(model.status,
+                                  Text(model.status.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,

@@ -133,18 +133,17 @@ class StackController extends GetxController {
 
   void stake() async {
     if (controllerStakeAmount.text.isEmpty) {
-      EasyLoading.showToast('Please Enter Balance');
+      EasyLoading.showToast('Please Enter Balance'.tr);
       return;
     } else if (selectStakeDays.value.isEmpty) {
-      EasyLoading.showToast('Please Select Staking Plan');
+      EasyLoading.showToast('Please Select Staking Plan'.tr);
       return;
-    } else if (selectStakeDays.value ==
-        "Whitelisted  (Staking Period:-  365 Days)") {
+    } else if (selectid.value == 5) {
     } else if (double.parse(controllerStakeAmount.text.toString()) > 50000) {
-      EasyLoading.showToast('Please Enter Balance Less than 50000 TXH');
+      EasyLoading.showToast('Please Enter Balance Less than 50000 TXH'.tr);
       return;
     } else if (double.parse(controllerStakeAmount.text.toString()) < 500) {
-      EasyLoading.showToast('Please Enter Balance More than 500 TXH');
+      EasyLoading.showToast('Please Enter Balance More than 500 TXH'.tr);
       return;
     }
     Map body = {
@@ -160,7 +159,7 @@ class StackController extends GetxController {
     EasyLoading.dismiss();
     if (apiResponse.status) {
       CommonResponse response = apiResponse.data;
-      EasyLoading.showToast(response.message);
+      EasyLoading.showToast(response.message.tr);
       getStakingList();
       controllerStakeAmount.clear();
       controllerRefral.clear();
@@ -182,7 +181,7 @@ class StackController extends GetxController {
     EasyLoading.dismiss();
     if (apiResponse.status) {
       CommonResponse response = apiResponse.data;
-      EasyLoading.showToast(response.message);
+      EasyLoading.showToast(response.message.tr);
       getStakingList();
 
       controllerStakeAmount.clear();

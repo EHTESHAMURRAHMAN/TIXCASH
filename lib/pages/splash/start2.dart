@@ -28,27 +28,27 @@ class Startview2 extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 2,
                 ),
                 Text(
-                  'Allow us to track your data and\nhelp provide a better\nTIXCASH WALLET experience'
+                  'Allow us to track your data and\nhelp provide a better\nTixcash Wallet experience'
                       .tr,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 17,
                       color: Colors.black),
                 ),
                 const SizedBox(height: 15),
                 Text(
-                  'We would like to collect data from your session to\nhelp make TIXCASH WALLET easier and\nmore fun to use'
+                  'We would like to collect data from your session to\nhelp make Tixcash Wallet easier and\nmore fun to use'
                       .tr,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15, color: Colors.black),
+                  style: const TextStyle(fontSize: 15, color: Colors.black),
                 ),
                 const SizedBox(height: 15),
                 Text(
                   'These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey\'re totally anonymous and\nwill never be shared with anyone else'
                       .tr,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15, color: Colors.black),
+                  style: const TextStyle(fontSize: 15, color: Colors.black),
                 ),
               ],
             ),
@@ -67,7 +67,7 @@ class Startview2 extends StatelessWidget {
               child: Center(
                 child: Text(
                   'Next'.tr,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 17,
                       color: Colors.white),

@@ -256,6 +256,15 @@ class SendTyvView extends GetView<SendTyvController> {
                                                   color: Colors.black))),
                                         ],
                                       ),
+                                      const SizedBox(height: 12),
+                                      Text(
+                                          'Will be confirmed in 16 confirmations'
+                                              .tr,
+                                          textAlign: TextAlign.start,
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.black)),
                                     ],
                                   ),
                                 ),
@@ -751,7 +760,7 @@ class SendDetails extends StatelessWidget {
         elevation: 0,
         // backgroundColor: Colors.transparent,
         title: Text(
-          'Transfer'.tr,
+          'Transfers'.tr,
           style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500),
         ),
 
@@ -792,7 +801,7 @@ class SendDetails extends StatelessWidget {
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Asset :'.tr,
+                        Text('Assets'.tr,
                             style: GoogleFonts.roboto(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,

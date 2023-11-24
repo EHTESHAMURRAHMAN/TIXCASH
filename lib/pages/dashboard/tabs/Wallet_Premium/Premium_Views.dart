@@ -64,7 +64,7 @@ class PremiumViews extends GetView<PremiumController> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Text('TIXCASH VIP ACCESS'.tr,
+                  Text('Tixcash vip access'.tr,
                       style: TextStyle(
                           color: Colors.yellow.shade600,
                           fontWeight: FontWeight.bold,
@@ -398,7 +398,7 @@ class PremiumViews extends GetView<PremiumController> {
                               ),
                             ),
                             const SizedBox(height: 10),
-                            const Text('You Are Premium Member',
+                            Text('You Are Premium Member'.tr,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
@@ -703,15 +703,16 @@ class PremiumViews extends GetView<PremiumController> {
               children: [
                 Column(
                   children: [
-                    const Text('** ⚠️ Warning ⚠️ **',
+                    Text('** ⚠️ Warning ⚠️ **'.tr,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.red,
                             fontSize: 15,
                             fontWeight: FontWeight.bold)),
                     const SizedBox(height: 10),
-                    const Text(
-                        'Referral code is important and permanent. If missed then the referral rewards will be missed.',
+                    Text(
+                        'Referral code is important and permanent. If missed then the referral rewards will be missed.'
+                            .tr,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.black,
@@ -723,7 +724,7 @@ class PremiumViews extends GetView<PremiumController> {
                         Get.back();
                         controller.rcontroller.clear();
                       },
-                      child: const Text('Okay'),
+                      child: Text('Okay'.tr),
                       //    child: const Text('Pay \$5'),
                     ),
                   ],

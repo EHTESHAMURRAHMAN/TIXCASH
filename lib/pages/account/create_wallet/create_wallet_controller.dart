@@ -30,6 +30,7 @@ class CreateWalletController extends GetxController {
 
   //
   final selectType = ''.obs;
+  final selectid = 0.obs;
   WebViewController mWebViewController = WebViewController()
     ..setJavaScriptMode(JavaScriptMode.unrestricted)
     ..setBackgroundColor(const Color(0x00000000))

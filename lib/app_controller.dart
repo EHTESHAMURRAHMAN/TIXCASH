@@ -337,7 +337,7 @@ class AppController extends GetxController {
                         const SizedBox(width: 12),
                         TextButton(
                             onPressed: () => Get.back(),
-                            child: Text('CANCEL'.tr)),
+                            child: Text('Cancel'.tr)),
                         TextButton(
                             onPressed: () {
                               var storage = Get.find<SharedPreferences>();

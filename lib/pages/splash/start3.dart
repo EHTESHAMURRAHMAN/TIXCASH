@@ -22,7 +22,7 @@ class Startview3 extends GetView {
               ),
               const SizedBox(height: 55),
               Text(
-                'Welcome to TIXCASH WALLET'.tr,
+                'Welcome to Tixcash Wallet'.tr,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -31,7 +31,7 @@ class Startview3 extends GetView {
               ),
               const SizedBox(height: 25),
               Text(
-                'The home of your Funds & your\nNFT collection on TIXCASH WALLET Network'
+                'The home of your Funds & your\nNFT collection on Tixcash Wallet Network'
                     .tr,
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 16, color: Colors.black),

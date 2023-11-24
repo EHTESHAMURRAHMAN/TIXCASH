@@ -33,7 +33,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                 height: 120,
               ),
               Text(
-                'TIXCASH WALLET'.tr,
+                'Tixcash Wallet'.tr,
                 style: const TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,

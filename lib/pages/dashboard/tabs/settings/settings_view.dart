@@ -308,7 +308,8 @@ class phrse extends StatelessWidget {
                                         Clipboard.setData(ClipboardData(
                                             text:
                                                 '${controller.backupPResponse.value?.backuphrase}'));
-                                        EasyLoading.showToast('Address Copied');
+                                        EasyLoading.showToast(
+                                            'Address Copied'.tr);
                                       },
                                       child: Container(
                                         width:
@@ -1302,7 +1303,8 @@ class GetinTouch extends StatelessWidget {
             InkWell(
               onTap: () {
                 Share.share(
-                    'Download the TIXCASH WALLET app from play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line');
+                    'Download the TIXCASH WALLET app from play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line'
+                        .tr);
               },
               child: SizedBox(
                 height: 60,
@@ -1343,20 +1345,151 @@ class GetinTouch extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
-            SizedBox(
-              height: 60,
-              width: MediaQuery.of(context).size.width / 1.2,
-              child: Card(
-                color: Theme.of(context).primaryColor,
-                elevation: 2,
-                shadowColor: Colors.purple[900],
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: MineCell(
-                    title: 'Join Telegram'.tr,
-                    svgIcon: 'assets/SVG_Icons/Ic_telegram.svg',
+            InkWell(
+              onTap: () {
+                const url = 'https://github.com/Tixcoin';
+                openBrowserUrl(url: url, inApp: true);
+              },
+              child: SizedBox(
+                height: 60,
+                width: MediaQuery.of(context).size.width / 1.2,
+                child: Card(
+                  color: Theme.of(context).primaryColor,
+                  elevation: 2,
+                  shadowColor: Colors.purple[900],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      children: [
+                        Image.network(
+                            'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+                            color: Colors.white,
+                            height:
+                                22), //Icon(Icons.twitter, color: Colors.white, size: 22),
+                        const SizedBox(width: 15),
+                        Text(
+                          'Join Github'.tr,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Spacer(),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            InkWell(
+              onTap: () {
+                const url = 'https://x.com/tixcash?s=09';
+                openBrowserUrl(url: url, inApp: true);
+              },
+              child: SizedBox(
+                height: 60,
+                width: MediaQuery.of(context).size.width / 1.2,
+                child: Card(
+                  color: Theme.of(context).primaryColor,
+                  elevation: 2,
+                  shadowColor: Colors.purple[900],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      children: [
+                        Image.network(
+                            'https://cdn-icons-png.flaticon.com/512/733/733635.png',
+                            color: Colors.white,
+                            height:
+                                22), //Icon(Icons.twitter, color: Colors.white, size: 22),
+                        const SizedBox(width: 15),
+                        Text(
+                          'Join Twitter'.tr,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Spacer(),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            InkWell(
+              onTap: () {
+                const url = 'https://m.facebook.com/tixcashtxh';
+                openBrowserUrl(url: url, inApp: true);
+              },
+              child: SizedBox(
+                height: 60,
+                width: MediaQuery.of(context).size.width / 1.2,
+                child: Card(
+                  color: Theme.of(context).primaryColor,
+                  elevation: 2,
+                  shadowColor: Colors.purple[900],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      children: [
+                        Icon(Icons.facebook, color: Colors.white, size: 22),
+                        const SizedBox(width: 15),
+                        Text(
+                          'Join Facebook'.tr,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Spacer(),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            InkWell(
+              onTap: () {
+                const url = 'https://t.me/www_Tixcash_org';
+                openBrowserUrl(url: url, inApp: true);
+              },
+              child: SizedBox(
+                height: 60,
+                width: MediaQuery.of(context).size.width / 1.2,
+                child: Card(
+                  color: Theme.of(context).primaryColor,
+                  elevation: 2,
+                  shadowColor: Colors.purple[900],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: MineCell(
+                      title: 'Join Telegram'.tr,
+                      svgIcon: 'assets/SVG_Icons/Ic_telegram.svg',
+                    ),
                   ),
                 ),
               ),
@@ -1384,6 +1517,20 @@ class GetinTouch extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future openBrowserUrl({
+    required String url,
+    bool inApp = false,
+  }) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: inApp,
+        forceWebView: inApp,
+        enableJavaScript: true,
+      );
+    }
   }
 }
 

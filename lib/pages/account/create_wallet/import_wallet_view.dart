@@ -69,6 +69,9 @@ class ImportWalletView extends GetView<CreateWalletController> {
                             if (value != null) {
                               controller.selectType.value = value['type'];
                             }
+                            if (value != null) {
+                              controller.selectid.value = value['id'];
+                            }
                           });
                         },
                         child: Container(
@@ -80,7 +83,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 15),
                                 child: Row(children: [
-                                  Obx(() => controller.selectType.value.isEmpty
+                                  Obx(() => controller.selectid.value == 0
                                       ? Text(
                                           'Select Recover Account Type'.tr,
                                           style: const TextStyle(
@@ -106,7 +109,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                       color: Colors.black, size: 30)
                                 ])))),
                     const SizedBox(height: 10),
-                    Obx(() => controller.selectType.value == "Secret Phrase"
+                    Obx(() => controller.selectid.value == 1
                         ? TextFormField(
                             controller: controller.controllerWords,
                             style: GoogleFonts.roboto(
@@ -133,7 +136,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                             ColorConstants.secondaryAppColor),
                                     borderRadius: BorderRadius.circular(20))),
                           )
-                        : controller.selectType.value == "Private Key"
+                        : controller.selectid.value == 2
                             ? InputIconBox(
                                 hint: 'Enter Private Key'.tr,
                                 // title: 'input receiving address'.tr,
@@ -261,7 +264,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                   ))
             ],
           )),
-          Obx(() => controller.selectType.value == "Secret Phrase"
+          Obx(() => controller.selectid.value == 1
               ? Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Obx(() => SaveButton(
@@ -294,7 +297,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                         isActive: controller.isActive.value,
                       )),
                 )
-              : controller.selectType.value == "Private Key"
+              : controller.selectid.value == 2
                   ? Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Obx(() => SaveButton(
@@ -477,7 +480,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                         //?.then((value) => Get.offAllNamed(Routes.Dashboard));
                       }
                     } else {
-                      EasyLoading.showToast('${response.message}');
+                      EasyLoading.showToast('${response.message}'.tr);
                       Get.back();
                     }
                     // controller.getImportAccount(isImportWallet: const ImportWalletView().isImportWallet);
@@ -593,7 +596,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                         //?.then((value) => Get.offAllNamed(Routes.Dashboard));
                       }
                     } else {
-                      EasyLoading.showToast('${response.message}');
+                      EasyLoading.showToast('${response.message}'.tr);
                     }
                   },
                   child: const Text('Pay \$5'),
@@ -776,12 +779,13 @@ class ImportWalletView extends GetView<CreateWalletController> {
   }
 }
 */
+
 class RecoveryDropDown extends StatelessWidget {
   RecoveryDropDown({Key? key}) : super(key: key);
 
   final recovertype = [
-    ["Secret Phrase"],
-    ["Private Key"],
+    ["Secret Phrase".tr, 1],
+    ["Private Key".tr, 2],
   ];
 
   @override
@@ -809,7 +813,7 @@ class RecoveryDropDown extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Select Recovery type'.tr,
-          style: TextStyle(
+          style: const TextStyle(
               fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
         ),
       ),
@@ -819,23 +823,23 @@ class RecoveryDropDown extends StatelessWidget {
             children: [
               ...recovertype.map((i) => Container(
                   margin: const EdgeInsets.symmetric(vertical: 7),
-                  height: 65,
+                  height: 60,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                      color: Colors.blue.shade100,
-                      borderRadius: BorderRadius.circular(15)),
+                      color: Theme.of(context).primaryColor,
+                      borderRadius: BorderRadius.circular(30)),
                   child: Center(
                       child: ListTile(
-                    //  trailing: const Icon(Icons.circle, color: Colors.blue),
                     title: Text(
-                      i.first,
+                      '${i.first}',
+                      textAlign: TextAlign.center,
                       style: const TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
                     onTap: () {
-                      Get.back(result: {'type': i.first});
+                      Get.back(result: {'type': i.first, 'id': i.last});
                     },
                   )))),
             ],
@@ -843,3 +847,71 @@ class RecoveryDropDown extends StatelessWidget {
     );
   }
 }
+
+// class RecoveryDropDown1 extends StatelessWidget {
+//   RecoveryDropDown1({Key? key}) : super(key: key);
+
+//   final recovertype = [
+//     ["Secret Phrase"],
+//     ["Private Key"],
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       appBar: AppBar(
+//         backgroundColor: Colors.white,
+//         systemOverlayStyle: const SystemUiOverlayStyle(
+//           statusBarColor: Colors.white,
+//           statusBarIconBrightness: Brightness.dark,
+//           statusBarBrightness: Brightness.dark,
+//         ),
+//         elevation: 0,
+//         automaticallyImplyLeading: false,
+//         leading: InkWell(
+//           onTap: () {
+//             Get.back();
+//           },
+//           child: const Icon(
+//             Icons.arrow_back_ios_new,
+//             color: Colors.black,
+//           ),
+//         ),
+//         centerTitle: true,
+//         title: Text(
+//           'Select Recovery type'.tr,
+//           style: TextStyle(
+//               fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+//         ),
+//       ),
+//       body: Container(
+//           margin: const EdgeInsets.symmetric(horizontal: 15),
+//           child: ListView(
+//             children: [
+//               ...recovertype.map((i) => Container(
+//                   margin: const EdgeInsets.symmetric(vertical: 7),
+//                   height: 65,
+//                   width: MediaQuery.of(context).size.width,
+//                   decoration: BoxDecoration(
+//                       color: Colors.blue.shade100,
+//                       borderRadius: BorderRadius.circular(15)),
+//                   child: Center(
+//                       child: ListTile(
+//                     //  trailing: const Icon(Icons.circle, color: Colors.blue),
+//                     title: Text(
+//                       i.first,
+//                       style: const TextStyle(
+//                           color: Colors.black,
+//                           fontSize: 15,
+//                           fontWeight: FontWeight.bold),
+//                     ),
+//                     onTap: () {
+//                       Get.back(result: {'type': i.first});
+//                     },
+//                   )))),
+//             ],
+//           )),
+//     );
+//   }
+// }

@@ -358,8 +358,8 @@ class ActiveStakeList extends StatelessWidget {
             ),
           ),
           centerTitle: true,
-          title: const Text(
-            'Select Stake Plan',
+          title: Text(
+            'Select Stake Plan'.tr,
             style: TextStyle(
                 fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
           ),
@@ -384,7 +384,7 @@ class ActiveStakeList extends StatelessWidget {
                       child: ListTile(
                         trailing: const Icon(Icons.ads_click),
                         title: Text(
-                          model.totaldays,
+                          model.totaldays.tr,
                           style: const TextStyle(
                               color: Colors.white,
                               fontSize: 15,
@@ -450,17 +450,17 @@ class currencyPremium extends StatelessWidget {
             String name = currencys.elementAt(index);
             return Container(
                 margin: const EdgeInsets.symmetric(vertical: 7),
-                height: 75,
+                height: 60,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    color: Colors.blue.shade100,
-                    borderRadius: BorderRadius.circular(22)),
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(30)),
                 child: Center(
                     child: ListTile(
                   title: Text(
                     name,
                     style: const TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 15,
                         fontWeight: FontWeight.bold),
                   ),

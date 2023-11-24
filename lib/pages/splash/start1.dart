@@ -145,7 +145,7 @@ class Startview1 extends GetView<SplashController> {
               Image.asset('assets/icons/startp1.png'),
               const SizedBox(height: 90),
               Text(
-                'Welcome to TIXCASH WALLET'.tr,
+                'Welcome to Tixcash Wallet'.tr,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 17,
@@ -161,7 +161,7 @@ class Startview1 extends GetView<SplashController> {
               ),
               const SizedBox(height: 15),
               Text(
-                'Use this wallet to collect and other\napplications running on tixcash Wallet'
+                'Use this wallet to collect and other\napplications running on Tixcash Wallet'
                     .tr,
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 15, color: Colors.white),

@@ -51,7 +51,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/sockets/src/socket_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -423,13 +422,13 @@ class HomeController extends GetxController with WidgetsBindingObserver {
         prefs.setString(StorageConstants.userInfo, userResponseToJson(users));
         prefs.setString(StorageConstants.userPassword, userPassword);
         userInfo = response.data;
-        EasyLoading.showToast(userResponse.message);
+        EasyLoading.showToast(userResponse.message.tr);
 
         appController.backupPharse();
         Get.offAllNamed(Routes.Dashboard);
         editingController.clear();
       } else {
-        EasyLoading.showToast(userResponse.message);
+        EasyLoading.showToast(userResponse.message.tr);
         Get.offAllNamed(Routes.Dashboard);
       }
     } else {

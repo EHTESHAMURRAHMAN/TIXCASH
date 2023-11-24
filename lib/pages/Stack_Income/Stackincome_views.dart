@@ -376,8 +376,8 @@ class txhincome extends GetView<StackController> {
                                               color: Colors.black,
                                               fontSize: 12),
                                         ),
-                                        const Text(
-                                          'DD : MM : YYYY',
+                                        Text(
+                                          'DD : MM : YYYY'.tr,
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black,
@@ -454,9 +454,9 @@ class txhincome extends GetView<StackController> {
                                               color: Colors.black,
                                               fontSize: 12),
                                         ),
-                                        const Text(
-                                          'DD : MM : YYYY',
-                                          style: TextStyle(
+                                        Text(
+                                          'DD : MM : YYYY'.tr,
+                                          style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black,
                                               fontSize: 15),
@@ -1280,7 +1280,7 @@ class txhincome extends GetView<StackController> {
                                     const SizedBox(height: 8),
                                     Container(
                                       padding: const EdgeInsets.all(10),
-                                      height: 55,
+                                      height: 60,
                                       width: MediaQuery.of(context).size.width /
                                           2.4,
                                       decoration: BoxDecoration(
@@ -1305,7 +1305,7 @@ class txhincome extends GetView<StackController> {
                                             style: const TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.red,
-                                                fontSize: 17),
+                                                fontSize: 16),
                                           ),
                                         ],
                                       ),

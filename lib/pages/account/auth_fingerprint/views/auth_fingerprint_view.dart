@@ -165,7 +165,7 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                                                 text: controller
                                                     .privateKey.value));
                                             EasyLoading.showToast(
-                                                'Address Copied');
+                                                'Address Copied'.tr);
                                           },
                                           child: Container(
                                             width: MediaQuery.of(context)
@@ -328,7 +328,7 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                                 color: Theme.of(context).primaryColor)),
                         child: Center(
                             child: Text(
-                          'Done',
+                          'Done'.tr,
                           style:
                               TextStyle(color: Theme.of(context).primaryColor),
                         )),

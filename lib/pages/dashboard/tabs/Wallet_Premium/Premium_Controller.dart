@@ -22,7 +22,7 @@ class PremiumController extends GetxController {
   TextEditingController rcontroller = TextEditingController();
   final isScanEnable = false.obs;
   final isCheckedTerms = false.obs;
-  final termsAndConditions = 'Skip Referral Code';
+  final termsAndConditions = 'Skip Referral Code'.tr;
 
   @override
   void onInit() {
@@ -95,7 +95,7 @@ class PremiumController extends GetxController {
     //EasyLoading.dismiss();
     if (apiResponse.status) {
       CommonResponse response = apiResponse.data;
-      EasyLoading.showToast(response.message);
+      EasyLoading.showToast(response.message.tr);
 
       // Get.snackbar(response.status, response.message,
       //     backgroundColor:

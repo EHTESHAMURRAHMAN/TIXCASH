@@ -402,7 +402,7 @@ class _bottomnavigationbarState extends State<DashboardView> {
       controller.counter = 0;
     });
     if (controller.counter == 1) {
-      EasyLoading.showToast('Press two times to Exit',
+      EasyLoading.showToast('Press two times to Exit'.tr,
           toastPosition: EasyLoadingToastPosition.bottom);
     }
 

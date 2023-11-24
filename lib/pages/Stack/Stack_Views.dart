@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/models/stackingList.dart';
 import 'package:tixcash/models/stackingListHistory.dart';
 import 'package:tixcash/pages/Stack/Stack_Controller.dart';
-import 'package:tixcash/pages/Stack_Income/Stackincome_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/send_tyv/send_tyv_controller.dart';
 import 'package:tixcash/routes/app_pages.dart';
@@ -184,8 +183,7 @@ class StackViews extends GetView<StackController> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 15),
                               child: Row(children: [
-                                Obx(() => controller
-                                        .selectStakeDays.value.isEmpty
+                                Obx(() => controller.selectid.value == 0
                                     ? Text(
                                         'Select Staking Plan'.tr,
                                         style: const TextStyle(
@@ -229,8 +227,7 @@ class StackViews extends GetView<StackController> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Obx(() => controller.selectStakeDays.value ==
-                              "Whitelisted  (Staking Period:-  365 Days)"
+                      Obx(() => controller.selectid.value == 5
                           ? Text('Min : No Limit'.tr,
                               style: GoogleFonts.roboto(
                                   fontSize: 14,
@@ -305,8 +302,7 @@ class StackViews extends GetView<StackController> {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  Obx(() => controller.selectStakeDays.value ==
-                          "Whitelisted  (Staking Period:-  365 Days)"
+                  Obx(() => controller.selectid.value == 0
                       ? Text('Max : No Limit'.tr,
                           style: GoogleFonts.roboto(
                               fontSize: 14,
@@ -330,7 +326,7 @@ class StackViews extends GetView<StackController> {
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black)),
                                 const SizedBox(width: 15),
-                                Text('DD : MM : YYYY',
+                                Text('DD : MM : YYYY'.tr,
                                     style: GoogleFonts.roboto(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
@@ -346,7 +342,7 @@ class StackViews extends GetView<StackController> {
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black)),
                                 const SizedBox(width: 15),
-                                Text('DD : MM : YYYY',
+                                Text('DD : MM : YYYY'.tr,
                                     style: GoogleFonts.roboto(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
@@ -362,7 +358,7 @@ class StackViews extends GetView<StackController> {
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black)),
                                 const SizedBox(width: 15),
-                                Text('DD : MM : YYYY',
+                                Text('DD : MM : YYYY'.tr,
                                     style: GoogleFonts.roboto(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
@@ -884,14 +880,13 @@ class StackViews extends GetView<StackController> {
           // controller.whiteListResponse.value?.whiteliststatus == 0
           Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Obx(() => controller.selectStakeDays.value ==
-                      "Whitelisted  (Staking Period:-  365 Days)"
+              child: Obx(() => controller.selectid.value == 5
                   ? SaveButton(
                       title: 'Next Step'.tr,
                       onPress: () {
                         controller.whiteListResponse.value?.whiteliststatus == 0
                             ? EasyLoading.showToast(
-                                'You Are Not Whitelisted Member')
+                                'You Are Not Whitelisted Member'.tr)
                             : Get.to(StakeDetails());
                       },
                       isActive: controller.isActived.value &&
@@ -1544,7 +1539,7 @@ class stakingIncomeHistory extends GetView {
         body: Obx(
           () => controller.stakingListHistoryModelResponse.isEmpty
               ? Center(
-                  child: Text('No Stake History',
+                  child: Text('No Stake History'.tr,
                       style: GoogleFonts.roboto(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,

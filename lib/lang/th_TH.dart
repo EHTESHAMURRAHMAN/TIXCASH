@@ -3,7 +3,7 @@ const Map<String, String> th_TH = {
   "scanFingure": "สแกนลายนิ้วมือ",
   "Enter Password": "ใส่รหัสผ่าน",
   "Password": "รหัสผ่าน",
-  "CANCEL": "ยกเลิก",
+  "Cancel": "ยกเลิก",
   "Enter correct password": "ป้อนรหัสผ่านที่ถูกต้อง",
   "CONFIRM": "ยืนยัน",
   "TIX Balance": "ยอดคงเหลือ TIX",
@@ -15,6 +15,7 @@ const Map<String, String> th_TH = {
   "SETTINGS": "การตั้งค่า",
   "Commission Fee": "ค่านายหน้า",
   "Add Store": "เพิ่มร้านค้า",
+  "Done": "เสร็จแล้ว",
   "Add Notification": "เพิ่มการแจ้งเตือน",
   "Coin": "เหรียญ",
   "recoveryMessage": "ข้อความการกู้คืน",
@@ -175,15 +176,15 @@ const Map<String, String> th_TH = {
   "Create New Account": "สร้างบัญชีใหม่",
   "Import an Account": "นำเข้าบัญชี",
   //lfhweufb ihoef
-  "Welcome to TIXCASH WALLET": "ยินดีต้อนรับสู่ TIXCASH WALLET",
+  "Welcome to Tixcash Wallet": "ยินดีต้อนรับสู่ Tixcash Wallet",
   "Your Digital passport": "หนังสือเดินทางดิจิทัลของคุณ",
-  "Use this wallet to collect and other\napplications running on tix":
-      "ใช้กระเป๋าเงินนี้เพื่อรวบรวมและ\แอปพลิเคชันอื่นๆ ที่ทำงานบน tix",
+  "Use this wallet to collect and other\napplications running on Tixcash Wallet":
+      "ใช้กระเป๋าเงินนี้เพื่อรวบรวมและ\แอปพลิเคชันอื่นๆ ที่ทำงานบน Tixcash Wallet",
   "Next": "ต่อไป",
-  "Allow us to track your data and\nhelp provide a better\nTIXCASH WALLET experience":
-      "อนุญาตให้เราติดตามข้อมูลของคุณและ\nช่วยมอบประสบการณ์\nTIXCASH WALLET ที่ดียิ่งขึ้น",
-  "We would like to collect data from your session to\nhelp make TIXCASH WALLET easier and\nmore fun to use":
-      "เราต้องการรวบรวมข้อมูลจากเซสชันของคุณเพื่อช่วย\nทำให้ TIXCASH WALLET ง่ายขึ้นและ\nใช้งานสนุกยิ่งขึ้น",
+  "Allow us to track your data and\nhelp provide a better\nTixcash Wallet experience":
+      "อนุญาตให้เราติดตามข้อมูลของคุณและ\nช่วยมอบประสบการณ์\nTixcash Wallet ที่ดียิ่งขึ้น",
+  "We would like to collect data from your session to\nhelp make Tixcash Wallet easier and\nmore fun to use":
+      "เราต้องการรวบรวมข้อมูลจากเซสชันของคุณเพื่อช่วย\nทำให้ Tixcash Wallet ง่ายขึ้นและ\nใช้งานสนุกยิ่งขึ้น",
   "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey\'re totally anonymous and\nwill never be shared with anyone else":
       "ข้อมูลเหล่านี้รวมถึงพฤติกรรมการใช้งาน เช่น การคลิก\nและการเลื่อน ตลอดจนการวินิจฉัยประสิทธิภาพ\nเป็นข้อมูลนิรนามโดยสิ้นเชิงและ\nจะไม่ถูกแชร์กับบุคคลอื่น",
   "The home of your Funds & your\nNFT collection on TIXCASH Network":
@@ -343,8 +344,8 @@ const Map<String, String> th_TH = {
   "Never disclose this key. Anyone with your private key can fully control your account, including transferring away any of your fund":
       "อย่าเปิดเผยกุญแจนี้ ใครก็ตามที่มีคีย์ส่วนตัวของคุณจะสามารถควบคุมบัญชีของคุณได้อย่างเต็มที่ รวมถึงการโอนเงินใด ๆ ของคุณออกไป",
   "Share": "แบ่งปัน",
-  "Done": "เสร็จแล้ว",
   "Copy": "สำเนา",
+  "Code": "รหัส",
   "Share QR": "แบ่งปัน QR",
   "Your Secret Recovery Phrase": "วลีกู้คืนความลับของคุณ",
   "Reset": "รีเซ็ต",
@@ -352,9 +353,53 @@ const Map<String, String> th_TH = {
   "Enter 24 Word Secrate Phrase": "ป้อนวลีลับ 24 คำ",
   "Use this wallet to collect and other\napplications running on tixcash Wallet":
       "ใช้กระเป๋าสตางค์นี้เพื่อรวบรวมและ\แอปพลิเคชันอื่นๆ ที่ทำงานบน tixcash Wallet",
-  "The home of your Funds & your\nNFT collection on TIXCASH WALLET Network":
-      "แหล่งเงินทุนและคอลเลกชัน\nNFT ของคุณบนเครือข่าย TIXCASH WALLET",
+  "The home of your Funds & your\nNFT collection on Tixcash Wallet Network":
+      "แหล่งเงินทุนและคอลเลกชัน\nNFT ของคุณบนเครือข่าย tixcash Wallet",
   "Enter Phrase": "ป้อนวลี",
   "Linking to Tixcash Stake": "เชื่อมโยงไปยังเดิมพัน Tixcash",
-  "Sign": "เข้าสู่ระบบ"
+  "Sign": "เข้าสู่ระบบ",
+  "Download the TIXCASH WALLET app from play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line":
+      "ดาวน์โหลดแอป TIXCASH WALLET จาก play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line",
+  "Referral Claim History": "ประวัติการเรียกร้องการอ้างอิง",
+  "No Referral History": "ไม่มีประวัติการอ้างอิง",
+  "Select Stake Plan": "เลือกแผนการเดิมพัน",
+  "DD : MM : YYYY": "วว : ดด : ปปปป",
+  "You have either insufficient balance or gas fee":
+      "คุณมียอดคงเหลือหรือค่าธรรมเนียมน้ำมันไม่เพียงพอ",
+
+  "You Are Not Whitelisted Member": "คุณไม่ใช่สมาชิกที่ได้รับอนุญาต",
+  "Whitelisted  (Staking Period:-  365 Days)":
+      "อยู่ในรายการที่อนุญาต (ระยะเวลาปักหลัก:- 365 วัน)",
+  "Enter Referral Code (Optional)": "ป้อนรหัสอ้างอิง (ไม่บังคับ)",
+  "Tixcash vip access": "การเข้าถึง Tixcash วีไอพี",
+  "Skip Referral Code": "ข้ามรหัสอ้างอิง",
+  "** ⚠️ Warning ⚠️ **": "** ⚠️คำเตือน ⚠️**",
+  "Referral code is important and permanent. If missed then the referral rewards will be missed.":
+      "รหัสอ้างอิงมีความสำคัญและถาวร หากพลาดก็จะพลาดรางวัลการแนะนำ",
+  "Okay": "ตกลง",
+  "Get Access": "ได้รับการเข้าถึง",
+  "Subscribtion Successfully": "สมัครสมาชิกสำเร็จ",
+  "Try after some time": "ลองอีกครั้งในภายหลัง",
+  "Gas fee :": "ค่าน้ำมัน :",
+  "Status :": "สถานะ :",
+  "TXT hash :": "แฮช TXT :",
+  "Claim Referral INCOME": "เรียกร้องรายได้การอ้างอิง",
+  "Approved": "ที่ได้รับการอนุมัติ",
+  "Please Enter Balance": "กรุณากรอกยอดคงเหลือ",
+  "Please Select Staking Plan": "โปรดเลือกแผนการปักหลัก",
+  "Please Enter Balance Less than 50000 TXH":
+      "กรุณากรอกยอดคงเหลือน้อยกว่า 50,000 TXH",
+  "Please Enter Balance More than 500 TXH":
+      "กรุณากรอกยอดคงเหลือมากกว่า 500 TXH",
+  "Staking History": "ประวัติการปักหลัก",
+  "No Stake History": "ประวัติการปักหลัก",
+  "Address Copied": "คัดลอกที่อยู่แล้ว",
+  "Withdrwal Successful": "การถอนเงินสำเร็จ",
+  "Will be confirmed in 16 confirmations":
+      "จะได้รับการยืนยันในการยืนยัน 16 ครั้ง",
+  "Join Twitter": "เข้าร่วมทวิตเตอร์",
+  "Join Facebook": "เข้าร่วม Facebook",
+  "Join Github": "เข้าร่วม Github",
+  "succeed": "ประสบความสำเร็จ",
+  "Password changed successfully": "เปลี่ยนรหัสผ่านเรียบร้อยแล้ว",
 };

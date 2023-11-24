@@ -38,7 +38,7 @@ class AboutReferral extends GetView {
         child: ListView(
           children: [
             const SizedBox(height: 15),
-            Text('What is 1st Gen Referral Income?',
+            Text('What is 1st Gen Referral Income?'.tr,
                 textAlign: TextAlign.left,
                 style: GoogleFonts.roboto(
                     fontSize: 17,
@@ -46,14 +46,15 @@ class AboutReferral extends GetView {
                     color: Colors.red)),
             const SizedBox(height: 10),
             Text(
-                '1st gen referral income" typically refers to the income or earnings that are directly generated from your direct referred user or downline members in a chain. These users are often referred to as your "1st gen" or "first-level" referrals. Your 1st gen income is the commission or bonus, you receive from the direct referrals you personally bring into the staking program.',
+                '1st gen referral income\" typically refers to the income or earnings that are directly generated from your direct referred user or downline members in a chain. These users are often referred to as your \"1st gen\" or \"first-level\" referrals. Your 1st gen income is the commission or bonus, you receive from the direct referrals you personally bring into the staking program.'
+                    .tr,
                 textAlign: TextAlign.left,
                 style: GoogleFonts.roboto(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.black)),
             const SizedBox(height: 30),
-            Text('What is 2nd Gen Referral Income?',
+            Text('What is 2nd Gen Referral Income?'.tr,
                 textAlign: TextAlign.left,
                 style: GoogleFonts.roboto(
                     fontSize: 17,
@@ -61,14 +62,15 @@ class AboutReferral extends GetView {
                     color: Colors.red)),
             const SizedBox(height: 10),
             Text(
-                '2nd gen referral income typically refers to earnings or income generated from referrals made by individuals who were directly referred by you. In the context of referral or affiliate programs, when you refer someone (1st gen), and they, in turn, refer others (2nd gen), the income you receive from the activities of those 2nd Gen referrals can be considered your 2nd gen referral income.',
+                '2nd gen referral income typically refers to earnings or income generated from referrals made by individuals who were directly referred by you. In the context of referral or affiliate programs, when you refer someone (1st gen), and they, in turn, refer others (2nd gen), the income you receive from the activities of those 2nd Gen referrals can be considered your 2nd gen referral income.'
+                    .tr,
                 textAlign: TextAlign.left,
                 style: GoogleFonts.roboto(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.black)),
             const SizedBox(height: 30),
-            Text('Referral Income',
+            Text('Referral Income'.tr,
                 textAlign: TextAlign.left,
                 style: GoogleFonts.roboto(
                     fontSize: 17,
@@ -78,13 +80,13 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Staking Period',
+                Text('Staking Period'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.red)),
-                Text('1460 Days',
+                Text('1460 Days'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
@@ -96,7 +98,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('1st Gen Referral Income',
+                Text('1st Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -114,7 +116,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('2nd Gen Referral Income',
+                Text('2nd Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -132,13 +134,13 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Staking Period',
+                Text('Staking Period'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.red)),
-                Text('730 Days',
+                Text('730 Days'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
@@ -150,7 +152,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('1st Gen Referral Income',
+                Text('1st Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -168,7 +170,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('2nd Gen Referral Income',
+                Text('2nd Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -186,13 +188,13 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Staking Period',
+                Text('Staking Period'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.red)),
-                Text('365 Days',
+                Text('365 Days'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
@@ -204,7 +206,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('1st Gen Referral Income',
+                Text('1st Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -222,7 +224,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('2nd Gen Referral Income',
+                Text('2nd Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -240,13 +242,13 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Staking Period',
+                Text('Staking Period'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.red)),
-                Text('90 Days',
+                Text('90 Days'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
@@ -258,7 +260,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('1st Gen Referral Income',
+                Text('1st Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -276,7 +278,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('2nd Gen Referral Income',
+                Text('2nd Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -293,14 +295,15 @@ class AboutReferral extends GetView {
             const SizedBox(height: 20),
             Row(
               children: [
-                Text('Note :   ',
+                Text('Note :'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.red)),
                 Text(
-                    'All above have Min 500 TXH to max.\n50000 TXH stake amount limitations.',
+                    'All above have Min 500 TXH to max.\n50000 TXH stake amount limitations.'
+                        .tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -314,13 +317,13 @@ class AboutReferral extends GetView {
             Row(
               //mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Whitelisted stake : ',
+                Text('Whitelisted stake : '.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.red)),
-                Text('(only available for a Whitelisted\n users)',
+                Text('(only available for a Whitelisted\n users)'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -332,13 +335,13 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Staking Period',
+                Text('Staking Period'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.red)),
-                Text('Whitelisted (365)',
+                Text('Whitelisted (365)'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
@@ -350,7 +353,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('1st Gen Referral Income',
+                Text('1st Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -368,7 +371,7 @@ class AboutReferral extends GetView {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('2nd Gen Referral Income',
+                Text('2nd Gen Referral Income'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,
@@ -385,13 +388,13 @@ class AboutReferral extends GetView {
             const SizedBox(height: 20),
             Row(
               children: [
-                Text('Note : ',
+                Text('Note :'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.red)),
-                Text('No stake amount limitations',
+                Text('No stake amount limitations'.tr,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.roboto(
                         fontSize: 14,

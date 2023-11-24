@@ -122,7 +122,7 @@ class SendTyvController extends GetxController {
     EasyLoading.dismiss();
     if (response.status) {
       CommonResponse res = response.data;
-      EasyLoading.showToast(res.message);
+      EasyLoading.showToast(res.message.tr);
       double amount = double.parse(controllerAmount.text.trim());
       controllerReceiver.text = '';
       controllerAmount.text = '';
@@ -131,7 +131,7 @@ class SendTyvController extends GetxController {
         currency: currencyResponse.value?.currency ?? 'TXH',
       );
     } else {
-      EasyLoading.showToast(response.data['message'] ?? '');
+      EasyLoading.showToast(response.data['message'] ?? ''.tr);
     }
   }
 
