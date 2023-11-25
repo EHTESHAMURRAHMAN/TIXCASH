@@ -29,10 +29,15 @@ class CreateAccountView extends GetView<CreateAccountController> {
           'Select Password'.tr,
           style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500),
         ),
+        centerTitle: true,
       ),
       backgroundColor: Colors.white,
       body: Column(
         children: [
+          Image.asset(
+            'assets/icons/logo.png',
+            height: MediaQuery.of(context).size.height / 10,
+          ),
           Expanded(
               child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
@@ -41,7 +46,12 @@ class CreateAccountView extends GetView<CreateAccountController> {
                 Text(
                   'New Wallet Password'.tr,
                   style: GoogleFonts.roboto(
-                      fontSize: 18, fontWeight: FontWeight.w500),
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(
+                  height: 8,
                 ),
                 Obx(() => Row(
                       children: [
@@ -56,7 +66,15 @@ class CreateAccountView extends GetView<CreateAccountController> {
                           decoration: InputDecoration(
                               hintText: 'New password'.tr,
                               hintStyle: const TextStyle(color: Colors.black26),
-                              border: InputBorder.none),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: ColorConstants.secondaryAppColor),
+                                  borderRadius: BorderRadius.circular(20)),
+                              border: InputBorder.none,
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: ColorConstants.secondaryAppColor),
+                                  borderRadius: BorderRadius.circular(20))),
                         )),
                         IconButton(
                             onPressed: () {
@@ -71,22 +89,18 @@ class CreateAccountView extends GetView<CreateAccountController> {
                             ))
                       ],
                     )),
-                Container(
-                  color: ColorConstants.secondaryDarkAppColor,
-                  height: 1,
-                ),
                 const SizedBox(
                   height: 8,
                 ),
-                Obx(() => _hintText(controller.isPasswordValid.value)),
+                Obx(() =>
+                    controller.hintText(controller.isPasswordValid.value)),
                 const SizedBox(
                   height: 16,
                 ),
                 Text(
                   'Confirm Password'.tr,
                   style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: CommonConstants.normalText),
+                      color: Colors.black, fontSize: CommonConstants.smallText),
                 ),
                 Obx(() => Row(
                       children: [
@@ -101,7 +115,15 @@ class CreateAccountView extends GetView<CreateAccountController> {
                           decoration: InputDecoration(
                               hintText: 'Confirm Password'.tr,
                               hintStyle: const TextStyle(color: Colors.black26),
-                              border: InputBorder.none),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: ColorConstants.secondaryAppColor),
+                                  borderRadius: BorderRadius.circular(20)),
+                              border: InputBorder.none,
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: ColorConstants.secondaryAppColor),
+                                  borderRadius: BorderRadius.circular(20))),
                         )),
                         IconButton(
                             onPressed: () {
@@ -116,15 +138,11 @@ class CreateAccountView extends GetView<CreateAccountController> {
                             ))
                       ],
                     )),
-                Container(
-                  color: ColorConstants.secondaryDarkAppColor,
-                  height: 1,
-                ),
                 const SizedBox(
                   height: 8,
                 ),
-                Obx(() =>
-                    _hintTextConfirm(controller.isConPasswordValid.value)),
+                Obx(() => controller
+                    .hintTextConfirm(controller.isConPasswordValid.value)),
                 const SizedBox(
                   height: 8,
                 ),
@@ -210,43 +228,5 @@ class CreateAccountView extends GetView<CreateAccountController> {
         ],
       ),
     );
-  }
-
-  Widget _hintText(int val) {
-    if (val == 0) {
-      return Text(
-        'Use a minimum of 8 characters'.tr,
-        style: const TextStyle(color: Colors.black54),
-      );
-    } else if (val == 1) {
-      return Text(
-        'Use a minimum of 8 characters'.tr,
-        style: const TextStyle(color: Colors.redAccent),
-      );
-    } else {
-      return Text(
-        'Use a minimum of 8 characters ✔'.tr,
-        style: const TextStyle(color: Colors.green),
-      );
-    }
-  }
-
-  Widget _hintTextConfirm(int val) {
-    if (val == 0) {
-      return const Text(
-        '',
-        style: TextStyle(color: Colors.black54),
-      );
-    } else if (val == 1) {
-      return Text(
-        'Password does not matched'.tr,
-        style: const TextStyle(color: Colors.redAccent),
-      );
-    } else {
-      return Text(
-        'Password confirmed'.tr,
-        style: const TextStyle(color: Colors.green),
-      );
-    }
   }
 }

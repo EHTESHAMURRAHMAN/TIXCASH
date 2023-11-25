@@ -26,7 +26,7 @@ class SettingsController extends GetxController {
 
   final List<PopupItem> autoLockOption = [
     PopupItem(title: 'Disabled', value: '10000000#0'),
-    PopupItem(title: 'Immediately', value: '10#1'),
+    PopupItem(title: 'Immediately', value: '0#1'),
     PopupItem(title: '1_min', value: '60#2'),
     PopupItem(title: '5_min', value: '300#3'),
     PopupItem(title: '30_min', value: '1800#4'),

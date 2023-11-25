@@ -110,7 +110,7 @@ class InviteView extends GetView<InviteController> {
                                     text:
                                         '${controller.usercodeResponse.value?.refrellcode}'),
                               );
-                              Get.snackbar('Copied',
+                              Get.snackbar('Copied'.tr,
                                   '${controller.usercodeResponse.value?.refrellcode}',
                                   backgroundColor: Colors.red);
                               // Get.snackbar('Copied', '',

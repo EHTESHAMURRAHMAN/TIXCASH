@@ -235,161 +235,158 @@ class _bottomnavigationbarState extends State<DashboardView> {
 
         //
         bottomNavigationBar: BottomAppBar(
+          height: 60,
+          color: Colors.white,
           elevation: 0,
-          child: Container(
-            color: Colors.white,
-            width: MediaQuery.of(context).size.width,
-            height: 55,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                  onTap: () {
-                    setState(
-                      () {
-                        currentScreen = const HomeView();
-                        currentTab = 1;
-                      },
-                    );
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(Icons.account_balance_wallet,
-                          size: 19,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                onTap: () {
+                  setState(
+                    () {
+                      currentScreen = const HomeView();
+                      currentTab = 1;
+                    },
+                  );
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(Icons.account_balance_wallet,
+                        size: 19,
+                        color: currentTab == 1
+                            ? Theme.of(context).primaryColor
+                            : Colors.grey),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Wallet'.tr,
+                      style: TextStyle(
+                          fontSize: 14,
                           color: currentTab == 1
                               ? Theme.of(context).primaryColor
                               : Colors.grey),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Wallet'.tr,
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: currentTab == 1
-                                ? Theme.of(context).primaryColor
-                                : Colors.grey),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                InkWell(
-                  onTap: () {
-                    setState(
-                      () {
-                        currentScreen = const DAppsView();
-                        currentTab = 2;
-                      },
-                    );
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(CupertinoIcons.doc_append,
-                          size: 19,
+              ),
+              InkWell(
+                onTap: () {
+                  setState(
+                    () {
+                      currentScreen = const DAppsView();
+                      currentTab = 2;
+                    },
+                  );
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(CupertinoIcons.doc_append,
+                        size: 19,
+                        color: currentTab == 2
+                            ? Theme.of(context).primaryColor
+                            : Colors.grey),
+                    const SizedBox(height: 4),
+                    Text(
+                      'dApps'.tr,
+                      style: TextStyle(
+                          fontSize: 14,
                           color: currentTab == 2
                               ? Theme.of(context).primaryColor
                               : Colors.grey),
-                      const SizedBox(height: 4),
-                      Text(
-                        'dApps'.tr,
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: currentTab == 2
-                                ? Theme.of(context).primaryColor
-                                : Colors.grey),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                InkWell(
-                  onTap: () {
-                    setState(
-                      () {
-                        currentScreen = const marketq();
-                        currentTab = 3;
-                      },
-                    );
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(Icons.line_style,
-                          size: 19,
+              ),
+              InkWell(
+                onTap: () {
+                  setState(
+                    () {
+                      currentScreen = const marketq();
+                      currentTab = 3;
+                    },
+                  );
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(Icons.line_style,
+                        size: 19,
+                        color: currentTab == 3
+                            ? Theme.of(context).primaryColor
+                            : Colors.grey),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Market'.tr,
+                      style: TextStyle(
+                          fontSize: 14,
                           color: currentTab == 3
                               ? Theme.of(context).primaryColor
                               : Colors.grey),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Market'.tr,
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: currentTab == 3
-                                ? Theme.of(context).primaryColor
-                                : Colors.grey),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                InkWell(
-                  onTap: () {
-                    setState(
-                      () {
-                        currentScreen = const explore();
-                        currentTab = 4;
-                      },
-                    );
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(Icons.explore,
-                          size: 19,
+              ),
+              InkWell(
+                onTap: () {
+                  setState(
+                    () {
+                      currentScreen = const explore();
+                      currentTab = 4;
+                    },
+                  );
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(Icons.explore,
+                        size: 19,
+                        color: currentTab == 4
+                            ? Theme.of(context).primaryColor
+                            : Colors.grey),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Explorer'.tr,
+                      style: TextStyle(
+                          fontSize: 14,
                           color: currentTab == 4
                               ? Theme.of(context).primaryColor
                               : Colors.grey),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Explorer'.tr,
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: currentTab == 4
-                                ? Theme.of(context).primaryColor
-                                : Colors.grey),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                InkWell(
-                  onTap: () {
-                    setState(
-                      () {
-                        currentScreen = SettingsView();
-                        currentTab = 5;
-                      },
-                    );
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(Icons.settings,
-                          size: 19,
+              ),
+              InkWell(
+                onTap: () {
+                  setState(
+                    () {
+                      currentScreen = SettingsView();
+                      currentTab = 5;
+                    },
+                  );
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(Icons.settings,
+                        size: 19,
+                        color: currentTab == 5
+                            ? Theme.of(context).primaryColor
+                            : Colors.grey),
+                    const SizedBox(height: 3),
+                    Text(
+                      'Setting'.tr,
+                      style: TextStyle(
+                          fontSize: 14,
                           color: currentTab == 5
                               ? Theme.of(context).primaryColor
                               : Colors.grey),
-                      const SizedBox(height: 3),
-                      Text(
-                        'Setting'.tr,
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: currentTab == 5
-                                ? Theme.of(context).primaryColor
-                                : Colors.grey),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

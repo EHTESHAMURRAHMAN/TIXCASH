@@ -36,12 +36,22 @@ class ScanQRChildCur extends GetView<ScanQrController> {
     return Scaffold(
       appBar: hasActionBar
           ? AppBar(
-              title: Text(
-                'RECEIVE ${currencyResponse?.currency}'.tr.toUpperCase(),
-                style: GoogleFonts.roboto(
-                    fontSize: 18, fontWeight: FontWeight.w500),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'RECEIVE'.tr,
+                    style: GoogleFonts.roboto(
+                        fontSize: 18, fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    '${currencyResponse?.currency}'.tr.toUpperCase(),
+                    style: GoogleFonts.roboto(
+                        fontSize: 18, fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(width: 40)
+                ],
               ),
-              centerTitle: true,
               leading: InkWell(
                   onTap: () => Get.back(),
                   child: const Icon(
@@ -67,13 +77,34 @@ class ScanQRChildCur extends GetView<ScanQrController> {
             const SizedBox(
               height: 16,
             ),
-            Text(
-              'YOUR ${currencyResponse?.currency}  ADDRESS'.tr,
-              style: GoogleFonts.roboto(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xFF40C4FF)),
-              textAlign: TextAlign.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'YOUR'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  '${currencyResponse?.currency}'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  'ADDRESS'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
             // SizedBox(height: SizeConfig().screenHeight*0.03,),
             const SizedBox(
@@ -218,13 +249,34 @@ class ScanQRChildCur extends GetView<ScanQrController> {
               height: SizeConfig().screenHeight * 0.03,
             ),
             // YOUR LINE QR CODE ADDRESS
-            Text(
-              'YOUR ${currencyResponse?.currency}  QR CODE ADDRESS'.tr,
-              style: GoogleFonts.roboto(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xFF40C4FF)),
-              textAlign: TextAlign.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'YOUR'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  ' ${currencyResponse?.currency} '.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  'QR CODE ADDRESS'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
             const SizedBox(
               height: 8,

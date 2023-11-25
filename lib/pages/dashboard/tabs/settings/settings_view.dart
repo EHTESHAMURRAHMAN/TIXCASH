@@ -1074,7 +1074,7 @@ class Security extends StatelessWidget {
                             style: const TextStyle(
                                 fontSize: 14, color: Colors.white),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Obx(() => Text(
                                 controller.unlockValue.value.tr,
                                 style: const TextStyle(
@@ -1163,7 +1163,7 @@ class Security extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Obx(() => Text(
                               controller.autoLockValue.value.tr,
                               style: const TextStyle(
@@ -1303,7 +1303,7 @@ class GetinTouch extends StatelessWidget {
             InkWell(
               onTap: () {
                 Share.share(
-                    'Download the TIXCASH WALLET app from play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line'
+                    'Download the Tixcash Wallet app from play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line'
                         .tr);
               },
               child: SizedBox(
@@ -1376,8 +1376,8 @@ class GetinTouch extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        Spacer(),
-                        Icon(
+                        const Spacer(),
+                        const Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.white,
                         )
@@ -1407,20 +1407,20 @@ class GetinTouch extends StatelessWidget {
                     child: Row(
                       children: [
                         Image.network(
-                            'https://cdn-icons-png.flaticon.com/512/733/733635.png',
+                            'https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png',
                             color: Colors.white,
                             height:
                                 22), //Icon(Icons.twitter, color: Colors.white, size: 22),
                         const SizedBox(width: 15),
                         Text(
-                          'Join Twitter'.tr,
+                          'Join X'.tr,
                           style: const TextStyle(
                             fontSize: 14,
                             color: Colors.white,
                           ),
                         ),
-                        Spacer(),
-                        Icon(
+                        const Spacer(),
+                        const Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.white,
                         )
@@ -1433,7 +1433,7 @@ class GetinTouch extends StatelessWidget {
             const SizedBox(height: 15),
             InkWell(
               onTap: () {
-                const url = 'https://m.facebook.com/tixcashtxh';
+                const url = 'https://www.facebook.com/tixcashtxh';
                 openBrowserUrl(url: url, inApp: true);
               },
               child: SizedBox(
@@ -1449,7 +1449,8 @@ class GetinTouch extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
                       children: [
-                        Icon(Icons.facebook, color: Colors.white, size: 22),
+                        const Icon(Icons.facebook,
+                            color: Colors.white, size: 22),
                         const SizedBox(width: 15),
                         Text(
                           'Join Facebook'.tr,
@@ -1458,8 +1459,8 @@ class GetinTouch extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        Spacer(),
-                        Icon(
+                        const Spacer(),
+                        const Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.white,
                         )
@@ -1582,7 +1583,7 @@ class About extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: MineCell(
-                      title: 'About TIXCASH WALLET'.tr,
+                      title: 'About Tixcash Wallet'.tr,
                     ),
                   ),
                 ),
@@ -1649,7 +1650,7 @@ class About extends StatelessWidget {
                     child: MineCell(
                       title: 'App Version'.tr,
                       trailing: Text(
-                        '1.15.1.2341',
+                        '2.00',
                         style: GoogleFonts.roboto(
                             fontSize: 14, color: Colors.white),
                       ),

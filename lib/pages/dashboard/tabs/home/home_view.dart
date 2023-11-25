@@ -260,8 +260,8 @@ class HomeView extends GetView<HomeController> {
               children: [
                 InkWell(
                   onTap: () {
-                    EasyLoading.showToast('Launching Soon'.tr,
-                        toastPosition: EasyLoadingToastPosition.top);
+                    // EasyLoading.showToast('Launching Soon'.tr,
+                    //     toastPosition: EasyLoadingToastPosition.top);
                   },
                   child: Column(
                     children: [

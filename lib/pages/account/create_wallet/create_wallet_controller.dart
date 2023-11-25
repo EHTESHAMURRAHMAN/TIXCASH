@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tixcash/api/apis.dart';
 import 'package:tixcash/app_controller.dart';
 import 'package:tixcash/models/paymentStatus.dart';
+import 'package:tixcash/pages/account/create_account/create_account_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
 import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/shared.dart';
@@ -13,10 +14,13 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class CreateWalletController extends GetxController {
   final AppController appController = Get.find<AppController>();
+  final CreateAccountController createController =
+      Get.put(CreateAccountController());
 
   final TextEditingController controllerWords = TextEditingController();
   final TextEditingController controllerRandom = TextEditingController();
   final TextEditingController controllerPrivateKey = TextEditingController();
+  final TextEditingController controllerphrase = TextEditingController();
 
   //get Pymt status
   final paymntStatusResponse = Rxn<PaymentStatusResponse>();
@@ -60,6 +64,7 @@ class CreateWalletController extends GetxController {
 
   final selectedEdit = 10001.obs;
   final isActive = false.obs;
+  final isphraseActive = false.obs;
   final isActived = false.obs;
 
   @override
@@ -172,20 +177,20 @@ class CreateWalletController extends GetxController {
   }
 
   void sendPassphrase({isImportWallet = false}) async {
-    String phrase = '';
-    for (var element in phraseList) {
-      phrase += '${element.toLowerCase()} ';
-    }
+    // String phrase = '';
+    // for (var element in phraseList) {
+    //   phrase += '${element.toLowerCase()} ';
+    // }
 
-    // phrase = phrase.substring(0, phrase.lastIndexOf(','));
-    printInfo(info: phrase);
-    ApiResponse response = await restoreAccountAPI(phrase);
+    // // phrase = phrase.substring(0, phrase.lastIndexOf(','));
+    // printInfo(info: phrase);
+    ApiResponse response = await restoreAccountAPI(controllerphrase.text);
     if (response.status) {
       //userInfo = response.data;
 
       final prefs = Get.find<SharedPreferences>();
       // prefs.setString(StorageConstants.phrase, phrase);
-      prefs.setString('${userInfo!.id}', phrase);
+      prefs.setString('${userInfo!.id}', controllerphrase.text);
       prefs.setBool(StorageConstants.backup, true);
       appController.isBackup.value = true;
 
@@ -194,9 +199,10 @@ class CreateWalletController extends GetxController {
         appController.backupPharse();
         HomeController().getsubs();
       } else {
-        Get.toNamed(Routes.CREATE_ACCOUNT, arguments: [
-          {'change': true}
-        ]);
+        createController.changePassword();
+        // Get.toNamed(Routes.CREATE_ACCOUNT, arguments: [
+        //   {'change': true}
+        // ]);
         //?.then((value) => Get.offAllNamed(Routes.Dashboard));
       }
     } else {
@@ -218,9 +224,11 @@ class CreateWalletController extends GetxController {
         HomeController().getsubs();
         appController.backupPharse();
       } else {
-        Get.toNamed(Routes.CREATE_ACCOUNT, arguments: [
-          {'change': true}
-        ]);
+        createController.changePassword();
+
+        // Get.toNamed(Routes.CREATE_ACCOUNT, arguments: [
+        //   {'change': true}
+        // ]);
         //?.then((value) => Get.offAllNamed(Routes.Dashboard));
       }
     } else {
@@ -348,7 +356,7 @@ class selectCurrency extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           InkWell(
             onTap: () {
               Get.to(currencyPremium())?.then((value) {

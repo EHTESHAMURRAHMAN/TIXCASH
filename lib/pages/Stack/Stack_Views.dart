@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -196,7 +198,7 @@ class StackViews extends GetView<StackController> {
                                             MediaQuery.of(context).size.width /
                                                 4,
                                         child: Text(
-                                          controller.selectStakeDays.value,
+                                          controller.selectStakeDays.value.tr,
                                           style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 15,
@@ -240,17 +242,17 @@ class StackViews extends GetView<StackController> {
                                   color: Colors.black))),
                       Obx(
                         () => controller.selectid.value == 5
-                            ? const Row(
+                            ? Row(
                                 children: [
                                   Text(
-                                    'Unlimited',
-                                    style: TextStyle(
+                                    'Unlimited'.tr,
+                                    style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         fontSize: 17),
                                   ),
-                                  SizedBox(width: 10),
-                                  Text(
+                                  const SizedBox(width: 10),
+                                  const Text(
                                     'TXH',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
@@ -1555,7 +1557,7 @@ class stakingIncomeHistory extends GetView {
                             vertical: 15, horizontal: 15),
                         margin: const EdgeInsets.symmetric(
                             vertical: 6, horizontal: 15),
-                        height: MediaQuery.of(context).size.height / 4.2,
+                        height: MediaQuery.of(context).size.height / 3.9,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.blue),
@@ -1582,7 +1584,7 @@ class stakingIncomeHistory extends GetView {
                               ),
                               Row(
                                 children: [
-                                  Text('Transacton Date :'.tr,
+                                  Text('Transaction Date :'.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
@@ -1598,14 +1600,14 @@ class stakingIncomeHistory extends GetView {
                               ),
                               Row(
                                 children: [
-                                  Text('Remark :'.tr,
+                                  Text('Remark'.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
                                           color:
                                               Theme.of(context).primaryColor)),
                                   const SizedBox(width: 17),
-                                  Text(model.remark,
+                                  Text(model.remark.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
@@ -1626,14 +1628,14 @@ class stakingIncomeHistory extends GetView {
                               //         color: Colors.black)),],),
                               Row(
                                 children: [
-                                  Text('Status:'.tr,
+                                  Text('Status :'.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
                                           color:
                                               Theme.of(context).primaryColor)),
                                   const SizedBox(width: 17),
-                                  Text(model.status,
+                                  Text(model.status.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
@@ -1642,14 +1644,14 @@ class stakingIncomeHistory extends GetView {
                               ),
                               Row(
                                 children: [
-                                  Text('Gas Fee :'.tr,
+                                  Text('Gas fee :'.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
                                           color:
                                               Theme.of(context).primaryColor)),
                                   const SizedBox(width: 17),
-                                  Text('${model.gasfee}',
+                                  Text('${model.gasfee}'.tr,
                                       style: GoogleFonts.roboto(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,

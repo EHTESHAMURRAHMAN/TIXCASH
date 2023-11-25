@@ -5,6 +5,6 @@ import 'finger_print_login_controller.dart';
 class FingerPrintLoginBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<FingerPrintLoginController>(() => FingerPrintLoginController());
+    Get.put<FingerPrintLoginController>(FingerPrintLoginController());
   }
 }

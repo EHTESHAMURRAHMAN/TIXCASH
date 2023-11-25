@@ -1,7 +1,5 @@
 //import 'package:firebase_core/firebase_core.dart';
-
 import 'dart:async';
-
 import 'package:shared_preferences/shared_preferences.dart';
 import 'di.dart';
 import 'routes/app_pages.dart';
@@ -14,7 +12,6 @@ import 'package:tixcash/app_binding.dart';
 import 'package:tixcash/lang/lang.dart';
 import 'package:tixcash/shared/shared.dart';
 
-// import 'firebase_options.dart';
 bool isLocalAuth = false;
 
 void main() async {
@@ -33,7 +30,6 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> with WidgetsBindingObserver {
   bool isLocked = false;
-  Timer? _timer;
   @override
   void initState() {
     super.initState();
@@ -52,12 +48,20 @@ class _AppState extends State<App> with WidgetsBindingObserver {
       // App is in the foreground
       setState(() {
         var storage = Get.find<SharedPreferences>();
+        storage.setInt(
+            StorageConstants.pauseTime, DateTime.now().millisecondsSinceEpoch);
+      });
+    } else if (state == AppLifecycleState.paused) {
+      // App is in the background
+      setState(() {
+        var storage = Get.find<SharedPreferences>();
         var sUser = storage.getString(StorageConstants.userInfo);
         super.didChangeAppLifecycleState(state);
         int time = storage.getInt(StorageConstants.pauseTime) ?? 1800;
         int locTime = storage.getInt(StorageConstants.locTime) ?? 1800;
         int timeNow = DateTime.now().millisecondsSinceEpoch;
         int diff = timeNow - time;
+
         printInfo(info: 'Difference => $diff');
         if (locTime * 500 < diff) {
           if (sUser != null) {
@@ -66,13 +70,6 @@ class _AppState extends State<App> with WidgetsBindingObserver {
             // Get.offAndToNamed(Routes.START);
           }
         }
-      });
-    } else {
-      // App is in the background
-      setState(() {
-        var storage = Get.find<SharedPreferences>();
-        storage.setInt(
-            StorageConstants.pauseTime, DateTime.now().millisecondsSinceEpoch);
       });
     }
   }

@@ -47,6 +47,44 @@ class CreateAccountController extends GetxController {
     super.onReady();
   }
 
+  Widget hintTextConfirm(int val) {
+    if (val == 0) {
+      return const Text(
+        '',
+        style: TextStyle(color: Colors.black54),
+      );
+    } else if (val == 1) {
+      return Text(
+        'Password does not matched'.tr,
+        style: const TextStyle(color: Colors.redAccent),
+      );
+    } else {
+      return Text(
+        'Password confirmed'.tr,
+        style: const TextStyle(color: Colors.green),
+      );
+    }
+  }
+
+  Widget hintText(int val) {
+    if (val == 0) {
+      return Text(
+        'Use a minimum of 8 characters'.tr,
+        style: const TextStyle(color: Colors.black54),
+      );
+    } else if (val == 1) {
+      return Text(
+        'Use a minimum of 8 characters'.tr,
+        style: const TextStyle(color: Colors.redAccent),
+      );
+    } else {
+      return Text(
+        'Use a minimum of 8 characters ✔'.tr,
+        style: const TextStyle(color: Colors.green),
+      );
+    }
+  }
+
   void checkPassword(String val) {
     isPasswordValid.value = controllerNewPass.text.isEmpty
         ? 0
@@ -101,7 +139,7 @@ class CreateAccountController extends GetxController {
     userPassword = controllerNewPass.text.trim();
     final prefs = Get.find<SharedPreferences>();
     prefs.setString(StorageConstants.userPassword, userPassword);
-    EasyLoading.showToast('Password changed successfully');
+    EasyLoading.showToast('Password changed successfully'.tr);
     Get.offAllNamed(Routes.Dashboard);
   }
 

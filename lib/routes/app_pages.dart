@@ -1,9 +1,7 @@
 import 'package:get/get.dart';
-import 'package:tixcash/main.dart';
 import 'package:tixcash/pages/Stack/Stack_Views.dart';
 import 'package:tixcash/pages/Stack/stack_Binding.dart';
 import 'package:tixcash/pages/Stack_Income/Stackincome_views.dart';
-import 'package:tixcash/pages/Stack_Income/stack_Binding.dart';
 import 'package:tixcash/pages/account/auth_fingerprint/bindings/auth_fingerprint_binding.dart';
 import 'package:tixcash/pages/account/auth_fingerprint/views/auth_fingerprint_view.dart';
 import 'package:tixcash/pages/dashboard/tabs/Wallet_Premium/Premium_Binding.dart';

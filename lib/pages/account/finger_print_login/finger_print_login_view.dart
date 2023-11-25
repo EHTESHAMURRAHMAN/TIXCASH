@@ -211,8 +211,8 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                           prefs.remove('security_val');
                                           prefs.remove('history_list');
                                           prefs.remove('last_open');
-                                          Get.offAndToNamed(Routes.START);
                                         });
+                                        Get.offAndToNamed(Routes.START);
                                       },
                                     ),
                                     InkWell(
@@ -231,12 +231,15 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                             horizontal: 25, vertical: 15),
                                         padding: const EdgeInsets.all(8),
                                         child: Center(
-                                          child: Text(
-                                            'Cancel'.tr,
-                                            style: GoogleFonts.roboto(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.black),
+                                          child: InkWell(
+                                            onTap: () => Get.back(),
+                                            child: Text(
+                                              'Cancel'.tr,
+                                              style: GoogleFonts.roboto(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.black),
+                                            ),
                                           ),
                                         ),
                                       ),

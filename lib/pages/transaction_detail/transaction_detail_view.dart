@@ -53,7 +53,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                     const url = 'http://explorer.tixcash.org/';
                     openBrowserUrl(url: url, inApp: true);
                   },
-                  child: const Text('View on Tixcash')),
+                  child: Text('View on Tixcash'.tr)),
             ),
             // Align(
             //   alignment: Alignment.topRight,
@@ -111,7 +111,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                       color: Colors.black,
                     ),
                     label: Text(
-                      'Sending account',
+                      'Sending account'.tr,
                       style: GoogleFonts.roboto(
                         color: Colors.black,
                       ),
@@ -130,7 +130,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                         onPressed: () {
                           Clipboard.setData(ClipboardData(
                               text: controller.trxDetails?.fromAdress ?? ''));
-                          EasyLoading.showToast('Copied');
+                          EasyLoading.showToast('Copied'.tr);
                         },
                         icon: const Icon(
                           Icons.copy,
@@ -146,7 +146,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                       color: Colors.black,
                     ),
                     label: Text(
-                      'Receiving account',
+                      'Receiving account'.tr,
                       style: GoogleFonts.roboto(
                         color: Colors.black,
                       ),
@@ -165,7 +165,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                         onPressed: () {
                           Clipboard.setData(ClipboardData(
                               text: controller.trxDetails?.toAddress ?? ''));
-                          EasyLoading.showToast('Copied');
+                          EasyLoading.showToast('Copied'.tr);
                         },
                         icon: const Icon(
                           Icons.copy,
@@ -181,7 +181,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
             ),
 
             Text(
-              'Transaction Type',
+              'Transaction Type'.tr,
               style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -200,7 +200,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
             // if(controller.trxDetails!=null&&controller.trxDetails!.debit>0)
 
             Text(
-              controller.trxDetails?.paymentType ?? '',
+              controller.trxDetails?.paymentType.tr ?? '',
               style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -212,7 +212,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
             ),
 
             Text(
-              'Transaction Hash',
+              'Transaction Hash'.tr,
               style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -227,7 +227,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
               children: [
                 Expanded(
                   child: Text(
-                    controller.trxDetails?.txthash ?? '',
+                    controller.trxDetails?.txthash.tr ?? ''.tr,
                     style: GoogleFonts.roboto(
                         fontWeight: FontWeight.normal,
                         color: Colors.black,
@@ -238,7 +238,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                     onPressed: () {
                       Clipboard.setData(ClipboardData(
                           text: controller.trxDetails?.txthash ?? ''));
-                      EasyLoading.showToast('Copied');
+                      EasyLoading.showToast('Copied'.tr);
                     },
                     icon: const Icon(
                       Icons.copy,
@@ -256,7 +256,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
             ),
 
             Text(
-              'Date',
+              'Date'.tr,
               style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,

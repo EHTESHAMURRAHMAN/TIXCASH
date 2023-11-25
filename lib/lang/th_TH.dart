@@ -219,7 +219,7 @@ const Map<String, String> th_TH = {
   "VERIFY NOW": "ยืนยันตอนนี้",
   "Stake": "เดิมพัน",
   "Referal": "การอ้างอิง",
-  "TIXCASH WALLET": "กระเป๋าเงิน TIXCASH",
+  "Tixcash Wallet": "กระเป๋าเงิน TIXCASH",
   "Enter 12 Word Secrate Phrase": "ป้อนวลีลับ 12 คำ",
   "Enter & Select": "ป้อนและเลือก",
   "Passphrase Entered (click to Edit)": "รหัสผ่านที่ป้อน (คลิกเพื่อแก้ไข)",
@@ -358,8 +358,8 @@ const Map<String, String> th_TH = {
   "Enter Phrase": "ป้อนวลี",
   "Linking to Tixcash Stake": "เชื่อมโยงไปยังเดิมพัน Tixcash",
   "Sign": "เข้าสู่ระบบ",
-  "Download the TIXCASH WALLET app from play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line":
-      "ดาวน์โหลดแอป TIXCASH WALLET จาก play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line",
+  "Download the Tixcash Wallet app from play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line":
+      "ดาวน์โหลดแอป Tixcash Wallet จาก play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line",
   "Referral Claim History": "ประวัติการเรียกร้องการอ้างอิง",
   "No Referral History": "ไม่มีประวัติการอ้างอิง",
   "Select Stake Plan": "เลือกแผนการเดิมพัน",
@@ -402,4 +402,29 @@ const Map<String, String> th_TH = {
   "Join Github": "เข้าร่วม Github",
   "succeed": "ประสบความสำเร็จ",
   "Password changed successfully": "เปลี่ยนรหัสผ่านเรียบร้อยแล้ว",
+  "Are You Sure\nYou Want To Erase Your\nWallet?":
+      "คุณแน่ใจหรือว่า\nคุณต้องการลบ\nกระเป๋าเงินของคุณ?",
+  "Your current wallet, accounts and assets will be removed from this app permanently. This action cannot be undone.":
+      "กระเป๋าเงิน บัญชี และทรัพย์สินปัจจุบันของคุณจะถูกลบออกจากแอพนี้อย่างถาวร การดำเนินการนี้ไม่สามารถยกเลิกได้",
+  "You can ONLY recover this wallet with your Secret Recovery Phrase TIXCASH WALLET does not have your Secret Recovery Phrase.":
+      "คุณสามารถกู้คืนกระเป๋าสตางค์นี้ได้ด้วยวลีการกู้คืนความลับของคุณเท่านั้น TIXCASH WALLET ไม่มีวลีการกู้คืนความลับของคุณ",
+  "I understand, continue": "เข้าใจแล้ว ดำเนินการต่อ",
+  "Import From Gallery": "นำเข้าจากแกลเลอรี",
+  "Unlimited": "ไม่ จำกัด",
+  "Claim Staking Reward": "รับรางวัลการปักหลัก",
+  "Transaction Details": "รายละเอียดการทำธุรกรรม",
+  "View on Tixcash": "ดูบน Tixcash",
+  "Sending account": "บัญชีส่ง",
+  "Receiving account": "บัญชีรับ",
+  "Transaction Type": "ประเภทธุรกรรม",
+  "Transaction Hash": "แฮชของธุรกรรม",
+  "Date": "วันที่",
+  "Sent": "ส่งแล้ว",
+  "Received": "ได้รับ",
+  "Send To Tixcash Wallet": "ส่งไปที่กระเป๋าเงิน Tixcash",
+  "RECEIVE": "รับ",
+  "YOUR": "ของคุณ",
+  "QR CODE ADDRESS": "ที่อยู่รหัส QR",
+  "ADDRESS": "ที่อยู่",
+  "About Tixcash Wallet": "เกี่ยวกับ Tixcash Wallet"
 };

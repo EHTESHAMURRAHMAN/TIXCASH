@@ -10,6 +10,7 @@ import 'package:tixcash/shared/shared.dart';
 
 class BackupWordsController extends GetxController {
   final AppController appController = Get.find<AppController>();
+  final TextEditingController controllerRandom = TextEditingController();
 
   // final String recoveryMessage = 'recoveryMessage'.tr;
   // final String recoveryMessage =
@@ -161,6 +162,21 @@ class BackupWordsController extends GetxController {
       }
     } else {
       EasyLoading.showToast('Wrong word'.tr);
+    }
+  }
+
+  void verify() async {
+    String phrase = '';
+    for (var element in phraseList) {
+      phrase += '${element.toLowerCase()} ';
+    }
+    //  phrase = phrase.substring(0, phrase.lastIndexOf(','));
+    printInfo(info: phrase);
+
+    if (phrase == appController.backupPResponse.value?.backuphrase) {
+      Get.offAllNamed(Routes.Dashboard);
+    } else {
+      EasyLoading.showToast('Wrong Phrase Key');
     }
   }
 

@@ -95,7 +95,7 @@ class SendTyvView extends GetView<SendTyvController> {
                                 horizontal: SizeConfig().screenWidth * 0.15,
                                 vertical: 8),
                             child: Text(
-                              'SEND TO TIXCASH WALLET'.tr,
+                              'Send To Tixcash Wallet'.tr,
                               style: GoogleFonts.roboto(
                                   fontSize: 13, fontWeight: FontWeight.w500),
                             ),
@@ -565,42 +565,46 @@ class InputIconBox extends StatelessWidget {
         //             borderSide: BorderSide(color: ColorConstants.secondaryAppColor),
         //             borderRadius: BorderRadius.circular(20))),
         //   )
-        TextFormField(
-          style: const TextStyle(color: Colors.black),
-          controller: controller,
-          onChanged: onChange,
-          onEditingComplete: onEditingComplete,
-          keyboardType: isNumber
-              ? const TextInputType.numberWithOptions(decimal: true)
-              : TextInputType.text,
-          decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: ColorConstants.secondaryAppColor),
-                  borderRadius: BorderRadius.circular(20)),
-              border: InputBorder.none,
-              focusedBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: ColorConstants.secondaryAppColor),
-                  borderRadius: BorderRadius.circular(20)),
-              hintText: hint,
-              labelText: hint,
-              hintStyle: GoogleFonts.roboto(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black),
-              labelStyle: GoogleFonts.roboto(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black),
-              suffixIcon: isScanner
-                  ? IconButton(
-                      onPressed: () {
-                        printInfo(info: 'Information center....');
-                        onScan!();
-                      },
-                      icon: const Icon(Icons.qr_code, color: Colors.black))
-                  : image),
+        SizedBox(
+          height: 60,
+          child: TextFormField(
+            style: const TextStyle(color: Colors.black),
+            controller: controller,
+            onChanged: onChange,
+            onEditingComplete: onEditingComplete,
+            keyboardType: isNumber
+                ? const TextInputType.numberWithOptions(decimal: true)
+                : TextInputType.text,
+            decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: ColorConstants.secondaryAppColor),
+                    borderRadius: BorderRadius.circular(20)),
+                border: InputBorder.none,
+                focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: ColorConstants.secondaryAppColor),
+                    borderRadius: BorderRadius.circular(20)),
+                hintText: hint,
+                labelText: hint,
+                hintStyle: GoogleFonts.roboto(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black),
+                labelStyle: GoogleFonts.roboto(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black),
+                suffixIcon: isScanner
+                    ? IconButton(
+                        onPressed: () {
+                          printInfo(info: 'Information center....');
+                          onScan!();
+                        },
+                        icon: Icon(Icons.qr_code,
+                            color: Theme.of(context).primaryColor))
+                    : image),
+          ),
         ),
 
         const SizedBox(
