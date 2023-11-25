@@ -186,7 +186,7 @@ class StackController extends GetxController {
 
       controllerStakeAmount.clear();
       controllerRefral.clear();
-      response.message == 'Claim Successfully'
+      response.message == 'Claim Successfully'.tr
           ? Get.to(stakingIncomeHistory())
           : Get.back();
     } else {

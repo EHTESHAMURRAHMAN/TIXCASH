@@ -96,9 +96,20 @@ class _marketqState extends State<marketq> {
                           border: Border.all()),
                     ),
                     InkWell(
-                      onTap: () {
-                        const url = 'https://coinmarketcap.com/';
-                        openBrowserUrl(url: url, inApp: true);
+                      onTap: () async {
+                        final Uri url = Uri.parse('https://coinmarketcap.com/');
+                        if (!await launchUrl(url)) {
+                          throw Exception('Could not launch $url');
+                        }
+                        // const url = 'https://coinmarketcap.com/';
+                        // if (await canLaunch(url)) {
+                        //   await launch(url,
+                        //       forceWebView: true, enableJavaScript: true);
+                        // } else {
+                        //   throw 'Could not launch $url';
+                        // }
+                        // const url = 'https://coinmarketcap.com/';
+                        // openBrowserUrl(url: url, inApp: true);
                       },
                       child: Align(
                         alignment: Alignment.bottomRight,

@@ -216,6 +216,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                       },
                                     ),
                                     InkWell(
+                                      onTap: () => Get.back(),
                                       child: Container(
                                         decoration: BoxDecoration(
                                           border:
@@ -231,21 +232,15 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                             horizontal: 25, vertical: 15),
                                         padding: const EdgeInsets.all(8),
                                         child: Center(
-                                          child: InkWell(
-                                            onTap: () => Get.back(),
-                                            child: Text(
-                                              'Cancel'.tr,
-                                              style: GoogleFonts.roboto(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.black),
-                                            ),
+                                          child: Text(
+                                            'Cancel'.tr,
+                                            style: GoogleFonts.roboto(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black),
                                           ),
                                         ),
                                       ),
-                                      onTap: () {
-                                        //  Get.back();
-                                      },
                                     ),
                                     const SizedBox(
                                       height: 30,

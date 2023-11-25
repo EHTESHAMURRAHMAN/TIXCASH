@@ -1346,9 +1346,13 @@ class GetinTouch extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             InkWell(
-              onTap: () {
-                const url = 'https://github.com/Tixcoin';
-                openBrowserUrl(url: url, inApp: true);
+              onTap: () async {
+                final Uri url = Uri.parse('https://github.com/Tixcoin');
+                if (!await launchUrl(url)) {
+                  throw Exception('Could not launch $url');
+                }
+                // const url = 'https://github.com/Tixcoin';
+                // openBrowserUrl(url: url, inApp: true);
               },
               child: SizedBox(
                 height: 60,
@@ -1389,9 +1393,13 @@ class GetinTouch extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             InkWell(
-              onTap: () {
-                const url = 'https://x.com/tixcash?s=09';
-                openBrowserUrl(url: url, inApp: true);
+              onTap: () async {
+                final Uri url = Uri.parse('https://x.com/tixcash?s=09');
+                if (!await launchUrl(url)) {
+                  throw Exception('Could not launch $url');
+                }
+                // const url = 'https://x.com/tixcash?s=09';
+                // openBrowserUrl(url: url, inApp: true);
               },
               child: SizedBox(
                 height: 60,
@@ -1432,9 +1440,14 @@ class GetinTouch extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             InkWell(
-              onTap: () {
-                const url = 'https://www.facebook.com/tixcashtxh';
-                openBrowserUrl(url: url, inApp: true);
+              onTap: () async {
+                // const url = 'https://www.facebook.com/tixcashtxh';
+                // openBrowserUrl(url: url, inApp: true);
+                final Uri url =
+                    Uri.parse('https://www.facebook.com/tixcashtxh');
+                if (!await launchUrl(url)) {
+                  throw Exception('Could not launch $url');
+                }
               },
               child: SizedBox(
                 height: 60,
@@ -1472,9 +1485,13 @@ class GetinTouch extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             InkWell(
-              onTap: () {
-                const url = 'https://t.me/www_Tixcash_org';
-                openBrowserUrl(url: url, inApp: true);
+              onTap: () async {
+                final Uri url = Uri.parse('https://t.me/www_Tixcash_org');
+                if (!await launchUrl(url)) {
+                  throw Exception('Could not launch $url');
+                }
+                // const url = 'https://t.me/www_Tixcash_org';
+                // openBrowserUrl(url: url, inApp: true);
               },
               child: SizedBox(
                 height: 60,

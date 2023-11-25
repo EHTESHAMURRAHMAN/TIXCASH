@@ -289,7 +289,7 @@ class _bottomnavigationbarState extends State<DashboardView> {
                             : Colors.grey),
                     const SizedBox(height: 4),
                     Text(
-                      'dApps'.tr,
+                      'dApps',
                       style: TextStyle(
                           fontSize: 14,
                           color: currentTab == 2

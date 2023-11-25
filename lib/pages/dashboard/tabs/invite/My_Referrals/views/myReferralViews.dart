@@ -54,14 +54,14 @@ class MyReferral extends GetView<MyReferralController> {
     );
   }
 
-  static const List<Tab> _tabs = [
+  static final List<Tab> _tabs = [
     Tab(
-        child: Text('1st Gen Referral',
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))),
+        child: Text('1st Gen Referral'.tr,
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold))),
     //Tab(text: 'Address proof'),
     Tab(
-        child: Text('2nd Gen Referral',
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))),
+        child: Text('2nd Gen Referral'.tr,
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold))),
   ];
 
   static List<Widget> _views = [
@@ -76,8 +76,8 @@ class firstGen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: const Center(
-          child: Text('Launching Soon',
+      child: Center(
+          child: Text('Launching Soon'.tr,
               style: TextStyle(
                   fontSize: 14,
                   color: Colors.black,
@@ -92,8 +92,8 @@ class secondGen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: const Center(
-          child: Text('Launching Soon',
+      child: Center(
+          child: Text('Launching Soon'.tr,
               style: TextStyle(
                   fontSize: 14,
                   color: Colors.black,

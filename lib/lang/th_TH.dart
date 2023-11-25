@@ -397,6 +397,7 @@ const Map<String, String> th_TH = {
   "Withdrwal Successful": "การถอนเงินสำเร็จ",
   "Will be confirmed in 16 confirmations":
       "จะได้รับการยืนยันในการยืนยัน 16 ครั้ง",
+  "Claim Successfully": "อ้างสิทธิ์สำเร็จ",
   "Join Twitter": "เข้าร่วมทวิตเตอร์",
   "Join Facebook": "เข้าร่วม Facebook",
   "Join Github": "เข้าร่วม Github",
@@ -426,5 +427,8 @@ const Map<String, String> th_TH = {
   "YOUR": "ของคุณ",
   "QR CODE ADDRESS": "ที่อยู่รหัส QR",
   "ADDRESS": "ที่อยู่",
-  "About Tixcash Wallet": "เกี่ยวกับ Tixcash Wallet"
+  "About Tixcash Wallet": "เกี่ยวกับ Tixcash Wallet",
+  "My Referral": "การอ้างอิงของฉัน",
+  "1st Gen Referral": "การอ้างอิงรุ่นที่ 1",
+  "2nd Gen Referral": "การอ้างอิงรุ่นที่ 2"
 };

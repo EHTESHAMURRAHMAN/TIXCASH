@@ -84,7 +84,7 @@ class txhincome extends GetView<StackController> {
                                       width:
                                           MediaQuery.of(context).size.width / 4,
                                       child: Text(
-                                        controller.selectStakeDays.value,
+                                        controller.selectStakeDays.value.tr,
                                         style: const TextStyle(
                                             color: Colors.red,
                                             fontSize: 12,
@@ -105,700 +105,7 @@ class txhincome extends GetView<StackController> {
           margin: const EdgeInsets.symmetric(horizontal: 15),
           child: Obx(
             () => controller.selectid.value == 0
-                ? Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.grey.shade500,
-                              ),
-                              borderRadius: BorderRadius.circular(13)),
-                          width: MediaQuery.of(context).size.width,
-                          child: Column(children: [
-                            Row(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 80,
-                                  width:
-                                      MediaQuery.of(context).size.width / 3.7,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
-                                      color: Colors.grey.shade300),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Total Staked\nValue'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        '00.00',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.red,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        'TXH',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const Spacer(),
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 80,
-                                  width:
-                                      MediaQuery.of(context).size.width / 3.7,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
-                                      color: Colors.grey.shade300),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Total\nRewards'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        '00.0',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        'TXH',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const Spacer(),
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 80,
-                                  width:
-                                      MediaQuery.of(context).size.width / 3.7,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
-                                      color: Colors.grey.shade300),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Pending\nRewards'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        '00.0',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.red,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        'TXH',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 12),
-                            Row(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 80,
-                                  width:
-                                      MediaQuery.of(context).size.width / 3.7,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
-                                      color: Colors.grey.shade300),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Daily\nReward'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        '0.00',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.red,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        'TXH',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const Spacer(),
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 80,
-                                  width:
-                                      MediaQuery.of(context).size.width / 3.7,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
-                                      color: Colors.grey.shade300),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Staking\nPeriod'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        '00',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        'Days',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const Spacer(),
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 80,
-                                  width:
-                                      MediaQuery.of(context).size.width / 3.7,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
-                                      color: Colors.grey.shade300),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'APY'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 23),
-                                      ),
-                                      const Text(
-                                        '00 %',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.red,
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 12),
-                            Row(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 55,
-                                  width:
-                                      MediaQuery.of(context).size.width / 2.5,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
-                                      color: Colors.grey.shade300),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Staking Start Date'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      Text(
-                                        'DD : MM : YYYY'.tr,
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                const Spacer(),
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 55,
-                                  width:
-                                      MediaQuery.of(context).size.width / 2.4,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
-                                      color: Colors.grey.shade300),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Staking End Date'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      Text(
-                                        'DD : MM : YYYY'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ])),
-                      const SizedBox(height: 10),
-                      Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.grey.shade500,
-                              ),
-                              borderRadius: BorderRadius.circular(13)),
-                          width: MediaQuery.of(context).size.width,
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const SizedBox(height: 15),
-                                      Text(
-                                        'Income Report'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 15),
-                                      ),
-                                      const SizedBox(height: 7),
-                                      Text(
-                                        'User Initiated Staking'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      Text(
-                                        'DD : MM : YYYY'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 15),
-                                      ),
-                                    ],
-                                  ),
-                                  const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 80,
-                                    width:
-                                        MediaQuery.of(context).size.width / 2.4,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Staked Amount'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          '0.0',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red,
-                                              fontSize: 16),
-                                        ),
-                                        const Text(
-                                          'TXH',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 5),
-                              Row(
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Total Staking Income'.tr,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                      const Text(
-                                        '0.0',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.red,
-                                            fontSize: 25),
-                                      ),
-                                      const Text(
-                                        'TXH',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 12),
-                                      ),
-                                    ],
-                                  ),
-                                  const Spacer(),
-                                  Column(
-                                    children: [
-                                      Container(
-                                        padding: const EdgeInsets.all(10),
-                                        height: 80,
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                2.4,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(11),
-                                            color: Colors.grey.shade300),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Staking Limit Left'.tr,
-                                              style: const TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black,
-                                                  fontSize: 12),
-                                            ),
-                                            const Text(
-                                              '0.0',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black,
-                                                  fontSize: 12),
-                                            ),
-                                            const Text(
-                                              'TXH',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black,
-                                                  fontSize: 12),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      const SizedBox(height: 5),
-                                      Container(
-                                        padding: const EdgeInsets.all(10),
-                                        height: 60,
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                2.4,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(11),
-                                            color: Colors.grey.shade300),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Paid Days'.tr,
-                                              style: const TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black,
-                                                  fontSize: 12),
-                                            ),
-                                            const Text(
-                                              '0',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.red,
-                                                  fontSize: 12),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          )),
-                      const SizedBox(height: 10),
-                      Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.grey.shade500,
-                              ),
-                              borderRadius: BorderRadius.circular(13)),
-                          width: MediaQuery.of(context).size.width,
-                          child: Column(
-                            children: [
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  'Unclaimed Income'.tr,
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                      fontSize: 12),
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  const Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        '0.0',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.red,
-                                            fontSize: 25),
-                                      ),
-                                      Text(
-                                        'TXH',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            fontSize: 10),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Icon(CupertinoIcons.alarm,
-                                          color: Colors.black, size: 30)
-                                    ],
-                                  ),
-                                  const Spacer(),
-                                  Column(
-                                    children: [
-                                      Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Column(
-                                            children: [
-                                              Container(
-                                                padding:
-                                                    const EdgeInsets.all(5),
-                                                color: Colors.black,
-                                                child: const Text(
-                                                  '00',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color: Colors.white,
-                                                      fontSize: 14),
-                                                ),
-                                              ),
-                                              const SizedBox(height: 3),
-                                              const Text(
-                                                'HRS',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black,
-                                                    fontSize: 10),
-                                              ),
-                                            ],
-                                          ),
-                                          const SizedBox(width: 2),
-                                          const Text(
-                                            ':',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                                fontSize: 20),
-                                          ),
-                                          const SizedBox(width: 2),
-                                          Column(
-                                            children: [
-                                              Container(
-                                                padding:
-                                                    const EdgeInsets.all(5),
-                                                color: Colors.black,
-                                                child: const Text(
-                                                  '00',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color: Colors.white,
-                                                      fontSize: 14),
-                                                ),
-                                              ),
-                                              const SizedBox(height: 3),
-                                              const Text(
-                                                'MINS',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black,
-                                                    fontSize: 10),
-                                              ),
-                                            ],
-                                          ),
-                                          const SizedBox(width: 2),
-                                          const Text(
-                                            ':',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                                fontSize: 20),
-                                          ),
-                                          const SizedBox(width: 2),
-                                          Column(
-                                            children: [
-                                              Container(
-                                                padding:
-                                                    const EdgeInsets.all(5),
-                                                color: Colors.black,
-                                                child: const Text(
-                                                  '00',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color: Colors.white,
-                                                      fontSize: 14),
-                                                ),
-                                              ),
-                                              const SizedBox(height: 3),
-                                              const Text(
-                                                'SECS',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black,
-                                                    fontSize: 10),
-                                              ),
-                                            ],
-                                          )
-                                        ],
-                                      ),
-
-                                      // Text(
-                                      //   controller.time.value,
-                                      //   style: GoogleFonts.oswald(
-                                      //       fontWeight: FontWeight.bold,
-                                      //       color: Colors.black,
-                                      //       fontSize: 25),
-                                      // ),
-                                      const SizedBox(height: 10),
-                                      Container(
-                                        height: 40,
-                                        width: 120,
-                                        decoration: BoxDecoration(
-                                            color: Colors.red.withOpacity(.5),
-                                            borderRadius:
-                                                BorderRadius.circular(15)),
-                                        child: Center(
-                                          child: Text('Claim Now'.tr,
-                                              style: GoogleFonts.roboto(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.white)),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          )),
-                      const SizedBox(height: 10),
-                    ],
-                  )
-                : SizedBox(
-                    height: MediaQuery.of(context).size.height / 1,
+                ? SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -815,7 +122,7 @@ class txhincome extends GetView<StackController> {
                                 children: [
                                   Container(
                                     padding: const EdgeInsets.all(10),
-                                    height: 80,
+                                    height: 90,
                                     width:
                                         MediaQuery.of(context).size.width / 3.7,
                                     decoration: BoxDecoration(
@@ -828,7 +135,707 @@ class txhincome extends GetView<StackController> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Total Staked\nValue'.tr,
+                                          'All Stake\nValue'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          '00.00',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.red,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          'TXH',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    height: 90,
+                                    width:
+                                        MediaQuery.of(context).size.width / 3.7,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                        color: Colors.grey.shade300),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Total\nRewards'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          '00.0',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          'TXH',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    height: 90,
+                                    width:
+                                        MediaQuery.of(context).size.width / 3.7,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                        color: Colors.grey.shade300),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Pending\nRewards'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          '00.0',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.red,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          'TXH',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 12),
+                              Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    height: 90,
+                                    width:
+                                        MediaQuery.of(context).size.width / 3.7,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                        color: Colors.grey.shade300),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Daily\nReward'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          '0.00',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.red,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          'TXH',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    height: 90,
+                                    width:
+                                        MediaQuery.of(context).size.width / 3.7,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                        color: Colors.grey.shade300),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Staking\nPeriod'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          '00',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          'Days',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    height: 90,
+                                    width:
+                                        MediaQuery.of(context).size.width / 3.7,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                        color: Colors.grey.shade300),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'APY'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 23),
+                                        ),
+                                        const Text(
+                                          '00 %',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.red,
+                                              fontSize: 18),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 12),
+                              Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    height: 55,
+                                    width:
+                                        MediaQuery.of(context).size.width / 2.5,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                        color: Colors.grey.shade300),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Staking Start Date'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        Text(
+                                          'DD : MM : YYYY'.tr,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    height: 55,
+                                    width:
+                                        MediaQuery.of(context).size.width / 2.4,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                        color: Colors.grey.shade300),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Staking End Date'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        Text(
+                                          'DD : MM : YYYY'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ])),
+                        const SizedBox(height: 10),
+                        Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.grey.shade500,
+                                ),
+                                borderRadius: BorderRadius.circular(13)),
+                            width: MediaQuery.of(context).size.width,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const SizedBox(height: 15),
+                                        Text(
+                                          'Income Report'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 15),
+                                        ),
+                                        const SizedBox(height: 7),
+                                        Text(
+                                          'User Initiated Staking'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        Text(
+                                          'DD : MM : YYYY'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 15),
+                                        ),
+                                      ],
+                                    ),
+                                    const Spacer(),
+                                    Container(
+                                      padding: const EdgeInsets.all(10),
+                                      height: 90,
+                                      width: MediaQuery.of(context).size.width /
+                                          2.4,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(11),
+                                          color: Colors.grey.shade300),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Staked Amount'.tr,
+                                            style: const TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black,
+                                                fontSize: 12),
+                                          ),
+                                          const Text(
+                                            '0.0',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.red,
+                                                fontSize: 16),
+                                          ),
+                                          const Text(
+                                            'TXH',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black,
+                                                fontSize: 12),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 5),
+                                Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Total Staking Income'.tr,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                        const Text(
+                                          '0.0',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.red,
+                                              fontSize: 25),
+                                        ),
+                                        const Text(
+                                          'TXH',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                    const Spacer(),
+                                    Column(
+                                      children: [
+                                        Container(
+                                          padding: const EdgeInsets.all(10),
+                                          height: 90,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              2.4,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(11),
+                                              color: Colors.grey.shade300),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Staking Limit Left'.tr,
+                                                style: const TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                    fontSize: 12),
+                                              ),
+                                              const Text(
+                                                '0.0',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                    fontSize: 12),
+                                              ),
+                                              const Text(
+                                                'TXH',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                    fontSize: 12),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(height: 5),
+                                        Container(
+                                          padding: const EdgeInsets.all(10),
+                                          height: 60,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              2.4,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(11),
+                                              color: Colors.grey.shade300),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Paid Days'.tr,
+                                                style: const TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                    fontSize: 12),
+                                              ),
+                                              const Text(
+                                                '0',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.red,
+                                                    fontSize: 12),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            )),
+                        const SizedBox(height: 10),
+                        Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.grey.shade500,
+                                ),
+                                borderRadius: BorderRadius.circular(13)),
+                            width: MediaQuery.of(context).size.width,
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    'Unclaimed Income'.tr,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                        fontSize: 12),
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    const Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          '0.0',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.red,
+                                              fontSize: 25),
+                                        ),
+                                        Text(
+                                          'TXH',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        SizedBox(height: 10),
+                                        Icon(CupertinoIcons.alarm,
+                                            color: Colors.black, size: 30)
+                                      ],
+                                    ),
+                                    const Spacer(),
+                                    Column(
+                                      children: [
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Column(
+                                              children: [
+                                                Container(
+                                                  padding:
+                                                      const EdgeInsets.all(5),
+                                                  color: Colors.black,
+                                                  child: const Text(
+                                                    '00',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.white,
+                                                        fontSize: 14),
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 3),
+                                                const Text(
+                                                  'HRS',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.black,
+                                                      fontSize: 10),
+                                                ),
+                                              ],
+                                            ),
+                                            const SizedBox(width: 2),
+                                            const Text(
+                                              ':',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black,
+                                                  fontSize: 20),
+                                            ),
+                                            const SizedBox(width: 2),
+                                            Column(
+                                              children: [
+                                                Container(
+                                                  padding:
+                                                      const EdgeInsets.all(5),
+                                                  color: Colors.black,
+                                                  child: const Text(
+                                                    '00',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.white,
+                                                        fontSize: 14),
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 3),
+                                                const Text(
+                                                  'MINS',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.black,
+                                                      fontSize: 10),
+                                                ),
+                                              ],
+                                            ),
+                                            const SizedBox(width: 2),
+                                            const Text(
+                                              ':',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black,
+                                                  fontSize: 20),
+                                            ),
+                                            const SizedBox(width: 2),
+                                            Column(
+                                              children: [
+                                                Container(
+                                                  padding:
+                                                      const EdgeInsets.all(5),
+                                                  color: Colors.black,
+                                                  child: const Text(
+                                                    '00',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.white,
+                                                        fontSize: 14),
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 3),
+                                                const Text(
+                                                  'SECS',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.black,
+                                                      fontSize: 10),
+                                                ),
+                                              ],
+                                            )
+                                          ],
+                                        ),
+
+                                        // Text(
+                                        //   controller.time.value,
+                                        //   style: GoogleFonts.oswald(
+                                        //       fontWeight: FontWeight.bold,
+                                        //       color: Colors.black,
+                                        //       fontSize: 25),
+                                        // ),
+                                        const SizedBox(height: 10),
+                                        Container(
+                                          height: 40,
+                                          width: 120,
+                                          decoration: BoxDecoration(
+                                              color: Colors.red.withOpacity(.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(15)),
+                                          child: Center(
+                                            child: Text('Claim Now'.tr,
+                                                style: GoogleFonts.roboto(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: Colors.white)),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            )),
+                        const SizedBox(height: 10),
+                      ],
+                    ),
+                  )
+                : SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.grey.shade500,
+                                ),
+                                borderRadius: BorderRadius.circular(13)),
+                            width: MediaQuery.of(context).size.width,
+                            child: Column(children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    height: 90,
+                                    width:
+                                        MediaQuery.of(context).size.width / 3.7,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                        color: Colors.grey.shade300),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'All Stake\nValue'.tr,
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black,
@@ -854,7 +861,7 @@ class txhincome extends GetView<StackController> {
                                   const Spacer(),
                                   Container(
                                     padding: const EdgeInsets.all(10),
-                                    height: 80,
+                                    height: 90,
                                     width:
                                         MediaQuery.of(context).size.width / 3.7,
                                     decoration: BoxDecoration(
@@ -893,7 +900,7 @@ class txhincome extends GetView<StackController> {
                                   const Spacer(),
                                   Container(
                                     padding: const EdgeInsets.all(10),
-                                    height: 80,
+                                    height: 90,
                                     width:
                                         MediaQuery.of(context).size.width / 3.7,
                                     decoration: BoxDecoration(
@@ -936,7 +943,7 @@ class txhincome extends GetView<StackController> {
                                 children: [
                                   Container(
                                     padding: const EdgeInsets.all(10),
-                                    height: 80,
+                                    height: 90,
                                     width:
                                         MediaQuery.of(context).size.width / 3.7,
                                     decoration: BoxDecoration(
@@ -975,7 +982,7 @@ class txhincome extends GetView<StackController> {
                                   const Spacer(),
                                   Container(
                                     padding: const EdgeInsets.all(10),
-                                    height: 80,
+                                    height: 90,
                                     width:
                                         MediaQuery.of(context).size.width / 3.7,
                                     decoration: BoxDecoration(
@@ -1014,7 +1021,7 @@ class txhincome extends GetView<StackController> {
                                   const Spacer(),
                                   Container(
                                     padding: const EdgeInsets.all(10),
-                                    height: 80,
+                                    height: 90,
                                     width:
                                         MediaQuery.of(context).size.width / 3.7,
                                     decoration: BoxDecoration(
@@ -1182,7 +1189,7 @@ class txhincome extends GetView<StackController> {
                                   children: [
                                     Container(
                                       padding: const EdgeInsets.all(10),
-                                      height: 80,
+                                      height: 90,
                                       width: MediaQuery.of(context).size.width /
                                           2.4,
                                       decoration: BoxDecoration(
@@ -1222,7 +1229,7 @@ class txhincome extends GetView<StackController> {
                                     const SizedBox(height: 8),
                                     Container(
                                       padding: const EdgeInsets.all(10),
-                                      height: 80,
+                                      height: 90,
                                       width: MediaQuery.of(context).size.width /
                                           2.4,
                                       decoration: BoxDecoration(

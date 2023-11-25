@@ -47,12 +47,21 @@ class ScanQRChild extends GetView<ScanQrController> {
               foregroundColor: Colors.black,
               elevation: 0,
               // backgroundColor: Colors.transparent,
-              title: Text(
-                'RECEIVE ${currencyResponse?.currency ?? 'TIX'}'
-                    .tr
-                    .toUpperCase(),
-                style: GoogleFonts.roboto(
-                    fontSize: 18, fontWeight: FontWeight.w500),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'RECEIVE'.tr,
+                    style: GoogleFonts.roboto(
+                        fontSize: 18, fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    '${currencyResponse?.currency}'.tr.toUpperCase(),
+                    style: GoogleFonts.roboto(
+                        fontSize: 18, fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(width: 40)
+                ],
               ),
             )
           : null,
@@ -63,13 +72,34 @@ class ScanQRChild extends GetView<ScanQrController> {
             const SizedBox(
               height: 16,
             ),
-            Text(
-              'YOUR ${currencyResponse?.currency ?? 'TIX'} ADDRESS'.tr,
-              style: GoogleFonts.roboto(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xFF40C4FF)),
-              textAlign: TextAlign.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'YOUR'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  '${currencyResponse?.currency}'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  'ADDRESS'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
             // SizedBox(height: SizeConfig().screenHeight*0.03,),
             const SizedBox(
@@ -174,7 +204,10 @@ class ScanQRChild extends GetView<ScanQrController> {
                 children: [
                   GestureDetector(
                     child: Container(
-                      color: const Color(0xFF1680ee),
+                      decoration: BoxDecoration(
+                          color: const Color(0xff1680ee),
+                          borderRadius: BorderRadius.circular(8)),
+
                       padding: const EdgeInsets.symmetric(
                           horizontal: 38, vertical: 10),
                       // width: SizeConfig().screenWidth*0.2,
@@ -211,14 +244,36 @@ class ScanQRChild extends GetView<ScanQrController> {
               height: SizeConfig().screenHeight * 0.03,
             ),
             // YOUR TIX QR CODE ADDRESS
-            Text(
-              'YOUR ${currencyResponse?.currency ?? 'TIX'}  QR CODE ADDRESS'.tr,
-              style: GoogleFonts.roboto(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xFF40C4FF)),
-              textAlign: TextAlign.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'YOUR'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  ' ${currencyResponse?.currency} '.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  'QR CODE ADDRESS'.tr,
+                  style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFF40C4FF)),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
+
             const SizedBox(
               height: 8,
             ),
@@ -228,9 +283,6 @@ class ScanQRChild extends GetView<ScanQrController> {
                   child: Obx(() => QrImageView(
                         backgroundColor: Colors.white,
                         data: controller.address.value,
-                        embeddedImage: Image.network(
-                                '$BASE/Icon/${currencyResponse?.icon}')
-                            .image,
                         version: QrVersions.auto,
                         size: 200,
                       )),

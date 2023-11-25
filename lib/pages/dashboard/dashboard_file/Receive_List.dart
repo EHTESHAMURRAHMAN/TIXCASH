@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tixcash/api/apis.dart';
 import 'package:tixcash/pages/dashboard/scan_qr/scan_qr_child_view_cur.dart';
-import 'package:tixcash/pages/dashboard/scan_qr/scan_qr_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
 import 'package:tixcash/shared/widgets/common_widgets.dart';
 

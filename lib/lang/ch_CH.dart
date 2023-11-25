@@ -301,7 +301,7 @@ const Map<String, String> ch_CH = {
   "Total Staking Income": "质押总收入",
   "Paid Days": "带薪天数",
   "Unclaimed Income": "无人认领的收入",
-  "Claim Now": "现在宣称",
+  "Claim Now": "立即确认",
   "Days": "天",
   "Claim": "确认",
   "Max Total": "总计",
@@ -432,5 +432,9 @@ const Map<String, String> ch_CH = {
   "YOUR": "你的",
   "QR CODE ADDRESS": "二维码地址",
   "ADDRESS": "地址",
-  "About Tixcash Wallet": "关于Tixcash 钱包"
+  "About Tixcash Wallet": "关于Tixcash 钱包",
+  "My Referral": "我的推荐",
+  "1st Gen Referral": "第一代推荐",
+  "2nd Gen Referral": "第二代推​​荐",
+
 };

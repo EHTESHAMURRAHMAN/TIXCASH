@@ -348,7 +348,7 @@ class HomeView extends GetView<HomeController> {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        'DeFi'.tr,
+                        'DeFi',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Theme.of(context).primaryColor),
