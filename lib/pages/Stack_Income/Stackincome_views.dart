@@ -377,8 +377,8 @@ class txhincome extends GetView<StackController> {
                                               fontSize: 12),
                                         ),
                                         Text(
-                                          'DD : MM : YYYY'.tr,
-                                          style: TextStyle(
+                                          'YYYY : MM : DD'.tr,
+                                          style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black,
                                               fontSize: 12),
@@ -409,7 +409,7 @@ class txhincome extends GetView<StackController> {
                                               fontSize: 12),
                                         ),
                                         Text(
-                                          'DD : MM : YYYY'.tr,
+                                          'YYYY : MM : DD'.tr,
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black,
@@ -455,7 +455,7 @@ class txhincome extends GetView<StackController> {
                                               fontSize: 12),
                                         ),
                                         Text(
-                                          'DD : MM : YYYY'.tr,
+                                          'YYYY : MM : DD'.tr,
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black,

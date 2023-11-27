@@ -328,7 +328,7 @@ class StackViews extends GetView<StackController> {
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black)),
                                 const SizedBox(width: 15),
-                                Text('DD : MM : YYYY'.tr,
+                                Text('YYYY : MM : DD'.tr,
                                     style: GoogleFonts.roboto(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
@@ -344,7 +344,7 @@ class StackViews extends GetView<StackController> {
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black)),
                                 const SizedBox(width: 15),
-                                Text('DD : MM : YYYY'.tr,
+                                Text('YYYY : MM : DD'.tr,
                                     style: GoogleFonts.roboto(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
@@ -360,7 +360,7 @@ class StackViews extends GetView<StackController> {
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black)),
                                 const SizedBox(width: 15),
-                                Text('DD : MM : YYYY'.tr,
+                                Text('YYYY : MM : DD'.tr,
                                     style: GoogleFonts.roboto(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,

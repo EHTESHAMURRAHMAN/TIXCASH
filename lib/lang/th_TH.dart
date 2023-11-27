@@ -362,8 +362,9 @@ const Map<String, String> th_TH = {
       "ดาวน์โหลดแอป Tixcash Wallet จาก play store\n\nhttps://play.google.com/store/apps/details?id=com.wallet.line",
   "Referral Claim History": "ประวัติการเรียกร้องการอ้างอิง",
   "No Referral History": "ไม่มีประวัติการอ้างอิง",
+  "Join X": "เข้าร่วม X",
   "Select Stake Plan": "เลือกแผนการเดิมพัน",
-  "DD : MM : YYYY": "วว : ดด : ปปปป",
+  "YYYY : MM : DD": "วว : ดด : ปปปป",
   "You have either insufficient balance or gas fee":
       "คุณมียอดคงเหลือหรือค่าธรรมเนียมน้ำมันไม่เพียงพอ",
 
@@ -436,4 +437,5 @@ const Map<String, String> th_TH = {
       "ช่องทางการสั่งจองและซื้อ Tixcash อย่างเป็นทางการ",
   "Only USDC and BUSD of BEP20 accepted.":
       "ยอมรับเฉพาะ USDC และ BUSD ของ BEP20",
+  "Bad (Internet) Connection": "การเชื่อมต่อ (อินเทอร์เน็ต) ไม่ดี"
 };

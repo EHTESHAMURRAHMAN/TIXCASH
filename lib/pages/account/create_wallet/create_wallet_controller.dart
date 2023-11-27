@@ -232,7 +232,7 @@ class CreateWalletController extends GetxController {
         //?.then((value) => Get.offAllNamed(Routes.Dashboard));
       }
     } else {
-      EasyLoading.showToast('${response.message}');
+      EasyLoading.showToast('Bad (Internet) Connection'.tr);
     }
   }
 

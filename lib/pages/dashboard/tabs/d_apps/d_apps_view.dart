@@ -1009,27 +1009,47 @@ class Courses extends StatelessWidget {
         // ignore: prefer_const_constructors
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Official Tixcash preorder and purchase channel'.tr,
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.start,
                   style: const TextStyle(
                       color: Colors.black,
-                      fontSize: 15,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold)),
-              const SizedBox(height: 30),
-              const Text('0x9845A79fCBa15D3411aba3DD3e04A7A47F7cA3ED',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold)),
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 1.3,
+                    child: const Text(
+                        '0x9845A79fCBa15D3411aba3DD3e04A7A47F7cA3ED',
+                        textAlign: TextAlign.start,
+                        maxLines: 2,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  const Spacer(),
+                  InkWell(
+                      onTap: () {
+                        Clipboard.setData(
+                          const ClipboardData(
+                              text:
+                                  '0x9845A79fCBa15D3411aba3DD3e04A7A47F7cA3ED'),
+                        );
+                      },
+                      child: Icon(Icons.copy,
+                          color: Theme.of(context).primaryColor))
+                ],
+              ),
+              const SizedBox(height: 20),
               Text('Only USDC and BUSD of BEP20 accepted.'.tr,
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.start,
                   style: const TextStyle(
                       color: Colors.black,
-                      fontSize: 15,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold)),
             ],
           ),

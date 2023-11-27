@@ -382,7 +382,7 @@ const Map<String, String> ru_RU = {
       "У вас либо недостаточный баланс, либо плата за газ",
   "Claim Successfully": "Успешно подать заявку",
   "Select Stake Plan": "Выберите план ставок",
-  "DD : MM : YYYY": "ДД : ММ : ГГГГ",
+  "YYYY : MM : DD": "ДД : ММ : ГГГГ",
   "You Are Not Whitelisted Member": "Вы не входите в белый список",
   "Whitelisted  (Staking Period:-  365 Days)":
       "В белом списке (период ставок: - 365 дней)",
@@ -455,4 +455,5 @@ const Map<String, String> ru_RU = {
       "Официальный канал предварительного заказа и покупки Tixcash",
   "Only USDC and BUSD of BEP20 accepted.":
       "Принимаются только USDC и BUSD BEP20.",
+  "Bad (Internet) Connection": "Плохое (Интернет) соединение"
 };

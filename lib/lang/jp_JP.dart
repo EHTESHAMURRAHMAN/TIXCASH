@@ -1,4 +1,4 @@
-const Map<String, String> ch_CH = {
+const Map<String, String> jp_JP = {
   "Not authorized": "贵宾通道",
   "scanFingure": "扫描指纹",
   "Enter Password": "输入密码",
@@ -442,5 +442,4 @@ const Map<String, String> ch_CH = {
   "Estimated Gas Fee": "预计汽油费",
   "Official Tixcash preorder and purchase channel": "实验室官方购买通道如下",
   "Only USDC and BUSD of BEP20 accepted.": "仅限USDC及BUSD(BEP20通道)，其他方式无效",
-  "Bad (Internet) Connection": "(互联网）连接不良"
 };
