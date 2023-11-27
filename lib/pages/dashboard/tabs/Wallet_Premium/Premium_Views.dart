@@ -117,13 +117,16 @@ class PremiumViews extends GetView<PremiumController> {
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold)),
                         const SizedBox(height: 7),
-                        Text(
-                            'Users have opportunity to earn more\nfrom their assets'
-                                .tr,
-                            style: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500)),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          child: Text(
+                              'Users have opportunity to earn more from their assets'
+                                  .tr,
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500)),
+                        ),
                       ],
                     ),
                   ],
@@ -144,13 +147,18 @@ class PremiumViews extends GetView<PremiumController> {
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold)),
                         const SizedBox(height: 7),
-                        Text(
-                            'Refer your friend & get reward on their\nstaking'
-                                .tr,
-                            style: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500)),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          child: Text(
+                              'Refer your friend & get reward on their staking'
+                                  .tr,
+                              textAlign: TextAlign.start,
+                              maxLines: 3,
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500)),
+                        ),
                       ],
                     ),
                   ],

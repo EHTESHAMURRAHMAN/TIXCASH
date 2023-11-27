@@ -14,6 +14,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
     controller.authenticateWithBiometrics();
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.transparent,
         systemOverlayStyle: const SystemUiOverlayStyle(

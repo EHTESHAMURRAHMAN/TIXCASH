@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tixcash/lang/ch_CH.dart';
+import 'package:tixcash/lang/ru_RU.dart';
 import 'package:tixcash/lang/th_TH.dart';
 
 class TranslationService extends Translations {
@@ -10,7 +11,7 @@ class TranslationService extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         // 'en_US': en_US,
-        // 'ru_RU': ru_RU,
+        'ru_RU': ru_RU,
         // 'kg_KG': kg_KG,
         // 'tr_TR': tr_TR,
         'ch_CH': ch_CH,
@@ -19,7 +20,7 @@ class TranslationService extends Translations {
 
   Map<String, Map<String, String>> get keys1 => {
         // 'en_US': en_US,
-        // 'ru_RU': ru_RU,
+        'ru_RU': ru_RU,
         // 'kg_KG': kg_KG,
         // 'tr_TR': tr_TR,
         'ch_CH': ch_CH,

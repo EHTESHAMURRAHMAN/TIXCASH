@@ -430,5 +430,10 @@ const Map<String, String> th_TH = {
   "About Tixcash Wallet": "เกี่ยวกับ Tixcash Wallet",
   "My Referral": "การอ้างอิงของฉัน",
   "1st Gen Referral": "การอ้างอิงรุ่นที่ 1",
-  "2nd Gen Referral": "การอ้างอิงรุ่นที่ 2"
+  "2nd Gen Referral": "การอ้างอิงรุ่นที่ 2",
+  "Estimated Gas Fee": "ค่าน้ำมันโดยประมาณ",
+  "Official Tixcash preorder and purchase channel":
+      "ช่องทางการสั่งจองและซื้อ Tixcash อย่างเป็นทางการ",
+  "Only USDC and BUSD of BEP20 accepted.":
+      "ยอมรับเฉพาะ USDC และ BUSD ของ BEP20",
 };

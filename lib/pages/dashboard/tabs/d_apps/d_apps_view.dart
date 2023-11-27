@@ -382,8 +382,7 @@ class DAppsView extends GetView<DAppsController> {
                           ),
                           InkWell(
                             onTap: () {
-                              EasyLoading.showToast('Launching Soon'.tr,
-                                  toastPosition: EasyLoadingToastPosition.top);
+                              Get.to(const Courses());
                             },
                             child: Container(
                               height: 70,
@@ -971,5 +970,71 @@ class DAppCard extends StatelessWidget {
         ),
       ),
     ));
+  }
+}
+
+class Courses extends StatelessWidget {
+  const Courses({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        leading: InkWell(
+            onTap: () => Get.back(),
+            child: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+              size: 20,
+            )),
+        title: Text('Courses'.tr,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarColor: Colors.white,
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.light,
+        ),
+      ),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+        // ignore: prefer_const_constructors
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text('Official Tixcash preorder and purchase channel'.tr,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold)),
+              const SizedBox(height: 30),
+              const Text('0x9845A79fCBa15D3411aba3DD3e04A7A47F7cA3ED',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold)),
+              const SizedBox(height: 30),
+              Text('Only USDC and BUSD of BEP20 accepted.'.tr,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold)),
+            ],
+          ),
+        ]),
+      ),
+    );
   }
 }

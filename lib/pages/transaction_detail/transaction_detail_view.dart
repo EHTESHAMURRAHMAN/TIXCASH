@@ -274,6 +274,34 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                   color: Colors.black,
                   fontSize: 15),
             ),
+            const SizedBox(height: 16),
+
+            Row(
+              children: [
+                Text(
+                  'Estimated Gas Fee'.tr,
+                  style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 15),
+                ),
+                const Spacer(),
+                Text(
+                  '${controller.trxDetails?.credit ?? 0.0} /'.tr,
+                  style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 15),
+                ),
+                Text(
+                  ' ${controller.trxDetails?.commissionAmt ?? 0.0}'.tr,
+                  style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 15),
+                ),
+              ],
+            )
           ],
         ),
       ),

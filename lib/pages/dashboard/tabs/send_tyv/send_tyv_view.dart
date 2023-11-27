@@ -976,7 +976,7 @@ class SendDetails extends StatelessWidget {
                 controller.fundTransferAccount();
               });
             } else {
-              EasyLoading.showToast('Invalid address');
+              EasyLoading.showToast('Invalid address'.tr);
               return;
             }
           }

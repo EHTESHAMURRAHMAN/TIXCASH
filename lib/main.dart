@@ -64,7 +64,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
         printInfo(info: 'Difference => $diff');
         if (locTime * 500 < diff) {
           if (sUser != null) {
-            Get.offAndToNamed(Routes.FINGER_PRINT_LOGIN);
+            Get.offAllNamed(Routes.FINGER_PRINT_LOGIN);
           } else {
             // Get.offAndToNamed(Routes.START);
           }

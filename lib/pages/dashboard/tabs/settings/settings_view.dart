@@ -661,18 +661,18 @@ class GeneralSetting extends StatelessWidget {
                                     controller.updateLocale('th', 'TH', 'ไทย'),
                               ),
                               // ListTile(
-                              //   title: Text('Russian',
+                              //   title: Text('Русский',
                               //       style: GoogleFonts.roboto(
                               //           fontSize: 14, color: Colors.black)),
-                              //   onTap: () =>
-                              //       updateLocale('ru', 'RU', 'Russian'),
+                              //   onTap: () => controller.updateLocale(
+                              //       'ru', 'RU', 'Русский'),
                               // ),
                               // ListTile(
                               //   title: Text('Turkish',
                               //       style: GoogleFonts.roboto(
                               //           fontSize: 14, color: Colors.black)),
-                              //   onTap: () =>
-                              //       updateLocale('tr', 'TR', 'Turkish'),
+                              //   onTap: () => controller.updateLocale(
+                              //       'tr', 'TR', 'Turkish'),
                               // ),
                             ],
                           ),

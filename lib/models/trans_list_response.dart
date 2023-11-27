@@ -23,6 +23,7 @@ class TransactionListResponse {
     required this.txthash,
     required this.remark,
     required this.blockchaintitle,
+    required this.commissionAmt,
   });
 
   final String transactionDate;
@@ -35,6 +36,7 @@ class TransactionListResponse {
   final String txthash;
   final String remark;
   final String blockchaintitle;
+  final double commissionAmt;
 
   factory TransactionListResponse.fromJson(Map<String, dynamic> json) =>
       TransactionListResponse(
@@ -48,6 +50,7 @@ class TransactionListResponse {
         txthash: json["txthash"] ?? '',
         remark: json["remark"] ?? '',
         blockchaintitle: json["blockchaintitle"] ?? '',
+        commissionAmt: json["commissionAmt"].toDouble(),
       );
 
   Map<String, dynamic> toJson() => {
@@ -61,5 +64,6 @@ class TransactionListResponse {
         "txthash": txthash,
         "remark": remark,
         "blockchaintitle": blockchaintitle,
+        "commissionAmt": commissionAmt,
       };
 }
