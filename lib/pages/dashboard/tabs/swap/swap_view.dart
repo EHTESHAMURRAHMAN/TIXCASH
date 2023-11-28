@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/constants/colors.dart';
+import 'package:tixcash/shared/widgets/common_widgets.dart';
 import 'package:tixcash/shared/widgets/submit_button.dart';
 
 import 'swap_controller.dart';
@@ -92,12 +93,12 @@ class SwapView extends GetView<SwapController> {
               children: [
                 // Obx(() => LogoBuilder(
                 //     logoUrl: controller.fromCurrency.value?.icon ?? 'BTC',
-                //     width: 40)),
+                //     width: 35)),
                 const SizedBox(
-                  width: 8,
+                  width: 10,
                 ),
                 Obx(() => Text(
-                      controller.fromCurrency.value?.currency ?? 'TIX',
+                      controller.selectcurrency.value,
                       style: GoogleFonts.roboto(
                           fontSize: 15,
                           color: Colors.black,
@@ -140,24 +141,31 @@ class SwapView extends GetView<SwapController> {
               Get.toNamed(Routes.SWAP_LIST, arguments: [
                 {'isToList': false}
               ])?.then((value) {
-                controller.fromCurrency.value = value[0]['currency'];
-                controller.userFundBalance(
-                    currency: controller.fromCurrency.value?.currency ?? 'TIX');
-                controller.getCurrencyPairPrice();
+                if (value != null) {
+                  controller.selectcurrency.value = value['currency'];
+                }
               });
+              // Get.toNamed(Routes.SWAP_LIST, arguments: [
+              //   {'isToList': false}
+              // ])?.then((value) {
+              //   controller.fromCurrency.value = value[0]['currency'];
+              //   controller.userFundBalance(
+              //       currency: controller.fromCurrency.value?.currency ?? 'TIX');
+              //   controller.getCurrencyPairPrice();
+              // });
             },
           ),
 
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                borderRadius: BorderRadius.circular(8)),
+                color: Colors.grey.shade300,
+                borderRadius: BorderRadius.circular(18)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 SizedBox(
-                  height: 30,
+                  height: 40,
                   child: TextField(
                     style: const TextStyle(color: Colors.black),
                     keyboardType:
@@ -169,6 +177,7 @@ class SwapView extends GetView<SwapController> {
                           '${double.parse(val) / (controller.currencyRate.value?.price ?? 1.0)}';
                     },
                     decoration: InputDecoration(
+                        enabledBorder: InputBorder.none,
                         suffixIcon: InkWell(
                           child: SizedBox(
                             height: 25,
@@ -219,12 +228,13 @@ class SwapView extends GetView<SwapController> {
             child: Row(
               children: [
                 // Obx(() => LogoBuilder(
-                //     logoUrl: controller.toCurrency.value?.icon ?? 'BTC')),
+                //     logoUrl: controller.toCurrency.value?.icon ?? 'BTC',
+                //     width: 35)),
                 const SizedBox(
-                  width: 8,
+                  width: 10,
                 ),
                 Obx(() => Text(
-                      controller.toCurrency.value?.currency ?? 'TIX',
+                      controller.fromCurrency.value?.currency ?? 'TIX',
                       style: GoogleFonts.roboto(
                           fontSize: 15,
                           color: Colors.black,
@@ -271,13 +281,13 @@ class SwapView extends GetView<SwapController> {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                borderRadius: BorderRadius.circular(8)),
+                color: Colors.grey.shade300,
+                borderRadius: BorderRadius.circular(18)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 SizedBox(
-                  height: 30,
+                  height: 40,
                   child: TextField(
                     enabled: false,
                     controller: controller.toController,

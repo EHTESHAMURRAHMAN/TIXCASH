@@ -829,7 +829,8 @@ class StackViews extends GetView<StackController> {
                                   fontWeight: FontWeight.bold,
                                   color: Colors.red))
                           : Text(
-                              '${controller.sponCodeResponse.value?.sponsorcode}',
+                              '${controller.sponCodeResponse.value?.sponsorcode}'
+                                  .tr,
                               style: GoogleFonts.roboto(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,

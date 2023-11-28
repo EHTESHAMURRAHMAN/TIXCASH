@@ -446,4 +446,7 @@ const Map<String, String> th_TH = {
       "คุณแน่ใจหรือไม่ว่าต้องการลบบัญชีของคุณ\nคุณได้สำรองข้อมูลแล้วหรือยัง",
   "Delete Account": "ลบบัญชี",
   "Delete": "ลบ",
+  "null": "โมฆะ",
+  "Failed": "ล้มเหลว",
+  "Wrong Phrase Key": "รหัสวลีผิด",
 };

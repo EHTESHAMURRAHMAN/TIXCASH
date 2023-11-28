@@ -452,4 +452,7 @@ const Map<String, String> ch_CH = {
       "您确定要删除您的帐户吗？\n您备份了吗？",
   "Delete Account": "删除帐户",
   "Delete": "删除",
+  "null": "无",
+  "Failed": "导入失败",
+  "Wrong Phrase Key": "错误的短语键",
 };

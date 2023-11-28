@@ -15,6 +15,7 @@ class SwapController extends GetxController {
 
   final fromCurrency = Rxn<SwapCurrency>();
   final toCurrency = Rxn<SwapCurrency>();
+  final selectcurrency = 'TXH'.obs;
 
   final currencyRate = Rxn<CurrencyRate>();
   final fromController = TextEditingController(text: '0.0');

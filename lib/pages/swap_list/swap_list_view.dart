@@ -41,6 +41,7 @@ class SwapListView extends GetView<SwapListController> {
               itemBuilder: (context, index) {
                 SwapCurrency swapCurrency =
                     controller.swapCurrencyList.elementAt(index);
+                swapCurrency.sort((a, b) => a.length.compareTo(b.length));
                 return ListTile(
                   leading: LogoBuilder(logoUrl: swapCurrency.icon),
                   title: Text(swapCurrency.currency,
@@ -49,10 +50,15 @@ class SwapListView extends GetView<SwapListController> {
                           fontWeight: FontWeight.w500,
                           color: Colors.black)),
                   onTap: () {
-                    Get.back(result: [
-                      {'currency': swapCurrency}
-                    ]);
+                    Get.back(result: {
+                      'currency': swapCurrency.currency,
+                    });
                   },
+                  // onTap: () {
+                  //   Get.back(result: [
+                  //     {'currency': swapCurrency}
+                  //   ]);
+                  // },
                 );
               },
               itemCount: controller.swapCurrencyList.length,

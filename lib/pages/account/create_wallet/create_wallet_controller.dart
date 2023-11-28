@@ -99,7 +99,7 @@ class CreateWalletController extends GetxController {
     if (phrase == appController.backupPResponse.value?.backuphrase) {
       Get.offAllNamed(Routes.Dashboard);
     } else {
-      EasyLoading.showToast('Wrong Phrase Key');
+      EasyLoading.showToast('Wrong Phrase Key'.tr);
     }
   }
 
@@ -206,7 +206,7 @@ class CreateWalletController extends GetxController {
         //?.then((value) => Get.offAllNamed(Routes.Dashboard));
       }
     } else {
-      EasyLoading.showToast('${response.message}');
+      EasyLoading.showToast('Failed'.tr);
     }
   }
 
@@ -232,7 +232,7 @@ class CreateWalletController extends GetxController {
         //?.then((value) => Get.offAllNamed(Routes.Dashboard));
       }
     } else {
-      EasyLoading.showToast('Bad (Internet) Connection'.tr);
+      EasyLoading.showToast('Failed'.tr);
     }
   }
 
