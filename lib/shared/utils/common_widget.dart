@@ -191,8 +191,8 @@ class PremiumAccess extends StatelessWidget {
             ),
           ),
           centerTitle: true,
-          title: const Text(
-            'Select Premium Plan',
+          title: Text(
+            'Select Premium Plan'.tr,
             style: TextStyle(
                 fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
           ),
@@ -212,28 +212,44 @@ class PremiumAccess extends StatelessWidget {
                       model.pid == 2
                           ? Padding(
                               padding: const EdgeInsets.only(left: 10),
-                              child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  '${model.pid} Years Access',
-                                  style: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '${model.pid} ',
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    'Years Access'.tr,
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
                               ),
                             )
                           : Padding(
                               padding: const EdgeInsets.only(left: 10),
-                              child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  '${model.pid} Year Access',
-                                  style: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '${model.pid} ',
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    'Year Access'.tr,
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
                               ),
                             ),
                       model.pid == 2

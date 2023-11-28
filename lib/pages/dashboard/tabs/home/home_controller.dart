@@ -302,7 +302,7 @@ class HomeController extends GetxController with WidgetsBindingObserver {
                       const Spacer(),
                       TextButton(
                           onPressed: () => Get.back(),
-                          child: Text('CANCEL'.tr)),
+                          child: Text('Cancel'.tr)),
                       const SizedBox(
                         width: 16,
                       ),

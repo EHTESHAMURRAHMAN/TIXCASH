@@ -614,7 +614,7 @@ class GeneralSetting extends StatelessWidget {
                     context: context,
                     builder: (context) => Dialog(
                           elevation: 5,
-                          shadowColor: Colors.red,
+                          shadowColor: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                           backgroundColor: Colors.white,
@@ -630,8 +630,9 @@ class GeneralSetting extends StatelessWidget {
                                     color: Colors.black),
                               ),
                               const SizedBox(height: 15),
-                              const Divider(
-                                color: Colors.red,
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 15),
+                                child: Divider(color: Colors.black),
                               ),
                               const SizedBox(height: 10),
                               ListTile(
@@ -710,7 +711,7 @@ class GeneralSetting extends StatelessWidget {
                     context: context,
                     builder: (context) => Dialog(
                           elevation: 5,
-                          shadowColor: Colors.red,
+                          shadowColor: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                           backgroundColor: Colors.white,
@@ -726,7 +727,10 @@ class GeneralSetting extends StatelessWidget {
                                     color: Colors.black),
                               ),
                               const SizedBox(height: 15),
-                              const Divider(),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 15),
+                                child: Divider(color: Colors.black),
+                              ),
                               const SizedBox(height: 5),
                               ListTile(
                                 title: Text('USD',

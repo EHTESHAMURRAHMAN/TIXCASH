@@ -251,7 +251,7 @@ const Map<String, String> th_TH = {
   "Users can create multiple account \nand rename their account":
       "ผู้ใช้สามารถสร้างหลายบัญชี \n และเปลี่ยนชื่อบัญชีของตนได้",
   "Stake & Earn": "เดิมพันและรับ",
-  "Users have opportunity to earn more\nfrom their assets":
+  "Users have opportunity to earn more from their assets":
       "ผู้ใช้มีโอกาสสร้างรายได้มากขึ้น\nจากสินทรัพย์ของตน",
   "Refferral Reward": "รางวัลผู้อ้างอิง",
   "Refer your friend & get reward on their\nstaking":
@@ -437,5 +437,13 @@ const Map<String, String> th_TH = {
       "ช่องทางการสั่งจองและซื้อ Tixcash อย่างเป็นทางการ",
   "Only USDC and BUSD of BEP20 accepted.":
       "ยอมรับเฉพาะ USDC และ BUSD ของ BEP20",
-  "Bad (Internet) Connection": "การเชื่อมต่อ (อินเทอร์เน็ต) ไม่ดี"
+  "Bad (Internet) Connection": "การเชื่อมต่อ (อินเทอร์เน็ต) ไม่ดี",
+  "Error": "ข้อผิดพลาด",
+  "Something went wrong try again": "มีบางอย่างผิดพลาดลองอีกครั้ง",
+  "Year Access": "ปีที่เข้าถึง",
+  "Years Access": "การเข้าถึงปี",
+  "Are you sure want to delete your account?\nHave you taken your backup?":
+      "คุณแน่ใจหรือไม่ว่าต้องการลบบัญชีของคุณ\nคุณได้สำรองข้อมูลแล้วหรือยัง",
+  "Delete Account": "ลบบัญชี",
+  "Delete": "ลบ",
 };

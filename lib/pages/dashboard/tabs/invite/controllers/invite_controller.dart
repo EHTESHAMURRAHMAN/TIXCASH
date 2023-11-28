@@ -87,12 +87,12 @@ class InviteController extends GetxController {
     EasyLoading.dismiss();
     if (apiResponse.status) {
       CommonResponse response = apiResponse.data;
-      EasyLoading.showToast(response.message);
+      EasyLoading.showToast(response.message.tr);
 
       getrefrallclaimlist();
       Get.back();
     } else {
-      Get.snackbar('Error', 'Something went wrong try again',
+      Get.snackbar('Error'.tr, 'Something went wrong try again'.tr,
           backgroundColor: Colors.red);
     }
   }

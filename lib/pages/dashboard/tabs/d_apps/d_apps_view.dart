@@ -1039,6 +1039,9 @@ class Courses extends StatelessWidget {
                               text:
                                   '0x9845A79fCBa15D3411aba3DD3e04A7A47F7cA3ED'),
                         );
+                        Get.snackbar('Copied'.tr,
+                            '0x9845A79fCBa15D3411aba3DD3e04A7A47F7cA3ED',
+                            backgroundColor: Colors.red);
                       },
                       child: Icon(Icons.copy,
                           color: Theme.of(context).primaryColor))

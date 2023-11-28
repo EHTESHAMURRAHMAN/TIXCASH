@@ -192,7 +192,7 @@ class _SelectProfileState extends State<SelectProfile> {
                       const Spacer(),
                       TextButton(
                           onPressed: () => Get.back(),
-                          child: Text('CANCEL'.tr)),
+                          child: Text('Cancel'.tr)),
                       const SizedBox(
                         width: 16,
                       ),
@@ -274,7 +274,7 @@ class _SelectProfileState extends State<SelectProfile> {
                                     BorderRadius.all(Radius.circular(10))),
                             shadowColor: Colors.lightBlue,
                           ),
-                          child: Text('CANCEL'.tr),
+                          child: Text('Cancel'.tr),
                         ),
                         const SizedBox(
                           width: 16,

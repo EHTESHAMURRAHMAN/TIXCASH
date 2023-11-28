@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -20,6 +18,7 @@ class StackViews extends GetView<StackController> {
   @override
   Widget build(BuildContext context) {
     controller.getstakingDaylist();
+    controller.getcheckreferall();
     final controller1 = Get.put(HomeController());
     return Scaffold(
       backgroundColor: Colors.white,
@@ -106,8 +105,7 @@ class StackViews extends GetView<StackController> {
                 children: [
                   TextFormField(
                     onChanged: (value) {
-                      controller.isActived.value =
-                          controller.controllerStakeAmount.text.isNotEmpty;
+                      controller.getcheckreferall();
                     },
                     controller: controller.controllerStakeAmount,
                     style: GoogleFonts.roboto(
@@ -896,7 +894,7 @@ class StackViews extends GetView<StackController> {
                   : SaveButton(
                       title: 'Next Step'.tr,
                       onPress: () {
-                        // controller.whiteListResponse.value?.whiteliststatus == 1
+                        // controller.wh iteListResponse.value?.whiteliststatus == 1
                         //     ? EasyLoading.showToast(
                         //         'You Are WhiteListed. You Can Stake In white List')
                         //     :
@@ -1275,7 +1273,7 @@ class stakingIncome extends GetView {
         body: Obx(
           () => controller.stakingListModelResponse.isEmpty
               ? Center(
-                  child: Text('No Stake',
+                  child: Text('No Stake'.tr,
                       style: GoogleFonts.roboto(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,

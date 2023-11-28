@@ -150,7 +150,7 @@ class PremiumViews extends GetView<PremiumController> {
                         SizedBox(
                           width: MediaQuery.of(context).size.width / 1.2,
                           child: Text(
-                              'Refer your friend & get reward on their staking'
+                              'Refer your friend & get reward on their\nstaking'
                                   .tr,
                               textAlign: TextAlign.start,
                               maxLines: 3,
