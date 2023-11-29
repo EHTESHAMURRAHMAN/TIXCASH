@@ -4,10 +4,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/constants/colors.dart';
-import 'package:tixcash/shared/widgets/common_widgets.dart';
 import 'package:tixcash/shared/widgets/submit_button.dart';
-
 import 'swap_controller.dart';
+
 
 class SwapView extends GetView<SwapController> {
   @override
