@@ -12,13 +12,7 @@ class Startview2 extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 0,
           elevation: 0,
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
         ),
-        backgroundColor: Colors.white,
         body: Container(
           child: Center(
             child: Column(
@@ -32,23 +26,21 @@ class Startview2 extends StatelessWidget {
                       .tr,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17,
-                      color: Colors.black),
+                      fontWeight: FontWeight.bold, fontSize: 17),
                 ),
                 const SizedBox(height: 15),
                 Text(
                   'We would like to collect data from your session to\nhelp make Tixcash Wallet easier and\nmore fun to use'
                       .tr,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 15, color: Colors.black),
+                  style: const TextStyle(fontSize: 15),
                 ),
                 const SizedBox(height: 15),
                 Text(
                   'These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey\'re totally anonymous and\nwill never be shared with anyone else'
                       .tr,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 15, color: Colors.black),
+                  style: const TextStyle(fontSize: 15),
                 ),
               ],
             ),

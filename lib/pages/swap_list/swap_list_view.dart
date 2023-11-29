@@ -12,22 +12,14 @@ class SwapListView extends GetView<SwapListController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         leading: InkWell(
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
               size: 20,
             )),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+
         elevation: 0,
         // backgroundColor: Colors.transparent,
         title: Text(
@@ -46,9 +38,9 @@ class SwapListView extends GetView<SwapListController> {
                   leading: LogoBuilder(logoUrl: swapCurrency.icon),
                   title: Text(swapCurrency.currency,
                       style: GoogleFonts.roboto(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black)),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      )),
                   onTap: () {
                     Get.back(result: {
                       'currency': swapCurrency.currency,

@@ -37,150 +37,129 @@ class SettingsView extends GetView<SettingsController> {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.white,
+          //backgroundColor: Colors.white,
           elevation: 0,
           title: Text(
             'Setting'.tr,
-            style: GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+            style: GoogleFonts.roboto(fontSize: 20),
           ),
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
+          // systemOverlayStyle: const SystemUiOverlayStyle(
+          //   statusBarColor: Colors.white,
+          //   statusBarIconBrightness: Brightness.dark,
+          //   statusBarBrightness: Brightness.dark,
+          // ),
         ),
-        body: Container(
-          color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: ListView(
-              children: [
-                ListTile(
-                  leading: Icon(CupertinoIcons.settings,
-                      color: Theme.of(context).primaryColor, size: 25),
-                  onTap: () {
-                    Get.to(GeneralSetting());
-                  },
-                  trailing: const Icon(Icons.arrow_forward_ios,
-                      color: Colors.black, size: 16),
-                  title: Text(
-                    'General'.tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 16, color: Colors.black),
-                  ),
-                  subtitle: Text(
-                    'Language, Pop-up notification'.tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 13, color: Colors.black),
-                  ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: ListView(
+            children: [
+              ListTile(
+                leading: Icon(CupertinoIcons.settings,
+                    color: Theme.of(context).primaryColor, size: 25),
+                onTap: () {
+                  Get.to(GeneralSetting());
+                },
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                title: Text(
+                  'General'.tr,
+                  style: GoogleFonts.roboto(fontSize: 16),
                 ),
-                const SizedBox(height: 20),
-                ListTile(
-                  leading: Icon(Icons.security,
-                      color: Theme.of(context).primaryColor, size: 25),
-                  onTap: () {
-                    Get.to(Security());
-                  },
-                  trailing: const Icon(Icons.arrow_forward_ios,
-                      color: Colors.black, size: 16),
-                  title: Text(
-                    'Security & Privacy'.tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 16, color: Colors.black),
-                  ),
-                  subtitle: Text(
-                    'Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock'
-                        .tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 13, color: Colors.black),
-                  ),
+                subtitle: Text(
+                  'Language, Pop-up notification'.tr,
+                  style: GoogleFonts.roboto(fontSize: 13),
                 ),
-                const SizedBox(height: 20),
-                ListTile(
-                  leading: Icon(CupertinoIcons.forward_end_alt,
-                      color: Theme.of(context).primaryColor, size: 25),
-                  onTap: () {
-                    EasyLoading.showToast('Launching Soon'.tr,
-                        toastPosition: EasyLoadingToastPosition.top);
-                  },
-                  trailing: const Icon(Icons.arrow_forward_ios,
-                      color: Colors.black, size: 16),
-                  title: Text(
-                    'Advanced'.tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 16, color: Colors.black),
-                  ),
-                  subtitle: Text(
-                    'Advanced'.tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 13, color: Colors.black),
-                  ),
+              ),
+              const SizedBox(height: 20),
+              ListTile(
+                leading: Icon(Icons.security,
+                    color: Theme.of(context).primaryColor, size: 25),
+                onTap: () {
+                  Get.to(Security());
+                },
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                title: Text(
+                  'Security & Privacy'.tr,
+                  style: GoogleFonts.roboto(fontSize: 16),
                 ),
-                const SizedBox(height: 20),
-                ListTile(
-                  leading: Icon(CupertinoIcons.profile_circled,
-                      color: Theme.of(context).primaryColor, size: 25),
-                  onTap: () {
-                    EasyLoading.showToast('Launching Soon'.tr,
-                        toastPosition: EasyLoadingToastPosition.top);
-                  },
-                  trailing: const Icon(Icons.arrow_forward_ios,
-                      color: Colors.black, size: 16),
-                  title: Text(
-                    'Contact'.tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 16, color: Colors.black),
-                  ),
-                  subtitle: Text(
-                    'Contact'.tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 13, color: Colors.black),
-                  ),
+                subtitle: Text(
+                  'Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock'
+                      .tr,
+                  style: GoogleFonts.roboto(fontSize: 13),
                 ),
-                const SizedBox(height: 20),
-                ListTile(
-                  leading: Icon(Icons.touch_app,
-                      color: Theme.of(context).primaryColor, size: 25),
-                  onTap: () {
-                    Get.to(GetinTouch());
-                  },
-                  trailing: const Icon(Icons.arrow_forward_ios,
-                      color: Colors.black, size: 16),
-                  title: Text(
-                    'Get In Touch'.tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 16, color: Colors.black),
-                  ),
-                  subtitle: Text(
-                    'Share This App, Review The App, Join telegram, Support Center'
-                        .tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 13, color: Colors.black),
-                  ),
+              ),
+              const SizedBox(height: 20),
+              ListTile(
+                leading: Icon(CupertinoIcons.forward_end_alt,
+                    color: Theme.of(context).primaryColor, size: 25),
+                onTap: () {
+                  EasyLoading.showToast('Launching Soon'.tr,
+                      toastPosition: EasyLoadingToastPosition.top);
+                },
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                title: Text(
+                  'Advanced'.tr,
+                  style: GoogleFonts.roboto(fontSize: 16),
                 ),
-                const SizedBox(height: 20),
-                ListTile(
-                  leading: Icon(Icons.details,
-                      color: Theme.of(context).primaryColor, size: 25),
-                  onTap: () {
-                    Get.to(About());
-                  },
-                  trailing: const Icon(Icons.arrow_forward_ios,
-                      color: Colors.black, size: 16),
-                  title: Text(
-                    'About Section'.tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 16, color: Colors.black),
-                  ),
-                  subtitle: Text(
-                    'About Tixcash Wallet, Terms & Condition, Privacy Policy, App Version'
-                        .tr,
-                    style:
-                        GoogleFonts.roboto(fontSize: 13, color: Colors.black),
-                  ),
+                subtitle: Text(
+                  'Advanced'.tr,
+                  style: GoogleFonts.roboto(fontSize: 13),
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 20),
+              ListTile(
+                leading: Icon(CupertinoIcons.profile_circled,
+                    color: Theme.of(context).primaryColor, size: 25),
+                onTap: () {
+                  EasyLoading.showToast('Launching Soon'.tr,
+                      toastPosition: EasyLoadingToastPosition.top);
+                },
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                title: Text(
+                  'Contact'.tr,
+                  style: GoogleFonts.roboto(fontSize: 16),
+                ),
+                subtitle: Text(
+                  'Contact'.tr,
+                  style: GoogleFonts.roboto(fontSize: 13),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ListTile(
+                leading: Icon(Icons.touch_app,
+                    color: Theme.of(context).primaryColor, size: 25),
+                onTap: () {
+                  Get.to(GetinTouch());
+                },
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                title: Text(
+                  'Get In Touch'.tr,
+                  style: GoogleFonts.roboto(fontSize: 16),
+                ),
+                subtitle: Text(
+                  'Share This App, Review The App, Join telegram, Support Center'
+                      .tr,
+                  style: GoogleFonts.roboto(fontSize: 13),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ListTile(
+                leading: Icon(Icons.details,
+                    color: Theme.of(context).primaryColor, size: 25),
+                onTap: () {
+                  Get.to(About());
+                },
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                title: Text(
+                  'About Section'.tr,
+                  style: GoogleFonts.roboto(fontSize: 16),
+                ),
+                subtitle: Text(
+                  'About Tixcash Wallet, Terms & Condition, Privacy Policy, App Version'
+                      .tr,
+                  style: GoogleFonts.roboto(fontSize: 13),
+                ),
+              ),
+            ],
           ),
         ));
   }
@@ -193,17 +172,9 @@ class phrse extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
-        backgroundColor: Colors.white,
         leading: InkWell(
             onTap: () => Get.back(),
-            child: const Icon(Icons.arrow_back_ios,
-                color: Colors.black, size: 18)),
-        foregroundColor: Colors.black,
+            child: const Icon(Icons.arrow_back_ios, size: 18)),
         automaticallyImplyLeading: false,
         elevation: 0,
         centerTitle: true,
@@ -212,7 +183,6 @@ class phrse extends StatelessWidget {
           style: GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.w500),
         ),
       ),
-      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
@@ -223,9 +193,7 @@ class phrse extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: Text('Your Secret Recovery Phrase'.tr,
                       style: const TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16)),
+                          fontWeight: FontWeight.bold, fontSize: 16)),
                 ),
                 const SizedBox(height: 10),
                 SizedBox(
@@ -276,7 +244,6 @@ class phrse extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                         fontWeight: FontWeight.w500,
-                                        color: Colors.black,
                                         fontSize: 16))),
                                 const SizedBox(height: 10),
                                 InkWell(
@@ -298,7 +265,7 @@ class phrse extends StatelessWidget {
                                 //     '${controller.backupPResponse1.value?.backuphrase}',
                                 //     textAlign: TextAlign.center,
                                 //     style: const TextStyle(
-                                //         color: Colors.black, fontSize: 20))),
+                                //           fontSize: 20))),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
@@ -311,26 +278,31 @@ class phrse extends StatelessWidget {
                                         EasyLoading.showToast(
                                             'Address Copied'.tr);
                                       },
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                3,
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 16, horizontal: 24),
-                                        decoration: BoxDecoration(
-                                            color: Colors.grey.shade200,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(30),
-                                            border: Border.all(
+                                                BorderRadius.circular(30)),
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              3,
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 16, horizontal: 24),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              border: Border.all(
+                                                  color: Theme.of(context)
+                                                      .primaryColor)),
+                                          child: Center(
+                                              child: Text(
+                                            'Copy'.tr,
+                                            style: TextStyle(
                                                 color: Theme.of(context)
-                                                    .primaryColor)),
-                                        child: Center(
-                                            child: Text(
-                                          'Copy'.tr,
-                                          style: TextStyle(
-                                              color: Theme.of(context)
-                                                  .primaryColor),
-                                        )),
+                                                    .primaryColor),
+                                          )),
+                                        ),
                                       ),
                                     ),
                                     InkWell(
@@ -338,26 +310,31 @@ class phrse extends StatelessWidget {
                                         Share.share(
                                             '${controller.backupPResponse.value?.backuphrase}');
                                       },
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                3,
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 16, horizontal: 24),
-                                        decoration: BoxDecoration(
-                                            color: Colors.grey.shade200,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(30),
-                                            border: Border.all(
+                                                BorderRadius.circular(30)),
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              3,
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 16, horizontal: 24),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              border: Border.all(
+                                                  color: Theme.of(context)
+                                                      .primaryColor)),
+                                          child: Center(
+                                              child: Text(
+                                            'Share'.tr,
+                                            style: TextStyle(
                                                 color: Theme.of(context)
-                                                    .primaryColor)),
-                                        child: Center(
-                                            child: Text(
-                                          'Share'.tr,
-                                          style: TextStyle(
-                                              color: Theme.of(context)
-                                                  .primaryColor),
-                                        )),
+                                                    .primaryColor),
+                                          )),
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -380,38 +357,46 @@ class phrse extends StatelessWidget {
                                   Screenshot(
                                       controller:
                                           controller.screenshotController,
-                                      child: Center(
-                                        child: Obx(() => QrImageView(
-                                              backgroundColor: Colors.white,
-                                              data:
-                                                  '${controller.backupPResponse.value?.backuphrase}',
-                                              version: QrVersions.auto,
-                                              size: 180.0,
-                                            )),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Center(
+                                          child: Obx(() => QrImageView(
+                                                backgroundColor: Colors.white,
+                                                data:
+                                                    '${controller.backupPResponse.value?.backuphrase}',
+                                                version: QrVersions.auto,
+                                                size: 180.0,
+                                              )),
+                                        ),
                                       )),
                                   InkWell(
                                     onTap: () {
                                       shareQrCode();
                                     },
-                                    child: Container(
-                                      width:
-                                          MediaQuery.of(context).size.width / 3,
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 16, horizontal: 24),
-                                      decoration: BoxDecoration(
-                                          color: Colors.grey.shade200,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(30),
-                                          border: Border.all(
+                                              BorderRadius.circular(30)),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                3,
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 16, horizontal: 24),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(30),
+                                            border: Border.all(
+                                                color: Theme.of(context)
+                                                    .primaryColor)),
+                                        child: Center(
+                                            child: Text(
+                                          'Share QR'.tr,
+                                          style: TextStyle(
                                               color: Theme.of(context)
-                                                  .primaryColor)),
-                                      child: Center(
-                                          child: Text(
-                                        'Share QR'.tr,
-                                        style: TextStyle(
-                                            color:
-                                                Theme.of(context).primaryColor),
-                                      )),
+                                                  .primaryColor),
+                                        )),
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -454,7 +439,7 @@ class phrse extends StatelessWidget {
                 //         () => Text(
                 //           '${controller.backupPResponse1.value?.backuphrase}',
                 //           textAlign: TextAlign.center,
-                //           style: const TextStyle(color: Colors.black, fontSize: 20),
+                //           style: const TextStyle(  fontSize: 20),
                 //         ),
                 //       ),
                 //       MaterialButton(
@@ -480,63 +465,67 @@ class phrse extends StatelessWidget {
                 //   ),
                 // ),
                 const SizedBox(height: 15),
-                Container(
-                    padding: const EdgeInsets.all(10),
-                    height: MediaQuery.of(context).size.height / 4.3,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
-                        borderRadius: BorderRadius.circular(9)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Remember :'.tr,
-                          style: const TextStyle(
-                              color: Colors.red,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          '● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered'
-                              .tr,
-                          style:
-                              const TextStyle(color: Colors.red, fontSize: 13),
-                        ),
-                        Text(
-                          '● Please do not backup and save by screenshots or network transmission'
-                              .tr,
-                          style:
-                              const TextStyle(color: Colors.red, fontSize: 13),
-                        ),
-                        Text(
-                          '● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help'
-                              .tr,
-                          style:
-                              const TextStyle(color: Colors.red, fontSize: 13),
-                        ),
-                      ],
-                    )),
+                Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(9)),
+                  child: Container(
+                      padding: const EdgeInsets.all(10),
+                      height: MediaQuery.of(context).size.height / 4.3,
+                      width: MediaQuery.of(context).size.width,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Remember :'.tr,
+                            style: const TextStyle(
+                                color: Colors.red,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            '● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered'
+                                .tr,
+                            style: const TextStyle(
+                                color: Colors.red, fontSize: 13),
+                          ),
+                          Text(
+                            '● Please do not backup and save by screenshots or network transmission'
+                                .tr,
+                            style: const TextStyle(
+                                color: Colors.red, fontSize: 13),
+                          ),
+                          Text(
+                            '● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help'
+                                .tr,
+                            style: const TextStyle(
+                                color: Colors.red, fontSize: 13),
+                          ),
+                        ],
+                      )),
+                ),
                 const SizedBox(height: 20),
                 InkWell(
                   onTap: () {
                     Get.back();
                   },
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 16, horizontal: 24),
-                    decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
-                        borderRadius: BorderRadius.circular(30),
-                        border:
-                            Border.all(color: Theme.of(context).primaryColor)),
-                    child: Center(
-                        child: Text(
-                      'Done'.tr,
-                      style: TextStyle(color: Theme.of(context).primaryColor),
-                    )),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16, horizontal: 24),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                              color: Theme.of(context).primaryColor)),
+                      child: Center(
+                          child: Text(
+                        'Done'.tr,
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                      )),
+                    ),
                   ),
                 ),
               ],
@@ -576,23 +565,15 @@ class GeneralSetting extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
-            onTap: () => Get.back(),
-            child: const Icon(Icons.arrow_back_ios, color: Colors.black)),
+            onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
           'General'.tr,
-          style: GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+          style: GoogleFonts.roboto(fontSize: 20),
         ),
         centerTitle: true,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
       ),
-      backgroundColor: Colors.white,
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
@@ -600,12 +581,12 @@ class GeneralSetting extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               'Current Language'.tr,
-              style: GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+              style: GoogleFonts.roboto(fontSize: 20),
             ),
             const SizedBox(height: 10),
             Text(
               'Translate the application to a different\nsupport language'.tr,
-              style: GoogleFonts.roboto(fontSize: 16, color: Colors.black),
+              style: GoogleFonts.roboto(fontSize: 16),
             ),
             const SizedBox(height: 20),
             InkWell(
@@ -617,7 +598,6 @@ class GeneralSetting extends StatelessWidget {
                           shadowColor: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
-                          backgroundColor: Colors.white,
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -625,53 +605,50 @@ class GeneralSetting extends StatelessWidget {
                               Text(
                                 'Select Language'.tr,
                                 style: GoogleFonts.roboto(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                               const SizedBox(height: 15),
                               const Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 15),
-                                child: Divider(color: Colors.black),
+                                child: Divider(),
                               ),
                               const SizedBox(height: 10),
                               ListTile(
                                   title: Text('English',
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 14, color: Colors.black)),
+                                      style: GoogleFonts.roboto(fontSize: 14)),
                                   onTap: () => controller.updateLocale(
                                       'en', 'US', 'English')),
                               // ListTile(
                               //   title: Text('Kyrgyz',
                               //       style: GoogleFonts.roboto(
-                              //           fontSize: 14, color: Colors.black)),
+                              //           fontSize: 14 )),
                               //   onTap: () => updateLocale('kg', 'KG', 'Kyrgyz'),
                               // ),
                               ListTile(
                                 title: Text('简体中文',
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black)),
+                                    style: GoogleFonts.roboto(fontSize: 14)),
                                 onTap: () => controller.updateLocale(
                                     'ch', 'CH', '简体中文'.tr),
                               ),
                               ListTile(
                                 title: Text('ไทย',
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black)),
+                                    style: GoogleFonts.roboto(fontSize: 14)),
                                 onTap: () =>
                                     controller.updateLocale('th', 'TH', 'ไทย'),
                               ),
                               // ListTile(
                               //   title: Text('Русский',
                               //       style: GoogleFonts.roboto(
-                              //           fontSize: 14, color: Colors.black)),
+                              //           fontSize: 14 )),
                               //   onTap: () => controller.updateLocale(
                               //       'ru', 'RU', 'Русский'),
                               // ),
                               // ListTile(
                               //   title: Text('Turkish',
                               //       style: GoogleFonts.roboto(
-                              //           fontSize: 14, color: Colors.black)),
+                              //           fontSize: 14 )),
                               //   onTap: () => controller.updateLocale(
                               //       'tr', 'TR', 'Turkish'),
                               // ),
@@ -694,8 +671,7 @@ class GeneralSetting extends StatelessWidget {
                       title: 'Language'.tr,
                       subview: Obx(() => Text(
                             controller.appController.language.value.tr,
-                            style: GoogleFonts.roboto(
-                                fontSize: 14, color: Colors.white),
+                            style: GoogleFonts.roboto(fontSize: 14),
                           )),
                       trailing: SvgPicture.asset(
                           'assets/SVG_Icons/Ic__arrow_down.svg'),
@@ -714,7 +690,6 @@ class GeneralSetting extends StatelessWidget {
                           shadowColor: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
-                          backgroundColor: Colors.white,
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -722,56 +697,49 @@ class GeneralSetting extends StatelessWidget {
                               Text(
                                 'Select Currency'.tr,
                                 style: GoogleFonts.roboto(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                               const SizedBox(height: 15),
                               const Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 15),
-                                child: Divider(color: Colors.black),
+                                child: Divider(),
                               ),
                               const SizedBox(height: 5),
                               ListTile(
                                 title: Text('USD',
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black)),
+                                    style: GoogleFonts.roboto(fontSize: 14)),
                                 onTap: () => controller.cLocale('USD'.tr),
                               ),
                               ListTile(
                                 title: Text('EUR',
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black)),
+                                    style: GoogleFonts.roboto(fontSize: 14)),
                                 onTap: () => controller.cLocale('EUR'.tr),
                               ),
                               ListTile(
                                 title: Text('CNY',
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black)),
+                                    style: GoogleFonts.roboto(fontSize: 14)),
                                 onTap: () => controller.cLocale('CNY'.tr),
                               ),
                               ListTile(
                                 title: Text('RUB',
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black)),
+                                    style: GoogleFonts.roboto(fontSize: 14)),
                                 onTap: () => controller.cLocale('RUB'.tr),
                               ),
                               ListTile(
                                 title: Text('JPY',
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black)),
+                                    style: GoogleFonts.roboto(fontSize: 14)),
                                 onTap: () => controller.cLocale('JPY'.tr),
                               ),
                               ListTile(
                                 title: Text('HKD',
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black)),
+                                    style: GoogleFonts.roboto(fontSize: 14)),
                                 onTap: () => controller.cLocale('HKD'.tr),
                               ),
                               ListTile(
                                 title: Text('GBP',
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black)),
+                                    style: GoogleFonts.roboto(fontSize: 14)),
                                 onTap: () => controller.cLocale('GBP'.tr),
                               ),
                             ],
@@ -848,23 +816,15 @@ class Security extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
-            onTap: () => Get.back(),
-            child: const Icon(Icons.arrow_back_ios, color: Colors.black)),
+            onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
           'Security & Privacy'.tr,
-          style: GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+          style: GoogleFonts.roboto(fontSize: 20),
         ),
         centerTitle: true,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
       ),
-      backgroundColor: Colors.white,
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
@@ -987,7 +947,6 @@ class Security extends StatelessWidget {
                   child: PopupMenuButton(
                       elevation: 5,
                       shadowColor: Colors.red,
-                      color: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
                       child: Row(
@@ -1023,8 +982,7 @@ class Security extends StatelessWidget {
                                         .elementAt(0)
                                         .title
                                         .tr,
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black))),
+                                    style: GoogleFonts.roboto(fontSize: 14))),
                             PopupMenuItem<String>(
                                 value: controller.securityOption
                                     .elementAt(1)
@@ -1034,8 +992,7 @@ class Security extends StatelessWidget {
                                         .elementAt(1)
                                         .title
                                         .tr,
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black))),
+                                    style: GoogleFonts.roboto(fontSize: 14))),
                           ],
                       onSelected: (String val) {
                         controller.appController.validateLogin(context, () {
@@ -1068,7 +1025,6 @@ class Security extends StatelessWidget {
                   child: PopupMenuButton(
                       elevation: 5,
                       shadowColor: Colors.red,
-                      color: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
                       child: Row(
@@ -1103,8 +1059,7 @@ class Security extends StatelessWidget {
                                         .elementAt(0)
                                         .title
                                         .tr,
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black))),
+                                    style: GoogleFonts.roboto(fontSize: 14))),
                             PopupMenuItem<String>(
                                 value:
                                     controller.unlockOption.elementAt(1).value,
@@ -1113,8 +1068,7 @@ class Security extends StatelessWidget {
                                         .elementAt(1)
                                         .title
                                         .tr,
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black))),
+                                    style: GoogleFonts.roboto(fontSize: 14))),
                             PopupMenuItem<String>(
                                 value:
                                     controller.unlockOption.elementAt(2).value,
@@ -1123,8 +1077,7 @@ class Security extends StatelessWidget {
                                         .elementAt(2)
                                         .title
                                         .tr,
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 14, color: Colors.black))),
+                                    style: GoogleFonts.roboto(fontSize: 14))),
                           ],
                       onSelected: (String val) {
                         controller.unlockValue.value = controller.unlockOption
@@ -1155,7 +1108,6 @@ class Security extends StatelessWidget {
                   child: PopupMenuButton(
                     elevation: 5,
                     shadowColor: Colors.red,
-                    color: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                     child: Row(
@@ -1191,57 +1143,43 @@ class Security extends StatelessWidget {
                           child: Text(
                               controller.autoLockOption.elementAt(0).title.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400))),
+                                  fontSize: 14, fontWeight: FontWeight.w400))),
                       PopupMenuItem<String>(
                           value: controller.autoLockOption.elementAt(1).value,
                           child: Text(
                               controller.autoLockOption.elementAt(1).title.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400))),
+                                  fontSize: 14, fontWeight: FontWeight.w400))),
                       PopupMenuItem<String>(
                           value: controller.autoLockOption.elementAt(2).value,
                           child: Text(
                               controller.autoLockOption.elementAt(2).title.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400))),
+                                  fontSize: 14, fontWeight: FontWeight.w400))),
                       PopupMenuItem<String>(
                           value: controller.autoLockOption.elementAt(3).value,
                           child: Text(
                               controller.autoLockOption.elementAt(3).title.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400))),
+                                  fontSize: 14, fontWeight: FontWeight.w400))),
                       PopupMenuItem<String>(
                           value: controller.autoLockOption.elementAt(4).value,
                           child: Text(
                               controller.autoLockOption.elementAt(4).title.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400))),
+                                  fontSize: 14, fontWeight: FontWeight.w400))),
                       PopupMenuItem<String>(
                           value: controller.autoLockOption.elementAt(5).value,
                           child: Text(
                               controller.autoLockOption.elementAt(5).title.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400))),
+                                  fontSize: 14, fontWeight: FontWeight.w400))),
                       PopupMenuItem<String>(
                           value: controller.autoLockOption.elementAt(6).value,
                           child: Text(
                               controller.autoLockOption.elementAt(6).title.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400))),
+                                  fontSize: 14, fontWeight: FontWeight.w400))),
                     ],
                     onSelected: (String val) {
                       List<String> str = val.split('#');
@@ -1283,23 +1221,15 @@ class GetinTouch extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
-            onTap: () => Get.back(),
-            child: const Icon(Icons.arrow_back_ios, color: Colors.black)),
+            onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
           'Get In Touch'.tr,
-          style: GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+          style: GoogleFonts.roboto(fontSize: 20),
         ),
         centerTitle: true,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
       ),
-      backgroundColor: Colors.white,
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
@@ -1566,23 +1496,15 @@ class About extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
-            onTap: () => Get.back(),
-            child: const Icon(Icons.arrow_back_ios, color: Colors.black)),
+            onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
           'About Tixcash Wallet'.tr,
-          style: GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+          style: GoogleFonts.roboto(fontSize: 20),
         ),
         centerTitle: true,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
       ),
-      backgroundColor: Colors.white,
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
@@ -1690,7 +1612,7 @@ class About extends StatelessWidget {
           children: [
             Text(
               '@2023 Tixcash. All rights reserved'.tr,
-              style: GoogleFonts.roboto(fontSize: 16, color: Colors.black),
+              style: GoogleFonts.roboto(fontSize: 16),
             ),
           ],
         ),
@@ -1755,7 +1677,7 @@ class About extends StatelessWidget {
 //           elevation: 0,
 //           title: Text(
 //             'Settings'.tr,
-//             style: GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+//             style: GoogleFonts.roboto(fontSize: 20 ),
 //           ),
 //           systemOverlayStyle: const SystemUiOverlayStyle(
 //             statusBarColor: Colors.white,
@@ -1774,16 +1696,16 @@ class About extends StatelessWidget {
 //                     Get.to(GeneralSetting());
 //                   },
 //                   trailing: const Icon(Icons.arrow_forward_ios,
-//                       color: Colors.black, size: 19),
+//                         size: 19),
 //                   title: Text(
 //                     'General'.tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 20 ),
 //                   ),
 //                   subtitle: Text(
 //                     'Language, Pop-up notification'.tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 16, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 16 ),
 //                   ),
 //                 ),
 //                 // const Divider(color: Colors.white12,),
@@ -1795,17 +1717,17 @@ class About extends StatelessWidget {
 //                     Get.to(Security());
 //                   },
 //                   trailing: const Icon(Icons.arrow_forward_ios,
-//                       color: Colors.black, size: 19),
+//                         size: 19),
 //                   title: Text(
 //                     'Security & Privacy'.tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 20 ),
 //                   ),
 //                   subtitle: Text(
 //                     'Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock'
 //                         .tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 16, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 16 ),
 //                   ),
 //                 ),
 //                 const SizedBox(height: 5),
@@ -1816,17 +1738,17 @@ class About extends StatelessWidget {
 //                     Get.to(GetinTouch());
 //                   },
 //                   trailing: const Icon(Icons.arrow_forward_ios,
-//                       color: Colors.black, size: 19),
+//                         size: 19),
 //                   title: Text(
 //                     'Get In Touch'.tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 20 ),
 //                   ),
 //                   subtitle: Text(
 //                     'Share This App, Review The App, Join telegram, Support Center'
 //                         .tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 16, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 16 ),
 //                   ),
 //                 ),
 //                 const SizedBox(height: 5),
@@ -1837,17 +1759,17 @@ class About extends StatelessWidget {
 //                     Get.to(About());
 //                   },
 //                   trailing: const Icon(Icons.arrow_forward_ios,
-//                       color: Colors.black, size: 19),
+//                         size: 19),
 //                   title: Text(
 //                     'About Section'.tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 20 ),
 //                   ),
 //                   subtitle: Text(
 //                     'About Tixcash Wallet, Terms & Condition, Privacy Policy, App Version'
 //                         .tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 16, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 16 ),
 //                   ),
 //                 ),
 //                 // MineCell(
@@ -1855,7 +1777,7 @@ class About extends StatelessWidget {
 //                 //   subview: Text(
 //                 //     'Get Premium'.tr,
 //                 //     style:
-//                 //         GoogleFonts.roboto(fontSize: 14, color: Colors.black),
+//                 //         GoogleFonts.roboto(fontSize: 14 ),
 //                 //   ),
 //                 //   onPressed: () {
 //                 //     Get.toNamed(Routes.PREMIUM_VIEW);
@@ -1867,7 +1789,7 @@ class About extends StatelessWidget {
 //                   subview: Obx(() => Text(
 //                         controller.appController.language.value.tr,
 //                         style: GoogleFonts.roboto(
-//                             fontSize: 14, color: Colors.black),
+//                             fontSize: 14 ),
 //                       )),
 //                   onPressed: () {
 //                     showDialog(
@@ -1883,7 +1805,7 @@ class About extends StatelessWidget {
 //                                   Text(
 //                                     'Select Language'.tr,
 //                                     style: GoogleFonts.roboto(
-//                                         fontSize: 14, color: Colors.black),
+//                                         fontSize: 14 ),
 //                                   ),
 //                                   ListTile(
 //                                       title: Text('English',
@@ -1895,34 +1817,34 @@ class About extends StatelessWidget {
 //                                   // ListTile(
 //                                   //   title: Text('Kyrgyz',
 //                                   //       style: GoogleFonts.roboto(
-//                                   //           fontSize: 14, color: Colors.black)),
+//                                   //           fontSize: 14 )),
 //                                   //   onTap: () => updateLocale('kg', 'KG', 'Kyrgyz'),
 //                                   // ),
 //                                   ListTile(
 //                                     title: Text('简体中文',
 //                                         style: GoogleFonts.roboto(
-//                                             fontSize: 14, color: Colors.black)),
+//                                             fontSize: 14 )),
 //                                     onTap: () => controller.updateLocale(
 //                                         'ch', 'CH', '简体中文'.tr),
 //                                   ),
 //                                   ListTile(
 //                                     title: Text('ไทย',
 //                                         style: GoogleFonts.roboto(
-//                                             fontSize: 14, color: Colors.black)),
+//                                             fontSize: 14 )),
 //                                     onTap: () => controller.updateLocale(
 //                                         'th', 'TH', 'ไทย'),
 //                                   ),
 //                                   // ListTile(
 //                                   //   title: Text('Russian',
 //                                   //       style: GoogleFonts.roboto(
-//                                   //           fontSize: 14, color: Colors.black)),
+//                                   //           fontSize: 14 )),
 //                                   //   onTap: () =>
 //                                   //       updateLocale('ru', 'RU', 'Russian'),
 //                                   // ),
 //                                   // ListTile(
 //                                   //   title: Text('Turkish',
 //                                   //       style: GoogleFonts.roboto(
-//                                   //           fontSize: 14, color: Colors.black)),
+//                                   //           fontSize: 14 )),
 //                                   //   onTap: () =>
 //                                   //       updateLocale('tr', 'TR', 'Turkish'),
 //                                   // ),
@@ -1983,7 +1905,7 @@ class About extends StatelessWidget {
 //                   subview: Text(
 //                     'show'.tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 14, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 14 ),
 //                   ),
 //                   onPressed: () {
 //                     // CreateAccountController().backupPhrase(context);
@@ -2006,7 +1928,7 @@ class About extends StatelessWidget {
 //                   subview: Text(
 //                     'show'.tr,
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 14, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 14 ),
 //                   ),
 //                   onPressed: () {
 //                     controller.appController.validateLogin(context, () {
@@ -2026,7 +1948,7 @@ class About extends StatelessWidget {
 //                   subview: Text(
 //                     '*****',
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 14, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 14 ),
 //                   ),
 //                   onPressed: () {
 //                     controller.appController.validateLogin(context, () {
@@ -2054,7 +1976,7 @@ class About extends StatelessWidget {
 //                           Obx(() => Text(
 //                                 controller.securityValue.value.tr,
 //                                 style: GoogleFonts.roboto(
-//                                     fontSize: 14, color: Colors.black),
+//                                     fontSize: 14 ),
 //                               )),
 //                           const SizedBox(
 //                             width: 24,
@@ -2077,7 +1999,7 @@ class About extends StatelessWidget {
 //                                         .title
 //                                         .tr,
 //                                     style: GoogleFonts.roboto(
-//                                         fontSize: 14, color: Colors.black))),
+//                                         fontSize: 14 ))),
 //                             PopupMenuItem<String>(
 //                                 value: controller.securityOption
 //                                     .elementAt(1)
@@ -2088,7 +2010,7 @@ class About extends StatelessWidget {
 //                                         .title
 //                                         .tr,
 //                                     style: GoogleFonts.roboto(
-//                                         fontSize: 14, color: Colors.black))),
+//                                         fontSize: 14 ))),
 //                           ],
 //                       onSelected: (String val) {
 //                         controller.appController.validateLogin(context, () {
@@ -2114,7 +2036,7 @@ class About extends StatelessWidget {
 //                           Obx(() => Text(
 //                                 controller.unlockValue.value.tr,
 //                                 style: const TextStyle(
-//                                     fontSize: 16, color: Colors.black),
+//                                     fontSize: 16 ),
 //                               )),
 //                           const SizedBox(
 //                             width: 24,
@@ -2136,7 +2058,7 @@ class About extends StatelessWidget {
 //                                         .title
 //                                         .tr,
 //                                     style: GoogleFonts.roboto(
-//                                         fontSize: 14, color: Colors.black))),
+//                                         fontSize: 14 ))),
 //                             PopupMenuItem<String>(
 //                                 value:
 //                                     controller.unlockOption.elementAt(1).value,
@@ -2146,7 +2068,7 @@ class About extends StatelessWidget {
 //                                         .title
 //                                         .tr,
 //                                     style: GoogleFonts.roboto(
-//                                         fontSize: 14, color: Colors.black))),
+//                                         fontSize: 14 ))),
 //                             PopupMenuItem<String>(
 //                                 value:
 //                                     controller.unlockOption.elementAt(2).value,
@@ -2156,7 +2078,7 @@ class About extends StatelessWidget {
 //                                         .title
 //                                         .tr,
 //                                     style: GoogleFonts.roboto(
-//                                         fontSize: 14, color: Colors.black))),
+//                                         fontSize: 14 ))),
 //                           ],
 //                       onSelected: (String val) {
 //                         controller.unlockValue.value = controller.unlockOption
@@ -2182,7 +2104,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockValue.value.tr,
 //                               style: const TextStyle(
 //                                 fontSize: 16,
-//                                 color: Colors.black,
+//                                  
 //                               ),
 //                             )),
 //                         const SizedBox(
@@ -2202,7 +2124,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(0).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                   color: Colors.black,
+//                                    
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(1).value,
@@ -2210,7 +2132,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(1).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                   color: Colors.black,
+//                                    
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(2).value,
@@ -2218,7 +2140,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(2).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                   color: Colors.black,
+//                                    
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(3).value,
@@ -2226,7 +2148,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(3).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                   color: Colors.black,
+//                                    
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(4).value,
@@ -2234,7 +2156,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(4).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                   color: Colors.black,
+//                                    
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(5).value,
@@ -2242,7 +2164,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(5).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                   color: Colors.black,
+//                                    
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(6).value,
@@ -2250,7 +2172,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(6).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                   color: Colors.black,
+//                                    
 //                                   fontWeight: FontWeight.w400))),
 //                     ],
 //                     onSelected: (String val) {
@@ -2372,7 +2294,7 @@ class About extends StatelessWidget {
 //                   trailing: Text(
 //                     '1.15.1.2341',
 //                     style:
-//                         GoogleFonts.roboto(fontSize: 14, color: Colors.black),
+//                         GoogleFonts.roboto(fontSize: 14 ),
 //                   ),
 //                 ),
 //               ],

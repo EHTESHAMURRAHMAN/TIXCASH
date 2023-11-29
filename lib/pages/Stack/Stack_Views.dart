@@ -21,7 +21,6 @@ class StackViews extends GetView<StackController> {
     controller.getcheckreferall();
     final controller1 = Get.put(HomeController());
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           'Stake'.tr,
@@ -32,16 +31,8 @@ class StackViews extends GetView<StackController> {
           onTap: () => Get.back(),
           child: const Icon(
             Icons.arrow_back_ios,
-            color: Colors.black,
           ),
         ),
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
         elevation: 0,
         automaticallyImplyLeading: false,
       ),
@@ -108,15 +99,11 @@ class StackViews extends GetView<StackController> {
                       controller.getcheckreferall();
                     },
                     controller: controller.controllerStakeAmount,
-                    style: GoogleFonts.roboto(
-                        fontSize: 16, color: ColorConstants.black),
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         hintText: 'Enter the Amount'.tr,
-                        hintStyle:
-                            const TextStyle(color: Colors.black, fontSize: 12),
-                        labelStyle:
-                            const TextStyle(color: Colors.black, fontSize: 12),
+                        hintStyle: const TextStyle(fontSize: 12),
+                        labelStyle: const TextStyle(fontSize: 12),
                         label: Text('Enter the Amount'.tr),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -133,9 +120,9 @@ class StackViews extends GetView<StackController> {
                     children: [
                       Text('Available Balance :'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black)),
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                          )),
                       const SizedBox(width: 8),
                       Text(controller1.totalUSD.value.toStringAsFixed(2),
                           style: GoogleFonts.roboto(
@@ -145,9 +132,9 @@ class StackViews extends GetView<StackController> {
                       const SizedBox(width: 4),
                       Text('TXH'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black)),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          )),
                     ],
                   ),
                   const SizedBox(height: 15),
@@ -187,7 +174,6 @@ class StackViews extends GetView<StackController> {
                                     ? Text(
                                         'Select Staking Plan'.tr,
                                         style: const TextStyle(
-                                            color: Colors.black,
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold),
                                       )
@@ -198,14 +184,12 @@ class StackViews extends GetView<StackController> {
                                         child: Text(
                                           controller.selectStakeDays.value.tr,
                                           style: const TextStyle(
-                                              color: Colors.black,
                                               fontSize: 15,
                                               fontWeight: FontWeight.bold),
                                           maxLines: 1,
                                         ))),
                                 const Spacer(),
-                                const Icon(Icons.arrow_drop_down,
-                                    color: Colors.black, size: 30)
+                                const Icon(Icons.arrow_drop_down, size: 30)
                               ])))),
                   const SizedBox(height: 20),
                   Row(
@@ -213,14 +197,14 @@ class StackViews extends GetView<StackController> {
                     children: [
                       Text('Lock-in Amount limit'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          )),
                       Text('Staking Limit Left'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          )),
                     ],
                   ),
                   const SizedBox(height: 15),
@@ -230,14 +214,14 @@ class StackViews extends GetView<StackController> {
                       Obx(() => controller.selectid.value == 5
                           ? Text('Min : No Limit'.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black))
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ))
                           : Text('Min : 500 TXH'.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black))),
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ))),
                       Obx(
                         () => controller.selectid.value == 5
                             ? Row(
@@ -246,7 +230,6 @@ class StackViews extends GetView<StackController> {
                                     'Unlimited'.tr,
                                     style: const TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.black,
                                         fontSize: 17),
                                   ),
                                   const SizedBox(width: 10),
@@ -254,7 +237,6 @@ class StackViews extends GetView<StackController> {
                                     'TXH',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.black,
                                         fontSize: 14),
                                   ),
                                 ],
@@ -266,7 +248,6 @@ class StackViews extends GetView<StackController> {
                                         '0.00',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.black,
                                             fontSize: 17),
                                       ),
                                       SizedBox(width: 10),
@@ -274,7 +255,6 @@ class StackViews extends GetView<StackController> {
                                         'TXH',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.black,
                                             fontSize: 14),
                                       ),
                                     ],
@@ -285,7 +265,6 @@ class StackViews extends GetView<StackController> {
                                             '${controller.stakeDashboardResponse.value?.remain}',
                                             style: const TextStyle(
                                                 fontWeight: FontWeight.bold,
-                                                color: Colors.black,
                                                 fontSize: 17),
                                           )),
                                       const SizedBox(width: 10),
@@ -293,7 +272,6 @@ class StackViews extends GetView<StackController> {
                                         'TXH',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.black,
                                             fontSize: 14),
                                       ),
                                     ],
@@ -305,14 +283,14 @@ class StackViews extends GetView<StackController> {
                   Obx(() => controller.selectid.value == 0
                       ? Text('Max : No Limit'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black))
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ))
                       : Text('Max : 50k TXH'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black))),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ))),
                   const SizedBox(height: 20),
 
                   Obx(() => controller.selectid.value == 0
@@ -322,15 +300,15 @@ class StackViews extends GetView<StackController> {
                               children: [
                                 Text('Date of Stake :'.tr,
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black)),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    )),
                                 const SizedBox(width: 15),
                                 Text('YYYY : MM : DD'.tr,
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black))
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ))
                               ],
                             ),
                             const SizedBox(height: 10),
@@ -338,15 +316,15 @@ class StackViews extends GetView<StackController> {
                               children: [
                                 Text('Start Date :'.tr,
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black)),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    )),
                                 const SizedBox(width: 15),
                                 Text('YYYY : MM : DD'.tr,
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black))
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ))
                               ],
                             ),
                             const SizedBox(height: 10),
@@ -354,15 +332,15 @@ class StackViews extends GetView<StackController> {
                               children: [
                                 Text('End Date :'.tr,
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black)),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    )),
                                 const SizedBox(width: 15),
                                 Text('YYYY : MM : DD'.tr,
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black))
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ))
                               ],
                             ),
                           ],
@@ -373,18 +351,18 @@ class StackViews extends GetView<StackController> {
                               children: [
                                 Text('Date of Stake :'.tr,
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black)),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    )),
                                 const SizedBox(width: 15),
                                 Text(
                                     controller.stakedateResponse.value
                                             ?.currentdate ??
                                         '',
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black))
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ))
                               ],
                             ),
                             const SizedBox(height: 10),
@@ -392,18 +370,18 @@ class StackViews extends GetView<StackController> {
                               children: [
                                 Text('Start Date :'.tr,
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black)),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    )),
                                 const SizedBox(width: 15),
                                 Text(
                                     controller.stakedateResponse.value
                                             ?.stardate ??
                                         '',
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black))
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ))
                               ],
                             ),
                             const SizedBox(height: 10),
@@ -411,18 +389,18 @@ class StackViews extends GetView<StackController> {
                               children: [
                                 Text('End Date :'.tr,
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black)),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    )),
                                 const SizedBox(width: 15),
                                 Text(
                                     controller
                                             .stakedateResponse.value?.enddate ??
                                         '',
                                     style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black))
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ))
                               ],
                             ),
                           ],
@@ -436,7 +414,7 @@ class StackViews extends GetView<StackController> {
                   //                   style: GoogleFonts.roboto(
                   //                       fontSize: 14,
                   //                       fontWeight: FontWeight.bold,
-                  //                       color: Colors.black)),
+                  //                         )),
                   //               const SizedBox(width: 15),
                   //               Text(
                   //                   controller
@@ -445,7 +423,7 @@ class StackViews extends GetView<StackController> {
                   //                   style: GoogleFonts.roboto(
                   //                       fontSize: 14,
                   //                       fontWeight: FontWeight.bold,
-                  //                       color: Colors.black))
+                  //                         ))
                   //             ],
                   //           ),
                   //           const SizedBox(height: 10),
@@ -455,13 +433,13 @@ class StackViews extends GetView<StackController> {
                   //                   style: GoogleFonts.roboto(
                   //                       fontSize: 14,
                   //                       fontWeight: FontWeight.bold,
-                  //                       color: Colors.black)),
+                  //                         )),
                   //               const SizedBox(width: 15),
                   //               Text(first,
                   //                   style: GoogleFonts.roboto(
                   //                       fontSize: 14,
                   //                       fontWeight: FontWeight.bold,
-                  //                       color: Colors.black))
+                  //                         ))
                   //             ],
                   //           ),
                   //           const SizedBox(height: 10),
@@ -471,13 +449,13 @@ class StackViews extends GetView<StackController> {
                   //                   style: GoogleFonts.roboto(
                   //                       fontSize: 14,
                   //                       fontWeight: FontWeight.bold,
-                  //                       color: Colors.black)),
+                  //                         )),
                   //               const SizedBox(width: 15),
                   //               Text(first1,
                   //                   style: GoogleFonts.roboto(
                   //                       fontSize: 14,
                   //                       fontWeight: FontWeight.bold,
-                  //                       color: Colors.black))
+                  //                         ))
                   //             ],
                   //           ),
                   //         ],
@@ -491,13 +469,13 @@ class StackViews extends GetView<StackController> {
                   //                       style: GoogleFonts.roboto(
                   //                           fontSize: 14,
                   //                           fontWeight: FontWeight.bold,
-                  //                           color: Colors.black)),
+                  //                             )),
                   //                   const SizedBox(width: 15),
                   //                   Text(now,
                   //                       style: GoogleFonts.roboto(
                   //                           fontSize: 14,
                   //                           fontWeight: FontWeight.bold,
-                  //                           color: Colors.black))
+                  //                             ))
                   //                 ],
                   //               ),
                   //               const SizedBox(height: 10),
@@ -507,13 +485,13 @@ class StackViews extends GetView<StackController> {
                   //                       style: GoogleFonts.roboto(
                   //                           fontSize: 14,
                   //                           fontWeight: FontWeight.bold,
-                  //                           color: Colors.black)),
+                  //                             )),
                   //                   const SizedBox(width: 15),
                   //                   Text(first,
                   //                       style: GoogleFonts.roboto(
                   //                           fontSize: 14,
                   //                           fontWeight: FontWeight.bold,
-                  //                           color: Colors.black))
+                  //                             ))
                   //                 ],
                   //               ),
                   //               const SizedBox(height: 10),
@@ -523,13 +501,13 @@ class StackViews extends GetView<StackController> {
                   //                       style: GoogleFonts.roboto(
                   //                           fontSize: 14,
                   //                           fontWeight: FontWeight.bold,
-                  //                           color: Colors.black)),
+                  //                             )),
                   //                   const SizedBox(width: 15),
                   //                   Text(first2,
                   //                       style: GoogleFonts.roboto(
                   //                           fontSize: 14,
                   //                           fontWeight: FontWeight.bold,
-                  //                           color: Colors.black))
+                  //                             ))
                   //                 ],
                   //               ),
                   //             ],
@@ -543,13 +521,13 @@ class StackViews extends GetView<StackController> {
                   //                           style: GoogleFonts.roboto(
                   //                               fontSize: 14,
                   //                               fontWeight: FontWeight.bold,
-                  //                               color: Colors.black)),
+                  //                                 )),
                   //                       const SizedBox(width: 15),
                   //                       Text(now,
                   //                           style: GoogleFonts.roboto(
                   //                               fontSize: 14,
                   //                               fontWeight: FontWeight.bold,
-                  //                               color: Colors.black))
+                  //                                 ))
                   //                     ],
                   //                   ),
                   //                   const SizedBox(height: 10),
@@ -559,13 +537,13 @@ class StackViews extends GetView<StackController> {
                   //                           style: GoogleFonts.roboto(
                   //                               fontSize: 14,
                   //                               fontWeight: FontWeight.bold,
-                  //                               color: Colors.black)),
+                  //                                 )),
                   //                       const SizedBox(width: 15),
                   //                       Text(first,
                   //                           style: GoogleFonts.roboto(
                   //                               fontSize: 14,
                   //                               fontWeight: FontWeight.bold,
-                  //                               color: Colors.black))
+                  //                                 ))
                   //                     ],
                   //                   ),
                   //                   const SizedBox(height: 10),
@@ -575,13 +553,13 @@ class StackViews extends GetView<StackController> {
                   //                           style: GoogleFonts.roboto(
                   //                               fontSize: 14,
                   //                               fontWeight: FontWeight.bold,
-                  //                               color: Colors.black)),
+                  //                                 )),
                   //                       const SizedBox(width: 15),
                   //                       Text(first3,
                   //                           style: GoogleFonts.roboto(
                   //                               fontSize: 14,
                   //                               fontWeight: FontWeight.bold,
-                  //                               color: Colors.black))
+                  //                                 ))
                   //                     ],
                   //                   ),
                   //                 ],
@@ -595,13 +573,13 @@ class StackViews extends GetView<StackController> {
                   //                               style: GoogleFonts.roboto(
                   //                                   fontSize: 14,
                   //                                   fontWeight: FontWeight.bold,
-                  //                                   color: Colors.black)),
+                  //                                     )),
                   //                           const SizedBox(width: 15),
                   //                           Text(now,
                   //                               style: GoogleFonts.roboto(
                   //                                   fontSize: 14,
                   //                                   fontWeight: FontWeight.bold,
-                  //                                   color: Colors.black))
+                  //                                     ))
                   //                         ],
                   //                       ),
                   //                       const SizedBox(height: 10),
@@ -611,13 +589,13 @@ class StackViews extends GetView<StackController> {
                   //                               style: GoogleFonts.roboto(
                   //                                   fontSize: 14,
                   //                                   fontWeight: FontWeight.bold,
-                  //                                   color: Colors.black)),
+                  //                                     )),
                   //                           const SizedBox(width: 15),
                   //                           Text(first,
                   //                               style: GoogleFonts.roboto(
                   //                                   fontSize: 14,
                   //                                   fontWeight: FontWeight.bold,
-                  //                                   color: Colors.black))
+                  //                                     ))
                   //                         ],
                   //                       ),
                   //                       const SizedBox(height: 10),
@@ -627,13 +605,13 @@ class StackViews extends GetView<StackController> {
                   //                               style: GoogleFonts.roboto(
                   //                                   fontSize: 14,
                   //                                   fontWeight: FontWeight.bold,
-                  //                                   color: Colors.black)),
+                  //                                     )),
                   //                           const SizedBox(width: 15),
                   //                           Text(first4,
                   //                               style: GoogleFonts.roboto(
                   //                                   fontSize: 14,
                   //                                   fontWeight: FontWeight.bold,
-                  //                                   color: Colors.black))
+                  //                                     ))
                   //                         ],
                   //                       ),
                   //                     ],
@@ -649,14 +627,14 @@ class StackViews extends GetView<StackController> {
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black)),
+                  //                                         )),
                   //                               const SizedBox(width: 15),
                   //                               Text(now,
                   //                                   style: GoogleFonts.roboto(
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black))
+                  //                                         ))
                   //                             ],
                   //                           ),
                   //                           const SizedBox(height: 10),
@@ -667,14 +645,14 @@ class StackViews extends GetView<StackController> {
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black)),
+                  //                                         )),
                   //                               const SizedBox(width: 15),
                   //                               Text(first,
                   //                                   style: GoogleFonts.roboto(
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black))
+                  //                                         ))
                   //                             ],
                   //                           ),
                   //                           const SizedBox(height: 10),
@@ -685,14 +663,14 @@ class StackViews extends GetView<StackController> {
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black)),
+                  //                                         )),
                   //                               const SizedBox(width: 15),
                   //                               Text(first3,
                   //                                   style: GoogleFonts.roboto(
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black))
+                  //                                         ))
                   //                             ],
                   //                           ),
                   //                         ],
@@ -706,14 +684,14 @@ class StackViews extends GetView<StackController> {
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black)),
+                  //                                         )),
                   //                               const SizedBox(width: 15),
                   //                               Text('00-00-0000',
                   //                                   style: GoogleFonts.roboto(
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black))
+                  //                                         ))
                   //                             ],
                   //                           ),
                   //                           const SizedBox(height: 10),
@@ -724,14 +702,14 @@ class StackViews extends GetView<StackController> {
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black)),
+                  //                                         )),
                   //                               const SizedBox(width: 15),
                   //                               Text('00-00-0000',
                   //                                   style: GoogleFonts.roboto(
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black))
+                  //                                         ))
                   //                             ],
                   //                           ),
                   //                           const SizedBox(height: 10),
@@ -742,14 +720,14 @@ class StackViews extends GetView<StackController> {
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black)),
+                  //                                         )),
                   //                               const SizedBox(width: 15),
                   //                               Text('00-00-0000',
                   //                                   style: GoogleFonts.roboto(
                   //                                       fontSize: 14,
                   //                                       fontWeight:
                   //                                           FontWeight.bold,
-                  //                                       color: Colors.black))
+                  //                                         ))
                   //                             ],
                   //                           ),
                   //                         ],
@@ -759,9 +737,9 @@ class StackViews extends GetView<StackController> {
                     children: [
                       Text('Estimated APY :'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          )),
                       const SizedBox(width: 15),
                       Obx(() => controller.selectid.value == 0
                           ? const Text(
@@ -817,9 +795,9 @@ class StackViews extends GetView<StackController> {
                     children: [
                       Text('My Sponsor Referral Code :'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)),
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                          )),
                       Obx(() => controller
                                   .sponCodeResponse.value?.sponsorcode ==
                               ''
@@ -860,9 +838,9 @@ class StackViews extends GetView<StackController> {
                   //   decoration: InputDecoration(
                   //       hintText: 'Enter Referral Code'.tr,
                   //       hintStyle:
-                  //           const TextStyle(color: Colors.black, fontSize: 12),
+                  //           const TextStyle(   fontSize: 12),
                   //       labelStyle:
-                  //           const TextStyle(color: Colors.black, fontSize: 12),
+                  //           const TextStyle(   fontSize: 12),
                   //       label: Text('Enter Referral Code'.tr),
                   //       enabledBorder: OutlineInputBorder(
                   //           borderSide: BorderSide(
@@ -931,7 +909,7 @@ class StackViews extends GetView<StackController> {
 //             onTap: () => Get.back(),
 //             child: const Icon(
 //               Icons.arrow_back_ios,
-//               color: Colors.black,
+//
 //             )),
 //         systemOverlayStyle: const SystemUiOverlayStyle(
 //           statusBarColor: Colors.white,
@@ -962,7 +940,7 @@ class StackViews extends GetView<StackController> {
 //                       borderRadius: BorderRadius.circular(18),
 //                       boxShadow: const [
 //                         BoxShadow(
-//                             color: Colors.black12,
+//                               12,
 //                             offset: Offset(2, 2),
 //                             spreadRadius: 2,
 //                             blurRadius: 4)
@@ -1011,7 +989,7 @@ class StackViews extends GetView<StackController> {
 //                                     style: TextStyle(
 //                                         fontSize: 14,
 //                                         fontWeight: FontWeight.bold,
-//                                         color: Colors.black)),
+//                                           )),
 //                               ],
 //                             ),
 //                             Row(
@@ -1025,7 +1003,7 @@ class StackViews extends GetView<StackController> {
 //                                     style: TextStyle(
 //                                         fontSize: 14,
 //                                         fontWeight: FontWeight.bold,
-//                                         color: Colors.black)),
+//                                           )),
 //                               ],
 //                             ),
 //                             Row(
@@ -1039,7 +1017,7 @@ class StackViews extends GetView<StackController> {
 //                                     style: TextStyle(
 //                                         fontSize: 14,
 //                                         fontWeight: FontWeight.bold,
-//                                         color: Colors.black)),
+//                                           )),
 //                               ],
 //                             ),
 //                           ],
@@ -1056,7 +1034,7 @@ class StackViews extends GetView<StackController> {
 //                       borderRadius: BorderRadius.circular(18),
 //                       boxShadow: const [
 //                         BoxShadow(
-//                             color: Colors.black12,
+//                               12,
 //                             offset: Offset(2, 2),
 //                             spreadRadius: 2,
 //                             blurRadius: 4)
@@ -1105,7 +1083,7 @@ class StackViews extends GetView<StackController> {
 //                                     style: TextStyle(
 //                                         fontSize: 14,
 //                                         fontWeight: FontWeight.bold,
-//                                         color: Colors.black)),
+//                                           )),
 //                               ],
 //                             ),
 //                             Row(
@@ -1119,7 +1097,7 @@ class StackViews extends GetView<StackController> {
 //                                     style: TextStyle(
 //                                         fontSize: 14,
 //                                         fontWeight: FontWeight.bold,
-//                                         color: Colors.black)),
+//                                           )),
 //                               ],
 //                             ),
 //                             Row(
@@ -1133,7 +1111,7 @@ class StackViews extends GetView<StackController> {
 //                                     style: TextStyle(
 //                                         fontSize: 14,
 //                                         fontWeight: FontWeight.bold,
-//                                         color: Colors.black)),
+//                                           )),
 //                               ],
 //                             ),
 //                           ],
@@ -1150,7 +1128,7 @@ class StackViews extends GetView<StackController> {
 //                       borderRadius: BorderRadius.circular(18),
 //                       boxShadow: const [
 //                         BoxShadow(
-//                             color: Colors.black12,
+//                               12,
 //                             offset: Offset(2, 2),
 //                             spreadRadius: 2,
 //                             blurRadius: 4)
@@ -1195,7 +1173,7 @@ class StackViews extends GetView<StackController> {
 //                                     style: TextStyle(
 //                                         fontSize: 14,
 //                                         fontWeight: FontWeight.bold,
-//                                         color: Colors.black)),
+//                                           )),
 //                               ],
 //                             ),
 //                             Row(
@@ -1209,7 +1187,7 @@ class StackViews extends GetView<StackController> {
 //                                     style: TextStyle(
 //                                         fontSize: 14,
 //                                         fontWeight: FontWeight.bold,
-//                                         color: Colors.black)),
+//                                           )),
 //                               ],
 //                             ),
 //                             Row(
@@ -1223,7 +1201,7 @@ class StackViews extends GetView<StackController> {
 //                                     style: TextStyle(
 //                                         fontSize: 14,
 //                                         fontWeight: FontWeight.bold,
-//                                         color: Colors.black)),
+//                                           )),
 //                               ],
 //                             ),
 //                           ],
@@ -1258,7 +1236,6 @@ class stakingIncome extends GetView {
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
             ),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
@@ -1276,9 +1253,9 @@ class stakingIncome extends GetView {
               ? Center(
                   child: Text('No Stake'.tr,
                       style: GoogleFonts.roboto(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black)))
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      )))
               : ListView.builder(
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
@@ -1307,30 +1284,30 @@ class stakingIncome extends GetView {
                                     children: [
                                       Text('Total Income :'.tr,
                                           style: GoogleFonts.roboto(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black)),
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                          )),
                                       const SizedBox(width: 17),
                                       Text('${model.stakingincome}',
                                           style: GoogleFonts.roboto(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black)),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          )),
                                     ],
                                   ),
                                   Row(
                                     children: [
                                       Text('Remaining Income :'.tr,
                                           style: GoogleFonts.roboto(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black)),
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                          )),
                                       const SizedBox(width: 17),
                                       Text('${model.remainingamt}',
                                           style: GoogleFonts.roboto(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black)),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          )),
                                     ],
                                   )
                                 ],
@@ -1389,15 +1366,15 @@ class stakingIncome extends GetView {
                                 children: [
                                   Text('Staking Value'.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                   const SizedBox(width: 15),
                                   Text('${model.stakeamount}',
                                       style: GoogleFonts.roboto(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black))
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                      ))
                                 ],
                               ),
                               Column(
@@ -1405,15 +1382,15 @@ class stakingIncome extends GetView {
                                 children: [
                                   Text('Staking Period'.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                   const SizedBox(width: 15),
                                   Text(model.stakeday,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black))
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                      ))
                                 ],
                               )
                             ],
@@ -1427,15 +1404,15 @@ class stakingIncome extends GetView {
                                 children: [
                                   Text('Staking Start Date'.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                   const SizedBox(width: 15),
                                   Text(model.stake_date,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black))
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                      ))
                                 ],
                               ),
                               Column(
@@ -1443,15 +1420,15 @@ class stakingIncome extends GetView {
                                 children: [
                                   Text('Staking End Date'.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                   const SizedBox(width: 15),
                                   Text(model.end_date,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black))
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                      ))
                                 ],
                               )
                             ],
@@ -1465,15 +1442,15 @@ class stakingIncome extends GetView {
                                 children: [
                                   Text('Staking Paid Days'.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                   const SizedBox(width: 15),
                                   Text(model.paid_Days,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black))
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                      ))
                                 ],
                               ),
                               Column(
@@ -1481,15 +1458,15 @@ class stakingIncome extends GetView {
                                 children: [
                                   Text('Staking APY'.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                   const SizedBox(width: 15),
                                   Obx(() => Text('${model.apy}%',
                                       style: GoogleFonts.roboto(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)))
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                      )))
                                 ],
                               )
                             ],
@@ -1513,7 +1490,6 @@ class stakingIncomeHistory extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
             'Staking History'.tr,
@@ -1524,16 +1500,8 @@ class stakingIncomeHistory extends GetView {
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
             ),
           ),
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
           elevation: 0,
           automaticallyImplyLeading: false,
         ),
@@ -1542,9 +1510,9 @@ class stakingIncomeHistory extends GetView {
               ? Center(
                   child: Text('No Stake History'.tr,
                       style: GoogleFonts.roboto(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black)))
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      )))
               : ListView.builder(
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
@@ -1576,9 +1544,9 @@ class stakingIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text('${model.amount}',
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               Row(
@@ -1592,9 +1560,9 @@ class stakingIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text(model.transactiondate,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               Row(
@@ -1608,9 +1576,9 @@ class stakingIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text(model.remark.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               //         Row(children: [Text('Txthash :'.tr,
@@ -1624,7 +1592,7 @@ class stakingIncomeHistory extends GetView {
                               //     style: GoogleFonts.roboto(
                               //         fontSize: 14,
                               //         fontWeight: FontWeight.bold,
-                              //         color: Colors.black)),],),
+                              //           )),],),
                               Row(
                                 children: [
                                   Text('Status :'.tr,
@@ -1636,9 +1604,9 @@ class stakingIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text(model.status.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               Row(
@@ -1652,9 +1620,9 @@ class stakingIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text('${model.gasfee}'.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               Row(
@@ -1668,9 +1636,9 @@ class stakingIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text(model.staking,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               Row(
@@ -1688,9 +1656,9 @@ class stakingIncomeHistory extends GetView {
                                     child: Text(model.txthash,
                                         maxLines: 2,
                                         style: GoogleFonts.roboto(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black)),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        )),
                                   ),
                                   const Spacer(),
                                   InkWell(
@@ -1722,22 +1690,14 @@ class StakeDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         leading: InkWell(
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
               size: 20,
             )),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+
         elevation: 0,
         // backgroundColor: Colors.transparent,
         title: Text(
@@ -1759,97 +1719,102 @@ class StakeDetails extends StatelessWidget {
             //         style: GoogleFonts.roboto(
             //             fontSize: 25,
             //             fontWeight: FontWeight.bold,
-            //             color: Colors.black)),
+            //               )),
             //     Obx(() => Text(
             //           ' ${controller.currencyResponse.value?.currency}',
             //           style: GoogleFonts.roboto(
             //               fontSize: 22,
             //               fontWeight: FontWeight.w600,
-            //               color: Colors.black),
+            //                 ),
             //         )),
             //   ],
             // ),
             const SizedBox(height: 30),
-            Container(
-              //  margin: const EdgeInsets.symmetric(horizontal: 15),
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey.shade300),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Amount :'.tr,
-                            style: GoogleFonts.roboto(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black)),
-                        Text(' ${controller.controllerStakeAmount.text}',
-                            // '${controller.commissionAmount.value} LINE',
-                            style: GoogleFonts.roboto(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black))
-                      ]),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Remark'.tr,
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
-                      Text('Staking',
-                          maxLines: 1,
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Network fee'.tr,
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
-                      Text('${sendController.commissionAmount.value} TXH',
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black))
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Text('Max Total'.tr,
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
-                      const Spacer(),
-                      Obx(() => Text(
-                          '${double.parse(controller.controllerStakeAmount.text.toString()) + sendController.commissionAmount.value}',
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)))
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            SizedBox(
+                height: 150,
+                width: MediaQuery.of(context).size.width,
+                child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Amount :'.tr,
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                    )),
+                                Text(
+                                    ' ${controller.controllerStakeAmount.text}',
+                                    // '${controller.commissionAmount.value} LINE',
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ))
+                              ]),
+                          const SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('Remark'.tr,
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  )),
+                              Text('Staking',
+                                  maxLines: 1,
+                                  // '${controller.commissionAmount.value} LINE',
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('Network fee'.tr,
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  )),
+                              Text(
+                                  '${sendController.commissionAmount.value} TXH',
+                                  // '${controller.commissionAmount.value} LINE',
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ))
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Text('Max Total'.tr,
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  )),
+                              const Spacer(),
+                              Obx(() => Text(
+                                  '${double.parse(controller.controllerStakeAmount.text.toString()) + sendController.commissionAmount.value}',
+                                  // '${controller.commissionAmount.value} LINE',
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  )))
+                            ],
+                          ),
+                        ],
+                      ),
+                    ))),
           ],
         ),
       ),

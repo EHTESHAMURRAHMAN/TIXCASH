@@ -70,7 +70,7 @@ class CreateAccountController extends GetxController {
     if (val == 0) {
       return Text(
         'Use a minimum of 8 characters'.tr,
-        style: const TextStyle(color: Colors.black54),
+        style: const TextStyle(color: Colors.grey),
       );
     } else if (val == 1) {
       return Text(

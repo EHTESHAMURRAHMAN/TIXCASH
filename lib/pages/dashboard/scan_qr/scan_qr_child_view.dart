@@ -28,23 +28,15 @@ class ScanQRChild extends GetView<ScanQrController> {
   Widget build(BuildContext context) {
     controller.getAddressId(currencyResponse?.currency ?? 'TIX');
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: hasActionBar
           ? AppBar(
-              systemOverlayStyle: const SystemUiOverlayStyle(
-                statusBarColor: Colors.white,
-                statusBarIconBrightness: Brightness.dark,
-                statusBarBrightness: Brightness.dark,
-              ),
               leading: InkWell(
                   onTap: () => Get.back(),
                   child: const Icon(
                     Icons.arrow_back_ios,
-                    color: Colors.black,
                     size: 20,
                   )),
-              backgroundColor: Colors.white,
-              foregroundColor: Colors.black,
+
               elevation: 0,
               // backgroundColor: Colors.transparent,
               title: Row(
@@ -56,7 +48,7 @@ class ScanQRChild extends GetView<ScanQrController> {
                         fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    '${currencyResponse?.currency}'.tr.toUpperCase(),
+                    ' ${currencyResponse?.currency}'.tr.toUpperCase(),
                     style: GoogleFonts.roboto(
                         fontSize: 18, fontWeight: FontWeight.w500),
                   ),
@@ -84,7 +76,7 @@ class ScanQRChild extends GetView<ScanQrController> {
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  '${currencyResponse?.currency}'.tr,
+                  ' ${currencyResponse?.currency} '.tr,
                   style: GoogleFonts.roboto(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
@@ -190,9 +182,7 @@ class ScanQRChild extends GetView<ScanQrController> {
             Obx(() => Text(
                   controller.address.value,
                   style: GoogleFonts.roboto(
-                      fontSize: 13,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400),
+                      fontSize: 13, fontWeight: FontWeight.w400),
                   textAlign: TextAlign.center,
                 )),
             const SizedBox(height: 16),
@@ -294,7 +284,6 @@ class ScanQRChild extends GetView<ScanQrController> {
                 },
                 child: const Icon(
                   Icons.share,
-                  color: Colors.black,
                   size: 30,
                 )),
 

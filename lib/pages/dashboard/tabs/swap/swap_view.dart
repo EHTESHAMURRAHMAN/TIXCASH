@@ -7,7 +7,6 @@ import 'package:tixcash/shared/constants/colors.dart';
 import 'package:tixcash/shared/widgets/submit_button.dart';
 import 'swap_controller.dart';
 
-
 class SwapView extends GetView<SwapController> {
   @override
   Widget build(BuildContext context) {
@@ -17,26 +16,14 @@ class SwapView extends GetView<SwapController> {
     controller.fromController.text = '';
     controller.toController.text = '';
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: InkWell(
             onTap: () {
               Get.back();
             },
-            child: const Icon(
-              Icons.arrow_back_ios,
-              size: 22,
-              color: Colors.black,
-            )),
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
+            child: const Icon(Icons.arrow_back_ios, size: 22)),
 
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
         elevation: 0,
         // backgroundColor: Colors.transparent,
         title: Text(
@@ -52,9 +39,9 @@ class SwapView extends GetView<SwapController> {
               child: Text(
                 'Trade tokens in an instance'.tr,
                 style: GoogleFonts.roboto(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black),
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
             const SizedBox(height: 16),
@@ -99,31 +86,24 @@ class SwapView extends GetView<SwapController> {
                 Obx(() => Text(
                       controller.selectcurrency.value,
                       style: GoogleFonts.roboto(
-                          fontSize: 15,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
+                          fontSize: 15, fontWeight: FontWeight.w500),
                     )),
                 const IconButton(
                     onPressed: null,
                     icon: Icon(
                       Icons.keyboard_arrow_down_rounded,
-                      color: Colors.black,
                       size: 25,
                     )),
                 const Expanded(child: SizedBox()),
                 Text(
                   'Balance'.tr,
                   style: GoogleFonts.roboto(
-                      fontSize: 16,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500),
+                      fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 Obx(() => Text(
                       ': ${controller.fromBalanceTotal.value}',
                       style: GoogleFonts.roboto(
-                          fontSize: 15,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700),
+                          fontSize: 15, fontWeight: FontWeight.w700),
                     )),
                 Obx(() => controller.isBalanceLoading.value
                     ? const SizedBox(
@@ -156,17 +136,14 @@ class SwapView extends GetView<SwapController> {
           ),
 
           Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                borderRadius: BorderRadius.circular(18)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                SizedBox(
-                  height: 40,
+              height: 60,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(17),
+                ),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: TextField(
-                    style: const TextStyle(color: Colors.black),
                     keyboardType:
                         const TextInputType.numberWithOptions(decimal: true),
                     controller: controller.fromController,
@@ -188,9 +165,7 @@ class SwapView extends GetView<SwapController> {
                               child: Text(
                                 'MAX'.tr,
                                 style: GoogleFonts.roboto(
-                                    color: Colors.black,
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w500),
+                                    fontSize: 13, fontWeight: FontWeight.w500),
                               ),
                             ),
                           ),
@@ -203,12 +178,10 @@ class SwapView extends GetView<SwapController> {
                         ),
                         border: InputBorder.none,
                         hintText: 'Enter amount'.tr,
-                        hintStyle: const TextStyle(color: Colors.black)),
+                        hintStyle: const TextStyle()),
                   ),
                 ),
-              ],
-            ),
-          ),
+              )),
           const SizedBox(
             height: 8,
           ),
@@ -235,31 +208,24 @@ class SwapView extends GetView<SwapController> {
                 Obx(() => Text(
                       controller.fromCurrency.value?.currency ?? 'TIX',
                       style: GoogleFonts.roboto(
-                          fontSize: 15,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
+                          fontSize: 15, fontWeight: FontWeight.w500),
                     )),
                 const IconButton(
                     onPressed: null,
                     icon: Icon(
                       Icons.keyboard_arrow_down_rounded,
-                      color: Colors.black,
                       size: 25,
                     )),
                 const Expanded(child: SizedBox()),
                 Text(
                   'Balance'.tr,
                   style: GoogleFonts.roboto(
-                      fontSize: 16,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500),
+                      fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 Obx(() => Text(
                       ': ${controller.toBalanceTotal.value}',
                       style: GoogleFonts.roboto(
-                          fontSize: 15,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700),
+                          fontSize: 15, fontWeight: FontWeight.w700),
                     )),
 
                 // Obx(() => controller.isBalanceLoading.value?const SizedBox(width: 14, height: 14, child: CircularProgressIndicator(),):const SizedBox())
@@ -278,25 +244,19 @@ class SwapView extends GetView<SwapController> {
             },
           ),
           Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                borderRadius: BorderRadius.circular(18)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                SizedBox(
-                  height: 40,
-                  child: TextField(
-                    enabled: false,
-                    controller: controller.toController,
-                    textAlign: TextAlign.right,
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                    ),
-                  ),
+            height: 60,
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(17),
+              ),
+              child: TextField(
+                enabled: false,
+                controller: controller.toController,
+                textAlign: TextAlign.right,
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
                 ),
-              ],
+              ),
             ),
           ),
           Padding(
@@ -307,29 +267,25 @@ class SwapView extends GetView<SwapController> {
                       child: Text(
                     'Price'.tr,
                     style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
+                        fontSize: 16, fontWeight: FontWeight.w500),
                   )),
                   Obx(() => Text(
                         '${controller.currencyRate.value?.price ?? 1.0}',
                         style: GoogleFonts.roboto(
-                            fontSize: 16,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500),
+                            fontSize: 16, fontWeight: FontWeight.w500),
                       )),
                   Obx(() => Text(
                         ' ${controller.fromCurrency.value?.currency}/${controller.toCurrency.value?.currency}'
                             .tr,
                         style: GoogleFonts.roboto(
-                            fontSize: 13,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500),
+                            fontSize: 13, fontWeight: FontWeight.w500),
                       )),
                   const SizedBox(
                     width: 8,
                   ),
-                  const Icon(Icons.refresh, color: Colors.black)
+                  const Icon(
+                    Icons.refresh,
+                  )
                 ],
               ))
         ],

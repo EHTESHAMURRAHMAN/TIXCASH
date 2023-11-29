@@ -31,7 +31,6 @@ class _marketqState extends State<marketq> {
       body: Stack(
         children: [
           Scaffold(
-            backgroundColor: Colors.white,
             body: ListView(
               children: [
                 Container(
@@ -65,9 +64,7 @@ class _marketqState extends State<marketq> {
                     child: Text('Market'.tr,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.roboto(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black)),
+                            fontSize: 22, fontWeight: FontWeight.bold)),
                   ),
                 ),
                 const SizedBox(height: 15),
@@ -78,9 +75,7 @@ class _marketqState extends State<marketq> {
                           .tr,
                       textAlign: TextAlign.left,
                       style: GoogleFonts.roboto(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black)),
+                          fontSize: 14, fontWeight: FontWeight.w700)),
                 ),
                 const SizedBox(height: 40),
                 Stack(
@@ -225,22 +220,13 @@ class explore extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
         toolbarHeight: 0,
         elevation: 0,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.light,
-        ),
       ),
-      backgroundColor: Colors.white,
       body: Center(
         child: Text('Launching Soon'.tr,
-            style: GoogleFonts.roboto(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.black)),
+            style:
+                GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.bold)),
       ),
     );
   }

@@ -22,13 +22,8 @@ class BackupWordsView extends GetView<BackupWordsController> {
       appBar: AppBar(
         leading: InkWell(
             onTap: () => Get.back(),
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              size: 20,
-            )),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+            child: const Icon(Icons.arrow_back_ios, size: 20)),
+
         elevation: 0,
         // backgroundColor: Colors.transparent,
         title: Text(
@@ -36,7 +31,7 @@ class BackupWordsView extends GetView<BackupWordsController> {
           style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500),
         ),
       ),
-      backgroundColor: ColorConstants.white,
+
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -48,8 +43,7 @@ class BackupWordsView extends GetView<BackupWordsController> {
                     child: Column(
                       children: [
                         Text(controller.recoveryMessage,
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 16)),
+                            style: const TextStyle(fontSize: 16)),
                         const SizedBox(
                           height: 24,
                         ),
@@ -76,44 +70,46 @@ class BackupWordsView extends GetView<BackupWordsController> {
                               }).toList(),
                             )),
                         const SizedBox(height: 15),
-                        Container(
-                            padding: const EdgeInsets.all(10),
-                            height: MediaQuery.of(context).size.height / 4.3,
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                                color: Colors.grey.shade300,
-                                borderRadius: BorderRadius.circular(9)),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Remember :'.tr,
-                                  style: const TextStyle(
-                                      color: Colors.red,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  '● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered'
-                                      .tr,
-                                  style: const TextStyle(
-                                      color: Colors.red, fontSize: 13),
-                                ),
-                                Text(
-                                  '● Please do not backup and save by screenshots or network transmission'
-                                      .tr,
-                                  style: const TextStyle(
-                                      color: Colors.red, fontSize: 13),
-                                ),
-                                Text(
-                                  '● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help'
-                                      .tr,
-                                  style: const TextStyle(
-                                      color: Colors.red, fontSize: 13),
-                                ),
-                              ],
-                            )),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(9)),
+                          child: Container(
+                              padding: const EdgeInsets.all(10),
+                              height: MediaQuery.of(context).size.height / 4.3,
+                              width: MediaQuery.of(context).size.width,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Remember :'.tr,
+                                    style: const TextStyle(
+                                        color: Colors.red,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    '● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered'
+                                        .tr,
+                                    style: const TextStyle(
+                                        color: Colors.red, fontSize: 13),
+                                  ),
+                                  Text(
+                                    '● Please do not backup and save by screenshots or network transmission'
+                                        .tr,
+                                    style: const TextStyle(
+                                        color: Colors.red, fontSize: 13),
+                                  ),
+                                  Text(
+                                    '● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help'
+                                        .tr,
+                                    style: const TextStyle(
+                                        color: Colors.red, fontSize: 13),
+                                  ),
+                                ],
+                              )),
+                        ),
                         const SizedBox(height: 20),
                         MaterialButton(
                           onPressed: () {
@@ -620,7 +616,7 @@ class PhraseContainer extends StatelessWidget {
 //             onTap: () => Get.back(),
 //             child: const Icon(
 //               Icons.arrow_back_ios,
-//               color: Colors.black,
+//
 //               size: 20,
 //             )),
 //         backgroundColor: Colors.white,
@@ -643,7 +639,7 @@ class PhraseContainer extends StatelessWidget {
 //                     padding: const EdgeInsets.all(8),
 //                     child: Column(
 //                       children: [
-//                         Text(controller.recoveryMessage, style: const TextStyle(color: Colors.black, fontSize: 16)),
+//                         Text(controller.recoveryMessage, style: const TextStyle(   fontSize: 16)),
 //                         const SizedBox(
 //                           height: 24,
 //                         ),
@@ -669,7 +665,7 @@ class PhraseContainer extends StatelessWidget {
 //                         const SizedBox(height: 15),
 //                         Text(
 //                           'Please Note Down Secret Recovery Pharse'.tr,
-//                           style: TextStyle(color: Colors.black, fontSize: 15),
+//                           style: TextStyle(   fontSize: 15),
 //                         ),
 //                         const SizedBox(height: 25),
 //                         Container(
@@ -1184,17 +1180,9 @@ class Verify extends GetView {
     //     : Get.put(CreateWalletController());
     return Scaffold(
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
-        backgroundColor: Colors.white,
         leading: InkWell(
             onTap: () => Get.back(),
-            child: const Icon(Icons.arrow_back_ios,
-                color: Colors.black, size: 18)),
-        foregroundColor: Colors.black,
+            child: const Icon(Icons.arrow_back_ios, size: 18)),
         automaticallyImplyLeading: false,
         elevation: 0,
         centerTitle: true,
@@ -1203,7 +1191,6 @@ class Verify extends GetView {
           style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500),
         ),
       ),
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
@@ -1222,17 +1209,13 @@ class Verify extends GetView {
                     ),
                     TextFormField(
                       controller: controller.controllerRandom,
-                      style: GoogleFonts.roboto(
-                          fontSize: 16, color: ColorConstants.black),
                       onChanged: (val) {
                         controller.searchWords(val);
                       },
                       decoration: InputDecoration(
                           hintText: 'Enter 24 Word Secrate Phrase'.tr,
-                          hintStyle: const TextStyle(
-                              color: Colors.black, fontSize: 12),
-                          labelStyle: const TextStyle(
-                              color: Colors.black, fontSize: 12),
+                          hintStyle: const TextStyle(fontSize: 12),
+                          labelStyle: const TextStyle(fontSize: 12),
                           label: Text('Enter 24 Word Secrate Phrase'.tr),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -1283,8 +1266,7 @@ class Verify extends GetView {
                 child: Obx(() => controller.phraseList.isNotEmpty
                     ? Text(
                         'Passphrase Entered (click to Edit)'.tr,
-                        style: GoogleFonts.roboto(
-                            fontSize: 16, color: ColorConstants.black),
+                        style: GoogleFonts.roboto(fontSize: 16),
                       )
                     : const SizedBox()),
               ),
@@ -1294,8 +1276,7 @@ class Verify extends GetView {
                       return ListTile(
                         leading: Text(
                           '${index + 1}',
-                          style: GoogleFonts.roboto(
-                              fontSize: 16, color: ColorConstants.black),
+                          style: GoogleFonts.roboto(fontSize: 16),
                         ),
                         title: Text(
                           element,
@@ -1303,7 +1284,7 @@ class Verify extends GetView {
                             fontSize: 16,
                             color: controller.selectedEdit.value == index
                                 ? ColorConstants.secondaryDarkAppColor
-                                : ColorConstants.black,
+                                : Colors.red,
                           ),
                         ),
                         onTap: () {
@@ -1355,7 +1336,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
         leading: InkWell(
             onTap: () => Get.back(),
             child: const Icon(Icons.arrow_back_ios,
-                color: Colors.black, size: 18)),
+                   size: 18)),
         foregroundColor: Colors.black,
         automaticallyImplyLeading: false,
         elevation: 0,
@@ -1398,9 +1379,9 @@ class ImportWalletView extends GetView<CreateWalletController> {
                       decoration: InputDecoration(
                           hintText: 'Enter 12 Word Secrate Phrase'.tr,
                           hintStyle: const TextStyle(
-                              color: Colors.black, fontSize: 12),
+                                 fontSize: 12),
                           labelStyle: const TextStyle(
-                              color: Colors.black, fontSize: 12),
+                                 fontSize: 12),
                           label: Text('Enter & Select'.tr),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -1525,14 +1506,12 @@ class RecoveryDropDown extends StatelessWidget {
           },
           child: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
           ),
         ),
         centerTitle: true,
         title: Text(
           'Select Recovery type'.tr,
-          style: const TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
       body: Container(
@@ -1552,9 +1531,7 @@ class RecoveryDropDown extends StatelessWidget {
                     title: Text(
                       i.first,
                       style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
+                          fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                     onTap: () {
                       Get.back(result: {'type': i.first});

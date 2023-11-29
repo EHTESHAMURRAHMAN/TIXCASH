@@ -109,11 +109,11 @@ class _SelectProfileState extends State<SelectProfile> {
                   ],
                 )),
                 widget.isSelected
-                    ? const Padding(
+                    ? Padding(
                         padding: EdgeInsets.only(right: 10),
                         child: Icon(
                           Icons.check_circle,
-                          color: Colors.white,
+                          color: Theme.of(context).primaryColor,
                           size: 28,
                         ),
                       )
@@ -230,7 +230,6 @@ class _SelectProfileState extends State<SelectProfile> {
         builder: (context) => Dialog(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25)),
-              backgroundColor: Colors.white,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -252,9 +251,7 @@ class _SelectProfileState extends State<SelectProfile> {
                         .tr,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
+                        fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(15.0),

@@ -25,10 +25,13 @@ class InviteView extends GetView<InviteController> {
     controller.inviteInits();
     controller.pendingdirectincome();
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
-          title: Text('Refer Your Friends and Earn'.tr),
+          title: Text(
+            'Refer Your Friends and Earn'.tr,
+            style:
+                GoogleFonts.roboto(fontSize: 15, fontWeight: FontWeight.bold),
+          ),
           centerTitle: true,
           backgroundColor: Theme.of(context).primaryColor,
           systemOverlayStyle: SystemUiOverlayStyle(
@@ -90,7 +93,7 @@ class InviteView extends GetView<InviteController> {
                         children: [
                           Obx(() => Text(
                                 '${controller.usercodeResponse.value?.refrellcode}',
-                                style: Theme.of(context).textTheme.titleLarge,
+                                style: Theme.of(context).textTheme.titleSmall,
                               )),
                           const Spacer(),
                           Container(
@@ -120,11 +123,11 @@ class InviteView extends GetView<InviteController> {
                               children: [
                                 Text(
                                   'Copy'.tr,
-                                  style: Theme.of(context).textTheme.titleSmall,
+                                  style: GoogleFonts.roboto(fontSize: 12),
                                 ),
                                 Text(
                                   'Code'.tr,
-                                  style: Theme.of(context).textTheme.titleSmall,
+                                  style: GoogleFonts.roboto(fontSize: 12),
                                 ),
                               ],
                             ),
@@ -240,16 +243,16 @@ class InviteView extends GetView<InviteController> {
                         children: [
                           Text('Total Earning :'.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black)),
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              )),
                           const SizedBox(width: 10),
                           Obx(() => Text(
                               '${controller.directincome.value?.totalamount.toStringAsFixed(2)}',
                               style: GoogleFonts.roboto(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black))),
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ))),
                         ],
                       ),
                       const SizedBox(height: 5),
@@ -257,16 +260,16 @@ class InviteView extends GetView<InviteController> {
                         children: [
                           Text('Balance Amount :'.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black)),
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              )),
                           const SizedBox(width: 10),
                           Obx(() => Text(
                               '${controller.directincome.value?.claimamount.toStringAsFixed(2)}',
                               style: GoogleFonts.roboto(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black))),
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ))),
                         ],
                       ),
                     ],
@@ -319,9 +322,9 @@ class InviteView extends GetView<InviteController> {
                   ? Center(
                       child: Text('No Stake'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)))
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          )))
                   : Obx(
                       () => ListView.builder(
                         itemCount: controller.referalIncomeModelResponse.length,
@@ -348,15 +351,15 @@ class InviteView extends GetView<InviteController> {
                                     children: [
                                       Text('Amount :'.tr,
                                           style: GoogleFonts.roboto(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black)),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          )),
                                       const SizedBox(width: 17),
                                       Text('${model.amount}',
                                           style: GoogleFonts.roboto(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black))
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                          ))
                                     ],
                                   ),
                                   const SizedBox(height: 7),
@@ -366,15 +369,15 @@ class InviteView extends GetView<InviteController> {
                                     children: [
                                       Text('Transaction Date :'.tr,
                                           style: GoogleFonts.roboto(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black)),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          )),
                                       const SizedBox(width: 15),
                                       Text(model.transactiondate,
                                           style: GoogleFonts.roboto(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black))
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold,
+                                          ))
                                     ],
                                   ),
                                   const SizedBox(height: 7),
@@ -382,15 +385,15 @@ class InviteView extends GetView<InviteController> {
                                     children: [
                                       Text('Remark'.tr,
                                           style: GoogleFonts.roboto(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black)),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          )),
                                       const SizedBox(width: 15),
                                       Text(model.remark,
                                           style: GoogleFonts.roboto(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black))
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold,
+                                          ))
                                     ],
                                   ),
                                   const SizedBox(height: 7),
@@ -398,15 +401,15 @@ class InviteView extends GetView<InviteController> {
                                     children: [
                                       Text('Staking :'.tr,
                                           style: GoogleFonts.roboto(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black)),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          )),
                                       const SizedBox(width: 15),
                                       Text(model.staking,
                                           style: GoogleFonts.roboto(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black))
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold,
+                                          ))
                                     ],
                                   ),
                                 ],
@@ -415,7 +418,7 @@ class InviteView extends GetView<InviteController> {
 
                             // subtitle: Text(
                             //   'Staking Income'.tr,
-                            //   style: GoogleFonts.roboto(fontSize: 18, color: Colors.black),
+                            //   style: GoogleFonts.roboto(fontSize: 18,   ),
                             // ),
                           );
                         },
@@ -468,7 +471,6 @@ class stakingIncome extends GetView {
     final Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
           centerTitle: true,
@@ -514,9 +516,7 @@ class stakingIncome extends GetView {
                     .tr,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black)),
+                    fontSize: 14, fontWeight: FontWeight.w700)),
           ),
           const SizedBox(height: 30),
           Stack(
@@ -559,9 +559,10 @@ class stakingIncome extends GetView {
                         const SizedBox(width: 15),
                         Text('Stake & Earn'.tr,
                             style: GoogleFonts.roboto(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black))
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ))
                       ],
                     ),
                   ),
@@ -610,9 +611,10 @@ class stakingIncome extends GetView {
                         const SizedBox(width: 15),
                         Text('Refer & Earn'.tr,
                             style: GoogleFonts.roboto(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black))
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ))
                       ],
                     ),
                   ),
@@ -669,9 +671,10 @@ class stakingIncome extends GetView {
                         const SizedBox(width: 15),
                         Text('Get VIP Access'.tr,
                             style: GoogleFonts.roboto(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black))
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ))
                       ],
                     ),
                   ),
@@ -745,7 +748,6 @@ class ReferralIncomeHistory extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
             'Referral Claim History'.tr,
@@ -756,16 +758,8 @@ class ReferralIncomeHistory extends GetView {
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
             ),
           ),
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
           elevation: 0,
           automaticallyImplyLeading: false,
         ),
@@ -774,9 +768,9 @@ class ReferralIncomeHistory extends GetView {
               ? Center(
                   child: Text('No Referral History'.tr,
                       style: GoogleFonts.roboto(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black)))
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      )))
               : ListView.builder(
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
@@ -808,9 +802,9 @@ class ReferralIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text(model.amount.toStringAsFixed(4),
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               Row(
@@ -824,9 +818,9 @@ class ReferralIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text(model.transactiondate,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               Row(
@@ -840,9 +834,9 @@ class ReferralIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text(': ${model.remark.tr}',
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               Row(
@@ -856,9 +850,9 @@ class ReferralIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text('${model.gasfee}',
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               //         Row(children: [Text('Txthash :'.tr,
@@ -872,7 +866,7 @@ class ReferralIncomeHistory extends GetView {
                               //     style: GoogleFonts.roboto(
                               //         fontSize: 14,
                               //         fontWeight: FontWeight.bold,
-                              //         color: Colors.black)),],),
+                              //           )),],),
                               Row(
                                 children: [
                                   Text('Status :'.tr,
@@ -884,9 +878,9 @@ class ReferralIncomeHistory extends GetView {
                                   const SizedBox(width: 17),
                                   Text(model.status.tr,
                                       style: GoogleFonts.roboto(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                 ],
                               ),
                               Row(
@@ -904,9 +898,9 @@ class ReferralIncomeHistory extends GetView {
                                     child: Text(model.txthash,
                                         maxLines: 2,
                                         style: GoogleFonts.roboto(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black)),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        )),
                                   ),
                                   const Spacer(),
                                   InkWell(
@@ -938,22 +932,14 @@ class InviteClaimDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         leading: InkWell(
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
               size: 20,
             )),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+
         elevation: 0,
         // backgroundColor: Colors.transparent,
         title: Text(
@@ -975,13 +961,13 @@ class InviteClaimDetails extends StatelessWidget {
             //         style: GoogleFonts.roboto(
             //             fontSize: 25,
             //             fontWeight: FontWeight.bold,
-            //             color: Colors.black)),
+            //               )),
             //     Obx(() => Text(
             //           ' ${controller.currencyResponse.value?.currency}',
             //           style: GoogleFonts.roboto(
             //               fontSize: 22,
             //               fontWeight: FontWeight.w600,
-            //               color: Colors.black),
+            //                 ),
             //         )),
             //   ],
             // ),
@@ -1000,16 +986,16 @@ class InviteClaimDetails extends StatelessWidget {
                       children: [
                         Text('Amount :'.tr,
                             style: GoogleFonts.roboto(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black)),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            )),
                         Text(
                             '${controller.directincome.value?.claimamount.toStringAsFixed(2)}',
                             // '${controller.commissionAmount.value} LINE',
                             style: GoogleFonts.roboto(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black))
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ))
                       ]),
                   const SizedBox(height: 10),
                   Row(
@@ -1017,16 +1003,16 @@ class InviteClaimDetails extends StatelessWidget {
                     children: [
                       Text('Remark'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          )),
                       Text('Referral Income',
                           maxLines: 1,
                           // '${controller.commissionAmount.value} LINE',
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          )),
                     ],
                   ),
                   const SizedBox(height: 10),
@@ -1035,15 +1021,15 @@ class InviteClaimDetails extends StatelessWidget {
                     children: [
                       Text('Network fee'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          )),
                       Text('${sendController.commissionAmount.value} TXH',
                           // '${controller.commissionAmount.value} LINE',
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black))
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ))
                     ],
                   ),
                   const SizedBox(height: 10),
@@ -1051,17 +1037,17 @@ class InviteClaimDetails extends StatelessWidget {
                     children: [
                       Text('Max Total'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          )),
                       const Spacer(),
                       Obx(() => Text(
                           '${controller.directincome.value!.claimamount - sendController.commissionAmount.value}',
                           // '${controller.commissionAmount.value} LINE',
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)))
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          )))
                     ],
                   ),
                 ],

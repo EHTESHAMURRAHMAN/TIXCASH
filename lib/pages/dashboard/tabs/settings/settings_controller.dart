@@ -195,23 +195,11 @@ class PrivacyandPolicy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Privacy Policy'.tr),
-        foregroundColor: Colors.black,
         centerTitle: true,
         leading: InkWell(
-            onTap: () => Get.back(),
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-            )),
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
-        backgroundColor: Colors.white,
+            onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
         elevation: 0,
         automaticallyImplyLeading: false,
       ),
@@ -228,20 +216,9 @@ class Term_Condition extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Terms and Conditions'.tr),
-        foregroundColor: Colors.black,
         centerTitle: true,
         leading: InkWell(
-            onTap: () => Get.back(),
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-            )),
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
-        backgroundColor: Colors.white,
+            onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
         elevation: 0,
         automaticallyImplyLeading: false,
       ),

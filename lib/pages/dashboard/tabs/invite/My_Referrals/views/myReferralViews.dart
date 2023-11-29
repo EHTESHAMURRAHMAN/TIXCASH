@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:tixcash/pages/dashboard/tabs/invite/My_Referrals/controllers/myReferral_controller.dart';
 
@@ -12,27 +11,17 @@ class MyReferral extends GetView<MyReferralController> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
           leading: InkWell(
               onTap: () => Get.back(),
               child: const Icon(
                 Icons.arrow_back_ios,
-                color: Colors.black,
                 size: 20,
               )),
           title: Text('My Referral'.tr,
-              style: const TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold)),
+              style:
+                  const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
           centerTitle: true,
-          backgroundColor: Colors.white,
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
           elevation: 0,
           bottom: TabBar(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
@@ -78,10 +67,7 @@ class firstGen extends StatelessWidget {
     return Container(
       child: Center(
           child: Text('Launching Soon'.tr,
-              style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold))),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))),
     );
   }
 }
@@ -94,10 +80,7 @@ class secondGen extends StatelessWidget {
     return Container(
       child: Center(
           child: Text('Launching Soon'.tr,
-              style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold))),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))),
     );
   }
 }

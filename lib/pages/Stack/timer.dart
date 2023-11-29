@@ -50,7 +50,7 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
           children: [
             Container(
               padding: const EdgeInsets.all(5),
-              color: Colors.black,
+              color: Colors.grey.shade800,
               child: Text(
                 time1,
                 style: const TextStyle(
@@ -60,11 +60,11 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
               ),
             ),
             const SizedBox(height: 3),
-            const Text(
+            Text(
               'HRS',
               style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                  color: Colors.grey.shade800,
                   fontSize: 10),
             ),
           ],
@@ -80,7 +80,7 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
           children: [
             Container(
               padding: const EdgeInsets.all(5),
-              color: Colors.black,
+              color: Colors.grey.shade800,
               child: Text(
                 time2,
                 style: const TextStyle(
@@ -90,11 +90,11 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
               ),
             ),
             const SizedBox(height: 3),
-            const Text(
+            Text(
               'MINS',
               style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                  color: Colors.grey.shade800,
                   fontSize: 10),
             ),
           ],
@@ -110,7 +110,7 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
           children: [
             Container(
               padding: const EdgeInsets.all(5),
-              color: Colors.black,
+              color: Colors.grey.shade800,
               child: Text(
                 time3,
                 style: const TextStyle(
@@ -120,11 +120,11 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
               ),
             ),
             const SizedBox(height: 3),
-            const Text(
+            Text(
               'SECS',
               style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                  color: Colors.grey.shade800,
                   fontSize: 10),
             ),
           ],

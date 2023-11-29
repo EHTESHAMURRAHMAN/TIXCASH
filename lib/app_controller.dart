@@ -263,7 +263,6 @@ class AppController extends GetxController {
         builder: (context) => Dialog(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25)),
-              backgroundColor: Colors.white,
               child: Container(
                 decoration: BoxDecoration(
                     border: Border.all(
@@ -295,14 +294,10 @@ class AppController extends GetxController {
                       child: TextFormField(
                         obscureText: true,
                         controller: editingController,
-                        style: GoogleFonts.roboto(
-                            fontSize: 16, color: ColorConstants.black),
                         decoration: InputDecoration(
                             hintText: 'Password'.tr,
-                            hintStyle: const TextStyle(
-                                color: Colors.black, fontSize: 12),
-                            labelStyle: const TextStyle(
-                                color: Colors.black, fontSize: 12),
+                            hintStyle: const TextStyle(),
+                            labelStyle: const TextStyle(fontSize: 12),
                             label: Text('Password'.tr),
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(

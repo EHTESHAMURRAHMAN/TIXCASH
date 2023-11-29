@@ -50,84 +50,79 @@ class _BottomSheetViewState extends State<BottomSheetView> {
     _users = val != null ? userResponseFromJson(val) : [];
     _users.sort((a, b) => a.active == b.active ? 1 : -1);
     return Material(
-      child: Container(
-        color: Colors.white,
-        child: ListView(
-          controller: widget.scrollController,
-          children: [
-            Container(
-              height: 8,
-              width: double.infinity,
-              margin: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width / 3,
-                  vertical: 8),
-              decoration: BoxDecoration(
-                  color: Colors.black26,
-                  borderRadius: BorderRadius.circular(4)),
-            ),
-            const SizedBox(height: 6),
-            Column(
-              children: List<Widget>.generate(_users.length, (index) {
-                UserResponse user = _users.elementAt(index);
-                return SelectProfile(
-                  name: user.name,
-                  isSelected: userInfo!.id == user.id,
-                  onSelect: (val) {
-                    if (mounted) {
-                      setState(() {
-                        userInfo = user;
-                        widget.onSelect();
-                        controller.getsubs();
-                        // controller1.backupPharse1();
-                        controller2.backupPharse();
-                        InviteController().inviteInits();
-                        StackController().getwhiteliststatus();
-                        controller.getBalanceCurrencyList();
-                      });
-                    }
-                  },
-                  onEdit: (val) {
-                    userInfo!.name = val;
-                    _users.elementAt(index).name = val;
-
-                    final prefs = Get.find<SharedPreferences>();
-                    prefs.setString(
-                        StorageConstants.userInfo, userResponseToJson(_users));
-                    controller.getsubs();
-                  },
-                  onDelete: (val) {
-                    _users.removeAt(index);
-
-                    final prefs = Get.find<SharedPreferences>();
-                    prefs.setString(
-                        StorageConstants.userInfo, userResponseToJson(_users));
-                    Get.back();
-                  },
-                );
-              }),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            TextButton(
-                onPressed: () {
-                  // controller.subscriptionResponse.value?.pid == 0
-                  //     ? EasyLoading.showToast('Get Premium Access First')
-                  //     :
-                  newWallet(context);
+      child: ListView(
+        controller: widget.scrollController,
+        children: [
+          Container(
+            height: 8,
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 3, vertical: 8),
+            decoration: BoxDecoration(
+                color: Colors.grey, borderRadius: BorderRadius.circular(4)),
+          ),
+          const SizedBox(height: 6),
+          Column(
+            children: List<Widget>.generate(_users.length, (index) {
+              UserResponse user = _users.elementAt(index);
+              return SelectProfile(
+                name: user.name,
+                isSelected: userInfo!.id == user.id,
+                onSelect: (val) {
+                  if (mounted) {
+                    setState(() {
+                      userInfo = user;
+                      widget.onSelect();
+                      controller.getsubs();
+                      // controller1.backupPharse1();
+                      controller2.backupPharse();
+                      InviteController().inviteInits();
+                      StackController().getwhiteliststatus();
+                      controller.getBalanceCurrencyList();
+                    });
+                  }
                 },
-                child: Text('Create New Account'.tr,
-                    style: const TextStyle(fontSize: 14))),
-            TextButton(
-                onPressed: () {
-                  Get.to(() => const ImportWalletView(
-                        isImportWallet: true,
-                      ));
+                onEdit: (val) {
+                  userInfo!.name = val;
+                  _users.elementAt(index).name = val;
+
+                  final prefs = Get.find<SharedPreferences>();
+                  prefs.setString(
+                      StorageConstants.userInfo, userResponseToJson(_users));
+                  controller.getsubs();
                 },
-                child: Text('Import an Account'.tr,
-                    style: const TextStyle(fontSize: 14))),
-          ],
-        ),
+                onDelete: (val) {
+                  _users.removeAt(index);
+
+                  final prefs = Get.find<SharedPreferences>();
+                  prefs.setString(
+                      StorageConstants.userInfo, userResponseToJson(_users));
+                  Get.back();
+                },
+              );
+            }),
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          TextButton(
+              onPressed: () {
+                // controller.subscriptionResponse.value?.pid == 0
+                //     ? EasyLoading.showToast('Get Premium Access First')
+                //     :
+                newWallet(context);
+              },
+              child: Text('Create New Account'.tr,
+                  style: const TextStyle(fontSize: 14))),
+          TextButton(
+              onPressed: () {
+                Get.to(() => const ImportWalletView(
+                      isImportWallet: true,
+                    ));
+              },
+              child: Text('Import an Account'.tr,
+                  style: const TextStyle(fontSize: 14))),
+        ],
       ),
     );
   }
@@ -140,16 +135,13 @@ class _BottomSheetViewState extends State<BottomSheetView> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: Colors.white,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Icon(Icons.cancel, color: Colors.transparent),
               Text('Create New Account'.tr,
                   style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold)),
+                      fontSize: 15, fontWeight: FontWeight.bold)),
               InkWell(
                 onTap: () => Get.back(),
                 child: const Icon(Icons.cancel, color: Colors.black, size: 25),
@@ -161,20 +153,22 @@ class _BottomSheetViewState extends State<BottomSheetView> {
               children: [
                 Column(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      height: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.grey.shade300),
+                    SizedBox(
+                      height: 55,
                       width: MediaQuery.of(context).size.width,
-                      child: TextFormField(
-                        controller: controller.editingController,
-                        style: const TextStyle(color: Colors.black),
-                        decoration: InputDecoration(
-                            hintText: 'Username'.tr,
-                            hintStyle: const TextStyle(color: Colors.black26),
-                            border: InputBorder.none),
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: TextFormField(
+                            controller: controller.editingController,
+                            decoration: InputDecoration(
+                                hintText: 'Username'.tr,
+                                hintStyle: const TextStyle(),
+                                border: InputBorder.none),
+                          ),
+                        ),
                       ),
                     ),
                     // const Text('Select Currency',

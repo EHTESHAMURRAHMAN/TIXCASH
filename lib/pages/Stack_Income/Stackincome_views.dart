@@ -16,10 +16,8 @@ class txhincome extends GetView<StackController> {
   Widget build(BuildContext context) {
     controller.stakedashboard();
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
         elevation: 0,
         flexibleSpace: SafeArea(
           child: Container(
@@ -30,8 +28,10 @@ class txhincome extends GetView<StackController> {
                     onTap: () {
                       Get.back();
                     },
-                    child: const Icon(Icons.arrow_back_ios,
-                        size: 22, color: Colors.black)),
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      size: 22,
+                    )),
                 const SizedBox(width: 10),
                 Image.asset(
                   'assets/icons/logo.png',
@@ -40,9 +40,7 @@ class txhincome extends GetView<StackController> {
                 Text(
                   'TXH'.tr,
                   style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold),
+                      fontSize: 17, fontWeight: FontWeight.bold),
                 ),
                 const Spacer(),
                 InkWell(
@@ -59,42 +57,42 @@ class txhincome extends GetView<StackController> {
                         }
                       });
                     },
-                    child: Container(
+                    child: SizedBox(
                         height: 40,
                         width: MediaQuery.of(context).size.width / 2,
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          // border: Border.all(
-                          //     color: ColorConstants.secondaryAppColor),
-                          borderRadius: BorderRadius.circular(11),
-                          // color: Colors.grey.shade300
-                        ),
-                        child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: Row(children: [
-                              Obx(() => controller.selectStakeDays.value.isEmpty
-                                  ? Text(
-                                      'Select Staking Plan'.tr,
-                                      style: const TextStyle(
-                                          color: Colors.red,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400),
-                                    )
-                                  : SizedBox(
-                                      width:
-                                          MediaQuery.of(context).size.width / 4,
-                                      child: Text(
-                                        controller.selectStakeDays.value.tr,
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(11),
+                          ),
+                          child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              child: Row(children: [
+                                Obx(() => controller
+                                        .selectStakeDays.value.isEmpty
+                                    ? Text(
+                                        'Select Staking Plan'.tr,
                                         style: const TextStyle(
                                             color: Colors.red,
                                             fontSize: 12,
                                             fontWeight: FontWeight.w400),
-                                        maxLines: 1,
-                                      ))),
-                              const Spacer(),
-                              const Icon(Icons.arrow_drop_down,
-                                  color: Colors.black, size: 30)
-                            ])))),
+                                      )
+                                    : SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                4,
+                                        child: Text(
+                                          controller.selectStakeDays.value.tr,
+                                          style: const TextStyle(
+                                              color: Colors.red,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w400),
+                                          maxLines: 1,
+                                        ))),
+                                const Spacer(),
+                                const Icon(Icons.arrow_drop_down, size: 30)
+                              ])),
+                        ))),
               ],
             ),
           ),
@@ -120,304 +118,330 @@ class txhincome extends GetView<StackController> {
                             child: Column(children: [
                               Row(
                                 children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
+                                  SizedBox(
                                     height: 90,
                                     width:
                                         MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'All Stake\nValue'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'All Stake\nValue'.tr,
+                                              style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 12),
+                                            ),
+                                            const Text(
+                                              '00.00',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.red,
+                                                  fontSize: 12),
+                                            ),
+                                            const Text(
+                                              'TXH',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 12),
+                                            ),
+                                          ],
                                         ),
-                                        const Text(
-                                          '00.00',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          'TXH',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                      ],
+                                      ),
                                     ),
                                   ),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Total\nRewards'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          '00.0',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          'TXH',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 90,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Total\nRewards'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  '00.0',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  'TXH',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                              ],
+                                            ),
+                                          ))),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Pending\nRewards'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          '00.0',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          'TXH',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 90,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Pending\nRewards'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  '00.0',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  'TXH',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                              ],
+                                            ),
+                                          ))),
                                 ],
                               ),
                               const SizedBox(height: 12),
                               Row(
                                 children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
+                                  SizedBox(
                                     height: 90,
                                     width:
                                         MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Daily\nReward'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
+                                    child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(11),
                                         ),
-                                        const Text(
-                                          '0.00',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          'TXH',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                      ],
-                                    ),
+                                        child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Daily\nReward'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  '0.00',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  'TXH',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                              ],
+                                            ))),
                                   ),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Staking\nPeriod'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          '00',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          'Days',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 90,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Staking\nPeriod'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  '00',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  'Days',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                              ],
+                                            ),
+                                          ))),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'APY'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 23),
-                                        ),
-                                        const Text(
-                                          '00 %',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red,
-                                              fontSize: 18),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 90,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'APY'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 23),
+                                                ),
+                                                const Text(
+                                                  '00 %',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red,
+                                                      fontSize: 18),
+                                                ),
+                                              ],
+                                            ),
+                                          ))),
                                 ],
                               ),
                               const SizedBox(height: 12),
                               Row(
                                 children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 55,
-                                    width:
-                                        MediaQuery.of(context).size.width / 2.5,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Staking Start Date'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        Text(
-                                          'YYYY : MM : DD'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        )
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 60,
+                                      width: MediaQuery.of(context).size.width /
+                                          2.5,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Staking Start Date'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                Text(
+                                                  'YYYY : MM : DD'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                )
+                                              ],
+                                            ),
+                                          ))),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 55,
-                                    width:
-                                        MediaQuery.of(context).size.width / 2.4,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Staking End Date'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        Text(
-                                          'YYYY : MM : DD'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        )
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 60,
+                                      width: MediaQuery.of(context).size.width /
+                                          2.4,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Staking End Date'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                Text(
+                                                  'YYYY : MM : DD'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                )
+                                              ],
+                                            ),
+                                          ))),
                                 ],
                               ),
                             ])),
@@ -443,7 +467,6 @@ class txhincome extends GetView<StackController> {
                                           'Income Report'.tr,
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.black,
                                               fontSize: 15),
                                         ),
                                         const SizedBox(height: 7),
@@ -451,58 +474,61 @@ class txhincome extends GetView<StackController> {
                                           'User Initiated Staking'.tr,
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.black,
                                               fontSize: 12),
                                         ),
                                         Text(
                                           'YYYY : MM : DD'.tr,
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.black,
                                               fontSize: 15),
                                         ),
                                       ],
                                     ),
                                     const Spacer(),
-                                    Container(
-                                      padding: const EdgeInsets.all(10),
-                                      height: 90,
-                                      width: MediaQuery.of(context).size.width /
-                                          2.4,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(11),
-                                          color: Colors.grey.shade300),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Staked Amount'.tr,
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                                fontSize: 12),
+                                    SizedBox(
+                                        height: 90,
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                2.4,
+                                        child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
                                           ),
-                                          const Text(
-                                            '0.0',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.red,
-                                                fontSize: 16),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Staked Amount'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  '0.0',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red,
+                                                      fontSize: 16),
+                                                ),
+                                                const Text(
+                                                  'TXH',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                          const Text(
-                                            'TXH',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                                fontSize: 12),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                        ))
                                   ],
                                 ),
                                 const SizedBox(height: 5),
@@ -516,7 +542,6 @@ class txhincome extends GetView<StackController> {
                                           'Total Staking Income'.tr,
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.black,
                                               fontSize: 12),
                                         ),
                                         const Text(
@@ -530,7 +555,6 @@ class txhincome extends GetView<StackController> {
                                           'TXH',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.black,
                                               fontSize: 12),
                                         ),
                                       ],
@@ -538,82 +562,93 @@ class txhincome extends GetView<StackController> {
                                     const Spacer(),
                                     Column(
                                       children: [
-                                        Container(
-                                          padding: const EdgeInsets.all(10),
-                                          height: 90,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              2.4,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(11),
-                                              color: Colors.grey.shade300),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Staking Limit Left'.tr,
-                                                style: const TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.black,
-                                                    fontSize: 12),
-                                              ),
-                                              const Text(
-                                                '0.0',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.black,
-                                                    fontSize: 12),
-                                              ),
-                                              const Text(
-                                                'TXH',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.black,
-                                                    fontSize: 12),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
+                                        SizedBox(
+                                            height: 90,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width /
+                                                2.4,
+                                            child: Card(
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(11),
+                                                ),
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                        'Staking Limit Left'.tr,
+                                                        style: const TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 12),
+                                                      ),
+                                                      const Text(
+                                                        '0.0',
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 12),
+                                                      ),
+                                                      const Text(
+                                                        'TXH',
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 12),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ))),
                                         const SizedBox(height: 5),
-                                        Container(
-                                          padding: const EdgeInsets.all(10),
-                                          height: 60,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              2.4,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(11),
-                                              color: Colors.grey.shade300),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Paid Days'.tr,
-                                                style: const TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.black,
-                                                    fontSize: 12),
+                                        SizedBox(
+                                            height: 60,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width /
+                                                2.4,
+                                            child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(11),
                                               ),
-                                              const Text(
-                                                '0',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.red,
-                                                    fontSize: 12),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Paid Days'.tr,
+                                                      style: const TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 12),
+                                                    ),
+                                                    const Text(
+                                                      '0',
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Colors.red,
+                                                          fontSize: 12),
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                            ],
-                                          ),
-                                        ),
+                                            ))
                                       ],
                                     ),
                                   ],
@@ -637,7 +672,6 @@ class txhincome extends GetView<StackController> {
                                     'Unclaimed Income'.tr,
                                     style: const TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.black,
                                         fontSize: 12),
                                   ),
                                 ),
@@ -658,12 +692,10 @@ class txhincome extends GetView<StackController> {
                                           'TXH',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.black,
                                               fontSize: 10),
                                         ),
                                         SizedBox(height: 10),
-                                        Icon(CupertinoIcons.alarm,
-                                            color: Colors.black, size: 30)
+                                        Icon(CupertinoIcons.alarm, size: 30)
                                       ],
                                     ),
                                     const Spacer(),
@@ -678,7 +710,6 @@ class txhincome extends GetView<StackController> {
                                                 Container(
                                                   padding:
                                                       const EdgeInsets.all(5),
-                                                  color: Colors.black,
                                                   child: const Text(
                                                     '00',
                                                     style: TextStyle(
@@ -694,7 +725,6 @@ class txhincome extends GetView<StackController> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w400,
-                                                      color: Colors.black,
                                                       fontSize: 10),
                                                 ),
                                               ],
@@ -704,7 +734,6 @@ class txhincome extends GetView<StackController> {
                                               ':',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold,
-                                                  color: Colors.black,
                                                   fontSize: 20),
                                             ),
                                             const SizedBox(width: 2),
@@ -713,7 +742,6 @@ class txhincome extends GetView<StackController> {
                                                 Container(
                                                   padding:
                                                       const EdgeInsets.all(5),
-                                                  color: Colors.black,
                                                   child: const Text(
                                                     '00',
                                                     style: TextStyle(
@@ -729,7 +757,6 @@ class txhincome extends GetView<StackController> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w400,
-                                                      color: Colors.black,
                                                       fontSize: 10),
                                                 ),
                                               ],
@@ -739,7 +766,6 @@ class txhincome extends GetView<StackController> {
                                               ':',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold,
-                                                  color: Colors.black,
                                                   fontSize: 20),
                                             ),
                                             const SizedBox(width: 2),
@@ -748,7 +774,6 @@ class txhincome extends GetView<StackController> {
                                                 Container(
                                                   padding:
                                                       const EdgeInsets.all(5),
-                                                  color: Colors.black,
                                                   child: const Text(
                                                     '00',
                                                     style: TextStyle(
@@ -764,7 +789,6 @@ class txhincome extends GetView<StackController> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w400,
-                                                      color: Colors.black,
                                                       fontSize: 10),
                                                 ),
                                               ],
@@ -776,7 +800,7 @@ class txhincome extends GetView<StackController> {
                                         //   controller.time.value,
                                         //   style: GoogleFonts.oswald(
                                         //       fontWeight: FontWeight.bold,
-                                        //       color: Colors.black,
+                                        //
                                         //       fontSize: 25),
                                         // ),
                                         const SizedBox(height: 10),
@@ -820,304 +844,330 @@ class txhincome extends GetView<StackController> {
                             child: Column(children: [
                               Row(
                                 children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'All Stake\nValue'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        Text(
-                                          '${controller.stakeDashboardResponse.value?.totalstaked}',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          'TXH',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 10),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 95,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'All Stake\nValue'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                Text(
+                                                  '${controller.stakeDashboardResponse.value?.totalstaked}',
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  'TXH',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 10),
+                                                ),
+                                              ],
+                                            ),
+                                          ))),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Total\nRewards'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        Text(
-                                          '${controller.stakeDashboardResponse.value?.totalreward}',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          'TXH',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 10),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 95,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Total\nRewards'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                Text(
+                                                  '${controller.stakeDashboardResponse.value?.totalreward}',
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  'TXH',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 10),
+                                                ),
+                                              ],
+                                            ),
+                                          ))),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Pending\nRewards'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        Text(
-                                          '${controller.stakeDashboardResponse.value?.pendingreward}',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          'TXH',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 10),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 95,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Pending\nRewards'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                Text(
+                                                  '${controller.stakeDashboardResponse.value?.pendingreward}',
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  'TXH',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 10),
+                                                ),
+                                              ],
+                                            ),
+                                          ))),
                                 ],
                               ),
                               const SizedBox(height: 12),
                               Row(
                                 children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Daily\nReward'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        Text(
-                                          '${controller.stakeDashboardResponse.value?.dailyreward}',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red,
-                                              fontSize: 12),
-                                        ),
-                                        const Text(
-                                          'TXH/Day',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 10),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 95,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Daily\nReward'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                Text(
+                                                  '${controller.stakeDashboardResponse.value?.dailyreward}',
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red,
+                                                      fontSize: 12),
+                                                ),
+                                                const Text(
+                                                  'TXH/Day',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 10),
+                                                ),
+                                              ],
+                                            ),
+                                          ))),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Staking\nPeriod'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        Text(
-                                          '${controller.stakeDashboardResponse.value?.stakingdays}',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 15),
-                                        ),
-                                        Text(
-                                          'Days'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 10),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 95,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Staking\nPeriod'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                Text(
+                                                  '${controller.stakeDashboardResponse.value?.stakingdays}',
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 15),
+                                                ),
+                                                Text(
+                                                  'Days'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 10),
+                                                ),
+                                              ],
+                                            ),
+                                          ))),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 90,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3.7,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'APY'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 23),
-                                        ),
-                                        Text(
-                                          '${controller.stakeDashboardResponse.value?.apy}%',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red,
-                                              fontSize: 15),
-                                        )
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 95,
+                                      width: MediaQuery.of(context).size.width /
+                                          3.7,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'APY'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 23),
+                                                ),
+                                                Text(
+                                                  '${controller.stakeDashboardResponse.value?.apy}%',
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red,
+                                                      fontSize: 15),
+                                                )
+                                              ],
+                                            ),
+                                          ))),
                                 ],
                               ),
                               const SizedBox(height: 12),
                               Row(
                                 children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 55,
-                                    width:
-                                        MediaQuery.of(context).size.width / 2.4,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Staking Start Date'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        ),
-                                        Text(
-                                          '${controller.stakeDashboardResponse.value?.stakingstart}',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        )
-                                      ],
-                                    ),
-                                  ),
+                                  SizedBox(
+                                      height: 60,
+                                      width: MediaQuery.of(context).size.width /
+                                          2.4,
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Staking Start Date'.tr,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                Text(
+                                                  '${controller.stakeDashboardResponse.value?.stakingstart}',
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                )
+                                              ],
+                                            ),
+                                          ))),
                                   const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    height: 55,
-                                    width:
-                                        MediaQuery.of(context).size.width / 2.4,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(11),
-                                        color: Colors.grey.shade300),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Staking End Date'.tr,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
+                                  SizedBox(
+                                      height: 60,
+                                      width: MediaQuery.of(context).size.width /
+                                          2.4,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(11),
                                         ),
-                                        Text(
-                                          '${controller.stakeDashboardResponse.value?.stakingend}',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                              fontSize: 12),
-                                        )
-                                      ],
-                                    ),
-                                  ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Staking End Date'.tr,
+                                                style: const TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 12),
+                                              ),
+                                              Text(
+                                                '${controller.stakeDashboardResponse.value?.stakingend}',
+                                                style: const TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 12),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ))
                                 ],
                               ),
                             ])),
@@ -1140,7 +1190,6 @@ class txhincome extends GetView<StackController> {
                                       'Income Report'.tr,
                                       style: const TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.black,
                                           fontSize: 18),
                                     ),
                                     const SizedBox(height: 50),
@@ -1148,7 +1197,6 @@ class txhincome extends GetView<StackController> {
                                       'User Initiated Staking'.tr,
                                       style: const TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.black,
                                           fontSize: 12),
                                     ),
                                     const SizedBox(height: 5),
@@ -1156,7 +1204,6 @@ class txhincome extends GetView<StackController> {
                                       '${controller.stakeDashboardResponse.value?.userstakindate}',
                                       style: const TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.black,
                                           fontSize: 17),
                                     ),
                                     const SizedBox(height: 17),
@@ -1164,7 +1211,6 @@ class txhincome extends GetView<StackController> {
                                       'Total Staking Income'.tr,
                                       style: const TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.black,
                                           fontSize: 12),
                                     ),
                                     const SizedBox(height: 3),
@@ -1180,135 +1226,151 @@ class txhincome extends GetView<StackController> {
                                       'TXH',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.black,
                                           fontSize: 10),
                                     ),
                                   ],
                                 ),
                                 Column(
                                   children: [
-                                    Container(
-                                      padding: const EdgeInsets.all(10),
-                                      height: 90,
-                                      width: MediaQuery.of(context).size.width /
-                                          2.4,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(11),
-                                          color: Colors.grey.shade300),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Staked Amount'.tr,
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                                fontSize: 12),
-                                          ),
-                                          Text(
-                                            '${controller.stakeDashboardResponse.value?.stakedamt}',
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.red,
-                                                fontSize: 17),
-                                          ),
-                                          const Text(
-                                            'TXH',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                                fontSize: 10),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                    SizedBox(
+                                        height: 95,
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                2.4,
+                                        child: Card(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(11),
+                                            ),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Staked Amount'.tr,
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 12),
+                                                  ),
+                                                  Text(
+                                                    '${controller.stakeDashboardResponse.value?.stakedamt}',
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.red,
+                                                        fontSize: 17),
+                                                  ),
+                                                  const Text(
+                                                    'TXH',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 10),
+                                                  ),
+                                                ],
+                                              ),
+                                            ))),
                                     const SizedBox(height: 8),
-                                    Container(
-                                      padding: const EdgeInsets.all(10),
-                                      height: 90,
-                                      width: MediaQuery.of(context).size.width /
-                                          2.4,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(11),
-                                          color: Colors.grey.shade300),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Staking Limit Left'.tr,
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                                fontSize: 12),
+                                    SizedBox(
+                                        height: 95,
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                2.4,
+                                        child: Card(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(11),
+                                            ),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Staking Limit Left'.tr,
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 12),
+                                                  ),
+                                                  controller.selectid.value == 5
+                                                      ? const Text(
+                                                          'No Limit',
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 17),
+                                                        )
+                                                      : Text(
+                                                          '${controller.stakeDashboardResponse.value?.remain}',
+                                                          style:
+                                                              const TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontSize: 17),
+                                                        ),
+                                                  const Text(
+                                                    'TXH',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 10),
+                                                  ),
+                                                ],
+                                              ),
+                                            ))),
+                                    const SizedBox(height: 8),
+                                    SizedBox(
+                                        height: 60,
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                2.4,
+                                        child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(11),
                                           ),
-                                          controller.selectid.value == 5
-                                              ? const Text(
-                                                  'No Limit',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color: Colors.black,
-                                                      fontSize: 17),
-                                                )
-                                              : Text(
-                                                  '${controller.stakeDashboardResponse.value?.remain}',
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Paid Days'.tr,
                                                   style: const TextStyle(
                                                       fontWeight:
                                                           FontWeight.bold,
-                                                      color: Colors.black,
-                                                      fontSize: 17),
+                                                      fontSize: 12),
                                                 ),
-                                          const Text(
-                                            'TXH',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                                fontSize: 10),
+                                                Text(
+                                                  '${controller.stakeDashboardResponse.value?.paid}',
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red,
+                                                      fontSize: 16),
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    const SizedBox(height: 8),
-                                    Container(
-                                      padding: const EdgeInsets.all(10),
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width /
-                                          2.4,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(11),
-                                          color: Colors.grey.shade300),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Paid Days'.tr,
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                                fontSize: 12),
-                                          ),
-                                          Text(
-                                            '${controller.stakeDashboardResponse.value?.paid}',
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.red,
-                                                fontSize: 16),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                        ))
                                   ],
                                 ),
                                 // Row(
@@ -1338,7 +1400,7 @@ class txhincome extends GetView<StackController> {
                                 //           '${controller.stakeDashboardResponse.value?.userstakindate}',
                                 //           style: const TextStyle(
                                 //               fontWeight: FontWeight.bold,
-                                //               color: Colors.black,
+                                //
                                 //               fontSize: 15),
                                 //         ),
                                 //         Text(
@@ -1353,7 +1415,7 @@ class txhincome extends GetView<StackController> {
                                 //           '${controller.stakeDashboardResponse.value?.totalsincome}',
                                 //           style: const TextStyle(
                                 //               fontWeight: FontWeight.bold,
-                                //               color: Colors.black,
+                                //
                                 //               fontSize: 25),
                                 //         ),
                                 //         Text(
@@ -1393,7 +1455,7 @@ class txhincome extends GetView<StackController> {
                                 //             '${controller.stakeDashboardResponse.value?.stakedamt}',
                                 //             style: const TextStyle(
                                 //                 fontWeight: FontWeight.bold,
-                                //                 color: Colors.black,
+                                //
                                 //                 fontSize: 12),
                                 //           ),
                                 //           Text(
@@ -1427,7 +1489,7 @@ class txhincome extends GetView<StackController> {
                                 //           '${controller.stakeDashboardResponse.value?.totalsincome}',
                                 //           style: const TextStyle(
                                 //               fontWeight: FontWeight.bold,
-                                //               color: Colors.black,
+                                //
                                 //               fontSize: 25),
                                 //         ),
                                 //         Text(
@@ -1471,7 +1533,7 @@ class txhincome extends GetView<StackController> {
                                 //                 '${controller.stakeDashboardResponse.value?.remain}',
                                 //                 style: const TextStyle(
                                 //                     fontWeight: FontWeight.bold,
-                                //                     color: Colors.black,
+                                //
                                 //                     fontSize: 12),
                                 //               ),
                                 //               Text(
@@ -1514,7 +1576,7 @@ class txhincome extends GetView<StackController> {
                                 //                 '${controller.stakeDashboardResponse.value?.paid}',
                                 //                 style: const TextStyle(
                                 //                     fontWeight: FontWeight.bold,
-                                //                     color: Colors.black,
+                                //
                                 //                     fontSize: 12),
                                 //               ),
                                 //             ],
@@ -1543,7 +1605,6 @@ class txhincome extends GetView<StackController> {
                                     'Unclaimed Income'.tr,
                                     style: const TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.black,
                                         fontSize: 12),
                                   ),
                                 ),
@@ -1564,12 +1625,11 @@ class txhincome extends GetView<StackController> {
                                           'TXH',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.black,
                                               fontSize: 10),
                                         ),
                                         const SizedBox(height: 10),
                                         const Icon(CupertinoIcons.alarm,
-                                            color: Colors.black, size: 30)
+                                            size: 30)
                                       ],
                                     ),
                                     const Spacer(),
@@ -1662,7 +1722,6 @@ class StakeClaimDetails extends StatelessWidget {
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
               size: 20,
             )),
         backgroundColor: Colors.white,
@@ -1688,13 +1747,13 @@ class StakeClaimDetails extends StatelessWidget {
             //         style: GoogleFonts.roboto(
             //             fontSize: 25,
             //             fontWeight: FontWeight.bold,
-            //             color: Colors.black)),
+            //               )),
             //     Obx(() => Text(
             //           ' ${controller.currencyResponse.value?.currency}',
             //           style: GoogleFonts.roboto(
             //               fontSize: 22,
             //               fontWeight: FontWeight.w600,
-            //               color: Colors.black),
+            //                 ),
             //         )),
             //   ],
             // ),
@@ -1713,16 +1772,16 @@ class StakeClaimDetails extends StatelessWidget {
                       children: [
                         Text('Amount :'.tr,
                             style: GoogleFonts.roboto(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black)),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            )),
                         Text(
                             '${controller.stakeDashboardResponse.value?.unclaim.toStringAsFixed(2)}',
                             // '${controller.commissionAmount.value} LINE',
                             style: GoogleFonts.roboto(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black))
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ))
                       ]),
                   const SizedBox(height: 10),
                   Row(
@@ -1730,16 +1789,16 @@ class StakeClaimDetails extends StatelessWidget {
                     children: [
                       Text('Remark'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          )),
                       Text('Stake Income'.tr,
                           maxLines: 1,
                           // '${controller.commissionAmount.value} LINE',
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          )),
                     ],
                   ),
                   const SizedBox(height: 10),
@@ -1748,15 +1807,15 @@ class StakeClaimDetails extends StatelessWidget {
                     children: [
                       Text('Network fee'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          )),
                       Text('${sendController.commissionAmount.value} TXH',
                           // '${controller.commissionAmount.value} LINE',
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black))
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ))
                     ],
                   ),
                   const SizedBox(height: 10),
@@ -1764,17 +1823,17 @@ class StakeClaimDetails extends StatelessWidget {
                     children: [
                       Text('Max Total'.tr,
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          )),
                       const Spacer(),
                       Obx(() => Text(
                           '${controller.stakeDashboardResponse.value!.unclaim - sendController.commissionAmount.value}',
                           // '${controller.commissionAmount.value} LINE',
                           style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)))
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          )))
                     ],
                   ),
                 ],

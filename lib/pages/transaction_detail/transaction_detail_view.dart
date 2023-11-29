@@ -17,22 +17,14 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
         : Get.put(TransactionDetailController());
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         leading: InkWell(
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
               size: 20,
             )),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+
         elevation: 0,
         centerTitle: true,
         // backgroundColor: Colors.transparent,
@@ -108,13 +100,10 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                     onPressed: null,
                     icon: const Icon(
                       Icons.arrow_circle_down,
-                      color: Colors.black,
                     ),
                     label: Text(
                       'Sending account'.tr,
-                      style: GoogleFonts.roboto(
-                        color: Colors.black,
-                      ),
+                      style: GoogleFonts.roboto(),
                     )),
 
                 Row(
@@ -122,9 +111,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                     Text(
                       controller.trxDetails?.fromAdress ?? '',
                       style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black,
-                          fontSize: 12),
+                          fontWeight: FontWeight.normal, fontSize: 12),
                     ),
                     IconButton(
                         onPressed: () {
@@ -134,7 +121,6 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                         },
                         icon: const Icon(
                           Icons.copy,
-                          color: Colors.black,
                         ))
                   ],
                 ),
@@ -143,13 +129,10 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                     onPressed: null,
                     icon: const Icon(
                       Icons.arrow_circle_up,
-                      color: Colors.black,
                     ),
                     label: Text(
                       'Receiving account'.tr,
-                      style: GoogleFonts.roboto(
-                        color: Colors.black,
-                      ),
+                      style: GoogleFonts.roboto(),
                     )),
 
                 Row(
@@ -157,9 +140,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                     Text(
                       controller.trxDetails?.toAddress ?? '',
                       style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black,
-                          fontSize: 12),
+                          fontWeight: FontWeight.normal, fontSize: 12),
                     ),
                     IconButton(
                         onPressed: () {
@@ -169,7 +150,6 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                         },
                         icon: const Icon(
                           Icons.copy,
-                          color: Colors.black,
                         ))
                   ],
                 )
@@ -182,10 +162,8 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
 
             Text(
               'Transaction Type'.tr,
-              style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 15),
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 15),
             ),
 
             const SizedBox(
@@ -201,10 +179,8 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
 
             Text(
               controller.trxDetails?.paymentType.tr ?? '',
-              style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 15),
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 15),
             ),
 
             const SizedBox(
@@ -213,10 +189,8 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
 
             Text(
               'Transaction Hash'.tr,
-              style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 15),
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 15),
             ),
 
             const SizedBox(
@@ -229,9 +203,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                   child: Text(
                     controller.trxDetails?.txthash.tr ?? ''.tr,
                     style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black,
-                        fontSize: 12),
+                        fontWeight: FontWeight.normal, fontSize: 12),
                   ),
                 ),
                 IconButton(
@@ -242,7 +214,6 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                     },
                     icon: const Icon(
                       Icons.copy,
-                      color: Colors.black,
                     ))
               ],
             ),
@@ -257,10 +228,8 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
 
             Text(
               'Date'.tr,
-              style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 15),
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 15),
             ),
 
             const SizedBox(
@@ -269,10 +238,8 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
 
             Text(
               controller.trxDetails?.transactionDate ?? '',
-              style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 15),
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 15),
             ),
             const SizedBox(height: 16),
 
@@ -281,24 +248,18 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                 Text(
                   'Estimated Gas Fee'.tr,
                   style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      fontSize: 15),
+                      fontWeight: FontWeight.bold, fontSize: 15),
                 ),
                 const Spacer(),
                 Text(
                   '${controller.trxDetails?.credit ?? 0.0} /'.tr,
                   style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      fontSize: 15),
+                      fontWeight: FontWeight.bold, fontSize: 15),
                 ),
                 Text(
                   ' ${controller.trxDetails?.commissionAmt ?? 0.0}'.tr,
                   style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      fontSize: 15),
+                      fontWeight: FontWeight.bold, fontSize: 15),
                 ),
               ],
             )

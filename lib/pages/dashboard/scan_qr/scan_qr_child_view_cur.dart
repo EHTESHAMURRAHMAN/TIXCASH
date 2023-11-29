@@ -45,7 +45,7 @@ class ScanQRChildCur extends GetView<ScanQrController> {
                         fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    '${currencyResponse?.currency}'.tr.toUpperCase(),
+                    ' ${currencyResponse?.currency}'.tr.toUpperCase(),
                     style: GoogleFonts.roboto(
                         fontSize: 18, fontWeight: FontWeight.w500),
                   ),
@@ -56,20 +56,11 @@ class ScanQRChildCur extends GetView<ScanQrController> {
                   onTap: () => Get.back(),
                   child: const Icon(
                     Icons.arrow_back_ios,
-                    color: Colors.black,
                   )),
-              systemOverlayStyle: const SystemUiOverlayStyle(
-                statusBarColor: Colors.white,
-                statusBarIconBrightness: Brightness.dark,
-                statusBarBrightness: Brightness.dark,
-              ),
-              backgroundColor: Colors.white,
-              foregroundColor: Colors.black,
               elevation: 0,
               automaticallyImplyLeading: false,
             )
           : null,
-      backgroundColor: Colors.white,
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: ListView(
@@ -89,7 +80,7 @@ class ScanQRChildCur extends GetView<ScanQrController> {
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  '${currencyResponse?.currency}'.tr,
+                  ' ${currencyResponse?.currency} '.tr,
                   style: GoogleFonts.roboto(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
@@ -195,9 +186,7 @@ class ScanQRChildCur extends GetView<ScanQrController> {
             Obx(() => Text(
                   controller.address.value ?? 'null',
                   style: GoogleFonts.roboto(
-                      fontSize: 13,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400),
+                      fontSize: 13, fontWeight: FontWeight.w400),
                   textAlign: TextAlign.center,
                 )),
             const SizedBox(height: 16),
@@ -317,7 +306,6 @@ class ScanQRChildCur extends GetView<ScanQrController> {
                 },
                 child: const Icon(
                   Icons.share,
-                  color: Colors.black,
                   size: 30,
                 )),
             Obx(() => controller.isTransferFromExchange.value

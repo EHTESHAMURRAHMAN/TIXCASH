@@ -104,7 +104,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                       context: context,
                       builder: (context) => Dialog(
                             // insetPadding: EdgeInsets.symmetric(horizontal: 15),
-                            backgroundColor: Colors.white,
+
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20)),
                             child: Padding(
@@ -143,8 +143,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                       style: GoogleFonts.roboto(
                                           fontSize: 16,
                                           fontWeight: FontWeight.w400,
-                                          fontStyle: FontStyle.normal,
-                                          color: Colors.black),
+                                          fontStyle: FontStyle.normal),
                                     ),
                                     const SizedBox(
                                       height: 10,
@@ -159,8 +158,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                       style: GoogleFonts.roboto(
                                           fontSize: 16,
                                           fontWeight: FontWeight.w400,
-                                          fontStyle: FontStyle.normal,
-                                          color: Colors.black),
+                                          fontStyle: FontStyle.normal),
                                     ),
                                     const SizedBox(
                                       height: 30,
@@ -220,8 +218,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                       onTap: () => Get.back(),
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          border:
-                                              Border.all(color: Colors.black),
+                                          border: Border.all(),
                                           borderRadius:
                                               BorderRadius.circular(25),
                                         ),
@@ -237,8 +234,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                             'Cancel'.tr,
                                             style: GoogleFonts.roboto(
                                                 fontSize: 14,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.black),
+                                                fontWeight: FontWeight.w500),
                                           ),
                                         ),
                                       ),

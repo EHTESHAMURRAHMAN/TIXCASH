@@ -22,17 +22,9 @@ class ImportWalletView extends GetView<CreateWalletController> {
         : Get.put(CreateWalletController());
     return Scaffold(
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
-        backgroundColor: Colors.white,
         leading: InkWell(
             onTap: () => Get.back(),
-            child: const Icon(Icons.arrow_back_ios,
-                color: Colors.black, size: 18)),
-        foregroundColor: Colors.black,
+            child: const Icon(Icons.arrow_back_ios, size: 18)),
         automaticallyImplyLeading: false,
         elevation: 0,
         centerTitle: true,
@@ -41,7 +33,6 @@ class ImportWalletView extends GetView<CreateWalletController> {
           style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500),
         ),
       ),
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
@@ -69,40 +60,41 @@ class ImportWalletView extends GetView<CreateWalletController> {
                             }
                           });
                         },
-                        child: Container(
-                            height: 60,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.grey.shade300),
-                            child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 15),
-                                child: Row(children: [
-                                  Obx(() => controller.selectid.value == 0
-                                      ? Text(
-                                          'Select Recover Account Type'.tr,
-                                          style: const TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold),
-                                        )
-                                      : SizedBox(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              3,
-                                          child: Text(
-                                            controller.selectType.value,
+                        child: SizedBox(
+                            height: 55,
+                            child: Card(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 4),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 15),
+                                  child: Row(children: [
+                                    Obx(() => controller.selectid.value == 0
+                                        ? Text(
+                                            'Select Recover Account Type'.tr,
                                             style: const TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 15,
+                                                fontSize: 14,
                                                 fontWeight: FontWeight.bold),
-                                            maxLines: 1,
-                                          ))),
-                                  const Spacer(),
-                                  const Icon(Icons.arrow_drop_down,
-                                      color: Colors.black, size: 30)
-                                ])))),
+                                          )
+                                        : SizedBox(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width /
+                                                3,
+                                            child: Text(
+                                              controller.selectType.value,
+                                              style: const TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
+                                              maxLines: 1,
+                                            ))),
+                                    const Spacer(),
+                                    const Icon(Icons.arrow_drop_down, size: 30)
+                                  ]),
+                                )))),
                     const SizedBox(height: 10),
                     Obx(() => controller.selectid.value == 1
                         ? Column(
@@ -158,8 +150,6 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                               controller.createController
                                                   .checkPassword(val);
                                             },
-                                            style: const TextStyle(
-                                                color: Colors.black),
                                             obscureText: controller
                                                 .createController
                                                 .isNewObscure
@@ -187,8 +177,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                                           .secondaryDarkAppColor,
                                                     )),
                                                 hintText: 'New password'.tr,
-                                                hintStyle: const TextStyle(
-                                                    color: Colors.black26),
+                                                hintStyle: const TextStyle(),
                                                 enabledBorder: OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color: ColorConstants
@@ -223,8 +212,6 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                               controller.createController
                                                   .checkPassword(val);
                                             },
-                                            style: const TextStyle(
-                                                color: Colors.black),
                                             obscureText: controller
                                                 .createController
                                                 .isConObscure
@@ -252,8 +239,7 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                                           .secondaryDarkAppColor,
                                                     )),
                                                 hintText: 'Confirm Password'.tr,
-                                                hintStyle: const TextStyle(
-                                                    color: Colors.black26),
+                                                hintStyle: const TextStyle(),
                                                 enabledBorder: OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color: ColorConstants
@@ -377,8 +363,6 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                                   controller.createController
                                                       .checkPassword(val);
                                                 },
-                                                style: const TextStyle(
-                                                    color: Colors.black),
                                                 obscureText: controller
                                                     .createController
                                                     .isNewObscure
@@ -406,8 +390,8 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                                               .secondaryDarkAppColor,
                                                         )),
                                                     hintText: 'New password'.tr,
-                                                    hintStyle: const TextStyle(
-                                                        color: Colors.black26),
+                                                    hintStyle:
+                                                        const TextStyle(),
                                                     enabledBorder: OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                             color: ColorConstants
@@ -443,8 +427,6 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                                   controller.createController
                                                       .checkPassword(val);
                                                 },
-                                                style: const TextStyle(
-                                                    color: Colors.black),
                                                 obscureText: controller
                                                     .createController
                                                     .isConObscure
@@ -473,8 +455,8 @@ class ImportWalletView extends GetView<CreateWalletController> {
                                                         )),
                                                     hintText:
                                                         'Confirm Password'.tr,
-                                                    hintStyle: const TextStyle(
-                                                        color: Colors.black26),
+                                                    hintStyle:
+                                                        const TextStyle(),
                                                     enabledBorder: OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                             color: ColorConstants
@@ -644,14 +626,7 @@ class RecoveryDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         elevation: 0,
         automaticallyImplyLeading: false,
         leading: InkWell(
@@ -660,14 +635,12 @@ class RecoveryDropDown extends StatelessWidget {
           },
           child: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
           ),
         ),
         centerTitle: true,
         title: Text(
           'Select Recovery type'.tr,
-          style: const TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
       body: Container(

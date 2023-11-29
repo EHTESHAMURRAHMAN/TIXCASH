@@ -10,7 +10,6 @@ class Startview3 extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
         child: Center(
           child: Column(
@@ -25,16 +24,18 @@ class Startview3 extends GetView {
                 'Welcome to Tixcash Wallet'.tr,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Colors.black),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
               ),
               const SizedBox(height: 25),
               Text(
                 'The home of your Funds & your\nNFT collection on Tixcash Wallet Network'
                     .tr,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 16, color: Colors.black),
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
               ),
               const SizedBox(height: 15),
             ],
@@ -71,19 +72,21 @@ class Startview3 extends GetView {
               onTap: () {
                 Get.to(() => const ImportWalletView());
               },
-              child: Container(
-                height: 45,
-                width: MediaQuery.of(context).size.width / 1.5,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Colors.grey.shade200),
-                child: Center(
-                  child: Text(
-                    'I already have a wallet'.tr,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                        color: Color(0xff1680ee)),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: SizedBox(
+                  height: 45,
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  child: Center(
+                    child: Text(
+                      'I already have a wallet'.tr,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          color: Color(0xff1680ee)),
+                    ),
                   ),
                 ),
               ),

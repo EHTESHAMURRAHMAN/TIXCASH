@@ -171,14 +171,7 @@ class PremiumAccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
           elevation: 0,
           automaticallyImplyLeading: false,
           leading: InkWell(
@@ -187,14 +180,12 @@ class PremiumAccess extends StatelessWidget {
             },
             child: const Icon(
               Icons.arrow_back_ios_new,
-              color: Colors.black,
             ),
           ),
           centerTitle: true,
           title: Text(
             'Select Premium Plan'.tr,
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
         ),
         body: Container(
@@ -217,14 +208,12 @@ class PremiumAccess extends StatelessWidget {
                                   Text(
                                     '${model.pid} ',
                                     style: const TextStyle(
-                                        color: Colors.black,
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     'Years Access'.tr,
                                     style: const TextStyle(
-                                        color: Colors.black,
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -238,14 +227,12 @@ class PremiumAccess extends StatelessWidget {
                                   Text(
                                     '${model.pid} ',
                                     style: const TextStyle(
-                                        color: Colors.black,
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     'Year Access'.tr,
                                     style: const TextStyle(
-                                        color: Colors.black,
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -354,14 +341,7 @@ class ActiveStakeList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
           elevation: 0,
           automaticallyImplyLeading: false,
           leading: InkWell(
@@ -370,14 +350,12 @@ class ActiveStakeList extends StatelessWidget {
             },
             child: const Icon(
               Icons.arrow_back_ios_new,
-              color: Colors.black,
             ),
           ),
           centerTitle: true,
           title: Text(
             'Select Stake Plan'.tr,
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
         ),
         body: Container(
@@ -433,14 +411,7 @@ class currencyPremium extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         elevation: 0,
         automaticallyImplyLeading: false,
         leading: InkWell(
@@ -449,14 +420,12 @@ class currencyPremium extends StatelessWidget {
           },
           child: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
           ),
         ),
         centerTitle: true,
         title: const Text(
           'Select Currency',
-          style: TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
       body: Container(
@@ -531,14 +500,12 @@ class StakeDays extends StatelessWidget {
           },
           child: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
           ),
         ),
         centerTitle: true,
         title: const Text(
           'Select Staking Plan',
-          style: TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
       body: Container(
@@ -558,9 +525,7 @@ class StakeDays extends StatelessWidget {
                     title: Text(
                       '${i.first}',
                       style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
+                          fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                     onTap: () {
                       Get.back(result: {'plan': i.first, 'id': i.last});

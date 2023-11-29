@@ -17,20 +17,12 @@ class CreateWalletView extends GetView<CreateWalletController> {
 // ignore: must_be_immutable
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: InkWell(
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
             )),
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
-        backgroundColor: Colors.white,
         elevation: 0,
         automaticallyImplyLeading: false,
       ),
@@ -52,9 +44,7 @@ class CreateWalletView extends GetView<CreateWalletController> {
                         .tr,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold))),
+                        fontSize: 15, fontWeight: FontWeight.bold))),
             const SizedBox(
               height: 36,
             ),

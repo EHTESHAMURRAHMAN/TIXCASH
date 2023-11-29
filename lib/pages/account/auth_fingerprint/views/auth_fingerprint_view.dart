@@ -20,20 +20,13 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         leading: InkWell(
             onTap: () => Get.back(),
-            child: const Icon(Icons.arrow_back_ios,
-                color: Colors.black, size: 18)),
+            child: const Icon(Icons.arrow_back_ios, size: 18)),
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
         elevation: 0,
       ),
-      backgroundColor: Colors.white,
+
       body: SingleChildScrollView(
         child: Obx(() => Container(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -44,9 +37,7 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                   Text(
                     controller.saveItMessage,
                     style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
                     height: 16,
@@ -82,9 +73,7 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                   Text(
                     'Your private key'.tr,
                     style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
                     height: 24,
@@ -135,9 +124,9 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                                               ? '••••••'
                                               : controller.privateKey.value,
                                           style: GoogleFonts.roboto(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18,
-                                              color: Colors.black),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18,
+                                          ),
                                         )),
                                     const SizedBox(height: 10),
                                     InkWell(
@@ -167,27 +156,33 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                                             EasyLoading.showToast(
                                                 'Address Copied'.tr);
                                           },
-                                          child: Container(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                3,
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 16, horizontal: 24),
-                                            decoration: BoxDecoration(
-                                                color: Colors.grey.shade200,
+                                          child: Card(
+                                            shape: RoundedRectangleBorder(
                                                 borderRadius:
-                                                    BorderRadius.circular(30),
-                                                border: Border.all(
+                                                    BorderRadius.circular(30)),
+                                            child: Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width /
+                                                  3,
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 16,
+                                                      horizontal: 24),
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(30),
+                                                  border: Border.all(
+                                                      color: Theme.of(context)
+                                                          .primaryColor)),
+                                              child: Center(
+                                                  child: Text(
+                                                'Copy'.tr,
+                                                style: TextStyle(
                                                     color: Theme.of(context)
-                                                        .primaryColor)),
-                                            child: Center(
-                                                child: Text(
-                                              'Copy'.tr,
-                                              style: TextStyle(
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
-                                            )),
+                                                        .primaryColor),
+                                              )),
+                                            ),
                                           ),
                                         ),
                                         InkWell(
@@ -195,27 +190,33 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                                             Share.share(
                                                 controller.privateKey.value);
                                           },
-                                          child: Container(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                3,
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 16, horizontal: 24),
-                                            decoration: BoxDecoration(
-                                                color: Colors.grey.shade200,
+                                          child: Card(
+                                            shape: RoundedRectangleBorder(
                                                 borderRadius:
-                                                    BorderRadius.circular(30),
-                                                border: Border.all(
+                                                    BorderRadius.circular(30)),
+                                            child: Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width /
+                                                  3,
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 16,
+                                                      horizontal: 24),
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(30),
+                                                  border: Border.all(
+                                                      color: Theme.of(context)
+                                                          .primaryColor)),
+                                              child: Center(
+                                                  child: Text(
+                                                'Share'.tr,
+                                                style: TextStyle(
                                                     color: Theme.of(context)
-                                                        .primaryColor)),
-                                            child: Center(
-                                                child: Text(
-                                              'Share'.tr,
-                                              style: TextStyle(
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
-                                            )),
+                                                        .primaryColor),
+                                              )),
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -251,26 +252,31 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                                       onTap: () {
                                         shareQrCode();
                                       },
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                3,
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 16, horizontal: 24),
-                                        decoration: BoxDecoration(
-                                            color: Colors.grey.shade200,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(30),
-                                            border: Border.all(
+                                                BorderRadius.circular(30)),
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              3,
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 16, horizontal: 24),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              border: Border.all(
+                                                  color: Theme.of(context)
+                                                      .primaryColor)),
+                                          child: Center(
+                                              child: Text(
+                                            'Share QR'.tr,
+                                            style: TextStyle(
                                                 color: Theme.of(context)
-                                                    .primaryColor)),
-                                        child: Center(
-                                            child: Text(
-                                          'Share QR'.tr,
-                                          style: TextStyle(
-                                              color: Theme.of(context)
-                                                  .primaryColor),
-                                        )),
+                                                    .primaryColor),
+                                          )),
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -317,21 +323,24 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                       onTap: () {
                         Get.back();
                       },
-                      child: Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 16, horizontal: 24),
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
-                            borderRadius: BorderRadius.circular(30),
-                            border: Border.all(
-                                color: Theme.of(context).primaryColor)),
-                        child: Center(
-                            child: Text(
-                          'Done'.tr,
-                          style:
-                              TextStyle(color: Theme.of(context).primaryColor),
-                        )),
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 24),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              border: Border.all(
+                                  color: Theme.of(context).primaryColor)),
+                          child: Center(
+                              child: Text(
+                            'Done'.tr,
+                            style: TextStyle(
+                                color: Theme.of(context).primaryColor),
+                          )),
+                        ),
                       ),
                     ),
                   ),
@@ -423,7 +432,7 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
 //                       ),
 //                       Image.asset('assets/icons/finger_print.png',
 //                           width: MediaQuery.of(context).size.width / 3,
-//                           color: Colors.black),
+//                             ),
 //                       const SizedBox(
 //                         height: 50,
 //                       ),
@@ -457,7 +466,7 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
 //                       padding: const EdgeInsets.symmetric(
 //                           horizontal: 16, vertical: 32),
 //                       decoration: BoxDecoration(
-//                           color: Colors.black,
+//                             
 //                           borderRadius: BorderRadius.circular(8)),
 //                       child: Row(
 //                         children: <Widget>[
@@ -498,14 +507,14 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
 //                           horizontal: 16, vertical: 32),
 //                       decoration: BoxDecoration(
 //                           borderRadius: BorderRadius.circular(8),
-//                           border: Border.all(color: Colors.black)),
+//                           border: Border.all(  )),
 //                       child: Column(
 //                         mainAxisSize: MainAxisSize.min,
 //                         children: [
 //                           Text(
 //                             controller.privateKey.value,
 //                             style: GoogleFonts.roboto(
-//                                 color: Colors.black,
+//                                   
 //                                 fontSize: 18,
 //                                 fontWeight: FontWeight.bold),
 //                           ),
@@ -526,7 +535,7 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
 //                                   child: Text('Copy to Clipboard')),
 //                               decoration: BoxDecoration(
 //                                   borderRadius: BorderRadius.circular(30),
-//                                   border: Border.all(color: Colors.black)),
+//                                   border: Border.all(  )),
 //                             ),
 //                           )
 //                         ],
@@ -544,9 +553,9 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
 //                         padding: const EdgeInsets.symmetric(
 //                             vertical: 16, horizontal: 24),
 //                         decoration: BoxDecoration(
-//                             color: Colors.black,
+//                               
 //                             borderRadius: BorderRadius.circular(30),
-//                             border: Border.all(color: Colors.black)),
+//                             border: Border.all(  )),
 //                         child: Center(
 //                             child: Text(
 //                           'DONE',

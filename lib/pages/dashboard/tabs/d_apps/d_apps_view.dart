@@ -88,7 +88,7 @@ class DAppsView extends GetView<DAppsController> {
                               AppFocus.unfocus(context);
                               _onSubmit(context, textValue);
     
-                            }, child: const Icon(Icons.search, color: Colors.black, size: 24,))
+                            }, child: const Icon(Icons.search,    size: 24,))
                         ),
                       ),
                       decoration: BoxDecoration(
@@ -130,7 +130,6 @@ class DAppsView extends GetView<DAppsController> {
         ),*/
           Obx(() => controller.lastUrl.value.isEmpty
               ? Scaffold(
-                  backgroundColor: Colors.white,
                   body: ListView(
                     children: [
                       Container(
@@ -164,6 +163,7 @@ class DAppsView extends GetView<DAppsController> {
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.roboto(
                                         fontSize: 14,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.w700)),
                               )
                             ],
@@ -178,9 +178,9 @@ class DAppsView extends GetView<DAppsController> {
                           child: Text('Tixcash Services'.tr,
                               textAlign: TextAlign.center,
                               style: GoogleFonts.roboto(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black)),
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              )),
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -193,34 +193,28 @@ class DAppsView extends GetView<DAppsController> {
                                   ? stakePopup(context)
                                   : Get.to(stakingIncome());
                             },
-                            child: Container(
-                              height: 70,
+                            child: SizedBox(
+                              height: 60,
                               width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.asset(
-                                    'assets/icons/logo.png',
-                                    height: 35,
-                                    width: 35,
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text('Tixcash Stake'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(width: 8),
+                                    Image.asset(
+                                      'assets/icons/logo.png',
+                                      height: 35,
+                                      width: 35,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text('Tixcash Stake'.tr,
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500)),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -229,37 +223,31 @@ class DAppsView extends GetView<DAppsController> {
                               EasyLoading.showToast('Launching Soon'.tr,
                                   toastPosition: EasyLoadingToastPosition.top);
                             },
-                            child: Container(
-                              height: 70,
+                            child: SizedBox(
+                              height: 60,
                               width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.asset(
-                                    'assets/icons/fitness.png',
-                                    height: 35,
-                                    width: 35,
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text('Fitness Club'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(width: 8),
+                                    Image.asset(
+                                      'assets/icons/fitness.png',
+                                      height: 35,
+                                      width: 35,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text('Fitness Club'.tr,
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500)),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
+                          )
                         ],
                       ),
                       const SizedBox(height: 12),
@@ -271,73 +259,124 @@ class DAppsView extends GetView<DAppsController> {
                               EasyLoading.showToast('Launching Soon'.tr,
                                   toastPosition: EasyLoadingToastPosition.top);
                             },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.network(
-                                    'https://cdn-icons-png.flaticon.com/512/2170/2170714.png',
-                                    height: 35,
-                                    width: 35,
+                            child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text('Community'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.network(
+                                        'https://cdn-icons-png.flaticon.com/512/2170/2170714.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('Community'.tr,
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                )),
                           ),
                           InkWell(
                             onTap: () {
                               EasyLoading.showToast('Launching Soon'.tr,
                                   toastPosition: EasyLoadingToastPosition.top);
                             },
-                            child: Container(
-                              height: 70,
+                            child: SizedBox(
+                              height: 60,
                               width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.asset(
-                                    'assets/icons/mining.png',
-                                    height: 35,
-                                    width: 35,
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text('Mining Pool'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(width: 8),
+                                    Image.asset(
+                                      'assets/icons/mining.png',
+                                      height: 35,
+                                      width: 35,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text('Mining Pool'.tr,
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500)),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 12),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          InkWell(
+                              onTap: () {
+                                EasyLoading.showToast('Launching Soon'.tr,
+                                    toastPosition:
+                                        EasyLoadingToastPosition.top);
+                              },
+                              child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.asset(
+                                        'assets/icons/store.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('Tixcash Stores'.tr,
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                ),
+                              )),
+                          InkWell(
+                              onTap: () {
+                                Get.to(const Courses());
+                              },
+                              child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.asset(
+                                        'assets/icons/courses.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('Courses'.tr,
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                ),
+                              )),
                         ],
                       ),
                       const SizedBox(height: 12),
@@ -349,149 +388,58 @@ class DAppsView extends GetView<DAppsController> {
                               EasyLoading.showToast('Launching Soon'.tr,
                                   toastPosition: EasyLoadingToastPosition.top);
                             },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.asset(
-                                    'assets/icons/store.png',
-                                    height: 35,
-                                    width: 35,
+                            child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text('Tixcash Stores'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Get.to(const Courses());
-                            },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.asset(
-                                    'assets/icons/courses.png',
-                                    height: 35,
-                                    width: 35,
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.asset(
+                                        'assets/icons/cash_share.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('Cash Sharing'.tr,
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text('Courses'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              EasyLoading.showToast('Launching Soon'.tr,
-                                  toastPosition: EasyLoadingToastPosition.top);
-                            },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.asset(
-                                    'assets/icons/cash_share.png',
-                                    height: 35,
-                                    width: 35,
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text('Cash Sharing'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
+                                )),
                           ),
                           InkWell(
                             onTap: () {
                               EasyLoading.showToast('Launching Soon'.tr,
                                   toastPosition: EasyLoadingToastPosition.top);
                             },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.asset(
-                                    'assets/icons/foundation.png',
-                                    height: 35,
-                                    width: 35,
+                            child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text('Foundation'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.asset(
+                                        'assets/icons/foundation.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('Foundation'.tr,
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                )),
                           ),
                         ],
                       ),
@@ -503,9 +451,7 @@ class DAppsView extends GetView<DAppsController> {
                           child: Text('DeFi'.tr,
                               textAlign: TextAlign.center,
                               style: GoogleFonts.roboto(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black)),
+                                  fontSize: 20, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -519,34 +465,28 @@ class DAppsView extends GetView<DAppsController> {
                               // launchUrlString('https://pancakeswap.finance/',
                               //     mode: LaunchMode.externalApplication);
                             },
-                            child: Container(
-                              height: 70,
+                            child: SizedBox(
+                              height: 60,
                               width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.network(
-                                    'https://s2.coinmarketcap.com/static/img/coins/200x200/7186.png',
-                                    height: 35,
-                                    width: 35,
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text('Pancakeswap',
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(width: 8),
+                                    Image.network(
+                                      'https://s2.coinmarketcap.com/static/img/coins/200x200/7186.png',
+                                      height: 35,
+                                      width: 35,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text('Pancakeswap',
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500)),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -566,36 +506,29 @@ class DAppsView extends GetView<DAppsController> {
                               // launchUrlString('https://app.uniswap.org/',
                               //     mode: LaunchMode.externalApplication);
                             },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.network(
-                                    'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Uniswap_Logo.svg/1200px-Uniswap_Logo.svg.png',
-                                    height: 35,
-                                    width: 35,
+                            child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text('Uniswap',
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.network(
+                                        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Uniswap_Logo.svg/1200px-Uniswap_Logo.svg.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('Uniswap',
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                )),
                           ),
 
                           // DAppCard(
@@ -619,36 +552,29 @@ class DAppsView extends GetView<DAppsController> {
                               // launchUrlString('https://curve.fi/#/ethereum/swap',
                               //     mode: LaunchMode.externalApplication);
                             },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.network(
-                                    'https://miro.medium.com/v2/resize:fit:1400/1*TJp7SItIYcHFKtOLbcAeeQ.png',
-                                    height: 35,
-                                    width: 35,
+                            child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text('Curve',
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.network(
+                                        'https://miro.medium.com/v2/resize:fit:1400/1*TJp7SItIYcHFKtOLbcAeeQ.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('Curve',
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                )),
                           ),
 
                           // DAppCard(
@@ -660,45 +586,38 @@ class DAppsView extends GetView<DAppsController> {
                           //   },
                           // ),
                           InkWell(
-                            onTap: () {
-                              const url =
-                                  'https://app.1inch.io/#/1/simple/swap/USDT';
-                              openBrowserUrl(url: url, inApp: true);
-                              // launchUrlString(
-                              //     'https://app.1inch.io/#/1/simple/swap/USDT',
-                              //     mode: LaunchMode.externalApplication);
-                            },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.network(
-                                    'https://static.vecteezy.com/system/resources/previews/024/092/590/original/1inch-network-1inch-glass-crypto-coin-3d-illustration-free-png.png',
-                                    height: 35,
-                                    width: 35,
+                              onTap: () {
+                                const url =
+                                    'https://app.1inch.io/#/1/simple/swap/USDT';
+                                openBrowserUrl(url: url, inApp: true);
+                                // launchUrlString(
+                                //     'https://app.1inch.io/#/1/simple/swap/USDT',
+                                //     mode: LaunchMode.externalApplication);
+                              },
+                              child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text('1inch',
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
-                          ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.network(
+                                        'https://static.vecteezy.com/system/resources/previews/024/092/590/original/1inch-network-1inch-glass-crypto-coin-3d-illustration-free-png.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('1inch',
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                ),
+                              )),
                         ],
                       ),
                       const SizedBox(
@@ -714,36 +633,29 @@ class DAppsView extends GetView<DAppsController> {
                               // launchUrlString('https://yearn.fi/vaults',
                               //     mode: LaunchMode.externalApplication);
                             },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.network(
-                                    'https://cdn-icons-png.flaticon.com/512/6001/6001662.png',
-                                    height: 35,
-                                    width: 35,
+                            child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text('Yearn',
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.network(
+                                        'https://cdn-icons-png.flaticon.com/512/6001/6001662.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('Yearn',
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                )),
                           ),
 
                           InkWell(
@@ -752,36 +664,29 @@ class DAppsView extends GetView<DAppsController> {
                               openBrowserUrl(url: url, inApp: true);
                               //launchUrlString('https://www.sushi.com/swap', mode: LaunchMode.externalApplication);
                             },
-                            child: Container(
-                              height: 70,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(16),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 1),
-                                        spreadRadius: 2,
-                                        blurRadius: 4)
-                                  ]),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  Image.network(
-                                    'https://img.freepik.com/premium-vector/sushiswap-sushi-token-symbol-cryptocurrency-logo-coin-icon-isolated-white-background-vector-illustration_337410-1379.jpg',
-                                    height: 35,
-                                    width: 35,
+                            child: SizedBox(
+                                height: 60,
+                                width: MediaQuery.of(context).size.width / 2.2,
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text('Sushi',
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 8),
+                                      Image.network(
+                                        'https://s2.coinmarketcap.com/static/img/coins/200x200/6758.png',
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text('Sushi',
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                )),
                           ),
                           // DAppCard(
                           //   //child: Image.network(''),
@@ -823,7 +728,6 @@ class DAppsView extends GetView<DAppsController> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: Colors.white,
           title: Image.asset(
             'assets/icons/logo.png',
             height: MediaQuery.of(context).size.height / 12,
@@ -837,9 +741,7 @@ class DAppsView extends GetView<DAppsController> {
                     Text('Linking to Tixcash Stake'.tr,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold)),
+                            fontSize: 15, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -949,7 +851,7 @@ class DAppCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
         decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(30),
             boxShadow: const [
               BoxShadow(
                   color: Colors.black12,
@@ -979,30 +881,16 @@ class Courses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: InkWell(
             onTap: () => Get.back(),
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              size: 20,
-            )),
+            child: const Icon(Icons.arrow_back_ios, size: 20)),
         title: Text('Courses'.tr,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.bold)),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
         centerTitle: true,
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
         elevation: 0,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.light,
-        ),
       ),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
@@ -1014,9 +902,7 @@ class Courses extends StatelessWidget {
               Text('Official Tixcash preorder and purchase channel'.tr,
                   textAlign: TextAlign.start,
                   style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold)),
+                      fontSize: 14, fontWeight: FontWeight.bold)),
               const SizedBox(height: 20),
               Row(
                 children: [
@@ -1027,9 +913,7 @@ class Courses extends StatelessWidget {
                         textAlign: TextAlign.start,
                         maxLines: 2,
                         style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold)),
+                            fontSize: 14, fontWeight: FontWeight.bold)),
                   ),
                   const Spacer(),
                   InkWell(
@@ -1051,9 +935,7 @@ class Courses extends StatelessWidget {
               Text('Only USDC and BUSD of BEP20 accepted.'.tr,
                   textAlign: TextAlign.start,
                   style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold)),
+                      fontSize: 14, fontWeight: FontWeight.bold)),
             ],
           ),
         ]),

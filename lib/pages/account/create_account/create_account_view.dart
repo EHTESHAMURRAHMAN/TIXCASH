@@ -18,11 +18,9 @@ class CreateAccountView extends GetView<CreateAccountController> {
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
               size: 20,
             )),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+
         elevation: 0,
         // backgroundColor: Colors.transparent,
         title: Text(
@@ -31,7 +29,6 @@ class CreateAccountView extends GetView<CreateAccountController> {
         ),
         centerTitle: true,
       ),
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Image.asset(
@@ -46,9 +43,7 @@ class CreateAccountView extends GetView<CreateAccountController> {
                 Text(
                   'New Wallet Password'.tr,
                   style: GoogleFonts.roboto(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                      fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 const SizedBox(
                   height: 8,
@@ -61,11 +56,10 @@ class CreateAccountView extends GetView<CreateAccountController> {
                           onChanged: (val) {
                             controller.checkPassword(val);
                           },
-                          style: const TextStyle(color: Colors.black),
                           obscureText: controller.isNewObscure.value,
                           decoration: InputDecoration(
                               hintText: 'New password'.tr,
-                              hintStyle: const TextStyle(color: Colors.black26),
+                              hintStyle: const TextStyle(),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: ColorConstants.secondaryAppColor),
@@ -99,8 +93,7 @@ class CreateAccountView extends GetView<CreateAccountController> {
                 ),
                 Text(
                   'Confirm Password'.tr,
-                  style: const TextStyle(
-                      color: Colors.black, fontSize: CommonConstants.smallText),
+                  style: const TextStyle(fontSize: CommonConstants.smallText),
                 ),
                 Obx(() => Row(
                       children: [
@@ -110,11 +103,10 @@ class CreateAccountView extends GetView<CreateAccountController> {
                           onChanged: (val) {
                             controller.checkPassword(val);
                           },
-                          style: const TextStyle(color: Colors.black),
                           obscureText: controller.isConObscure.value,
                           decoration: InputDecoration(
                               hintText: 'Confirm Password'.tr,
-                              hintStyle: const TextStyle(color: Colors.black26),
+                              hintStyle: const TextStyle(),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: ColorConstants.secondaryAppColor),

@@ -21,7 +21,7 @@ class SendTyvView extends GetView<SendTyvController> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-
+    controller.checkIsValid();
     controller.refreshData();
     if (_onPageChange.isClosed) {
       _onPageChange = StreamController<int>.broadcast();
@@ -32,22 +32,10 @@ class SendTyvView extends GetView<SendTyvController> {
     // controller.result = null;
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
           leading: InkWell(
               onTap: () => Get.back(),
-              child: const Icon(
-                Icons.arrow_back_ios,
-                color: Colors.black,
-                size: 20,
-              )),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+              child: const Icon(Icons.arrow_back_ios, size: 20)),
           elevation: 0,
           // backgroundColor: Colors.transparent,
           title: Row(
@@ -244,16 +232,15 @@ class SendTyvView extends GetView<SendTyvController> {
                                           Text('Network fee'.tr,
                                               style: GoogleFonts.roboto(
                                                   fontSize: 15,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: Colors.black)),
+                                                  fontWeight: FontWeight.w400)),
                                           const Spacer(),
                                           Obx(() => Text(
                                               '${controller.commissionAmount.value} ${controller.mCurrency.value}',
                                               // '${controller.commissionAmount.value} LINE',
                                               style: GoogleFonts.roboto(
                                                   fontSize: 15,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: Colors.black))),
+                                                  fontWeight:
+                                                      FontWeight.w400))),
                                         ],
                                       ),
                                       const SizedBox(height: 12),
@@ -263,8 +250,7 @@ class SendTyvView extends GetView<SendTyvController> {
                                           textAlign: TextAlign.start,
                                           style: GoogleFonts.roboto(
                                               fontSize: 15,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.black)),
+                                              fontWeight: FontWeight.w400)),
                                     ],
                                   ),
                                 ),
@@ -274,7 +260,7 @@ class SendTyvView extends GetView<SendTyvController> {
                                 //       () => controller.qrImagefile.value == null
                                 //           ? const Icon(
                                 //               Icons.abc,
-                                //               color: Colors.black,
+                                //
                                 //               size: 60,
                                 //             )
                                 //           : Padding(
@@ -397,7 +383,6 @@ class SendTyvView extends GetView<SendTyvController> {
                                       .toStringAsFixed(4),
                                   style: GoogleFonts.roboto(
                                     fontSize: 24,
-                                    color: Colors.black,
                                     fontWeight: FontWeight.w600,
                                   ))
                               : controller.appController.currency.value == 'CNY'
@@ -408,7 +393,6 @@ class SendTyvView extends GetView<SendTyvController> {
                                           .toStringAsFixed(4),
                                       style: GoogleFonts.roboto(
                                         fontSize: 24,
-                                        color: Colors.black,
                                         fontWeight: FontWeight.w600,
                                       ))
                                   : controller.appController.currency.value ==
@@ -420,7 +404,6 @@ class SendTyvView extends GetView<SendTyvController> {
                                               .toStringAsFixed(4),
                                           style: GoogleFonts.roboto(
                                             fontSize: 24,
-                                            color: Colors.black,
                                             fontWeight: FontWeight.w600,
                                           ))
                                       : controller.appController.currency.value ==
@@ -431,28 +414,24 @@ class SendTyvView extends GetView<SendTyvController> {
                                                   .toStringAsFixed(4),
                                               style: GoogleFonts.roboto(
                                                 fontSize: 24,
-                                                color: Colors.black,
                                                 fontWeight: FontWeight.w600,
                                               ))
                                           : controller.appController.currency.value == 'HKD'
                                               ? Text((controller.fundBalance * double.parse('${controller.homecontroller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4),
                                                   style: GoogleFonts.roboto(
                                                     fontSize: 24,
-                                                    color: Colors.black,
                                                     fontWeight: FontWeight.w600,
                                                   ))
                                               : controller.appController.currency.value == 'GBP'
                                                   ? Text((controller.fundBalance * double.parse('${controller.homecontroller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4),
                                                       style: GoogleFonts.roboto(
                                                         fontSize: 24,
-                                                        color: Colors.black,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ))
                                                   : Text('${controller.fundBalance}',
                                                       style: GoogleFonts.roboto(
                                                         fontSize: 24,
-                                                        color: Colors.black,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ))),
@@ -460,7 +439,7 @@ class SendTyvView extends GetView<SendTyvController> {
                           //     style: GoogleFonts.roboto(
                           //         fontSize: 20,
                           //         fontWeight: FontWeight.bold,
-                          //         color: Colors.black))),
+                          //           ))),
                           const SizedBox(
                             width: 4,
                           ),
@@ -554,8 +533,8 @@ class InputIconBox extends StatelessWidget {
         //     style: GoogleFonts.roboto(fontSize: 16, color: ColorConstants.black),
         //     decoration: InputDecoration(
         //         hintText: 'Enter Private Key'.tr,
-        //         hintStyle: const TextStyle(color: Colors.black, fontSize: 12),
-        //         labelStyle: const TextStyle(color: Colors.black, fontSize: 12),
+        //         hintStyle: const TextStyle(  , fontSize: 12),
+        //         labelStyle: const TextStyle(  , fontSize: 12),
         //         label: Text('Enter Private Key'.tr),
         //         enabledBorder: OutlineInputBorder(
         //             borderSide: BorderSide(color: ColorConstants.secondaryAppColor),
@@ -568,7 +547,6 @@ class InputIconBox extends StatelessWidget {
         SizedBox(
           height: 60,
           child: TextFormField(
-            style: const TextStyle(color: Colors.black),
             controller: controller,
             onChanged: onChange,
             onEditingComplete: onEditingComplete,
@@ -588,13 +566,9 @@ class InputIconBox extends StatelessWidget {
                 hintText: hint,
                 labelText: hint,
                 hintStyle: GoogleFonts.roboto(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black),
+                    fontSize: 15, fontWeight: FontWeight.w400),
                 labelStyle: GoogleFonts.roboto(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black),
+                    fontSize: 15, fontWeight: FontWeight.w400),
                 suffixIcon: isScanner
                     ? IconButton(
                         onPressed: () {
@@ -662,8 +636,8 @@ class InputIconBox1 extends StatelessWidget {
         //     style: GoogleFonts.roboto(fontSize: 16, color: ColorConstants.black),
         //     decoration: InputDecoration(
         //         hintText: 'Enter Private Key'.tr,
-        //         hintStyle: const TextStyle(color: Colors.black, fontSize: 12),
-        //         labelStyle: const TextStyle(color: Colors.black, fontSize: 12),
+        //         hintStyle: const TextStyle(  , fontSize: 12),
+        //         labelStyle: const TextStyle(  , fontSize: 12),
         //         label: Text('Enter Private Key'.tr),
         //         enabledBorder: OutlineInputBorder(
         //             borderSide: BorderSide(color: ColorConstants.secondaryAppColor),
@@ -674,46 +648,43 @@ class InputIconBox1 extends StatelessWidget {
         //             borderRadius: BorderRadius.circular(20))),
         //   )
         Container(
-          height: 55,
           padding: const EdgeInsets.symmetric(horizontal: 15),
-          margin: const EdgeInsets.symmetric(horizontal: 4),
-          decoration: BoxDecoration(
+          height: 55,
+          child: Card(
+            margin: const EdgeInsets.symmetric(horizontal: 4),
+            shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(17),
-              color: Colors.grey.shade300),
-          child: TextFormField(
-            style: const TextStyle(color: Colors.black),
-            controller: controller,
-            onChanged: onChange,
-            onEditingComplete: onEditingComplete,
-            keyboardType: isNumber
-                ? const TextInputType.numberWithOptions(decimal: true)
-                : TextInputType.text,
-            decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.transparent),
-                    borderRadius: BorderRadius.circular(20)),
-                border: InputBorder.none,
-                focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.transparent),
-                    borderRadius: BorderRadius.circular(20)),
-                hintText: hint,
-                labelText: hint,
-                hintStyle: GoogleFonts.roboto(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black),
-                labelStyle: GoogleFonts.roboto(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black),
-                suffixIcon: isScanner
-                    ? IconButton(
-                        onPressed: () {
-                          printInfo(info: 'Information center....');
-                          onScan!();
-                        },
-                        icon: const Icon(Icons.qr_code, color: Colors.black))
-                    : image),
+            ),
+            child: TextFormField(
+              controller: controller,
+              onChanged: onChange,
+              onEditingComplete: onEditingComplete,
+              keyboardType: isNumber
+                  ? const TextInputType.numberWithOptions(decimal: true)
+                  : TextInputType.text,
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(20)),
+                  border: InputBorder.none,
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(20)),
+                  hintText: hint,
+                  labelText: hint,
+                  hintStyle: GoogleFonts.roboto(
+                      fontSize: 15, fontWeight: FontWeight.w400),
+                  labelStyle: GoogleFonts.roboto(
+                      fontSize: 15, fontWeight: FontWeight.w400),
+                  suffixIcon: isScanner
+                      ? IconButton(
+                          onPressed: () {
+                            printInfo(info: 'Information center....');
+                            onScan!();
+                          },
+                          icon: const Icon(Icons.qr_code))
+                      : image),
+            ),
           ),
         ),
 
@@ -745,22 +716,14 @@ class SendDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final cntrl = Get.put(ScanQrController());
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         leading: InkWell(
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
               size: 20,
             )),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+
         elevation: 0,
         // backgroundColor: Colors.transparent,
         title: Text(
@@ -780,134 +743,143 @@ class SendDetails extends StatelessWidget {
                 Text('- ${controller.controllerAmount.text}',
                     // '${controller.commissionAmount.value} LINE',
                     style: GoogleFonts.roboto(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black)),
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    )),
                 Obx(() => Text(
                       ' ${controller.currencyResponse.value?.currency}',
                       style: GoogleFonts.roboto(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black),
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                      ),
                     )),
               ],
             ),
             const SizedBox(height: 30),
-            Container(
-              //  margin: const EdgeInsets.symmetric(horizontal: 15),
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey.shade300),
+            SizedBox(
+                height: 120,
+                width: MediaQuery.of(context).size.width,
+                child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Assets'.tr,
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                    )),
+                                Text(
+                                    ' ${controller.currencyResponse.value?.currency}',
+                                    // '${controller.commissionAmount.value} LINE',
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ))
+                              ]),
+                          const SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('From'.tr,
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  )),
+                              Container(
+                                width: MediaQuery.of(context).size.width / 1.8,
+                                child: Text('${userInfo?.address}',
+                                    maxLines: 1,
+                                    // '${controller.commissionAmount.value} LINE',
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('To'.tr,
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  )),
+                              Container(
+                                width: MediaQuery.of(context).size.width / 1.8,
+                                child: Text(controller.controllerReceiver.text,
+                                    maxLines: 1,
+                                    // '${controller.commissionAmount.value} LINE',
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ))),
+            const SizedBox(height: 15),
+            SizedBox(
+              height: 100,
               width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Assets'.tr,
-                            style: GoogleFonts.roboto(
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          Text('Network fee'.tr,
+                              style: GoogleFonts.roboto(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.black)),
-                        Text(' ${controller.currencyResponse.value?.currency}',
-                            // '${controller.commissionAmount.value} LINE',
-                            style: GoogleFonts.roboto(
+                              )),
+                          const Spacer(),
+                          Obx(() => Text(
+                              '${controller.commissionAmount.value} ${controller.mCurrency.value}',
+                              // '${controller.commissionAmount.value} LINE',
+                              style: GoogleFonts.roboto(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black))
-                      ]),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('From'.tr,
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
-                      Container(
-                        width: MediaQuery.of(context).size.width / 1.8,
-                        child: Text('${userInfo?.address}',
-                            maxLines: 1,
-                            // '${controller.commissionAmount.value} LINE',
-                            style: GoogleFonts.roboto(
+                              ))),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Text('Max Total'.tr,
+                              style: GoogleFonts.roboto(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                              )),
+                          const Spacer(),
+                          Obx(() => Text(
+                              '${double.parse(controller.controllerAmount.text.toString()) + controller.commissionAmount.value}',
+                              // '${controller.commissionAmount.value} LINE',
+                              style: GoogleFonts.roboto(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black)),
+                              )))
+                        ],
                       ),
                     ],
                   ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('To'.tr,
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
-                      Container(
-                        width: MediaQuery.of(context).size.width / 1.8,
-                        child: Text(controller.controllerReceiver.text,
-                            maxLines: 1,
-                            // '${controller.commissionAmount.value} LINE',
-                            style: GoogleFonts.roboto(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black)),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 15),
-            Container(
-              //  margin: const EdgeInsets.symmetric(horizontal: 15),
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey.shade300),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text('Network fee'.tr,
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
-                      const Spacer(),
-                      Obx(() => Text(
-                          '${controller.commissionAmount.value} ${controller.mCurrency.value}',
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black))),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Text('Max Total'.tr,
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black)),
-                      const Spacer(),
-                      Obx(() => Text(
-                          '${double.parse(controller.controllerAmount.text.toString()) + controller.commissionAmount.value}',
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)))
-                    ],
-                  ),
-                ],
+                ),
               ),
             ),
           ],

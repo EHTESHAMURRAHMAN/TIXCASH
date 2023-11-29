@@ -54,13 +54,16 @@ class HomeView extends GetView<HomeController> {
                     },
                     icon: const Icon(
                       Icons.account_circle_outlined,
+                      color: Colors.white,
                       size: 30,
                     )),
                 Obx(() => Text(controller.accountName.value,
                     style: GoogleFonts.roboto(
-                        fontSize: 14, fontWeight: FontWeight.w300))),
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300))),
                 const Spacer(),
-                const Icon(Icons.notifications, size: 25)
+                const Icon(Icons.notifications, color: Colors.white, size: 25)
               ],
             ),
           ),
@@ -81,9 +84,9 @@ class HomeView extends GetView<HomeController> {
                 child: Text(
                   'Total Balance'.tr,
                   style: GoogleFonts.roboto(
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: Colors.white),
+                      fontSize: 16),
                 ),
               ),
               const SizedBox(height: 10),
@@ -249,9 +252,11 @@ class HomeView extends GetView<HomeController> {
       bottomNavigationBar: Container(
         padding: const EdgeInsets.only(top: 10),
         height: MediaQuery.of(context).size.height / 2,
-        decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
+        decoration: BoxDecoration(
+            color: Theme.of(context).brightness == Brightness.light
+                ? Colors.white
+                : Colors.black,
+            borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(30), topRight: Radius.circular(30))),
         child: Stack(
           children: [
@@ -479,55 +484,57 @@ class HomeView extends GetView<HomeController> {
                               // component is not dragged.
                               child: Container(
                                   //padding: const EdgeInsets.symmetric(vertical: 8),
-                                  decoration: const BoxDecoration(
-                                      border: Border(
-                                          bottom: BorderSide(
-                                              color: Colors.white24))),
+                                  // decoration: const BoxDecoration(
+                                  //     border: Border(
+                                  //         bottom: BorderSide(
+                                  //             color: Colors.white24))),
                                   child: ListTile(
-                                    leading: LogoBuilder(logoUrl: element.icon),
-                                    title: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          element.currency,
-                                          style: GoogleFonts.roboto(
-                                              fontSize: 16,
-                                              color: Colors.black),
-                                        ),
-                                        Obx(
-                                          () => controller.appController
-                                                      .currency.value ==
-                                                  'EUR'
+                                leading: LogoBuilder(logoUrl: element.icon),
+                                title: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      element.currency,
+                                      style: GoogleFonts.roboto(fontSize: 16),
+                                    ),
+                                    Obx(
+                                      () => controller.appController.currency
+                                                  .value ==
+                                              'EUR'
+                                          ? Text(
+                                              '€${(element.price * double.parse('${controller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
+                                              style: GoogleFonts.roboto(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400),
+                                            )
+                                          : controller.appController.currency
+                                                      .value ==
+                                                  'CNY'
                                               ? Text(
-                                                  '€${(element.price * double.parse('${controller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
+                                                  '¥${(element.price * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
                                                   style: GoogleFonts.roboto(
                                                       fontSize: 12,
-                                                      color: Colors.black,
                                                       fontWeight:
                                                           FontWeight.w400),
                                                 )
                                               : controller.appController
                                                           .currency.value ==
-                                                      'CNY'
+                                                      'RUB'
                                                   ? Text(
-                                                      '¥${(element.price * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
+                                                      '₽${(element.price * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
                                                       style: GoogleFonts.roboto(
                                                           fontSize: 12,
-                                                          color: Colors.black,
                                                           fontWeight:
                                                               FontWeight.w400),
                                                     )
                                                   : controller.appController
                                                               .currency.value ==
-                                                          'RUB'
+                                                          'JPY'
                                                       ? Text(
-                                                          '₽${(element.price * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
+                                                          '¥${(element.price * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
                                                           style: GoogleFonts
                                                               .roboto(
                                                                   fontSize: 12,
-                                                                  color: Colors
-                                                                      .black,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w400),
@@ -536,9 +543,9 @@ class HomeView extends GetView<HomeController> {
                                                                   .appController
                                                                   .currency
                                                                   .value ==
-                                                              'JPY'
+                                                              'HKD'
                                                           ? Text(
-                                                              '¥${(element.price * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
+                                                              'HK\$${(element.price * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
                                                               style: GoogleFonts.roboto(
                                                                   fontSize: 12,
                                                                   color: Colors
@@ -551,9 +558,9 @@ class HomeView extends GetView<HomeController> {
                                                                       .appController
                                                                       .currency
                                                                       .value ==
-                                                                  'HKD'
+                                                                  'GBP'
                                                               ? Text(
-                                                                  'HK\$${(element.price * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
+                                                                  '£${(element.price * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
                                                                   style: GoogleFonts.roboto(
                                                                       fontSize:
                                                                           12,
@@ -563,55 +570,48 @@ class HomeView extends GetView<HomeController> {
                                                                           FontWeight
                                                                               .w400),
                                                                 )
-                                                              : controller
-                                                                          .appController
-                                                                          .currency
-                                                                          .value ==
-                                                                      'GBP'
-                                                                  ? Text(
-                                                                      '£${(element.price * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
-                                                                      style: GoogleFonts.roboto(
-                                                                          fontSize:
-                                                                              12,
-                                                                          color: Colors
-                                                                              .black,
-                                                                          fontWeight:
-                                                                              FontWeight.w400),
-                                                                    )
-                                                                  : Text(
-                                                                      '\$${element.price.toStringAsFixed(4)}',
-                                                                      style: GoogleFonts.roboto(
-                                                                          fontSize:
-                                                                              12,
-                                                                          color: Colors
-                                                                              .black,
-                                                                          fontWeight:
-                                                                              FontWeight.w400),
-                                                                    ),
-                                        ),
-                                      ],
+                                                              : Text(
+                                                                  '\$${element.price.toStringAsFixed(4)}',
+                                                                  style: GoogleFonts.roboto(
+                                                                      fontSize:
+                                                                          12,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400),
+                                                                ),
                                     ),
-                                    trailing: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Obx(() => Text(
-                                              controller.isShowBalance.value
-                                                  ? '••••••'
-                                                  : element.balance
-                                                      .toStringAsFixed(4),
-                                              style: GoogleFonts.roboto(
-                                                  fontSize: 18,
-                                                  color: Colors.black),
-                                            )),
-                                        //  '\$${element.usdvalue.toStringAsFixed(3)}',
+                                  ],
+                                ),
+                                trailing: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Obx(() => Text(
+                                          controller.isShowBalance.value
+                                              ? '••••••'
+                                              : element.balance
+                                                  .toStringAsFixed(4),
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 18,
+                                          ),
+                                        )),
+                                    //  '\$${element.usdvalue.toStringAsFixed(3)}',
 
-                                        Obx(
-                                          () => controller.appController
-                                                      .currency.value ==
-                                                  'EUR'
+                                    Obx(
+                                      () => controller.appController.currency
+                                                  .value ==
+                                              'EUR'
+                                          ? Text(
+                                              '€${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
+                                              style: GoogleFonts.roboto(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w400,
+                                                color: const Color(0xFF40C4FF),
+                                              ))
+                                          : controller.appController.currency
+                                                      .value ==
+                                                  'CNY'
                                               ? Text(
-                                                  '€${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
+                                                  '¥${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
                                                   style: GoogleFonts.roboto(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w400,
@@ -620,9 +620,9 @@ class HomeView extends GetView<HomeController> {
                                                   ))
                                               : controller.appController
                                                           .currency.value ==
-                                                      'CNY'
+                                                      'RUB'
                                                   ? Text(
-                                                      '¥${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
+                                                      '₽${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
                                                       style: GoogleFonts.roboto(
                                                         fontSize: 14,
                                                         fontWeight:
@@ -632,9 +632,9 @@ class HomeView extends GetView<HomeController> {
                                                       ))
                                                   : controller.appController
                                                               .currency.value ==
-                                                          'RUB'
+                                                          'JPY'
                                                       ? Text(
-                                                          '₽${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
+                                                          '¥${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
                                                           style: GoogleFonts
                                                               .roboto(
                                                             fontSize: 14,
@@ -647,9 +647,9 @@ class HomeView extends GetView<HomeController> {
                                                                   .appController
                                                                   .currency
                                                                   .value ==
-                                                              'JPY'
+                                                              'HKD'
                                                           ? Text(
-                                                              '¥${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
+                                                              'HK\$${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
                                                               style: GoogleFonts
                                                                   .roboto(
                                                                 fontSize: 14,
@@ -663,12 +663,11 @@ class HomeView extends GetView<HomeController> {
                                                                       .appController
                                                                       .currency
                                                                       .value ==
-                                                                  'HKD'
+                                                                  'GBP'
                                                               ? Text(
-                                                                  'HK\$${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
-                                                                  style:
-                                                                      GoogleFonts
-                                                                          .roboto(
+                                                                  '£${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
+                                                                  style: GoogleFonts
+                                                                      .roboto(
                                                                     fontSize:
                                                                         14,
                                                                     fontWeight:
@@ -677,41 +676,28 @@ class HomeView extends GetView<HomeController> {
                                                                     color: const Color(
                                                                         0xFF40C4FF),
                                                                   ))
-                                                              : controller
-                                                                          .appController
-                                                                          .currency
-                                                                          .value ==
-                                                                      'GBP'
-                                                                  ? Text('£${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
-                                                                      style: GoogleFonts.roboto(
-                                                                        fontSize:
-                                                                            14,
-                                                                        fontWeight:
-                                                                            FontWeight.w400,
-                                                                        color: const Color(
-                                                                            0xFF40C4FF),
-                                                                      ))
-                                                                  : Text('\$${controller.isShowBalance.value ? '••••••' : element.usdvalue.toStringAsFixed(4)}',
-                                                                      style: GoogleFonts.roboto(
-                                                                        fontSize:
-                                                                            14,
-                                                                        fontWeight:
-                                                                            FontWeight.w400,
-                                                                        color: const Color(
-                                                                            0xFF40C4FF),
-                                                                      )),
-                                        ),
-                                      ],
+                                                              : Text('\$${controller.isShowBalance.value ? '••••••' : element.usdvalue.toStringAsFixed(4)}',
+                                                                  style: GoogleFonts.roboto(
+                                                                    fontSize:
+                                                                        14,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                    color: const Color(
+                                                                        0xFF40C4FF),
+                                                                  )),
                                     ),
-                                    onTap: () {
-                                      Get.toNamed(Routes.TRANSACTION_HISTORY,
-                                          arguments: [
-                                            {'currency': element}
-                                          ])?.then((value) {
-                                        controller.getBalanceCurrencyList();
-                                      });
-                                    },
-                                  )),
+                                  ],
+                                ),
+                                onTap: () {
+                                  Get.toNamed(Routes.TRANSACTION_HISTORY,
+                                      arguments: [
+                                        {'currency': element}
+                                      ])?.then((value) {
+                                    controller.getBalanceCurrencyList();
+                                  });
+                                },
+                              )),
                             );
                           }).toList(),
                         )

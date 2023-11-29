@@ -18,7 +18,6 @@ class PremiumViews extends GetView<PremiumController> {
     controller.refreshData();
     controller.getpremiumList();
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
           systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: Color(0xff1680ee),
@@ -45,8 +44,8 @@ class PremiumViews extends GetView<PremiumController> {
               decoration: BoxDecoration(
                   color: Theme.of(context).primaryColor,
                   borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20))),
+                      bottomLeft: Radius.circular(35),
+                      bottomRight: Radius.circular(35))),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 // mainAxisAlignment: MainAxisAlignment.center,
@@ -97,7 +96,7 @@ class PremiumViews extends GetView<PremiumController> {
                 //                 color: Theme.of(context).primaryColor, fontSize: 16, fontWeight: FontWeight.bold)),
                 //         const SizedBox(height: 7),
                 //         Text('Users can create multiple account \nand rename their account'.tr,
-                //             style: const TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.w500)),
+                //             style: const TextStyle(   fontSize: 14, fontWeight: FontWeight.w500)),
                 //       ],
                 //     ),
                 //   ],
@@ -123,9 +122,7 @@ class PremiumViews extends GetView<PremiumController> {
                               'Users have opportunity to earn more from their assets'
                                   .tr,
                               style: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500)),
+                                  fontSize: 14, fontWeight: FontWeight.w500)),
                         ),
                       ],
                     ),
@@ -155,9 +152,7 @@ class PremiumViews extends GetView<PremiumController> {
                               textAlign: TextAlign.start,
                               maxLines: 3,
                               style: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500)),
+                                  fontSize: 14, fontWeight: FontWeight.w500)),
                         ),
                       ],
                     ),
@@ -182,46 +177,48 @@ class PremiumViews extends GetView<PremiumController> {
                                   });
                                 },
                                 child: Container(
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 4),
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 15),
                                     height: 55,
-                                    decoration: BoxDecoration(
+                                    child: Card(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4),
+                                      shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(17),
-                                        color: Colors.grey.shade300),
-                                    child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 15),
-                                        child: Row(children: [
-                                          Obx(() => controller
-                                                  .selectPlan.value.isEmpty
-                                              ? Text(
-                                                  'Select Premium Plan'.tr,
-                                                  style: const TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                )
-                                              : SizedBox(
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width /
-                                                      4,
-                                                  child: Text(
-                                                    controller.selectPlan.value,
+                                      ),
+                                      child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 15),
+                                          child: Row(children: [
+                                            Obx(() => controller
+                                                    .selectPlan.value.isEmpty
+                                                ? Text(
+                                                    'Select Premium Plan'.tr,
                                                     style: const TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 15,
+                                                        fontSize: 14,
                                                         fontWeight:
                                                             FontWeight.bold),
-                                                    maxLines: 1,
-                                                  ))),
-                                          const Spacer(),
-                                          const Icon(Icons.arrow_drop_down,
-                                              color: Colors.black, size: 30)
-                                        ])))),
+                                                  )
+                                                : SizedBox(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width /
+                                                            4,
+                                                    child: Text(
+                                                      controller
+                                                          .selectPlan.value,
+                                                      style: const TextStyle(
+                                                          fontSize: 15,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                      maxLines: 1,
+                                                    ))),
+                                            const Spacer(),
+                                            const Icon(Icons.arrow_drop_down,
+                                                size: 30)
+                                          ])),
+                                    ))),
                             const SizedBox(height: 10),
                             Obx(() => controller.selectPlan.value.isNotEmpty
                                 ? InkWell(
@@ -234,53 +231,55 @@ class PremiumViews extends GetView<PremiumController> {
                                       });
                                     },
                                     child: Container(
-                                        margin: const EdgeInsets.symmetric(
-                                            horizontal: 4),
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 15),
                                         height: 55,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(17),
-                                            color: Colors.grey.shade300),
-                                        child: Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 15),
-                                            child: Row(children: [
-                                              Obx(() => controller
-                                                      .selectCurrencys
-                                                      .value
-                                                      .isEmpty
-                                                  ? Text(
-                                                      'Select Currency'.tr,
-                                                      style: const TextStyle(
-                                                          color: Colors.black,
-                                                          fontSize: 14,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    )
-                                                  : SizedBox(
-                                                      width:
-                                                          MediaQuery.of(context)
+                                        child: Card(
+                                            margin: const EdgeInsets.symmetric(
+                                                horizontal: 4),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(17),
+                                            ),
+                                            child: Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 15),
+                                                child: Row(children: [
+                                                  Obx(() => controller
+                                                          .selectCurrencys
+                                                          .value
+                                                          .isEmpty
+                                                      ? Text(
+                                                          'Select Currency'.tr,
+                                                          style: const TextStyle(
+                                                              fontSize: 14,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        )
+                                                      : SizedBox(
+                                                          width: MediaQuery.of(
+                                                                      context)
                                                                   .size
                                                                   .width /
                                                               4,
-                                                      child: Text(
-                                                        controller
-                                                            .selectCurrencys
-                                                            .value,
-                                                        style: const TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 15,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                        maxLines: 1,
-                                                      ))),
-                                              const Spacer(),
-                                              const Icon(Icons.arrow_drop_down,
-                                                  color: Colors.black, size: 30)
-                                            ]))))
+                                                          child: Text(
+                                                            controller
+                                                                .selectCurrencys
+                                                                .value,
+                                                            style: const TextStyle(
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                            maxLines: 1,
+                                                          ))),
+                                                  const Spacer(),
+                                                  const Icon(
+                                                      Icons.arrow_drop_down,
+                                                      size: 30)
+                                                ])))))
                                 : const SizedBox()),
                             const SizedBox(height: 10),
                             Obx(() => controller.selectPlan.value.isNotEmpty &&
@@ -331,7 +330,7 @@ class PremiumViews extends GetView<PremiumController> {
                                     value: controller.isCheckedTerms.value,
                                     onChanged: (val) {
                                       controller.isCheckedTerms.value == false
-                                          ? stakePopup(context)
+                                          ? referalPopup(context)
                                           : null;
                                       controller.isCheckedTerms.value =
                                           val ?? true;
@@ -407,10 +406,8 @@ class PremiumViews extends GetView<PremiumController> {
                             ),
                             const SizedBox(height: 10),
                             Text('You Are Premium Member'.tr,
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15)),
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 15)),
                           ],
                         ),
                 ),
@@ -453,14 +450,14 @@ class PremiumViews extends GetView<PremiumController> {
   //                               .selectPlan.value.isEmpty
   //                           ? const SizedBox()
   //                           : const Icon(Icons.arrow_drop_down,
-  //                               color: Colors.black, size: 30)),
+  //                                  size: 30)),
 
   //                       Obx(() => controller
   //                               .selectPlan.value.isEmpty
   //                           ? Text(
   //                               'Select Premium Plan'.tr,
   //                               style: const TextStyle(
-  //                                   color: Colors.black,
+  //
   //                                   fontSize: 14,
   //                                   fontWeight: FontWeight.bold),
   //                             )
@@ -472,7 +469,7 @@ class PremiumViews extends GetView<PremiumController> {
   //                               child: Text(
   //                                 controller.selectPlan.value,
   //                                 style: const TextStyle(
-  //                                     color: Colors.black,
+  //
   //                                     fontSize: 15,
   //                                     fontWeight:
   //                                         FontWeight.bold),
@@ -486,7 +483,7 @@ class PremiumViews extends GetView<PremiumController> {
   //                             controller.selectPlan.value.isEmpty
   //                                 ? const Icon(
   //                                     Icons.arrow_drop_down,
-  //                                     color: Colors.black,
+  //
   //                                     size: 30)
   //                                 : InkWell(
   //                                     onTap: () {
@@ -562,12 +559,12 @@ class PremiumViews extends GetView<PremiumController> {
   //                                                           child:
   //                                                               Row(
   //                                                             children: [
-  //                                                               Obx(() => controller.selectCurrencys.value.isEmpty ? Text('Select Currency'.tr, style: const TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold)) : Text(controller.selectCurrencys.value, style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold), maxLines: 1)),
+  //                                                               Obx(() => controller.selectCurrencys.value.isEmpty ? Text('Select Currency'.tr, style: const TextStyle(   fontSize: 14, fontWeight: FontWeight.bold)) : Text(controller.selectCurrencys.value, style: const TextStyle(   fontSize: 15, fontWeight: FontWeight.bold), maxLines: 1)),
   //                                                               const Spacer(),
   //                                                               const Icon(
   //                                                                 Icons.arrow_drop_down,
   //                                                                 size: 25,
-  //                                                                 color: Colors.black,
+  //
   //                                                               )
   //                                                             ],
   //                                                           ),
@@ -633,7 +630,7 @@ class PremiumViews extends GetView<PremiumController> {
   //             const SizedBox(height: 10),
   //             const Text('You Are Premium Member',
   //                 style: TextStyle(
-  //                     color: Colors.black,
+  //
   //                     fontWeight: FontWeight.bold,
   //                     fontSize: 15)),
   //           ],
@@ -651,7 +648,7 @@ class PremiumViews extends GetView<PremiumController> {
 //                             const SizedBox(height: 10),
 //                             const Text('You Are Premium Member',
 //                                 style: TextStyle(
-//                                     color: Colors.black,
+//
 //                                     fontWeight: FontWeight.bold,
 //                                     fontSize: 15)),
 //                           ],
@@ -675,7 +672,7 @@ class PremiumViews extends GetView<PremiumController> {
   //           decoration: InputDecoration(
   //               hintText: 'Enter Referral Code (Optional)',
   //               hintStyle: const TextStyle(
-  //                   color: Colors.black, fontSize: 14),
+  //                      fontSize: 14),
   //               labelText: 'Enter Referral Code',
   //               enabledBorder: OutlineInputBorder(
   //                 borderSide:
@@ -687,13 +684,13 @@ class PremiumViews extends GetView<PremiumController> {
   //                       color: Colors.transparent),
   //                   borderRadius: BorderRadius.circular(20)),
   //               labelStyle: const TextStyle(
-  //                   color: Colors.black, fontSize: 14),
+  //                      fontSize: 14),
   //               border: InputBorder.none),
   //         ),
   //       )
   //     : SizedBox()),
   // const SizedBox(height: 5),
-  void stakePopup(context) {
+  void referalPopup(context) {
     // BackupWordsController controller1 = Get.put(BackupWordsController());
 
     showDialog(
@@ -701,7 +698,6 @@ class PremiumViews extends GetView<PremiumController> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: Colors.white,
           title: Image.asset(
             'assets/icons/logo.png',
             height: MediaQuery.of(context).size.height / 12,
@@ -713,7 +709,7 @@ class PremiumViews extends GetView<PremiumController> {
                   children: [
                     Text('** ⚠️ Warning ⚠️ **'.tr,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.red,
                             fontSize: 15,
                             fontWeight: FontWeight.bold)),
@@ -722,10 +718,8 @@ class PremiumViews extends GetView<PremiumController> {
                         'Referral code is important and permanent. If missed then the referral rewards will be missed.'
                             .tr,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold)),
+                        style: const TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {

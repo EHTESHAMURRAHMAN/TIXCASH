@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tixcash/shared/shared.dart';
 
 class ThemeConfig {
@@ -31,6 +32,7 @@ class ThemeConfig {
         space: 1,
         thickness: 1,
       ),
+
       cardTheme: CardTheme(
         color: cardBackground,
         margin: EdgeInsets.zero,
@@ -202,3 +204,74 @@ class ThemeConfig {
         error: Colors.red,
       );
 }
+
+ThemeData lightTheme1() => ThemeData(
+    // primaryColor: const Color(0xff1680ee),
+    primaryColor: const Color(0xff1680ee),
+    //primaryColorDark: const Color(0xff1680ee),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: TextButton.styleFrom(backgroundColor: const Color(0xff1680ee))),
+    // backgroundColor: const Color(0xff1680ee))),
+    drawerTheme: const DrawerThemeData(backgroundColor: Colors.white),
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: Colors.white,
+    radioTheme: RadioThemeData(
+      fillColor:
+          MaterialStateColor.resolveWith((states) => const Color(0xff1680ee)),
+      // (states) => const Color(0xff1680ee)),
+    ),
+    appBarTheme: const AppBarTheme(
+        systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.white,
+            statusBarIconBrightness: Brightness.dark,
+            statusBarBrightness: Brightness.light,
+            systemNavigationBarColor: Colors.black),
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white),
+    tabBarTheme: const TabBarTheme(labelColor: Colors.black),
+    textTheme: const TextTheme(
+      headline1: TextStyle(color: Colors.deepPurpleAccent),
+      headline2: TextStyle(color: Colors.deepPurpleAccent),
+      subtitle2: TextStyle(color: Colors.red),
+      subtitle1: TextStyle(color: Colors.black),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        unselectedItemColor: Colors.red, selectedItemColor: Colors.blue),
+    cardColor: Colors.white70);
+
+ThemeData darkTheme1() => ThemeData(
+    // primaryColor: const Color(0xff1680ee),
+    primaryColor: const Color(0xff1680ee),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: TextButton.styleFrom(backgroundColor: const Color(0xff1680ee))),
+    drawerTheme: const DrawerThemeData(backgroundColor: Color(0xff171d29)),
+    textTheme: const TextTheme(
+      subtitle1: TextStyle(color: Colors.white),
+    ),
+    scaffoldBackgroundColor: Colors.black,
+    radioTheme: RadioThemeData(
+      fillColor:
+          MaterialStateColor.resolveWith((states) => const Color(0xff1680ee)),
+    ),
+    backgroundColor: Colors.black,
+    brightness: Brightness.dark,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.black,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.black,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+      ),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Colors.red,
+        unselectedItemColor: Colors.red,
+        selectedItemColor: Colors.blue),
+    iconTheme: const IconThemeData(color: Colors.white),
+    cardColor: const Color(0xff29313c),
+    buttonTheme: const ButtonThemeData(
+        buttonColor: Color(0xff1680ee), textTheme: ButtonTextTheme.primary),
+    textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+            foregroundColor:
+                MaterialStateProperty.all<Color>(const Color(0xff1680ee)))));

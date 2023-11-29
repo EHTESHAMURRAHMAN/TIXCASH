@@ -232,11 +232,11 @@ class _bottomnavigationbarState extends State<DashboardView> {
           bucket: bucket,
           child: currentScreen,
         ),
-
-        //
         bottomNavigationBar: BottomAppBar(
+          color: Theme.of(context).brightness == Brightness.light
+              ? Colors.white
+              : Colors.black,
           height: 60,
-          color: Colors.white,
           elevation: 0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

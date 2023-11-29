@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/pages/dashboard/scan_qr/scan_qr_child_view.dart';
@@ -17,48 +15,34 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
     controller.initValue();
     return Scaffold(
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         leading: InkWell(
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
             )),
-        backgroundColor: Colors.white,
         title: Text(
           'Transaction History'.tr.toUpperCase(),
-          style: GoogleFonts.roboto(
-              fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
+          style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500),
         ),
         actions: [
           GestureDetector(
-            child: Container(
-              color: Colors.white,
-              child: SizedBox(
-                width: SizeConfig().screenWidth * 0.35,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(
-                      Icons.arrow_upward,
-                      color: Colors.black,
-                    ),
-                    const SizedBox(
-                      width: 16,
-                    ),
-                    Text(
-                      'Send'.tr.toUpperCase(),
-                      style: GoogleFonts.roboto(
-                          fontSize: 13,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
-                    )
-                  ],
-                ),
+            child: SizedBox(
+              width: SizeConfig().screenWidth * 0.35,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(
+                    Icons.arrow_upward,
+                  ),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  Text(
+                    'Send'.tr.toUpperCase(),
+                    style: GoogleFonts.roboto(
+                        fontSize: 13, fontWeight: FontWeight.w500),
+                  )
+                ],
               ),
             ),
             onTap: () {
@@ -80,7 +64,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
 
           GestureDetector(
             child: Container(
-              color: Colors.white,
               child: SizedBox(
                 width: SizeConfig().screenWidth * 0.35,
                 child: Row(
@@ -88,7 +71,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                   children: [
                     const Icon(
                       Icons.arrow_downward,
-                      color: Colors.black,
                     ),
                     const SizedBox(
                       width: 16,
@@ -96,9 +78,7 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                     Text(
                       'Receive'.tr.toUpperCase(),
                       style: GoogleFonts.roboto(
-                          fontSize: 13,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
+                          fontSize: 13, fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -124,7 +104,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
         ],
         elevation: 0,
       ),
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           const SizedBox(
@@ -238,7 +217,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                                     element.toAddress,
                                     style: GoogleFonts.roboto(
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.black,
                                         fontSize: 15),
                                   ),
                                   Text(
@@ -379,10 +357,10 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                             Text(
                               'NO TRANSACTION'.tr,
                               style: GoogleFonts.roboto(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
-                                  fontStyle: FontStyle.normal,
-                                  color: Colors.black),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal,
+                              ),
                               textAlign: TextAlign.center,
                             ),
                             Padding(
@@ -477,7 +455,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                               .toStringAsFixed(4),
                           style: GoogleFonts.roboto(
                             fontSize: 24,
-                            color: Colors.black,
                             fontWeight: FontWeight.w600,
                           ))
                       : controller.appController.currency.value == 'CNY'
@@ -488,7 +465,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                                   .toStringAsFixed(4),
                               style: GoogleFonts.roboto(
                                 fontSize: 24,
-                                color: Colors.black,
                                 fontWeight: FontWeight.w600,
                               ))
                           : controller.appController.currency.value == 'RUB'
@@ -499,7 +475,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                                       .toStringAsFixed(4),
                                   style: GoogleFonts.roboto(
                                     fontSize: 24,
-                                    color: Colors.black,
                                     fontWeight: FontWeight.w600,
                                   ))
                               : controller.appController.currency.value == 'JPY'
@@ -510,7 +485,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                                           .toStringAsFixed(4),
                                       style: GoogleFonts.roboto(
                                         fontSize: 24,
-                                        color: Colors.black,
                                         fontWeight: FontWeight.w600,
                                       ))
                                   : controller.appController.currency.value ==
@@ -522,7 +496,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                                               .toStringAsFixed(4),
                                           style: GoogleFonts.roboto(
                                             fontSize: 24,
-                                            color: Colors.black,
                                             fontWeight: FontWeight.w600,
                                           ))
                                       : controller.appController.currency
@@ -535,19 +508,17 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                                                   .toStringAsFixed(4),
                                               style: GoogleFonts.roboto(
                                                 fontSize: 24,
-                                                color: Colors.black,
                                                 fontWeight: FontWeight.w600,
                                               ))
                                           : Text('${controller.fundBalance}',
                                               style: GoogleFonts.roboto(
                                                 fontSize: 24,
-                                                color: Colors.black,
                                                 fontWeight: FontWeight.w600,
                                               ))),
                   // Obx(() => Text('${controller.fundBalance}',
                   //     style: GoogleFonts.roboto(
                   //       fontSize: 24,
-                  //       color: Colors.black,
+                  //
                   //       fontWeight: FontWeight.w600,
                   //     ))),
                   const SizedBox(width: 8),
