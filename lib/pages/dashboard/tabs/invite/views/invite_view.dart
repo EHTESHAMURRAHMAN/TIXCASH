@@ -334,85 +334,92 @@ class InviteView extends GetView<InviteController> {
                               .elementAt(index);
 
                           return ListTile(
-                            title: Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 15),
+                            title: Card(
                               margin: const EdgeInsets.symmetric(vertical: 3),
-                              height: MediaQuery.of(context).size.height / 6.4,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
+                                margin: const EdgeInsets.symmetric(vertical: 3),
+                                height:
+                                    MediaQuery.of(context).size.height / 6.4,
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
                                   border: Border.all(color: Colors.blue),
                                   borderRadius: BorderRadius.circular(20),
-                                  color: Colors.blue.shade50.withOpacity(.5)),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text('Amount :'.tr,
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                      const SizedBox(width: 17),
-                                      Text('${model.amount}',
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
-                                          ))
-                                    ],
-                                  ),
-                                  const SizedBox(height: 7),
-                                  const Divider(color: Colors.blue),
-                                  const SizedBox(height: 7),
-                                  Row(
-                                    children: [
-                                      Text('Transaction Date :'.tr,
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                      const SizedBox(width: 15),
-                                      Text(model.transactiondate,
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.bold,
-                                          ))
-                                    ],
-                                  ),
-                                  const SizedBox(height: 7),
-                                  Row(
-                                    children: [
-                                      Text('Remark'.tr,
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                      const SizedBox(width: 15),
-                                      Text(model.remark,
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.bold,
-                                          ))
-                                    ],
-                                  ),
-                                  const SizedBox(height: 7),
-                                  Row(
-                                    children: [
-                                      Text('Staking :'.tr,
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                      const SizedBox(width: 15),
-                                      Text(model.staking,
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.bold,
-                                          ))
-                                    ],
-                                  ),
-                                ],
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text('Amount :'.tr,
+                                            style: GoogleFonts.roboto(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                        const SizedBox(width: 17),
+                                        Text('${model.amount}',
+                                            style: GoogleFonts.roboto(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            ))
+                                      ],
+                                    ),
+                                    const SizedBox(height: 7),
+                                    const Divider(color: Colors.blue),
+                                    const SizedBox(height: 7),
+                                    Row(
+                                      children: [
+                                        Text('Transaction Date :'.tr,
+                                            style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                        const SizedBox(width: 15),
+                                        Text(model.transactiondate,
+                                            style: GoogleFonts.roboto(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                            ))
+                                      ],
+                                    ),
+                                    const SizedBox(height: 7),
+                                    Row(
+                                      children: [
+                                        Text('Remark'.tr,
+                                            style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                        const SizedBox(width: 15),
+                                        Text(model.remark,
+                                            style: GoogleFonts.roboto(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                            ))
+                                      ],
+                                    ),
+                                    const SizedBox(height: 7),
+                                    Row(
+                                      children: [
+                                        Text('Staking :'.tr,
+                                            style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                        const SizedBox(width: 15),
+                                        Text(model.staking,
+                                            style: GoogleFonts.roboto(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                            ))
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
 
@@ -777,145 +784,150 @@ class ReferralIncomeHistory extends GetView {
                     ReferralClaimlistModel model = controller
                         .referralClaimlistModelResponse
                         .elementAt(index);
-                    return Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 15, horizontal: 15),
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 6, horizontal: 15),
-                        height: MediaQuery.of(context).size.height / 4.6,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
+                    return Card(
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 6, horizontal: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(23),
+                      ),
+                      child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 15, horizontal: 15),
+                          height: MediaQuery.of(context).size.height / 4.6,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
                             border: Border.all(color: Colors.blue),
                             borderRadius: BorderRadius.circular(23),
-                            color: Colors.blue.shade50.withOpacity(.5)),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Row(
-                                children: [
-                                  Text('Amount :'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color:
-                                              Theme.of(context).primaryColor)),
-                                  const SizedBox(width: 17),
-                                  Text(model.amount.toStringAsFixed(4),
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Text('Transaction Date :'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color:
-                                              Theme.of(context).primaryColor)),
-                                  const SizedBox(width: 17),
-                                  Text(model.transactiondate,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Text('Remark'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color:
-                                              Theme.of(context).primaryColor)),
-                                  const SizedBox(width: 17),
-                                  Text(': ${model.remark.tr}',
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Text('Gas fee :'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color:
-                                              Theme.of(context).primaryColor)),
-                                  const SizedBox(width: 17),
-                                  Text('${model.gasfee}',
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ],
-                              ),
-                              //         Row(children: [Text('Txthash :'.tr,
-
-                              //  maxLines: 1,   style: GoogleFonts.roboto(
-                              //         fontSize: 12,
-                              //         fontWeight: FontWeight.bold,
-                              //        color: Theme.of(context).primaryColor)),
-                              // const SizedBox(width: 17),
-                              // Text(model.txthash,
-                              //     style: GoogleFonts.roboto(
-                              //         fontSize: 14,
-                              //         fontWeight: FontWeight.bold,
-                              //           )),],),
-                              Row(
-                                children: [
-                                  Text('Status :'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color:
-                                              Theme.of(context).primaryColor)),
-                                  const SizedBox(width: 17),
-                                  Text(model.status.tr,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Text('TXT hash :'.tr,
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color:
-                                              Theme.of(context).primaryColor)),
-                                  const SizedBox(width: 17),
-                                  SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width / 2,
-                                    child: Text(model.txthash,
-                                        maxLines: 2,
+                          ),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Amount :'.tr,
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Theme.of(context)
+                                                .primaryColor)),
+                                    const SizedBox(width: 17),
+                                    Text(model.amount.toStringAsFixed(4),
                                         style: GoogleFonts.roboto(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                         )),
-                                  ),
-                                  const Spacer(),
-                                  InkWell(
-                                      onTap: () {
-                                        Clipboard.setData(
-                                            ClipboardData(text: model.txthash));
-                                      },
-                                      child: Icon(
-                                        Icons.copy,
-                                        color: Theme.of(context).primaryColor,
-                                        size: 20,
-                                      ))
-                                ],
-                              ),
-                            ]));
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Text('Transaction Date :'.tr,
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Theme.of(context)
+                                                .primaryColor)),
+                                    const SizedBox(width: 17),
+                                    Text(model.transactiondate,
+                                        style: GoogleFonts.roboto(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Text('Remark'.tr,
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Theme.of(context)
+                                                .primaryColor)),
+                                    const SizedBox(width: 17),
+                                    Text(': ${model.remark.tr}',
+                                        style: GoogleFonts.roboto(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Text('Gas fee :'.tr,
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Theme.of(context)
+                                                .primaryColor)),
+                                    const SizedBox(width: 17),
+                                    Text('${model.gasfee}',
+                                        style: GoogleFonts.roboto(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                  ],
+                                ),
+                                //         Row(children: [Text('Txthash :'.tr,
+
+                                //  maxLines: 1,   style: GoogleFonts.roboto(
+                                //         fontSize: 12,
+                                //         fontWeight: FontWeight.bold,
+                                //        color: Theme.of(context).primaryColor)),
+                                // const SizedBox(width: 17),
+                                // Text(model.txthash,
+                                //     style: GoogleFonts.roboto(
+                                //         fontSize: 14,
+                                //         fontWeight: FontWeight.bold,
+                                //           )),],),
+                                Row(
+                                  children: [
+                                    Text('Status :'.tr,
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Theme.of(context)
+                                                .primaryColor)),
+                                    const SizedBox(width: 17),
+                                    Text(model.status.tr,
+                                        style: GoogleFonts.roboto(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Text('TXT hash :'.tr,
+                                        style: GoogleFonts.roboto(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Theme.of(context)
+                                                .primaryColor)),
+                                    const SizedBox(width: 17),
+                                    SizedBox(
+                                      width:
+                                          MediaQuery.of(context).size.width / 2,
+                                      child: Text(model.txthash,
+                                          maxLines: 2,
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ),
+                                    const Spacer(),
+                                    InkWell(
+                                        onTap: () {
+                                          Clipboard.setData(ClipboardData(
+                                              text: model.txthash));
+                                        },
+                                        child: Icon(
+                                          Icons.copy,
+                                          color: Theme.of(context).primaryColor,
+                                          size: 20,
+                                        ))
+                                  ],
+                                ),
+                              ])),
+                    );
                   },
                   itemCount: controller.referralClaimlistModelResponse.length,
                 ),
@@ -972,85 +984,89 @@ class InviteClaimDetails extends StatelessWidget {
             //   ],
             // ),
             const SizedBox(height: 30),
-            Container(
-              //  margin: const EdgeInsets.symmetric(horizontal: 15),
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey.shade300),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  Row(
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Container(
+                //  margin: const EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.all(20),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: [
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Amount :'.tr,
+                              style: GoogleFonts.roboto(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                              )),
+                          Text(
+                              '${controller.directincome.value?.claimamount.toStringAsFixed(2)}',
+                              // '${controller.commissionAmount.value} LINE',
+                              style: GoogleFonts.roboto(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ))
+                        ]),
+                    const SizedBox(height: 10),
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Amount :'.tr,
+                        Text('Remark'.tr,
                             style: GoogleFonts.roboto(
                               fontSize: 15,
                               fontWeight: FontWeight.w400,
                             )),
-                        Text(
-                            '${controller.directincome.value?.claimamount.toStringAsFixed(2)}',
+                        Text('Referral Income',
+                            maxLines: 1,
+                            // '${controller.commissionAmount.value} LINE',
+                            style: GoogleFonts.roboto(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            )),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Network fee'.tr,
+                            style: GoogleFonts.roboto(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            )),
+                        Text('${sendController.commissionAmount.value} TXH',
                             // '${controller.commissionAmount.value} LINE',
                             style: GoogleFonts.roboto(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                             ))
-                      ]),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Remark'.tr,
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          )),
-                      Text('Referral Income',
-                          maxLines: 1,
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          )),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Network fee'.tr,
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          )),
-                      Text('${sendController.commissionAmount.value} TXH',
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ))
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Text('Max Total'.tr,
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          )),
-                      const Spacer(),
-                      Obx(() => Text(
-                          '${controller.directincome.value!.claimamount - sendController.commissionAmount.value}',
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          )))
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text('Max Total'.tr,
+                            style: GoogleFonts.roboto(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            )),
+                        const Spacer(),
+                        Obx(() => Text(
+                            '${controller.directincome.value!.claimamount - sendController.commissionAmount.value}',
+                            // '${controller.commissionAmount.value} LINE',
+                            style: GoogleFonts.roboto(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            )))
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

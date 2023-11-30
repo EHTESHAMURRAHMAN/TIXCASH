@@ -57,105 +57,109 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
             //           'View on ${controller.trxDetails?.blockchaintitle}')),
             // ),
             // }, child: const Text('View on Linescan')),),
-            SACellContainer(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                if (!(controller.trxDetails != null &&
-                    controller.trxDetails!.paymentType.contains('Sent')))
-                  // Align(alignment: Alignment.center, child: Text('+${controller.trxDetails?.credit??0.0} LINE', style: GoogleFonts.roboto(
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      '+${controller.trxDetails?.credit ?? 0.0} ${controller.trxDetails?.currency}',
-                      style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green,
-                          fontSize: 20),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Theme.of(context).primaryColor)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (!(controller.trxDetails != null &&
+                      controller.trxDetails!.paymentType.contains('Sent')))
+                    // Align(alignment: Alignment.center, child: Text('+${controller.trxDetails?.credit??0.0} LINE', style: GoogleFonts.roboto(
+                    Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        '+${controller.trxDetails?.credit ?? 0.0} ${controller.trxDetails?.currency}',
+                        style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green,
+                            fontSize: 20),
+                      ),
                     ),
+
+                  // if(controller.trxDetails!=null&&controller.trxDetails!.debit>0)
+                  if (controller.trxDetails != null &&
+                      controller.trxDetails!.paymentType.contains('Sent'))
+                    // Align(alignment: Alignment.center, child: Text('-${controller.trxDetails?.credit??0.0} LINE', style: GoogleFonts.roboto(
+                    Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        '-${controller.trxDetails?.credit ?? 0.0} ${controller.trxDetails?.currency}',
+                        style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red,
+                            fontSize: 20),
+                      ),
+                    ),
+
+                  const SizedBox(
+                    height: 16,
                   ),
 
-                // if(controller.trxDetails!=null&&controller.trxDetails!.debit>0)
-                if (controller.trxDetails != null &&
-                    controller.trxDetails!.paymentType.contains('Sent'))
-                  // Align(alignment: Alignment.center, child: Text('-${controller.trxDetails?.credit??0.0} LINE', style: GoogleFonts.roboto(
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      '-${controller.trxDetails?.credit ?? 0.0} ${controller.trxDetails?.currency}',
-                      style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.red,
-                          fontSize: 20),
-                    ),
+                  Divider(color: Theme.of(context).primaryColor),
+
+                  TextButton.icon(
+                      onPressed: null,
+                      icon: const Icon(
+                        Icons.arrow_circle_down,
+                      ),
+                      label: Text(
+                        'Sending account'.tr,
+                        style: GoogleFonts.roboto(),
+                      )),
+
+                  Row(
+                    children: [
+                      Text(
+                        controller.trxDetails?.fromAdress ?? '',
+                        style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.normal, fontSize: 12),
+                      ),
+                      IconButton(
+                          onPressed: () {
+                            Clipboard.setData(ClipboardData(
+                                text: controller.trxDetails?.fromAdress ?? ''));
+                            EasyLoading.showToast('Copied'.tr);
+                          },
+                          icon: const Icon(
+                            Icons.copy,
+                          ))
+                    ],
                   ),
 
-                const SizedBox(
-                  height: 16,
-                ),
+                  TextButton.icon(
+                      onPressed: null,
+                      icon: const Icon(
+                        Icons.arrow_circle_up,
+                      ),
+                      label: Text(
+                        'Receiving account'.tr,
+                        style: GoogleFonts.roboto(),
+                      )),
 
-                const Divider(color: Colors.white),
-
-                TextButton.icon(
-                    onPressed: null,
-                    icon: const Icon(
-                      Icons.arrow_circle_down,
-                    ),
-                    label: Text(
-                      'Sending account'.tr,
-                      style: GoogleFonts.roboto(),
-                    )),
-
-                Row(
-                  children: [
-                    Text(
-                      controller.trxDetails?.fromAdress ?? '',
-                      style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.normal, fontSize: 12),
-                    ),
-                    IconButton(
-                        onPressed: () {
-                          Clipboard.setData(ClipboardData(
-                              text: controller.trxDetails?.fromAdress ?? ''));
-                          EasyLoading.showToast('Copied'.tr);
-                        },
-                        icon: const Icon(
-                          Icons.copy,
-                        ))
-                  ],
-                ),
-
-                TextButton.icon(
-                    onPressed: null,
-                    icon: const Icon(
-                      Icons.arrow_circle_up,
-                    ),
-                    label: Text(
-                      'Receiving account'.tr,
-                      style: GoogleFonts.roboto(),
-                    )),
-
-                Row(
-                  children: [
-                    Text(
-                      controller.trxDetails?.toAddress ?? '',
-                      style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.normal, fontSize: 12),
-                    ),
-                    IconButton(
-                        onPressed: () {
-                          Clipboard.setData(ClipboardData(
-                              text: controller.trxDetails?.toAddress ?? ''));
-                          EasyLoading.showToast('Copied'.tr);
-                        },
-                        icon: const Icon(
-                          Icons.copy,
-                        ))
-                  ],
-                )
-              ],
-            )),
-
+                  Row(
+                    children: [
+                      Text(
+                        controller.trxDetails?.toAddress ?? '',
+                        style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.normal, fontSize: 12),
+                      ),
+                      IconButton(
+                          onPressed: () {
+                            Clipboard.setData(ClipboardData(
+                                text: controller.trxDetails?.toAddress ?? ''));
+                            EasyLoading.showToast('Copied'.tr);
+                          },
+                          icon: const Icon(
+                            Icons.copy,
+                          ))
+                    ],
+                  )
+                ],
+              ),
+            ),
             const SizedBox(
               height: 16,
             ),

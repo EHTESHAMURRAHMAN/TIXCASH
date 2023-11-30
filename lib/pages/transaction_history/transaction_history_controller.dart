@@ -71,7 +71,7 @@ class TransactionHistoryController extends GetxController {
   checkFund() async {
     double tempBalance = fundBalance.value;
     isBalanceLoading.value = true;
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 10), (timer) {
       if (tempBalance == fundBalance.value) {
         getUserFundBalance();
       } else {

@@ -94,19 +94,26 @@ class Startview1 extends GetView<SplashController> {
                                       onTap: () => controller1.updateLocale(
                                           'th', 'TH', 'Thai'),
                                     ),
+                                    ListTile(
+                                      title: Text('Русский',
+                                          style:
+                                              GoogleFonts.roboto(fontSize: 14)),
+                                      onTap: () => controller1.updateLocale(
+                                          'ru', 'RU', 'Русский'),
+                                    ),
+                                    ListTile(
+                                      title: Text('日本語',
+                                          style:
+                                              GoogleFonts.roboto(fontSize: 14)),
+                                      onTap: () => controller1.updateLocale(
+                                          'jp', 'JP', '日本語'),
+                                    ),
                                     // ListTile(
-                                    //   title: Text('Russian',
-                                    //       style: GoogleFonts.roboto(
-                                    //           fontSize: 14,   color: Colors.white,)),
-                                    //   onTap: () =>
-                                    //       updateLocale('ru', 'RU', 'Russian'),
-                                    // ),
-                                    // ListTile(
-                                    //   title: Text('Turkish',
-                                    //       style: GoogleFonts.roboto(
-                                    //           fontSize: 14,   color: Colors.white,)),
-                                    //   onTap: () =>
-                                    //       updateLocale('tr', 'TR', 'Turkish'),
+                                    //   title: Text('español',
+                                    //       style:
+                                    //           GoogleFonts.roboto(fontSize: 14)),
+                                    //   onTap: () => controller1.updateLocale(
+                                    //       'sp', 'SP', 'español'),
                                     // ),
                                   ],
                                 ),
@@ -161,7 +168,7 @@ class Startview1 extends GetView<SplashController> {
               ),
               const SizedBox(height: 15),
               Text(
-                'Use this wallet to collect and other\napplications running on Tixcash Wallet'
+                'Use this wallet to collect and other\napplications running on tixcash Wallet'
                     .tr,
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 15, color: Colors.white),

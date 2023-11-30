@@ -182,11 +182,11 @@ const Map<String, String> ch_CH = {
       "使用此钱包收集和其他\n在 Tixcash Wallet 上运行的应用程序",
   "Next": "下一个",
   "Allow us to track your data and\nhelp provide a better\nTixcash Wallet experience":
-      "允许我们跟踪您的数据并\n帮助提供更好的\nTixcash Wallet 钱包体验",
+      "允许我们跟踪您的数据并帮助提供更好的Tixcash Wallet 钱包体验",
   "We would like to collect data from your session to\nhelp make Tixcash Wallet easier and\nmore fun to use":
-      "我们希望从您的会话中收集数据，\n帮助让 Tixcash Wallet 更容易使用，\n使用起来更有趣",
+      "我们希望从您的会话中收集数据，帮助让 Tixcash Wallet 更容易使用，使用起来更有趣",
   "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey\'re totally anonymous and\nwill never be shared with anyone else":
-      "这些数据包括使用行为，例如单击和滚动以及性能诊断。\n它们是完全匿名的，\n绝不会与其他任何人共享",
+      "这些数据包括使用行为，例如单击和滚动以及性能诊断。它们是完全匿名的，绝不会与其他任何人共享",
   "The home of your Funds & your\nNFT collection on TIXCASH Network":
       "TIXCASH 网络上您的资金和\nNFT 收藏的所在地",
   "Create new wallet": "创建新钱包",
@@ -219,7 +219,7 @@ const Map<String, String> ch_CH = {
   "Stake": "赌注",
   "Referal": "推荐",
   "Tixcash Wallet": "Tixcash钱包",
-  "Enter 24 Word Secret Phrase": "输入 24 个字的秘密短语",
+  "Enter 24 Word Secrate Phrase": "输入 24 个字的秘密短语",
   "Enter & Select": "输入并选择",
   "Passphrase Entered (click to Edit)": "输入密码（点击编辑）",
   "Stack Amount": "堆叠数量",

@@ -43,14 +43,12 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
-      // App is in the foreground
       setState(() {
         var storage = Get.find<SharedPreferences>();
         storage.setInt(
             StorageConstants.pauseTime, DateTime.now().millisecondsSinceEpoch);
       });
     } else if (state == AppLifecycleState.paused) {
-      // App is in the background
       setState(() {
         var storage = Get.find<SharedPreferences>();
         var sUser = storage.getString(StorageConstants.userInfo);
@@ -86,8 +84,6 @@ class _AppState extends State<App> with WidgetsBindingObserver {
       title: 'Tixcash wallet',
       theme: lightTheme1(),
       darkTheme: darkTheme1(),
-      // theme: ThemeConfig.lightTheme,
-      // darkTheme: ThemeConfig.darkTheme,
       themeMode: ThemeMode.system,
       locale: TranslationService.locale,
       fallbackLocale: TranslationService.fallbackLocale,

@@ -739,7 +739,6 @@ class HomeView extends GetView<HomeController> {
       onSelect: () {
         controller.initValues();
         controller.accountName.value = userInfo?.name ?? '';
-
         Get.back();
       },
     );

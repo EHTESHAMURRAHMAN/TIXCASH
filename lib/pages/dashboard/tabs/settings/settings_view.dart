@@ -343,65 +343,33 @@ class phrse extends StatelessWidget {
                             ),
                           ),
 
-                          Container(
-                            margin: const EdgeInsets.symmetric(vertical: 7),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.blue,
-                                ),
-                                borderRadius: BorderRadius.circular(20)),
-                            width: MediaQuery.of(context).size.width,
-                            child: Center(
-                              child: Column(
-                                children: [
-                                  Screenshot(
-                                      controller:
-                                          controller.screenshotController,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Center(
-                                          child: Obx(() => QrImageView(
-                                                backgroundColor: Colors.white,
-                                                data:
-                                                    '${controller.backupPResponse.value?.backuphrase}',
-                                                version: QrVersions.auto,
-                                                size: 180.0,
-                                              )),
-                                        ),
-                                      )),
-                                  InkWell(
-                                    onTap: () {
-                                      shareQrCode();
-                                    },
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(30)),
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                3,
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 16, horizontal: 24),
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(30),
-                                            border: Border.all(
-                                                color: Theme.of(context)
-                                                    .primaryColor)),
-                                        child: Center(
-                                            child: Text(
-                                          'Share QR'.tr,
-                                          style: TextStyle(
-                                              color: Theme.of(context)
-                                                  .primaryColor),
-                                        )),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Center(
+                                child: Screenshot(
+                                    controller: controller.screenshotController,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Center(
+                                        child: Obx(() => QrImageView(
+                                              backgroundColor: Colors.white,
+                                              data:
+                                                  '${controller.backupPResponse.value?.backuphrase}',
+                                              version: QrVersions.auto,
+                                              size: 180,
+                                            )),
                                       ),
-                                    ),
-                                  ),
-                                ],
+                                    )),
                               ),
-                            ),
+                              InkWell(
+                                onTap: () {
+                                  shareQrCode();
+                                },
+                                child: const Center(
+                                    child: Icon(Icons.share, size: 30)),
+                              ),
+                            ],
                           ),
                           // Padding(
                           //   padding: const EdgeInsets.symmetric(vertical: 10),
@@ -464,13 +432,12 @@ class phrse extends StatelessWidget {
                 //     ],
                 //   ),
                 // ),
-                const SizedBox(height: 15),
+
                 Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9)),
                   child: Container(
                       padding: const EdgeInsets.all(10),
-                      height: MediaQuery.of(context).size.height / 4.3,
                       width: MediaQuery.of(context).size.width,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -638,19 +605,23 @@ class GeneralSetting extends StatelessWidget {
                                 onTap: () =>
                                     controller.updateLocale('th', 'TH', 'ไทย'),
                               ),
+                              ListTile(
+                                title: Text('Русский',
+                                    style: GoogleFonts.roboto(fontSize: 14)),
+                                onTap: () => controller.updateLocale(
+                                    'ru', 'RU', 'Русский'),
+                              ),
+                              ListTile(
+                                title: Text('日本語',
+                                    style: GoogleFonts.roboto(fontSize: 14)),
+                                onTap: () =>
+                                    controller.updateLocale('jp', 'JP', '日本語'),
+                              ),
                               // ListTile(
-                              //   title: Text('Русский',
-                              //       style: GoogleFonts.roboto(
-                              //           fontSize: 14 )),
+                              //   title: Text('español',
+                              //       style: GoogleFonts.roboto(fontSize: 14)),
                               //   onTap: () => controller.updateLocale(
-                              //       'ru', 'RU', 'Русский'),
-                              // ),
-                              // ListTile(
-                              //   title: Text('Turkish',
-                              //       style: GoogleFonts.roboto(
-                              //           fontSize: 14 )),
-                              //   onTap: () => controller.updateLocale(
-                              //       'tr', 'TR', 'Turkish'),
+                              //       'sp', 'SP', 'español'),
                               // ),
                             ],
                           ),

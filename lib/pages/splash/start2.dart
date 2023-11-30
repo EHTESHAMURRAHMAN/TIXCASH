@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:tixcash/pages/splash/start3.dart';
 
@@ -14,6 +13,7 @@ class Startview2 extends StatelessWidget {
           elevation: 0,
         ),
         body: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 10),
           child: Center(
             child: Column(
               children: [
@@ -26,21 +26,21 @@ class Startview2 extends StatelessWidget {
                       .tr,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 17),
+                      fontWeight: FontWeight.bold, fontSize: 14),
                 ),
                 const SizedBox(height: 15),
                 Text(
                   'We would like to collect data from your session to\nhelp make Tixcash Wallet easier and\nmore fun to use'
                       .tr,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 15),
+                  style: const TextStyle(fontSize: 14),
                 ),
                 const SizedBox(height: 15),
                 Text(
                   'These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey\'re totally anonymous and\nwill never be shared with anyone else'
                       .tr,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 15),
+                  style: const TextStyle(fontSize: 14),
                 ),
               ],
             ),

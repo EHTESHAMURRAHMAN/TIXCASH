@@ -213,7 +213,7 @@ const Map<String, String> ru_RU = {
   "Stake": "Ставка",
   "Referal": "Направления",
   "Tixcash Wallet": "Кошелек Тикскэш",
-  "Enter 24 Word Secret Phrase": "Введите секретную фразу из 24 слов",
+  "Enter 24 Word Secrate Phrase": "Введите секретную фразу из 24 слов",
   "Enter & Select": "Введите и выберите",
   "Passphrase Entered (click to Edit)":
       "Парольная фраза введена (нажмите, чтобы изменить)",
@@ -455,5 +455,16 @@ const Map<String, String> ru_RU = {
       "Официальный канал предварительного заказа и покупки Tixcash",
   "Only USDC and BUSD of BEP20 accepted.":
       "Принимаются только USDC и BUSD BEP20.",
-  "Bad (Internet) Connection": "Плохое (Интернет) соединение"
+  "Bad (Internet) Connection": "Плохое (Интернет) соединение",
+  "Error": "Ошибка",
+  "Something went wrong try again": "Что-то пошло не так, попробуйте еще раз",
+  "Year Access": "Год доступа",
+  "Years Access": "Год доступа",
+  "Are you sure want to delete your account?\nHave you taken your backup?":
+      "Вы уверены, что хотите удалить свою учетную запись?\nВы сделали резервную копию?",
+  "Delete Account": "Удалить аккаунт",
+  "Delete": "Удалить",
+  "null": "нулевой",
+  "Failed": "Неуспешный",
+  "Wrong Phrase Key": "Неверный ключевой фразы",
 };

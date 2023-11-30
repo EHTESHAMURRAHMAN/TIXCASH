@@ -60,7 +60,7 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                         ),
                         Expanded(
                             child: Text(
-                          controller.warningMsg,
+                          controller.warningMsg.tr,
                           style: GoogleFonts.roboto(
                               fontSize: 14, color: Colors.red),
                         ))
@@ -225,63 +225,28 @@ class AuthFingerprintView extends GetView<AuthFingerprintController> {
                                 ),
                               ),
                             ),
-                            Container(
-                              margin: EdgeInsets.symmetric(vertical: 7),
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Colors.blue,
-                                  ),
-                                  borderRadius: BorderRadius.circular(20)),
-                              width: MediaQuery.of(context).size.width,
-                              child: Center(
-                                child: Column(
-                                  children: [
-                                    Screenshot(
-                                        controller:
-                                            controller.screenshotController,
-                                        child: Center(
-                                          child: Obx(() => QrImageView(
-                                                backgroundColor: Colors.white,
-                                                data:
-                                                    controller.privateKey.value,
-                                                version: QrVersions.auto,
-                                                size: 180.0,
-                                              )),
-                                        )),
-                                    InkWell(
-                                      onTap: () {
-                                        shareQrCode();
-                                      },
-                                      child: Card(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(30)),
-                                        child: Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              3,
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 16, horizontal: 24),
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                              border: Border.all(
-                                                  color: Theme.of(context)
-                                                      .primaryColor)),
-                                          child: Center(
-                                              child: Text(
-                                            'Share QR'.tr,
-                                            style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .primaryColor),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Screenshot(
+                                    controller: controller.screenshotController,
+                                    child: Center(
+                                      child: Obx(() => QrImageView(
+                                            backgroundColor: Colors.white,
+                                            data: controller.privateKey.value,
+                                            version: QrVersions.auto,
+                                            size: 180,
                                           )),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                    )),
+                                const SizedBox(height: 15),
+                                InkWell(
+                                  onTap: () {
+                                    shareQrCode();
+                                  },
+                                  child: const Center(
+                                      child: Icon(Icons.share, size: 30)),
                                 ),
-                              ),
+                              ],
                             ),
                             // Padding(
                             //   padding: const EdgeInsets.symmetric(vertical: 10),

@@ -75,7 +75,6 @@ class BackupWordsView extends GetView<BackupWordsController> {
                               borderRadius: BorderRadius.circular(9)),
                           child: Container(
                               padding: const EdgeInsets.all(10),
-                              height: MediaQuery.of(context).size.height / 4.3,
                               width: MediaQuery.of(context).size.width,
                               child: Column(
                                 mainAxisAlignment:

@@ -109,7 +109,7 @@ class SwapController extends GetxController {
   _checkFund() async {
     double tempBalance = fromBalanceTotal.value;
     isBalanceLoading.value = true;
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(hours: 1), (timer) {
       if (tempBalance == fromBalanceTotal.value) {
         userFundBalance(
             isTo: false, currency: fromCurrency.value?.currency ?? 'LINE');

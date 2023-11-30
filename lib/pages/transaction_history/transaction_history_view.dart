@@ -61,7 +61,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
               mController.controllerAmount.clear();
             },
           ),
-
           GestureDetector(
             child: Container(
               child: SizedBox(
@@ -89,18 +88,7 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                   currencyResponse: controller.currencyResponse.value,
                 )),
           ),
-
-          // Container(width: SizeConfig().screenWidth*0.35,),
-          // TextButton.icon(onPressed: (){
-          //   Get.toNamed(Routes.SEND_TYV, arguments: [{'currency': controller.currencyResponse.value}])?.then((value){
-          //     controller.getTransactionList();
-          //   });
-          // }, icon: const Icon(Icons.arrow_upward, color: Colors.white,),
-          //   label: const Text('SEND', style: TextStyle(color: Colors.white),),),
-          // TextButton.icon(
-          //     onPressed: () => Get.to(() => const ScanQRChild(hasActionBar: true,)),
-          //     icon: const Icon(Icons.arrow_downward, color: Colors.white,),
-          //     label: const Text('RECEIVE', style: TextStyle(color: Colors.white))),
+          
         ],
         elevation: 0,
       ),
@@ -200,147 +188,161 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
 
           Obx(() => controller.transactionListResponseSearch.isNotEmpty
               ? Expanded(
+                  child: Padding(
+                  padding: const EdgeInsets.only(top: 5),
                   child: ListView(
-                  children:
-                      controller.transactionListResponseSearch.map((element) {
-                    return SACellContainer(
+                    children:
+                        controller.transactionListResponseSearch.map((element) {
+                      return Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
                         margin: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 10),
-                        child: GestureDetector(
-                          child: Row(
-                            children: [
-                              Expanded(
-                                  child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                            horizontal: 15, vertical: 5),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          height: 75,
+                          child: GestureDetector(
+                            child: Row(
+                              children: [
+                                Expanded(
+                                    child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      element.toAddress,
+                                      style: GoogleFonts.roboto(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15),
+                                    ),
+                                    Text(
+                                      element.transactionDate,
+                                      style: GoogleFonts.roboto(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.grey),
+                                    )
+                                  ],
+                                )),
+                                const SizedBox(
+                                  width: 16,
+                                ),
+                                //  if (element.paymentType
+                                //     .contains('Account Creation'))
+                                //   Text(
+                                //     '-${element.credit}',
+                                //     style: GoogleFonts.roboto(
+                                //         fontSize: 18,
+                                //         fontWeight: FontWeight.bold,
+                                //         color: Colors.red),
+                                //   ),
+                                // if (element.paymentType
+                                //     .contains('Account Creation'))
+                                //   Text(
+                                //     '-${element.credit}',
+                                //     style: GoogleFonts.roboto(
+                                //         fontSize: 18,
+                                //         fontWeight: FontWeight.bold,
+                                //         color: Colors.red),
+                                //   ),
+                                if (element.paymentType.contains('staking'))
                                   Text(
-                                    element.toAddress,
+                                    '-${element.credit}',
                                     style: GoogleFonts.roboto(
+                                        fontSize: 18,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                        color: Colors.red),
                                   ),
+                                if (element.paymentType
+                                    .contains('Referral INCOME'))
                                   Text(
-                                    element.transactionDate,
+                                    '+${element.credit}',
                                     style: GoogleFonts.roboto(
-                                        fontSize: 12,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.grey),
+                                        color: Colors.green),
+                                  ),
+                                if (element.paymentType
+                                    .contains('Staking Reward'))
+                                  Text(
+                                    '+${element.credit}',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green),
+                                  ),
+                                if (element.paymentType
+                                    .contains('Subscription'))
+                                  Text(
+                                    '-${element.credit}',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red),
+                                  ),
+                                if (element.paymentType
+                                    .contains('Account Creation'))
+                                  Text(
+                                    '-${element.credit}',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red),
+                                  ),
+                                if (element.paymentType.contains('Sent'))
+                                  Text(
+                                    '-${element.credit}',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red),
+                                  ),
+                                if (element.paymentType.contains('Received'))
+                                  Text(
+                                    '+${element.credit}',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green),
                                   )
-                                ],
-                              )),
-                              const SizedBox(
-                                width: 16,
-                              ),
-                              //  if (element.paymentType
-                              //     .contains('Account Creation'))
-                              //   Text(
-                              //     '-${element.credit}',
-                              //     style: GoogleFonts.roboto(
-                              //         fontSize: 18,
-                              //         fontWeight: FontWeight.bold,
-                              //         color: Colors.red),
-                              //   ),
-                              // if (element.paymentType
-                              //     .contains('Account Creation'))
-                              //   Text(
-                              //     '-${element.credit}',
-                              //     style: GoogleFonts.roboto(
-                              //         fontSize: 18,
-                              //         fontWeight: FontWeight.bold,
-                              //         color: Colors.red),
-                              //   ),
-                              if (element.paymentType.contains('staking'))
-                                Text(
-                                  '-${element.credit}',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.red),
-                                ),
-                              if (element.paymentType
-                                  .contains('Referral INCOME'))
-                                Text(
-                                  '+${element.credit}',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.green),
-                                ),
-                              if (element.paymentType
-                                  .contains('Staking Reward'))
-                                Text(
-                                  '+${element.credit}',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.green),
-                                ),
-                              if (element.paymentType.contains('Subscription'))
-                                Text(
-                                  '-${element.credit}',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.red),
-                                ),
-                              if (element.paymentType
-                                  .contains('Account Creation'))
-                                Text(
-                                  '-${element.credit}',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.red),
-                                ),
-                              if (element.paymentType.contains('Sent'))
-                                Text(
-                                  '-${element.credit}',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.red),
-                                ),
-                              if (element.paymentType.contains('Received'))
-                                Text(
-                                  '+${element.credit}',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.green),
-                                )
-                            ],
+                              ],
+                            ),
+                            onTap: () {
+                              Get.toNamed(Routes.TRANSACTION_DETAIL,
+                                  arguments: [
+                                    {'trans': element}
+                                  ]);
+                            },
                           ),
-                          onTap: () {
-                            Get.toNamed(Routes.TRANSACTION_DETAIL, arguments: [
-                              {'trans': element}
-                            ]);
-                          },
-                        ));
-                    /**
-          return SACellContainer(
-              margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              child: Column(children: [
-            Row(children: [
-              LogoBuilder(logoUrl: element.currency),
-              const SizedBox(width: 8,),
-              Expanded(child: Text(element.currency,)),
-              Text(element.transactionDate,),
-            ],),
-
-            const Divider(color: Colors.white12,),
-
-            const SizedBox(height: 8,),
-
-                _tradeCell('Trade Type:', element.paymentType),
-                _tradeCell('Credit:',  '${element.credit}'),
-                _tradeCell('Debit:',  '${element.debit}'),
-                _tradeCell('From:',      element.fromAdress),
-                _tradeCell('To:',        element.toAddress),
-                _tradeCell('Hash:',      element.txthash),
-
-          ],));
-              **/
-                  }).toList(),
+                        ),
+                      );
+                      /**
+                            return SACellContainer(
+                                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                child: Column(children: [
+                              Row(children: [
+                                LogoBuilder(logoUrl: element.currency),
+                                const SizedBox(width: 8,),
+                                Expanded(child: Text(element.currency,)),
+                                Text(element.transactionDate,),
+                              ],),
+                  
+                              const Divider(color: Colors.white12,),
+                  
+                              const SizedBox(height: 8,),
+                  
+                                  _tradeCell('Trade Type:', element.paymentType),
+                                  _tradeCell('Credit:',  '${element.credit}'),
+                                  _tradeCell('Debit:',  '${element.debit}'),
+                                  _tradeCell('From:',      element.fromAdress),
+                                  _tradeCell('To:',        element.toAddress),
+                                  _tradeCell('Hash:',      element.txthash),
+                  
+                            ],));
+                                **/
+                    }).toList(),
+                  ),
                 ))
               : controller.isTransLoaded.value
                   ? Expanded(
