@@ -9,6 +9,7 @@ import 'package:tixcash/api/apis.dart';
 import 'package:tixcash/pages/dashboard/scan_qr/scan_qr_controller.dart';
 // import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:tixcash/pages/dashboard/tabs/send_tyv/scan_qr.dart';
+import 'package:tixcash/pages/dashboard/tabs/settings/settings_view.dart';
 import 'package:tixcash/shared/shared.dart';
 import 'send_tyv_controller.dart';
 // import 'package:scan/scan.dart';
@@ -167,21 +168,44 @@ class SendTyvView extends GetView<SendTyvController> {
                                         // title: 'input receiving address'.tr,
                                         title: ''.tr,
 
-                                        image: GestureDetector(
-                                          child: Text(
-                                            'PASTE'.tr,
-                                            style: GoogleFonts.roboto(
-                                                fontSize: 13,
-                                                fontWeight: FontWeight.w400,
-                                                color: const Color(0xFF40C4FF)),
-                                          ),
-                                          onTap: () async {
-                                            ClipboardData? data =
-                                                await Clipboard.getData(
-                                                    'text/plain');
-                                            controller.controllerReceiver.text =
-                                                data?.text ?? '';
-                                          },
+                                        image: Row(
+                                          children: [
+                                            GestureDetector(
+                                              child: Icon(Icons.person,
+                                                  size: 28,
+                                                  color: Theme.of(context)
+                                                      .primaryColor),
+                                              onTap: () async {
+                                                Get.to(const AddressBook())
+                                                    ?.then((value) {
+                                                  if (value != null) {
+                                                    controller
+                                                            .controllerReceiver
+                                                            .text =
+                                                        value['address'];
+                                                  }
+                                                });
+                                              },
+                                            ),
+                                            const SizedBox(width: 25),
+                                            GestureDetector(
+                                              child: Text(
+                                                'PASTE'.tr,
+                                                style: GoogleFonts.roboto(
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: const Color(
+                                                        0xFF40C4FF)),
+                                              ),
+                                              onTap: () async {
+                                                ClipboardData? data =
+                                                    await Clipboard.getData(
+                                                        'text/plain');
+                                                controller.controllerReceiver
+                                                    .text = data?.text ?? '';
+                                              },
+                                            ),
+                                          ],
                                         ),
 
                                         //
@@ -302,6 +326,7 @@ class SendTyvView extends GetView<SendTyvController> {
                                       'Next Step'.tr,
                                       style: GoogleFonts.roboto(
                                         fontSize: 18,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
@@ -326,6 +351,7 @@ class SendTyvView extends GetView<SendTyvController> {
                                     'Next Step'.tr,
                                     style: GoogleFonts.roboto(
                                       fontSize: 18,
+                                      color: Colors.white,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),

@@ -1712,11 +1712,7 @@ class _AddressBookState extends State<AddressBook> {
         builder: (BuildContext context) {
           return Scaffold(
             appBar: AppBar(
-              toolbarHeight: 90,
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30))),
+              elevation: 0,
               title: const Text('Wallet Address'),
               centerTitle: true,
             ),
@@ -1805,8 +1801,7 @@ class _AddressBookState extends State<AddressBook> {
                                   child: Text(id == null ? "Save" : "Update",
                                       style: const TextStyle(
                                           fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white)),
+                                          fontWeight: FontWeight.bold)),
                                 ),
                               ),
                             ),
@@ -1824,160 +1819,104 @@ class _AddressBookState extends State<AddressBook> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Status bar
-
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(30),
-                bottomRight: Radius.circular(30))),
-        flexibleSpace: const SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Address Book',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white)),
-              // const SizedBox(height: 20),
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 35),
-              //   child: TextField(
-              //     style: const TextStyle(
-              //       color:
-              //     ),
-              //     decoration: InputDecoration(
-              //         filled: true,
-              //         fillColor: Colors.white,
-              //         border: OutlineInputBorder(
-              //             borderRadius: BorderRadius.circular(20),
-              //             borderSide: BorderSide.none),
-              //         hintText: "eg. Taj eye",
-              //         prefixIcon: const Icon(
-              //           Icons.search,
-              //           color:
-              //         )),
-              //   ),
-              // )
-            ],
-          ),
-        ),
+        elevation: 0,
+        title: const Text('Address Book',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        centerTitle: true,
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
               itemCount: allData.length,
-              itemBuilder: (context, index) => Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25)),
-                margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: Center(
-                      child: Text('${index + 1} ',
-                          style: const TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold)),
-                    ),
-                  ),
-                  title: Padding(
-                    padding: const EdgeInsets.only(top: 15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Text('$allData',
-                        //     style: const TextStyle(
-                        //         fontSize: 20,
-                        //         fontWeight: FontWeight.bold,
-                        //         color: Colors.white)),
-                        Text(allData[index]['title'],
-                            style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white)),
-
-                        const SizedBox(height: 8),
-                      ],
-                    ),
-                  ),
-                  subtitle: Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(allData[index]['desc'],
-                            style: const TextStyle(
-                                fontSize: 16, color: Colors.white)),
-                      ],
-                    ),
-                  ),
-                  trailing: IconButton(
-                      onPressed: () {
-                        showModalBottomSheet(
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30))),
-                            elevation: 5,
-                            isScrollControlled: true,
-                            context: context,
-                            builder: (context) => Container(
-                                padding: EdgeInsets.only(
-                                    top: 30,
-                                    left: 15,
-                                    right: 15,
-                                    bottom: MediaQuery.of(context)
-                                            .viewInsets
-                                            .bottom +
-                                        50),
-                                child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                                textStyle: const TextStyle(
-                                                    fontSize: 30,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                            onPressed: () {
-                                              showBottomSheet(
-                                                  allData[index]['id']);
-                                            },
-                                            child: const Text('Update',
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                          ),
-                                          ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                                primary: Colors.red,
-                                                textStyle: const TextStyle(
-                                                    fontSize: 30,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                            onPressed: () {
-                                              deleteData(allData[index]['id']);
-                                              Navigator.of(context).pop();
-                                            },
-                                            child: const Text('Delete',
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                          )
-                                        ],
-                                      ),
-                                    ])));
+              itemBuilder: (context, index) => SizedBox(
+                height: 85,
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14)),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                  child: Center(
+                    child: ListTile(
+                      onTap: () {
+                        Get.back(result: {
+                          'address': allData[index]['desc'],
+                        });
                       },
-                      icon: const Icon(Icons.more, color: Colors.white)),
+                      leading: const Icon(Icons.save, size: 25),
+                      title: Text(allData[index]['title'],
+                          style: const TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                      trailing: IconButton(
+                          onPressed: () {
+                            showModalBottomSheet(
+                                shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(30),
+                                        topRight: Radius.circular(30))),
+                                elevation: 5,
+                                isScrollControlled: true,
+                                context: context,
+                                builder: (context) => Container(
+                                    padding: EdgeInsets.only(
+                                        top: 30,
+                                        left: 15,
+                                        right: 15,
+                                        bottom: MediaQuery.of(context)
+                                                .viewInsets
+                                                .bottom +
+                                            50),
+                                    child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: [
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                    textStyle: const TextStyle(
+                                                        fontSize: 30,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                                onPressed: () {
+                                                  showBottomSheet(
+                                                      allData[index]['id']);
+                                                },
+                                                child: const Text('Update',
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              ),
+                                              ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                    primary: Colors.red,
+                                                    textStyle: const TextStyle(
+                                                        fontSize: 30,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                                onPressed: () {
+                                                  deleteData(
+                                                      allData[index]['id']);
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: const Text('Delete',
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              )
+                                            ],
+                                          ),
+                                        ])));
+                          },
+                          icon: const Icon(Icons.more)),
+                    ),
+                  ),
                 ),
               ),
             ),
