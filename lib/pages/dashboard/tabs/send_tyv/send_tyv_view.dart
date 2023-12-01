@@ -9,7 +9,7 @@ import 'package:tixcash/api/apis.dart';
 import 'package:tixcash/pages/dashboard/scan_qr/scan_qr_controller.dart';
 // import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:tixcash/pages/dashboard/tabs/send_tyv/scan_qr.dart';
-import 'package:tixcash/pages/dashboard/tabs/settings/settings_view.dart';
+import 'package:tixcash/pages/dashboard/tabs/settings/DB/db_view.dart';
 import 'package:tixcash/shared/shared.dart';
 import 'send_tyv_controller.dart';
 // import 'package:scan/scan.dart';
@@ -176,7 +176,7 @@ class SendTyvView extends GetView<SendTyvController> {
                                                   color: Theme.of(context)
                                                       .primaryColor),
                                               onTap: () async {
-                                                Get.to(const AddressBook())
+                                                Get.to(AddressBook(checkId: 1))
                                                     ?.then((value) {
                                                   if (value != null) {
                                                     controller

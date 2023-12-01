@@ -18,7 +18,6 @@ class SendTyvController extends GetxController {
 
   final TextEditingController controllerReceiver = TextEditingController();
   final TextEditingController controllerAmount = TextEditingController();
-
   final currencyResponse = Rxn<CurrencyResponse>();
 
   final isInputValid = false.obs;
