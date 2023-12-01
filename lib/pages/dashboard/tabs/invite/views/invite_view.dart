@@ -29,8 +29,8 @@ class InviteView extends GetView<InviteController> {
           elevation: 0,
           title: Text(
             'Refer Your Friends and Earn'.tr,
-            style:
-                GoogleFonts.roboto(fontSize: 15, fontWeight: FontWeight.bold),
+            style: GoogleFonts.roboto(
+                fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
           backgroundColor: Theme.of(context).primaryColor,
@@ -77,8 +77,7 @@ class InviteView extends GetView<InviteController> {
                     height: 16,
                   ),
                   DottedBorder(
-                    color: Theme.of(context).textTheme.titleMedium?.color ??
-                        Colors.white,
+                    color: Colors.white,
                     strokeWidth: 1,
                     // borderType: BorderType.Rect,
                     child: Container(
@@ -97,11 +96,7 @@ class InviteView extends GetView<InviteController> {
                               )),
                           const Spacer(),
                           Container(
-                            color: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium
-                                    ?.color ??
-                                Colors.white,
+                            color: Colors.white,
                             height: 30,
                             width: 1,
                             margin: const EdgeInsets.symmetric(horizontal: 8),
@@ -123,11 +118,13 @@ class InviteView extends GetView<InviteController> {
                               children: [
                                 Text(
                                   'Copy'.tr,
-                                  style: GoogleFonts.roboto(fontSize: 12),
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.white, fontSize: 12),
                                 ),
                                 Text(
                                   'Code'.tr,
-                                  style: GoogleFonts.roboto(fontSize: 12),
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.white, fontSize: 12),
                                 ),
                               ],
                             ),
@@ -141,7 +138,9 @@ class InviteView extends GetView<InviteController> {
                       onTap: () {
                         shareQrCode();
                       },
-                      child: const Center(child: Icon(Icons.share, size: 25))),
+                      child: const Center(
+                          child: Icon(Icons.share,
+                              size: 25, color: Colors.white))),
                   const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -168,7 +167,9 @@ class InviteView extends GetView<InviteController> {
                               child: Text(
                                 'About Referral'.tr,
                                 style: const TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.bold),
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold),
                               ),
                             )),
                       ),
@@ -221,7 +222,9 @@ class InviteView extends GetView<InviteController> {
                               child: Text(
                                 'History'.tr,
                                 style: const TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.bold),
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold),
                               ),
                             )),
                       ),
@@ -395,7 +398,7 @@ class InviteView extends GetView<InviteController> {
                                               fontWeight: FontWeight.bold,
                                             )),
                                         const SizedBox(width: 15),
-                                        Text(model.remark,
+                                        Text(': ${model.remark}',
                                             style: GoogleFonts.roboto(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
@@ -552,7 +555,9 @@ class stakingIncome extends GetView {
                     height: 60,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? Colors.white
+                            : Colors.black,
                         borderRadius: BorderRadius.circular(30),
                         border:
                             Border.all(color: Theme.of(context).primaryColor)),
@@ -567,7 +572,6 @@ class stakingIncome extends GetView {
                         Text('Stake & Earn'.tr,
                             style: GoogleFonts.roboto(
                               fontSize: 16,
-                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ))
                       ],
@@ -604,7 +608,9 @@ class stakingIncome extends GetView {
                     height: 60,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? Colors.white
+                            : Colors.black,
                         borderRadius: BorderRadius.circular(30),
                         border:
                             Border.all(color: Theme.of(context).primaryColor)),
@@ -619,7 +625,6 @@ class stakingIncome extends GetView {
                         Text('Refer & Earn'.tr,
                             style: GoogleFonts.roboto(
                               fontSize: 16,
-                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ))
                       ],
@@ -654,7 +659,9 @@ class stakingIncome extends GetView {
                     height: 60,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? Colors.white
+                            : Colors.black,
                         borderRadius: BorderRadius.circular(30),
                         border:
                             Border.all(color: Theme.of(context).primaryColor)),
@@ -679,7 +686,6 @@ class stakingIncome extends GetView {
                         Text('Get VIP Access'.tr,
                             style: GoogleFonts.roboto(
                               fontSize: 16,
-                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ))
                       ],

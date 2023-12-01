@@ -4,6 +4,7 @@ class StorageConstants {
   static const String userInfo2 = 'userInfo2';
   static const String userPassword = 'user_pass';
   static const String backup = 'is_backup';
+  static const String saveNetwork = 'saveNetwork';
   static const String phrase = 'phrase';
   static const String remindLater = 'remind_later';
   static const String isFingerPrint = 'is_fingerprint';

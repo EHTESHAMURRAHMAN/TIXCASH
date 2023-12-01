@@ -114,7 +114,10 @@ class _marketqState extends State<marketq> {
                           height: 60,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Theme.of(context).brightness ==
+                                      Brightness.light
+                                  ? Colors.white
+                                  : Colors.black,
                               borderRadius: BorderRadius.circular(30),
                               border: Border.all(
                                   color: Theme.of(context).primaryColor)),
@@ -129,8 +132,7 @@ class _marketqState extends State<marketq> {
                               Text('CoinMarketCap'.tr,
                                   style: GoogleFonts.roboto(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black))
+                                      fontWeight: FontWeight.bold))
                             ],
                           ),
                         ),
@@ -165,7 +167,10 @@ class _marketqState extends State<marketq> {
                           height: 60,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Theme.of(context).brightness ==
+                                      Brightness.light
+                                  ? Colors.white
+                                  : Colors.black,
                               borderRadius: BorderRadius.circular(30),
                               border: Border.all(
                                   color: Theme.of(context).primaryColor)),
@@ -180,8 +185,7 @@ class _marketqState extends State<marketq> {
                               Text('Trading View'.tr,
                                   style: GoogleFonts.roboto(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black))
+                                      fontWeight: FontWeight.bold))
                             ],
                           ),
                         ),

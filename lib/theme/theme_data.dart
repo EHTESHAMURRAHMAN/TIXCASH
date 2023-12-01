@@ -206,6 +206,7 @@ class ThemeConfig {
 }
 
 ThemeData lightTheme1() => ThemeData(
+
     // primaryColor: const Color(0xff1680ee),
     primaryColor: const Color(0xff1680ee),
     //primaryColorDark: const Color(0xff1680ee),
@@ -221,6 +222,7 @@ ThemeData lightTheme1() => ThemeData(
       // (states) => const Color(0xff1680ee)),
     ),
     appBarTheme: const AppBarTheme(
+        titleTextStyle: TextStyle(color: Colors.black),
         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Colors.white,
             statusBarIconBrightness: Brightness.dark,
@@ -256,6 +258,7 @@ ThemeData darkTheme1() => ThemeData(
     backgroundColor: Colors.black,
     brightness: Brightness.dark,
     appBarTheme: const AppBarTheme(
+      titleTextStyle: TextStyle(color: Colors.white),
       backgroundColor: Colors.black,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.black,

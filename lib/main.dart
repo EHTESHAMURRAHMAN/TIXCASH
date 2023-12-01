@@ -16,7 +16,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DenpendencyInjection.init();
   runApp(const App());
-  // configLoading();
 }
 
 class App extends StatefulWidget {

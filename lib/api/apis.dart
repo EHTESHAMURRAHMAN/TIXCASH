@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tixcash/models/BackupPhraseresponse.dart';
+import 'package:tixcash/models/LevelitemModel.dart';
 import 'package:tixcash/models/SponCode.dart';
 import 'package:tixcash/models/StakeDashboardResp.dart';
 import 'package:tixcash/models/StakeDateRsp.dart';
@@ -467,6 +468,23 @@ Future<ApiResponse> getwalletlistAPI() async {
 //         status: false, data: <WalletListResp>[], message: e.toString());
 //   }
 // }
+Future<ApiResponse> getLevelItemAPI(int level) async {
+  try {
+    String url = '$BASEAPI/account/getlevelteam/${userInfo!.id}/$level';
+
+    final response = await http.get(Uri.parse(url));
+    if (response.statusCode == 200) {
+      List<LevelitemModel> data = levelitemModelFromJson(response.body);
+      return ApiResponse(status: true, data: data, message: SUCCESS);
+    } else {
+      return ApiResponse(
+          status: false, data: <LevelitemModel>[], message: ERROR);
+    }
+  } catch (e) {
+    return ApiResponse(
+        status: false, data: <LevelitemModel>[], message: e.toString());
+  }
+}
 
 Future<ApiResponse> getPremiumAPI() async {
   try {

@@ -210,11 +210,11 @@ const Map<String, String> sp_SP = {
   "Please note down Secret Recovery Phrase":
       "Por favor, anote la Frase de Recuperación Secreta",
   "Remember :": "Recuerde :",
-  "● Don't disclose the secret recovery phrase to anyone. Once lost, assets cannot be recovered":
+  "● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
       "● No divulgue la frase de recuperación secreta a nadie. Una vez perdidos, los activos no se pueden recuperar",
-  "● Please do not back up and save by screenshots or network transmission":
+  "● Please do not backup and save by screenshots or network transmission":
       "● Por favor, no haga copias de seguridad y guarde mediante capturas de pantalla o transmisión por red",
-  "● Don't uninstall the app when in issues, note the recovery phrase first, or contact us for help":
+  "● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help":
       "● No desinstale la aplicación cuando haya problemas, anote primero la frase de recuperación o contáctenos para obtener ayuda",
   "VERIFY NOW": "VERIFICAR AHORA",
   "Stake": "Participación",
@@ -280,7 +280,7 @@ const Map<String, String> sp_SP = {
   "Embark on your journey with Tixcash Wallet\'s revamped brand identity, tailored to enrich your Web3 experience. Uncover our intuitive layout and much more. Start your journey today":
       "Embárcate en tu viaje con la identidad de marca renovada de Tixcash Wallet, diseñada para enriquecer tu experiencia Web3. Descubre nuestro diseño intuitivo y mucho más. Comienza tu viaje hoy",
   "Tixcash Services": "Servicios de Tixcash",
-  "Tixcash Stake": "Tixcash Stake",
+  "Tixcash Stake": "Estaca Tixcash",
   "Fitness Club": "Club de Fitness",
   "Mining Pool": "Mining Pool",
   "Tixcash Stores": "Tiendas Tixcash",
@@ -318,7 +318,7 @@ const Map<String, String> sp_SP = {
   "Amount :": "Monto:",
   "Stake Claim": "Reclamo de Stake",
   "Refer Your Friends and Earn": "Refiere a tus amigos y Gana",
-  "About Referral": "Acerca de la Referencia",
+  "About Referral": "Acerca de",
   "History": "Historial",
   "Total Earning :": "Ganancia Total:",
   "Balance Amount :": "Monto de Saldo:",
@@ -378,17 +378,17 @@ const Map<String, String> sp_SP = {
   "2nd Gen Referral Income": "Ingreso de Referencia de 2da Generación",
   "Note :": "Nota:",
   "All above have Min 500 TXH to max.\n50000 TXH stake amount limitations.":
-      "Todos los anteriores tienen un límite mínimo de 500 TXH hasta un máximo.\nLimitaciones de la cantidad de stake de 50000 TXH.",
+      "Todos los anteriores tienen un límite mínimo\nde 500 TXH hasta un máximo.Limitaciones\nde la cantidad de stake de 50000 TXH.",
   "Whitelisted stake : ": "Stake en Lista Blanca:",
-  "(only available for a Whitelisted\n users)":
-      "(solo disponible para usuarios en Lista Blanca)",
+  "(only available for a Whitelisted\n users )":
+      "(solo disponible para\nusuarios en Lista Blanca)",
   "Whitelisted (365)": "En Lista Blanca (365)",
   "No stake amount limitations": "Sin limitaciones de cantidad de stake",
   "You have Insufficient balance": "Tienes saldo insuficiente",
   "You have either insufficient balance or gas fee":
       "Tienes saldo insuficiente o tarifa de gas",
   "Claim Successfully": "Reclamo Exitoso",
-  "Select Stake Plan": "Seleccionar Plan de Stake",
+  "Select Stake Plan": "Seleccionar plan",
   "YYYY : MM : DD": "AAAA : MM : DD",
   "You Are Not Whitelisted Member": "No eres miembro en Lista Blanca",
   "Whitelisted (Staking Period:- 365 Days)":
@@ -422,7 +422,7 @@ const Map<String, String> sp_SP = {
   "Join Twitter": "Únete a Twitter",
   "Join Facebook": "Únete a Facebook",
   "Join Github": "Únete a Github",
-  "Succeed": "Éxito",
+  "succeed": "Éxito",
   "Password changed successfully": "Contraseña cambiada exitosamente",
   "Are You Sure\nYou Want To Erase Your\nWallet?":
       "¿Estás seguro\nde que quieres borrar tu\nbilletera?",

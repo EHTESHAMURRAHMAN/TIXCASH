@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
@@ -13,6 +11,11 @@ import 'package:webview_flutter/webview_flutter.dart';
 class SettingsController extends GetxController {
   final AppController appController = Get.find<AppController>();
   final switchValue = false.obs;
+  final isActived = false.obs;
+  final isScanEnable = false.obs;
+  final TextEditingController controllerSavedNetwork = TextEditingController();
+  final TextEditingController controllerName = TextEditingController();
+
   final List<PopupItem> securityOption = [
     PopupItem(title: 'Password', value: '0'),
     PopupItem(title: 'Fingerprint', value: '1'),

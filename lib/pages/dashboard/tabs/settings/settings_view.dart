@@ -13,6 +13,8 @@ import 'package:screenshot/screenshot.dart';
 import 'package:share/share.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tixcash/app_controller.dart';
+import 'package:tixcash/pages/dashboard/tabs/send_tyv/scan_qr.dart';
+import 'package:tixcash/pages/dashboard/tabs/send_tyv/send_tyv_view.dart';
 import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/shared.dart';
 import 'package:tixcash/shared/widgets/preference_cell.dart';
@@ -84,6 +86,23 @@ class SettingsView extends GetView<SettingsController> {
                 subtitle: Text(
                   'Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock'
                       .tr,
+                  style: GoogleFonts.roboto(fontSize: 13),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ListTile(
+                leading: Icon(CupertinoIcons.bookmark,
+                    color: Theme.of(context).primaryColor, size: 25),
+                onTap: () {
+                  Get.to(AddressBook());
+                },
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                title: Text(
+                  'Address Book'.tr,
+                  style: GoogleFonts.roboto(fontSize: 16),
+                ),
+                subtitle: Text(
+                  'Save Your Name & Address & NetWork'.tr,
                   style: GoogleFonts.roboto(fontSize: 13),
                 ),
               ),
@@ -617,12 +636,12 @@ class GeneralSetting extends StatelessWidget {
                                 onTap: () =>
                                     controller.updateLocale('jp', 'JP', '日本語'),
                               ),
-                              // ListTile(
-                              //   title: Text('español',
-                              //       style: GoogleFonts.roboto(fontSize: 14)),
-                              //   onTap: () => controller.updateLocale(
-                              //       'sp', 'SP', 'español'),
-                              // ),
+                              ListTile(
+                                title: Text('español',
+                                    style: GoogleFonts.roboto(fontSize: 14)),
+                                onTap: () => controller.updateLocale(
+                                    'sp', 'SP', 'español'),
+                              ),
                             ],
                           ),
                         ));
@@ -642,7 +661,8 @@ class GeneralSetting extends StatelessWidget {
                       title: 'Language'.tr,
                       subview: Obx(() => Text(
                             controller.appController.language.value.tr,
-                            style: GoogleFonts.roboto(fontSize: 14),
+                            style: GoogleFonts.roboto(
+                                fontSize: 14, color: Colors.white),
                           )),
                       trailing: SvgPicture.asset(
                           'assets/SVG_Icons/Ic__arrow_down.svg'),
@@ -1605,6 +1625,214 @@ class About extends StatelessWidget {
     }
   }
 }
+
+class AddressBook extends StatefulWidget {
+  AddressBook({Key? key}) : super(key: key);
+
+  @override
+  State<AddressBook> createState() => _AddressBookState();
+}
+
+class _AddressBookState extends State<AddressBook> {
+  SettingsController controller = Get.put(SettingsController());
+  String name = "";
+  List<String> savedList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadList();
+  }
+
+  saveList(List<String> list) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setStringList("name", list);
+    setState(() {});
+  }
+
+  // void isSave() async {
+  //   SharedPreferences sp = await SharedPreferences.getInstance();
+  //   name = sp.getString("name") ?? "";
+  // }
+  loadList() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      savedList = prefs.getStringList("name") ?? [];
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: InkWell(
+            onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        title: Text(
+          'Address Book'.tr,
+          style: GoogleFonts.roboto(fontSize: 20),
+        ),
+        centerTitle: true,
+        actions: [
+          InkWell(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text('Dialog Title'),
+                      content: Column(
+                        children: [
+                          const SizedBox(height: 10),
+                          TextFormField(
+                            controller: controller.controllerName,
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                                hintText: 'Username'.tr,
+                                hintStyle: const TextStyle(fontSize: 14),
+                                labelStyle: const TextStyle(fontSize: 14),
+                                label: Text('Username'.tr),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color:
+                                            ColorConstants.secondaryAppColor),
+                                    borderRadius: BorderRadius.circular(20)),
+                                border: InputBorder.none,
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color:
+                                            ColorConstants.secondaryAppColor),
+                                    borderRadius: BorderRadius.circular(20))),
+                          ),
+                          const SizedBox(height: 25),
+                          InputIconBox(
+                            hint: 'Receiver address'.tr,
+                            title: ''.tr,
+                            image: GestureDetector(
+                              child: Text(
+                                'PASTE'.tr,
+                                style: GoogleFonts.roboto(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xFF40C4FF)),
+                              ),
+                              onTap: () async {
+                                ClipboardData? data =
+                                    await Clipboard.getData('text/plain');
+                                controller.controllerSavedNetwork.text =
+                                    data?.text ?? '';
+                                controller.isActived.value = controller
+                                    .controllerSavedNetwork.text.isNotEmpty;
+                              },
+                            ),
+
+                            //
+                            controller: controller.controllerSavedNetwork,
+                            onChange: (value) {
+                              controller.isActived.value = controller
+                                  .controllerSavedNetwork.text.isNotEmpty;
+                            },
+                            isScanner: true,
+                            onScan: () {
+                              controller.isScanEnable.value = true;
+                              callOnScan();
+                            },
+                          ),
+                        ],
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () async {
+                            SharedPreferences sp =
+                                await SharedPreferences.getInstance();
+                            sp.setString(
+                                "name", controller.controllerName.text);
+                            sp.setString("address",
+                                controller.controllerSavedNetwork.text);
+                            print('addrddrr${'address'}');
+                            Get.back();
+                          },
+                          child: Text('Okay'.tr),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              child: const Icon(Icons.add))
+        ],
+      ),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 15),
+        child: ListView(
+          children: [
+            FutureBuilder(
+              future: SharedPreferences.getInstance(),
+              builder: (context, AsyncSnapshot<SharedPreferences> snapshot) {
+                return Column(
+                  children: [Text(name.toString())],
+                );
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  callOnScan() async {
+    Get.to(const ScanQR())?.then((value) {
+      controller.controllerSavedNetwork.text = value;
+      controller.isActived.value = true;
+    });
+  }
+}
+
+// class AddAddress extends StatefulWidget {
+//   AddAddress({Key? key}) : super(key: key);
+
+//   @override
+//   State<AddAddress> createState() => _AddAddressState();
+// }
+
+// class _AddAddressState extends State<AddAddress> {
+//   SettingsController controller = Get.put(SettingsController());
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         leading: InkWell(
+//             onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
+//         automaticallyImplyLeading: false,
+//         elevation: 0,
+//         title: Text(
+//           'Wallet Address'.tr,
+//           style: GoogleFonts.roboto(fontSize: 20),
+//         ),
+//         centerTitle: true,
+//         actions: [
+//           InkWell(
+//               onTap: () async {
+//                 SharedPreferences sp = await SharedPreferences.getInstance();
+//                 sp.setString("name", controller.controllerName.text);
+//                 sp.setString("address", controller.controllerSavedNetwork.text);
+//                 Get.back();
+//               },
+//               child: const Icon(Icons.done, color: Colors.green))
+//         ],
+//       ),
+//       body: Container(
+//         margin: const EdgeInsets.symmetric(horizontal: 15),
+//         child: ListView(
+//           children: [],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 // import 'dart:async';
 // import 'dart:io';
 // import 'package:flutter/cupertino.dart';
@@ -2075,7 +2303,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockValue.value.tr,
 //                               style: const TextStyle(
 //                                 fontSize: 16,
-//                                  
+//
 //                               ),
 //                             )),
 //                         const SizedBox(
@@ -2095,7 +2323,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(0).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                    
+//
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(1).value,
@@ -2103,7 +2331,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(1).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                    
+//
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(2).value,
@@ -2111,7 +2339,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(2).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                    
+//
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(3).value,
@@ -2119,7 +2347,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(3).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                    
+//
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(4).value,
@@ -2127,7 +2355,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(4).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                    
+//
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(5).value,
@@ -2135,7 +2363,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(5).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                    
+//
 //                                   fontWeight: FontWeight.w400))),
 //                       PopupMenuItem<String>(
 //                           value: controller.autoLockOption.elementAt(6).value,
@@ -2143,7 +2371,7 @@ class About extends StatelessWidget {
 //                               controller.autoLockOption.elementAt(6).title.tr,
 //                               style: GoogleFonts.roboto(
 //                                   fontSize: 14,
-//                                    
+//
 //                                   fontWeight: FontWeight.w400))),
 //                     ],
 //                     onSelected: (String val) {

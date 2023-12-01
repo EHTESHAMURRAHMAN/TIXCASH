@@ -185,7 +185,7 @@ class PremiumAccess extends StatelessWidget {
           centerTitle: true,
           title: Text(
             'Select Premium Plan'.tr,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
         ),
         body: Container(

@@ -37,6 +37,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                 'Tixcash Wallet'.tr,
                 style: const TextStyle(
                     fontSize: 32,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal),
               ),
@@ -78,6 +79,7 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                 'Open wallet with fingerprint'.tr,
                 style: GoogleFonts.roboto(
                     fontSize: 18,
+                    color: Colors.white,
                     fontWeight: FontWeight.w300,
                     fontStyle: FontStyle.normal),
               ),
