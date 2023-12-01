@@ -13,8 +13,6 @@ class SettingsController extends GetxController {
   final switchValue = false.obs;
   final isActived = false.obs;
   final isScanEnable = false.obs;
-  final TextEditingController controllerSavedNetwork = TextEditingController();
-  final TextEditingController controllerName = TextEditingController();
 
   final List<PopupItem> securityOption = [
     PopupItem(title: 'Password', value: '0'),

@@ -15,6 +15,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tixcash/app_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/send_tyv/scan_qr.dart';
 import 'package:tixcash/pages/dashboard/tabs/send_tyv/send_tyv_view.dart';
+import 'package:tixcash/pages/dashboard/tabs/settings/DB_network.dart';
 import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/shared.dart';
 import 'package:tixcash/shared/widgets/preference_cell.dart';
@@ -1627,7 +1628,7 @@ class About extends StatelessWidget {
 }
 
 class AddressBook extends StatefulWidget {
-  AddressBook({Key? key}) : super(key: key);
+  const AddressBook({super.key});
 
   @override
   State<AddressBook> createState() => _AddressBookState();
@@ -1635,155 +1636,361 @@ class AddressBook extends StatefulWidget {
 
 class _AddressBookState extends State<AddressBook> {
   SettingsController controller = Get.put(SettingsController());
-  String name = "";
-  List<String> savedList = [];
+
+  List<Map<String, dynamic>> allData = [];
+  bool isLoading = true;
+  void refreshData() async {
+    final data = await SQLHELPER.getAllData();
+    setState(() {
+      allData = data;
+      isLoading = false;
+    });
+  }
 
   @override
   void initState() {
     super.initState();
-    loadList();
+    refreshData();
   }
 
-  saveList(List<String> list) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setStringList("name", list);
-    setState(() {});
+  Future<void> addData() async {
+    if (titleController.text.isEmpty) {
+      EasyLoading.showToast('Enter Name');
+      return;
+    }
+
+    if (descController.text.isEmpty) {
+      EasyLoading.showToast('Enter Details');
+      return;
+    }
+
+    await SQLHELPER.createData(
+      titleController.text,
+      descController.text,
+    );
+    titleController.text = "";
+
+    descController.text = "";
+    refreshData();
+    Navigator.of(context).pop();
   }
 
-  // void isSave() async {
-  //   SharedPreferences sp = await SharedPreferences.getInstance();
-  //   name = sp.getString("name") ?? "";
-  // }
-  loadList() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      savedList = prefs.getStringList("name") ?? [];
-    });
+  Future<void> updateData(int id) async {
+    await SQLHELPER.updateData(
+      id,
+      titleController.text,
+      descController.text,
+    );
+    refreshData();
+    Navigator.of(context).pop();
+  }
+
+  Future<void> deleteData(int id) async {
+    await SQLHELPER.deleteData(id);
+    // ignore: use_build_context_synchronously
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      content: Text("Data Deleted"),
+      backgroundColor: Colors.red,
+    ));
+    refreshData();
+  }
+
+  // String dateOfBirth = '';
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController descController = TextEditingController();
+
+  void showBottomSheet(int? id) async {
+    if (id != null) {
+      final existingData = allData.firstWhere((element) => element['id'] == id);
+      titleController.text = existingData['title'];
+
+      descController.text = existingData['desc'];
+    }
+
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Scaffold(
+            appBar: AppBar(
+              toolbarHeight: 90,
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(30),
+                      bottomRight: Radius.circular(30))),
+              title: const Text('Wallet Address'),
+              centerTitle: true,
+            ),
+            body: ListView(
+              children: [
+                const SizedBox(height: 10),
+                Container(
+                    padding: const EdgeInsets.all(15),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        const SizedBox(height: 10),
+                        TextFormField(
+                          controller: titleController,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              hintText: 'Username'.tr,
+                              hintStyle: const TextStyle(fontSize: 14),
+                              labelStyle: const TextStyle(fontSize: 14),
+                              label: Text('Username'.tr),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: ColorConstants.secondaryAppColor),
+                                  borderRadius: BorderRadius.circular(20)),
+                              border: InputBorder.none,
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: ColorConstants.secondaryAppColor),
+                                  borderRadius: BorderRadius.circular(20))),
+                        ),
+                        const SizedBox(height: 25),
+                        InputIconBox(
+                          hint: 'Receiver address'.tr,
+                          title: ''.tr,
+                          image: GestureDetector(
+                            child: Text(
+                              'PASTE'.tr,
+                              style: GoogleFonts.roboto(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
+                                  color: const Color(0xFF40C4FF)),
+                            ),
+                            onTap: () async {
+                              ClipboardData? data =
+                                  await Clipboard.getData('text/plain');
+                              descController.text = data?.text ?? '';
+                              controller.isActived.value =
+                                  descController.text.isNotEmpty;
+                            },
+                          ),
+
+                          //
+                          controller: descController,
+                          onChange: (value) {
+                            controller.isActived.value =
+                                descController.text.isNotEmpty;
+                          },
+                          isScanner: true,
+                          onScan: () {
+                            controller.isScanEnable.value = true;
+                            callOnScan();
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        Center(
+                          child: InkWell(
+                            onTap: () async {
+                              if (id == null) {
+                                await addData();
+                              }
+                              if (id != null) {
+                                await updateData(id);
+                              }
+                            },
+                            child: Container(
+                              height: 55,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15)),
+                                child: Center(
+                                  child: Text(id == null ? "Save" : "Update",
+                                      style: const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white)),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    )),
+              ],
+            ),
+          );
+        });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: InkWell(
-            onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
-        automaticallyImplyLeading: false,
-        elevation: 0,
-        title: Text(
-          'Address Book'.tr,
-          style: GoogleFonts.roboto(fontSize: 20),
-        ),
-        centerTitle: true,
-        actions: [
-          InkWell(
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: const Text('Dialog Title'),
-                      content: Column(
-                        children: [
-                          const SizedBox(height: 10),
-                          TextFormField(
-                            controller: controller.controllerName,
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                                hintText: 'Username'.tr,
-                                hintStyle: const TextStyle(fontSize: 14),
-                                labelStyle: const TextStyle(fontSize: 14),
-                                label: Text('Username'.tr),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            ColorConstants.secondaryAppColor),
-                                    borderRadius: BorderRadius.circular(20)),
-                                border: InputBorder.none,
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            ColorConstants.secondaryAppColor),
-                                    borderRadius: BorderRadius.circular(20))),
-                          ),
-                          const SizedBox(height: 25),
-                          InputIconBox(
-                            hint: 'Receiver address'.tr,
-                            title: ''.tr,
-                            image: GestureDetector(
-                              child: Text(
-                                'PASTE'.tr,
-                                style: GoogleFonts.roboto(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xFF40C4FF)),
-                              ),
-                              onTap: () async {
-                                ClipboardData? data =
-                                    await Clipboard.getData('text/plain');
-                                controller.controllerSavedNetwork.text =
-                                    data?.text ?? '';
-                                controller.isActived.value = controller
-                                    .controllerSavedNetwork.text.isNotEmpty;
-                              },
-                            ),
+        // Status bar
 
-                            //
-                            controller: controller.controllerSavedNetwork,
-                            onChange: (value) {
-                              controller.isActived.value = controller
-                                  .controllerSavedNetwork.text.isNotEmpty;
-                            },
-                            isScanner: true,
-                            onScan: () {
-                              controller.isScanEnable.value = true;
-                              callOnScan();
-                            },
-                          ),
-                        ],
-                      ),
-                      actions: [
-                        TextButton(
-                          onPressed: () async {
-                            SharedPreferences sp =
-                                await SharedPreferences.getInstance();
-                            sp.setString(
-                                "name", controller.controllerName.text);
-                            sp.setString("address",
-                                controller.controllerSavedNetwork.text);
-                            print('addrddrr${'address'}');
-                            Get.back();
-                          },
-                          child: Text('Okay'.tr),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
-              child: const Icon(Icons.add))
-        ],
-      ),
-      body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 15),
-        child: ListView(
-          children: [
-            FutureBuilder(
-              future: SharedPreferences.getInstance(),
-              builder: (context, AsyncSnapshot<SharedPreferences> snapshot) {
-                return Column(
-                  children: [Text(name.toString())],
-                );
-              },
-            )
-          ],
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30))),
+        flexibleSpace: const SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Address Book',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
+              // const SizedBox(height: 20),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 35),
+              //   child: TextField(
+              //     style: const TextStyle(
+              //       color:
+              //     ),
+              //     decoration: InputDecoration(
+              //         filled: true,
+              //         fillColor: Colors.white,
+              //         border: OutlineInputBorder(
+              //             borderRadius: BorderRadius.circular(20),
+              //             borderSide: BorderSide.none),
+              //         hintText: "eg. Taj eye",
+              //         prefixIcon: const Icon(
+              //           Icons.search,
+              //           color:
+              //         )),
+              //   ),
+              // )
+            ],
+          ),
         ),
+      ),
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemCount: allData.length,
+              itemBuilder: (context, index) => Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
+                margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Center(
+                      child: Text('${index + 1} ',
+                          style: const TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                  title: Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Text('$allData',
+                        //     style: const TextStyle(
+                        //         fontSize: 20,
+                        //         fontWeight: FontWeight.bold,
+                        //         color: Colors.white)),
+                        Text(allData[index]['title'],
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
+
+                        const SizedBox(height: 8),
+                      ],
+                    ),
+                  ),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(allData[index]['desc'],
+                            style: const TextStyle(
+                                fontSize: 16, color: Colors.white)),
+                      ],
+                    ),
+                  ),
+                  trailing: IconButton(
+                      onPressed: () {
+                        showModalBottomSheet(
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(30),
+                                    topRight: Radius.circular(30))),
+                            elevation: 5,
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (context) => Container(
+                                padding: EdgeInsets.only(
+                                    top: 30,
+                                    left: 15,
+                                    right: 15,
+                                    bottom: MediaQuery.of(context)
+                                            .viewInsets
+                                            .bottom +
+                                        50),
+                                child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                textStyle: const TextStyle(
+                                                    fontSize: 30,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                            onPressed: () {
+                                              showBottomSheet(
+                                                  allData[index]['id']);
+                                            },
+                                            child: const Text('Update',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                          ),
+                                          ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                primary: Colors.red,
+                                                textStyle: const TextStyle(
+                                                    fontSize: 30,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                            onPressed: () {
+                                              deleteData(allData[index]['id']);
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: const Text('Delete',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                          )
+                                        ],
+                                      ),
+                                    ])));
+                      },
+                      icon: const Icon(Icons.more, color: Colors.white)),
+                ),
+              ),
+            ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => showBottomSheet(null),
+        child: const Icon(Icons.add),
       ),
     );
   }
 
   callOnScan() async {
     Get.to(const ScanQR())?.then((value) {
-      controller.controllerSavedNetwork.text = value;
+      descController.text = value;
       controller.isActived.value = true;
     });
   }
