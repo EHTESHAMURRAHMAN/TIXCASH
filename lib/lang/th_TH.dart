@@ -394,6 +394,7 @@ const Map<String, String> th_TH = {
       "กรุณากรอกยอดคงเหลือมากกว่า 500 TXH",
   "Staking History": "ประวัติการปักหลัก",
   "No Stake History": "ประวัติการปักหลัก",
+  "Staking": "การปักหลัก",
   "Address Copied": "คัดลอกที่อยู่แล้ว",
   "Withdrwal Successful": "การถอนเงินสำเร็จ",
   "Will be confirmed in 16 confirmations":
@@ -449,4 +450,12 @@ const Map<String, String> th_TH = {
   "null": "โมฆะ",
   "Failed": "ล้มเหลว",
   "Wrong Phrase Key": "รหัสวลีผิด",
+  "Enter Name": "ใส่ชื่อ",
+  "Enter Address": "กรอกที่อยู่",
+  "Address Deleted": "ลบที่อยู่แล้ว",
+  "Wallet Address": "ที่อยู่กระเป๋าเงิน",
+  "Update": "อัปเดต",
+  "Address Book": "สมุดที่อยู่",
+  "Save Your Name & Address & NetWork":
+      "บันทึกชื่อและที่อยู่และเครือข่ายของคุณ",
 };

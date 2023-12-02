@@ -23,12 +23,22 @@ class PremiumController extends GetxController {
   final isScanEnable = false.obs;
   final isCheckedTerms = false.obs;
   final termsAndConditions = 'Skip Referral Code'.tr;
+  final ischeckreferall = false.obs;
 
   @override
   void onInit() {
     super.onInit();
     getsubs();
     getpremiumList();
+  }
+
+  Future<void> getcheckreferallInput() async {
+    if (userInfo == null) return;
+    ApiResponse response = await getcheckreferallAPI(rcontroller.text);
+    ischeckreferall.value = bool.parse(response.data);
+    isActived.value = rcontroller.text.isEmpty;
+
+    return;
   }
 
   Future<void> getcheckreferall() async {

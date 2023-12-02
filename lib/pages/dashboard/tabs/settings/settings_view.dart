@@ -13,10 +13,7 @@ import 'package:screenshot/screenshot.dart';
 import 'package:share/share.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tixcash/app_controller.dart';
-import 'package:tixcash/pages/dashboard/tabs/send_tyv/scan_qr.dart';
-import 'package:tixcash/pages/dashboard/tabs/send_tyv/send_tyv_view.dart';
 import 'package:tixcash/pages/dashboard/tabs/settings/DB/db_view.dart';
-import 'package:tixcash/pages/dashboard/tabs/settings/DB/DB_network.dart';
 import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/shared.dart';
 import 'package:tixcash/shared/widgets/preference_cell.dart';
@@ -93,14 +90,14 @@ class SettingsView extends GetView<SettingsController> {
               ),
               const SizedBox(height: 20),
               ListTile(
-                leading: Icon(CupertinoIcons.bookmark,
+                leading: Icon(CupertinoIcons.profile_circled,
                     color: Theme.of(context).primaryColor, size: 25),
                 onTap: () {
-                  Get.to(AddressBook(checkId: 0));
+                  Get.to(const AddressBook(checkId: 0));
                 },
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 title: Text(
-                  'Address Book'.tr,
+                  'Contact'.tr,
                   style: GoogleFonts.roboto(fontSize: 16),
                 ),
                 subtitle: Text(
@@ -123,24 +120,6 @@ class SettingsView extends GetView<SettingsController> {
                 ),
                 subtitle: Text(
                   'Advanced'.tr,
-                  style: GoogleFonts.roboto(fontSize: 13),
-                ),
-              ),
-              const SizedBox(height: 20),
-              ListTile(
-                leading: Icon(CupertinoIcons.profile_circled,
-                    color: Theme.of(context).primaryColor, size: 25),
-                onTap: () {
-                  EasyLoading.showToast('Launching Soon'.tr,
-                      toastPosition: EasyLoadingToastPosition.top);
-                },
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                title: Text(
-                  'Contact'.tr,
-                  style: GoogleFonts.roboto(fontSize: 16),
-                ),
-                subtitle: Text(
-                  'Contact'.tr,
                   style: GoogleFonts.roboto(fontSize: 13),
                 ),
               ),

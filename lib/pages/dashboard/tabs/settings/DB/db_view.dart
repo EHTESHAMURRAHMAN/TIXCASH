@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -39,12 +38,12 @@ class _AddressBookState extends State<AddressBook> {
 
   Future<void> addData() async {
     if (titleController.text.isEmpty) {
-      EasyLoading.showToast('Enter Name');
+      EasyLoading.showToast('Enter Name'.tr);
       return;
     }
 
     if (descController.text.isEmpty) {
-      EasyLoading.showToast('Enter Address');
+      EasyLoading.showToast('Enter Address'.tr);
       return;
     }
 
@@ -97,7 +96,7 @@ class _AddressBookState extends State<AddressBook> {
           return Scaffold(
             appBar: AppBar(
               elevation: 0,
-              title: const Text('Wallet Address'),
+              title: Text('Wallet Address'.tr),
               centerTitle: true,
             ),
             body: ListView(
@@ -196,7 +195,8 @@ class _AddressBookState extends State<AddressBook> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15)),
                                 child: Center(
-                                  child: Text(id == null ? "Save" : "Update",
+                                  child: Text(
+                                      id == null ? "Save".tr : "Update".tr,
                                       style: const TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold)),
@@ -218,7 +218,7 @@ class _AddressBookState extends State<AddressBook> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Text('Address Book',
+        title: Text('Address Book'.tr,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
@@ -236,7 +236,7 @@ class _AddressBookState extends State<AddressBook> {
                     height: 85,
                     child: Card(
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14)),
+                          borderRadius: BorderRadius.circular(25)),
                       margin: const EdgeInsets.symmetric(
                           vertical: 8, horizontal: 10),
                       child: Center(
@@ -253,7 +253,7 @@ class _AddressBookState extends State<AddressBook> {
                           leading: const Icon(Icons.save, size: 25),
                           title: Text(allData[index]['title'],
                               style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold)),
+                                  fontSize: 18, fontWeight: FontWeight.bold)),
                           trailing: IconButton(
                               onPressed: () {
                                 showModalBottomSheet(
@@ -292,10 +292,12 @@ class _AddressBookState extends State<AddressBook> {
                                                                     FontWeight
                                                                         .bold)),
                                                     onPressed: () {
+                                                      Navigator.of(context)
+                                                          .pop();
                                                       showBottomSheet(
                                                           allData[index]['id']);
                                                     },
-                                                    child: const Text('Update',
+                                                    child: Text('Update'.tr,
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 15,
@@ -318,7 +320,7 @@ class _AddressBookState extends State<AddressBook> {
                                                       Navigator.of(context)
                                                           .pop();
                                                     },
-                                                    child: const Text('Delete',
+                                                    child: Text('Delete'.tr,
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 15,

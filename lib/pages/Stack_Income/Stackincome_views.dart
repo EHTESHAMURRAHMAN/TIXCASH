@@ -1614,13 +1614,12 @@ class txhincome extends GetView<StackController> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          '${controller.stakeDashboardResponse.value?.unclaim}',
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red,
-                                              fontSize: 25),
-                                        ),
+                                        Obx(() => Text(
+                                            '${controller.stakeDashboardResponse.value?.unclaim}',
+                                            style: const TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.red,
+                                                fontSize: 25))),
                                         const Text(
                                           'TXH',
                                           style: TextStyle(
@@ -1711,21 +1710,14 @@ class StakeClaimDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
         leading: InkWell(
             onTap: () => Get.back(),
             child: const Icon(
               Icons.arrow_back_ios,
               size: 20,
             )),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+
         elevation: 0,
         // backgroundColor: Colors.transparent,
         title: Text(
@@ -1760,83 +1752,90 @@ class StakeClaimDetails extends StatelessWidget {
             const SizedBox(height: 30),
             Container(
               //  margin: const EdgeInsets.symmetric(horizontal: 15),
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey.shade300),
+
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
               width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Amount :'.tr,
-                            style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                            )),
-                        Text(
-                            '${controller.stakeDashboardResponse.value?.unclaim.toStringAsFixed(2)}',
-                            // '${controller.commissionAmount.value} LINE',
-                            style: GoogleFonts.roboto(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ))
-                      ]),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  child: Column(
                     children: [
-                      Text('Remark'.tr,
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          )),
-                      Text('Stake Income'.tr,
-                          maxLines: 1,
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          )),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Amount :'.tr,
+                                style: GoogleFonts.roboto(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                )),
+                            Text(
+                                '${controller.stakeDashboardResponse.value?.unclaim.toStringAsFixed(2)}',
+                                // '${controller.commissionAmount.value} LINE',
+                                style: GoogleFonts.roboto(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ))
+                          ]),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Remark'.tr,
+                              style: GoogleFonts.roboto(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                              )),
+                          Text('Stake Income'.tr,
+                              maxLines: 1,
+                              // '${controller.commissionAmount.value} LINE',
+                              style: GoogleFonts.roboto(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Network fee'.tr,
+                              style: GoogleFonts.roboto(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                              )),
+                          Text('${sendController.commissionAmount.value} TXH',
+                              // '${controller.commissionAmount.value} LINE',
+                              style: GoogleFonts.roboto(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ))
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Text('Max Total'.tr,
+                              style: GoogleFonts.roboto(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                              )),
+                          const Spacer(),
+                          Obx(() => Text(
+                              '${controller.stakeDashboardResponse.value!.unclaim - sendController.commissionAmount.value}',
+                              // '${controller.commissionAmount.value} LINE',
+                              style: GoogleFonts.roboto(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              )))
+                        ],
+                      ),
                     ],
                   ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Network fee'.tr,
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          )),
-                      Text('${sendController.commissionAmount.value} TXH',
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ))
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Text('Max Total'.tr,
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          )),
-                      const Spacer(),
-                      Obx(() => Text(
-                          '${controller.stakeDashboardResponse.value!.unclaim - sendController.commissionAmount.value}',
-                          // '${controller.commissionAmount.value} LINE',
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          )))
-                    ],
-                  ),
-                ],
+                ),
               ),
             ),
           ],

@@ -414,6 +414,7 @@ const Map<String, String> sp_SP = {
       "Por favor, ingrese un saldo inferior a 50000 TXH",
   "Please Enter Balance More than 500 TXH":
       "Por favor, ingrese un saldo superior a 500 TXH",
+  "Staking": "Replantear",
   "Staking History": "Historial de bloqueo",
   "No Stake History": "Sin historial de bloqueo",
   "Address Copied": "Dirección copiada",
@@ -471,4 +472,11 @@ const Map<String, String> sp_SP = {
   "null": "Nulo",
   "Failed": "Fallido",
   "Wrong Phrase Key": "Clave de frase incorrecta",
+  "Enter Name": "Ingrese su nombre",
+  "Enter Address": "Ingresa la direccionv",
+  "Address Deleted": "Dirección eliminada",
+  "Wallet Address": "Dirección de billetera",
+  "Update": "Actualizar",
+  "Address Book": "Directorio",
+  "Save Your Name & Address & NetWork": "Guarde su nombre, dirección y red",
 };

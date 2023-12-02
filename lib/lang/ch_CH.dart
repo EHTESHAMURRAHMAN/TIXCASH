@@ -216,7 +216,8 @@ const Map<String, String> ch_CH = {
   "● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help":
       "● 出现问题时请勿卸载应用程序，请先记下恢复短语或联系我们寻求帮助",
   "VERIFY NOW": "立即验证",
-  "Stake": "赌注",
+  "Stake": "质押",
+  "Staking": "质押",
   "Referal": "推荐",
   "Tixcash Wallet": "Tixcash钱包",
   "Enter 24 Word Secrate Phrase": "输入 24 个字的秘密短语",
@@ -455,4 +456,11 @@ const Map<String, String> ch_CH = {
   "null": "无",
   "Failed": "导入失败",
   "Wrong Phrase Key": "错误的短语键",
+  "Enter Name": "输入名字",
+  "Enter Address": "输入地址",
+  "Address Deleted": "地址已删除",
+  "Wallet Address": "钱包地址",
+  "Update": "更新",
+  "Address Book": "地址簿",
+  "Save Your Name & Address & NetWork": "保存您的姓名、地址和网络",
 };

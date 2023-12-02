@@ -783,14 +783,14 @@ class SendDetails extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             SizedBox(
-                height: 120,
                 width: MediaQuery.of(context).size.width,
                 child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 20),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -823,6 +823,7 @@ class SendDetails extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width / 1.8,
                                 child: Text('${userInfo?.address}',
                                     maxLines: 1,
+                                    textAlign: TextAlign.end,
                                     // '${controller.commissionAmount.value} LINE',
                                     style: GoogleFonts.roboto(
                                       fontSize: 15,
@@ -844,6 +845,7 @@ class SendDetails extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width / 1.8,
                                 child: Text(controller.controllerReceiver.text,
                                     maxLines: 1,
+                                    textAlign: TextAlign.end,
                                     // '${controller.commissionAmount.value} LINE',
                                     style: GoogleFonts.roboto(
                                       fontSize: 15,

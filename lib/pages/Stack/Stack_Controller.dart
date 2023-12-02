@@ -111,11 +111,7 @@ class StackController extends GetxController {
     return;
   }
 
-  Future<void> getcheckreferall() async {
-    // if (userInfo == null) return;
-    // ApiResponse response = await getcheckreferallAPI(controllerRefral.text);
-    // ischeckreferall.value = bool.parse(response.data);
-    // isActived.value = controllerRefral.text.isNotEmpty;
+  Future<void> checkStakeAmount() async {
     isActived.value = controllerStakeAmount.text.isNotEmpty;
     return;
   }

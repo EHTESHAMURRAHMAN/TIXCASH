@@ -303,20 +303,20 @@ class PremiumViews extends GetView<PremiumController> {
                                                 'text/plain');
                                         controller.rcontroller.text =
                                             data?.text ?? '';
-                                        controller.getcheckreferall();
+                                        controller.getcheckreferallInput();
                                       },
                                     ),
 
                                     //
                                     controller: controller.rcontroller,
                                     onChange: (value) {
-                                      controller.getcheckreferall();
+                                      controller.getcheckreferallInput();
                                     },
                                     isScanner: true,
                                     onScan: () {
                                       controller.isScanEnable.value = true;
                                       callOnScan();
-                                      controller.getcheckreferall();
+                                      controller.getcheckreferallInput();
                                     },
                                   )
                                 : const SizedBox()),

@@ -18,7 +18,7 @@ class StackViews extends GetView<StackController> {
   @override
   Widget build(BuildContext context) {
     controller.getstakingDaylist();
-    controller.getcheckreferall();
+
     final controller1 = Get.put(HomeController());
     return Scaffold(
       appBar: AppBar(
@@ -96,7 +96,7 @@ class StackViews extends GetView<StackController> {
                 children: [
                   TextFormField(
                     onChanged: (value) {
-                      controller.getcheckreferall();
+                      controller.checkStakeAmount();
                     },
                     controller: controller.controllerStakeAmount,
                     keyboardType: TextInputType.number,
@@ -1216,270 +1216,6 @@ class StackViews extends GetView<StackController> {
 //     );
 //   }
 // }
-class stakingIncome extends GetView {
-  stakingIncome({Key? key}) : super(key: key);
-
-  @override
-  StackController controller = Get.put(StackController());
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text(
-            'Staking Income'.tr,
-            style: GoogleFonts.roboto(fontSize: 18),
-          ),
-          centerTitle: true,
-          leading: InkWell(
-            onTap: () => Get.back(),
-            child: const Icon(
-              Icons.arrow_back_ios,
-            ),
-          ),
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-          elevation: 0,
-          automaticallyImplyLeading: false,
-        ),
-        body: Obx(
-          () => controller.stakingListModelResponse.isEmpty
-              ? Center(
-                  child: Text('No Stake'.tr,
-                      style: GoogleFonts.roboto(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      )))
-              : ListView.builder(
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    StakingListModel model =
-                        controller.stakingListModelResponse.elementAt(index);
-
-                    return Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 6, horizontal: 15),
-                      height: MediaQuery.of(context).size.height / 4.5,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.blue),
-                          borderRadius: BorderRadius.circular(23),
-                          color: Colors.blue.shade50.withOpacity(.5)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text('Total Income :'.tr,
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                      const SizedBox(width: 17),
-                                      Text('${model.stakingincome}',
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text('Remaining Income :'.tr,
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                      const SizedBox(width: 17),
-                                      Text('${model.remainingamt}',
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                    ],
-                                  )
-                                ],
-                              ),
-                              const Spacer(),
-                              model.remainingamt == 0
-                                  ? Container(
-                                      height: 40,
-                                      width: 70,
-                                      decoration: BoxDecoration(
-                                          color: Theme.of(context)
-                                              .primaryColor
-                                              .withOpacity(.5),
-                                          borderRadius:
-                                              BorderRadius.circular(15)),
-                                      child: Center(
-                                        child: Text('Claim'.tr,
-                                            style: GoogleFonts.roboto(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.white)),
-                                      ),
-                                    )
-                                  : InkWell(
-                                      splashColor: Colors.white,
-                                      onTap: () {
-                                        //controller.claimStake(model.stakeid);
-                                      },
-                                      child: Container(
-                                        height: 40,
-                                        width: 70,
-                                        decoration: BoxDecoration(
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                            borderRadius:
-                                                BorderRadius.circular(15)),
-                                        child: Center(
-                                          child: Text('Claim'.tr,
-                                              style: GoogleFonts.roboto(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.white)),
-                                        ),
-                                      ),
-                                    ),
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          const Divider(color: Colors.blue),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Staking Value'.tr,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(width: 15),
-                                  Text('${model.stakeamount}',
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold,
-                                      ))
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text('Staking Period'.tr,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(width: 15),
-                                  Text(model.stakeday,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold,
-                                      ))
-                                ],
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Staking Start Date'.tr,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(width: 15),
-                                  Text(model.stake_date,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold,
-                                      ))
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text('Staking End Date'.tr,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(width: 15),
-                                  Text(model.end_date,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold,
-                                      ))
-                                ],
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Staking Paid Days'.tr,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(width: 15),
-                                  Text(model.paid_Days,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold,
-                                      ))
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text('Staking APY'.tr,
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  const SizedBox(width: 15),
-                                  Obx(() => Text('${model.apy}%',
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold,
-                                      )))
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                  itemCount: controller.stakingListModelResponse.length,
-                ),
-        ));
-  }
-}
 
 class stakingIncomeHistory extends GetView {
   stakingIncomeHistory({Key? key}) : super(key: key);
@@ -1557,7 +1293,7 @@ class stakingIncomeHistory extends GetView {
                                   children: [
                                     Text('Transaction Date :'.tr,
                                         style: GoogleFonts.roboto(
-                                            fontSize: 15,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Theme.of(context)
                                                 .primaryColor)),
@@ -1573,7 +1309,7 @@ class stakingIncomeHistory extends GetView {
                                   children: [
                                     Text('Remark'.tr,
                                         style: GoogleFonts.roboto(
-                                            fontSize: 15,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Theme.of(context)
                                                 .primaryColor)),
@@ -1601,7 +1337,7 @@ class stakingIncomeHistory extends GetView {
                                   children: [
                                     Text('Status :'.tr,
                                         style: GoogleFonts.roboto(
-                                            fontSize: 15,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Theme.of(context)
                                                 .primaryColor)),
@@ -1617,7 +1353,7 @@ class stakingIncomeHistory extends GetView {
                                   children: [
                                     Text('Gas fee :'.tr,
                                         style: GoogleFonts.roboto(
-                                            fontSize: 15,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Theme.of(context)
                                                 .primaryColor)),
@@ -1633,7 +1369,7 @@ class stakingIncomeHistory extends GetView {
                                   children: [
                                     Text('Staking :'.tr,
                                         style: GoogleFonts.roboto(
-                                            fontSize: 15,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Theme.of(context)
                                                 .primaryColor)),
@@ -1649,7 +1385,7 @@ class stakingIncomeHistory extends GetView {
                                   children: [
                                     Text('TXT hash :'.tr,
                                         style: GoogleFonts.roboto(
-                                            fontSize: 15,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Theme.of(context)
                                                 .primaryColor)),
@@ -1736,14 +1472,14 @@ class StakeDetails extends StatelessWidget {
             // ),
             const SizedBox(height: 30),
             SizedBox(
-                height: 150,
                 width: MediaQuery.of(context).size.width,
                 child: Card(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 20),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -1752,14 +1488,14 @@ class StakeDetails extends StatelessWidget {
                               children: [
                                 Text('Amount :'.tr,
                                     style: GoogleFonts.roboto(
-                                      fontSize: 15,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w400,
                                     )),
                                 Text(
                                     ' ${controller.controllerStakeAmount.text}',
                                     // '${controller.commissionAmount.value} LINE',
                                     style: GoogleFonts.roboto(
-                                      fontSize: 15,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     ))
                               ]),
@@ -1769,14 +1505,14 @@ class StakeDetails extends StatelessWidget {
                             children: [
                               Text('Remark'.tr,
                                   style: GoogleFonts.roboto(
-                                    fontSize: 15,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                   )),
-                              Text('Staking',
+                              Text('Staking'.tr,
                                   maxLines: 1,
                                   // '${controller.commissionAmount.value} LINE',
                                   style: GoogleFonts.roboto(
-                                    fontSize: 15,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                   )),
                             ],
@@ -1787,14 +1523,14 @@ class StakeDetails extends StatelessWidget {
                             children: [
                               Text('Network fee'.tr,
                                   style: GoogleFonts.roboto(
-                                    fontSize: 15,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                   )),
                               Text(
                                   '${sendController.commissionAmount.value} TXH',
                                   // '${controller.commissionAmount.value} LINE',
                                   style: GoogleFonts.roboto(
-                                    fontSize: 15,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                   ))
                             ],
@@ -1804,7 +1540,7 @@ class StakeDetails extends StatelessWidget {
                             children: [
                               Text('Max Total'.tr,
                                   style: GoogleFonts.roboto(
-                                    fontSize: 15,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                   )),
                               const Spacer(),
@@ -1812,7 +1548,7 @@ class StakeDetails extends StatelessWidget {
                                   '${double.parse(controller.controllerStakeAmount.text.toString()) + sendController.commissionAmount.value}',
                                   // '${controller.commissionAmount.value} LINE',
                                   style: GoogleFonts.roboto(
-                                    fontSize: 15,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                   )))
                             ],

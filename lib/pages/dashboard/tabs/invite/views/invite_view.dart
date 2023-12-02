@@ -81,7 +81,7 @@ class InviteView extends GetView<InviteController> {
                     strokeWidth: 1,
                     // borderType: BorderType.Rect,
                     child: Container(
-                      width: 150,
+                      width: 200,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
@@ -89,6 +89,7 @@ class InviteView extends GetView<InviteController> {
                         //borderRadius: BorderRadius.circular(8)
                       ),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Obx(() => Text(
                                 '${controller.usercodeResponse.value?.refrellcode}',
@@ -290,7 +291,7 @@ class InviteView extends GetView<InviteController> {
                           child: Center(
                             child: Text('Claim'.tr,
                                 style: GoogleFonts.roboto(
-                                    fontSize: 14,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white)),
                           ),
@@ -309,7 +310,7 @@ class InviteView extends GetView<InviteController> {
                             child: Center(
                               child: Text('Claim'.tr,
                                   style: GoogleFonts.roboto(
-                                      fontSize: 14,
+                                      fontSize: 13,
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white)),
                             ),
@@ -360,13 +361,13 @@ class InviteView extends GetView<InviteController> {
                                       children: [
                                         Text('Amount :'.tr,
                                             style: GoogleFonts.roboto(
-                                              fontSize: 16,
+                                              fontSize: 15,
                                               fontWeight: FontWeight.bold,
                                             )),
                                         const SizedBox(width: 17),
                                         Text('${model.amount}',
                                             style: GoogleFonts.roboto(
-                                              fontSize: 15,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.bold,
                                             ))
                                       ],
@@ -378,13 +379,13 @@ class InviteView extends GetView<InviteController> {
                                       children: [
                                         Text('Transaction Date :'.tr,
                                             style: GoogleFonts.roboto(
-                                              fontSize: 14,
+                                              fontSize: 12,
                                               fontWeight: FontWeight.bold,
                                             )),
                                         const SizedBox(width: 15),
                                         Text(model.transactiondate,
                                             style: GoogleFonts.roboto(
-                                              fontSize: 13,
+                                              fontSize: 12,
                                               fontWeight: FontWeight.bold,
                                             ))
                                       ],
@@ -394,13 +395,13 @@ class InviteView extends GetView<InviteController> {
                                       children: [
                                         Text('Remark'.tr,
                                             style: GoogleFonts.roboto(
-                                              fontSize: 14,
+                                              fontSize: 12,
                                               fontWeight: FontWeight.bold,
                                             )),
                                         const SizedBox(width: 15),
                                         Text(': ${model.remark}',
                                             style: GoogleFonts.roboto(
-                                              fontSize: 13,
+                                              fontSize: 12,
                                               fontWeight: FontWeight.bold,
                                             ))
                                       ],
@@ -410,13 +411,13 @@ class InviteView extends GetView<InviteController> {
                                       children: [
                                         Text('Staking :'.tr,
                                             style: GoogleFonts.roboto(
-                                              fontSize: 14,
+                                              fontSize: 12,
                                               fontWeight: FontWeight.bold,
                                             )),
                                         const SizedBox(width: 15),
                                         Text(model.staking,
                                             style: GoogleFonts.roboto(
-                                              fontSize: 13,
+                                              fontSize: 12,
                                               fontWeight: FontWeight.bold,
                                             ))
                                       ],
