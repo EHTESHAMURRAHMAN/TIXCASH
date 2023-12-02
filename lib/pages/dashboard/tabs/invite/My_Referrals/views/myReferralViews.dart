@@ -38,7 +38,7 @@ class MyReferral extends GetView<MyReferralController> {
               tabs: _tabs),
         ),
         body: TabBarView(
-          physics: const BouncingScrollPhysics(),
+          // physics: const BouncingScrollPhysics(),
           dragStartBehavior: DragStartBehavior.down,
           children: _views,
         ),

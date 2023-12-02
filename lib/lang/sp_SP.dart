@@ -260,7 +260,8 @@ const Map<String, String> sp_SP = {
   "Select Premium Plan": "Seleccionar Plan Premium",
   "Select Currency": "Seleccionar Moneda",
   "General": "General",
-  "Language, Pop-up notification": "Idioma, Notificación Emergente",
+  "Language, Currency, Pop-up notification":
+      "Idioma, moneda, notificación emergente",
   "Security & Privacy": "Seguridad y Privacidad",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "Frase de Respaldo, Clave Privada, Cambiar Contraseña, Modo de Seguridad, Desbloquear Billetera Con, Autobloqueo",

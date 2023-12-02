@@ -1,9 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tixcash/routes/app_pages.dart';
 import 'finger_print_login_controller.dart';
 
 class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
@@ -191,11 +192,10 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                       onTap: () {
                                         controller.appController
                                             .validateLogin(context, () async {
-                                          Get.back();
-                                          Get.toNamed(Routes.AUTH_FINGERPRINT);
                                           SharedPreferences prefs =
                                               await SharedPreferences
                                                   .getInstance();
+
                                           prefs.remove('userInfo');
                                           prefs.remove('user_pass');
                                           prefs.remove('is_backup');
@@ -212,8 +212,8 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                                           prefs.remove('security_val');
                                           prefs.remove('history_list');
                                           prefs.remove('last_open');
+                                          exit(0);
                                         });
-                                        Get.offAndToNamed(Routes.START);
                                       },
                                     ),
                                     InkWell(

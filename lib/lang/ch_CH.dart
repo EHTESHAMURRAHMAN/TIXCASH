@@ -256,7 +256,7 @@ const Map<String, String> ch_CH = {
   "Select Premium Plan": "选择高级计划",
   "Select Currency": "选择货币",
   "General": "通用",
-  "Language, Pop-up notification": "语言、弹出通知",
+  "Language, Currency, Pop-up notification": "语言、货币、弹出通知",
   "Security & Privacy": "安全与隐私",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "备份短语、私钥、更改密码、安全模式、解锁钱包、自动锁定",

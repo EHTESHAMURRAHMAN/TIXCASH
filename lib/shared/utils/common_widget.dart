@@ -86,7 +86,7 @@ class SaveButton extends StatelessWidget {
               child: Center(
                 child: Text(
                   title,
-                  style: GoogleFonts.roboto(fontSize: 16),
+                  style: GoogleFonts.roboto(fontSize: 16, color: Colors.white),
                 ),
               ),
             ),
@@ -101,7 +101,7 @@ class SaveButton extends StatelessWidget {
             child: Center(
               child: Text(
                 title,
-                style: GoogleFonts.roboto(fontSize: 16),
+                style: GoogleFonts.roboto(fontSize: 16, color: Colors.white),
               ),
             ),
           );

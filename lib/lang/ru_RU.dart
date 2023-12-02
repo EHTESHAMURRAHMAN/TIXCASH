@@ -254,7 +254,8 @@ const Map<String, String> ru_RU = {
   "Select Premium Plan": "Выберите Премиум-план",
   "Select Currency": "Выберите валюту",
   "General": "Общий",
-  "Language, Pop-up notification": "Язык, Всплывающее уведомление",
+  "Language, Currency, Pop-up notification":
+      "Язык, валюта, всплывающее уведомление",
   "Security & Privacy": "Безопасность и конфиденциальность",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "Резервная фраза, закрытый ключ, смена пароля, режим безопасности, разблокировка кошелька с помощью, автоматическая блокировка",
@@ -329,7 +330,7 @@ const Map<String, String> ru_RU = {
   "Currency": "Валюта",
   "Username": "Имя пользователя",
   "Select Recovery type": "Выберите тип восстановления",
-  "Select Recover Account Type": "Выберите восстановить тип учетной записи",
+  "Select Recover Account Type": "Выберите тип",
   "Secret Phrase": "Секретная фраза",
   "Enter Private Key": "Введите закрытый ключ",
   "Private Key": "Закрытый ключ",

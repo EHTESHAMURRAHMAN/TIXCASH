@@ -66,7 +66,7 @@ class SettingsView extends GetView<SettingsController> {
                   style: GoogleFonts.roboto(fontSize: 16),
                 ),
                 subtitle: Text(
-                  'Language, Pop-up notification'.tr,
+                  'Language, Currency, Pop-up notification'.tr,
                   style: GoogleFonts.roboto(fontSize: 13),
                 ),
               ),
