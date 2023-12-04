@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:tixcash/api/apis.dart';
 import 'package:tixcash/models/SponCode.dart';
 import 'package:tixcash/models/StakeDashboardResp.dart';
@@ -18,7 +19,6 @@ import 'package:tixcash/routes/app_pages.dart';
 class StackController extends GetxController {
   final selectStakeDays = ''.obs;
   final selectid = 0.obs;
-  // final tabbarid = 0.obs;
   final controllerStakeAmount = TextEditingController();
   final controllerRefral = TextEditingController();
   final isStakeAmountValid = 0.obs;
@@ -44,12 +44,13 @@ class StackController extends GetxController {
   final isstakeListModellResponse = false.obs;
   final stakeDashboardResponse = Rxn<StakeDashboardResponse>();
   final isstakeDashboardResponse = false.obs;
-  final claimButtonActive = false.obs;
-  Timer? timer;
   final isListLoading = true.obs;
+  final activeButton = false.obs;
+
   @override
   void onInit() {
     super.onInit();
+    time();
     getStakingList();
     getStakingListHistory();
     getstakedate();
@@ -57,6 +58,16 @@ class StackController extends GetxController {
     getwhiteliststatus();
     getstakingDaylist();
     stakedashboard();
+  }
+
+  time() {
+    DateTime dt1 = DateTime.now();
+    DateTime dt2 = DateTime.parse(
+        stakeDashboardResponse.value?.userclaimdate ?? "2021-12-23 11:47:00");
+
+    if (dt1.isAtSameMomentAs(dt2) || dt1.isAfter(dt2)) {
+      activeButton.value = true;
+    }
   }
 
   Future<void> stakedashboard() async {
@@ -97,7 +108,6 @@ class StackController extends GetxController {
     isStakingHistoryListLoading.value = false;
     stakingListHistoryModelResponse.value = response.data;
     isstakingListHistoryModelResponse.value = true;
-
     return;
   }
 
@@ -108,7 +118,6 @@ class StackController extends GetxController {
     isListLoading.value = false;
     stakeListModelResponse.value = response.data;
     isstakeListModellResponse.value = true;
-
     return;
   }
 
@@ -147,7 +156,7 @@ class StackController extends GetxController {
       'userid': userInfo!.id,
       "amount": double.parse(controllerStakeAmount.text),
       "staketype": selectid.value,
-      // "refrellcode": controllerRefral.text,
+      // "efrellcode": controllerRefral.text,r
     };
 
     print(jsonEncode(body));
@@ -158,15 +167,12 @@ class StackController extends GetxController {
       CommonResponse response = apiResponse.data;
       EasyLoading.showToast(response.message.tr);
       getStakingList();
-      timer ??= Timer.periodic(const Duration(minutes: 1), (timer) {
-        claimButtonActive.value = true;
-      });
-      controllerStakeAmount.clear();
-      controllerRefral.clear();
 
       response.message == 'Staking Successfully'
           ? Get.toNamed(Routes.STACKINCOME)
           : Get.back();
+      controllerStakeAmount.clear();
+      controllerRefral.clear();
     } else {
       Get.snackbar('Error', 'Something went wrong try again',
           backgroundColor: Colors.red);
@@ -184,12 +190,12 @@ class StackController extends GetxController {
       CommonResponse response = apiResponse.data;
       EasyLoading.showToast(response.message.tr);
       getStakingList();
-      claimButtonActive.value == false;
-      controllerStakeAmount.clear();
-      controllerRefral.clear();
+      activeButton.value = true;
       response.message == 'Claim Successfully'.tr
           ? Get.to(stakingIncomeHistory())
           : Get.back();
+      controllerStakeAmount.clear();
+      controllerRefral.clear();
     } else {
       Get.snackbar('Error', 'Something went wrong try again',
           backgroundColor: Colors.red);

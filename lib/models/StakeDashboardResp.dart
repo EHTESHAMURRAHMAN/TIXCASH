@@ -26,6 +26,7 @@ class StakeDashboardResponse {
     required this.paid,
     required this.unclaim,
     required this.apy,
+    required this.userclaimdate,
   });
 
   final double totalstaked;
@@ -43,6 +44,7 @@ class StakeDashboardResponse {
   final int paid;
   final double unclaim;
   final double apy;
+  final String userclaimdate;
 
   factory StakeDashboardResponse.fromJson(Map<String, dynamic> json) =>
       StakeDashboardResponse(
@@ -61,6 +63,7 @@ class StakeDashboardResponse {
         paid: json["paid"],
         unclaim: json["unclaim"],
         apy: json["apy"],
+        userclaimdate: json["userclaimdate"].toString(),
       );
 
   Map<String, dynamic> toJson() => {
@@ -79,5 +82,6 @@ class StakeDashboardResponse {
         "paid": paid,
         "unclaim": unclaim,
         "apy": apy,
+        "userclaimdate": userclaimdate,
       };
 }

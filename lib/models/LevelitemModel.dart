@@ -10,15 +10,19 @@ String levelitemModelToJson(List<LevelitemModel> data) =>
 class LevelitemModel {
   LevelitemModel({
     required this.invitationcode,
+    required this.staking,
   });
 
   final String invitationcode;
+  final String staking;
 
   factory LevelitemModel.fromJson(Map<String, dynamic> json) => LevelitemModel(
         invitationcode: json["invitationcode"],
+        staking: json["staking"],
       );
 
   Map<String, dynamic> toJson() => {
         "invitationcode": invitationcode,
+        "staking": staking,
       };
 }

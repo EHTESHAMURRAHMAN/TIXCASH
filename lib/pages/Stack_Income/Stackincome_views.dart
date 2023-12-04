@@ -15,6 +15,7 @@ class txhincome extends GetView<StackController> {
 
   @override
   Widget build(BuildContext context) {
+    controller.time();
     controller.stakedashboard();
     return Scaffold(
       appBar: AppBar(
@@ -55,6 +56,7 @@ class txhincome extends GetView<StackController> {
                           controller.getstakedate();
                           controller.stakedashboard();
                           StackController().getstakingDaylist();
+                          controller.time();
                         }
                       });
                     },
@@ -1640,16 +1642,11 @@ class txhincome extends GetView<StackController> {
                                         const CountdownTimerDemo(),
                                         const SizedBox(height: 5),
                                         Obx(() => controller
-                                                    .claimButtonActive.value ==
+                                                    .activeButton.value ==
                                                 true
                                             ? InkWell(
                                                 onTap: () {
-                                                  EasyLoading.showToast(
-                                                      'loading...');
-                                                  controller.claimButtonActive
-                                                          .value ==
-                                                      false;
-                                                  // Get.to(StakeClaimDetails());
+                                                  Get.to(StakeClaimDetails());
                                                 },
                                                 child: Container(
                                                   height: 37,

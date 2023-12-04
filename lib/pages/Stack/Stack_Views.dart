@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tixcash/models/stackingList.dart';
 import 'package:tixcash/models/stackingListHistory.dart';
 import 'package:tixcash/pages/Stack/Stack_Controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
@@ -155,6 +154,7 @@ class StackViews extends GetView<StackController> {
                             controller.getstakingDaylist();
                             controller.getstakedate();
                             controller.stakedashboard();
+                            controller.time();
                           }
                         });
                       },

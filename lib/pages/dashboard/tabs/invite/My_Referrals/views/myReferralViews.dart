@@ -15,32 +15,75 @@ class MyReferral extends GetView<MyReferralController> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          leading: InkWell(
-              onTap: () => Get.back(),
-              child: const Icon(
-                Icons.arrow_back_ios,
-                size: 20,
-              )),
-          title: Text('My Referral'.tr,
-              style:
-                  const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-          centerTitle: true,
+          automaticallyImplyLeading: false,
+          toolbarHeight: 130,
           elevation: 0,
-          bottom: TabBar(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              indicator: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-                borderRadius: BorderRadius.circular(20),
+          flexibleSpace: Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: SafeArea(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                            onTap: () => Get.back(),
+                            child: const Icon(
+                              Icons.arrow_back_ios,
+                              size: 20,
+                            )),
+                        Text('My Referral'.tr,
+                            style: const TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold)),
+                        const Icon(
+                          Icons.arrow_back_ios,
+                          size: 20,
+                          color: Colors.transparent,
+                        )
+                      ],
+                    ),
+                  ),
+                  TabBar(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 8),
+                      indicator: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      unselectedLabelColor: Theme.of(context).primaryColor,
+                      labelColor: Colors.white,
+                      dividerColor: Colors.black,
+                      tabs: _tabs),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('S.No.'.tr,
+                            style: const TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold)),
+                        Text('UID'.tr,
+                            style: const TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold)),
+                        const SizedBox(width: 20),
+                        Text('Total Staking'.tr,
+                            style: const TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  )
+                ],
               ),
-              unselectedLabelColor: Theme.of(context).primaryColor,
-              labelColor: Colors.white,
-              dividerColor: Colors.black,
-              tabs: _tabs),
+            ),
+          ),
         ),
         body: TabBarView(
           // physics: const BouncingScrollPhysics(),
           dragStartBehavior: DragStartBehavior.down,
-          children: _views,
+          children: views,
         ),
       ),
     );
@@ -56,7 +99,7 @@ class MyReferral extends GetView<MyReferralController> {
             style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold))),
   ];
 
-  static List<Widget> _views = [
+  static List<Widget> views = [
     firstGen(),
     secondGen(),
   ];
@@ -72,40 +115,46 @@ class firstGen extends StatelessWidget {
     controller.levelTeam.value = 1;
     controller.getlevelItemList(controller.levelTeam.value);
     return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 15),
-        child: Obx(
-          () => ListView.builder(
-            //shrinkWrap: true,
-            // physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              LevelitemModel model =
-                  controller.levelitemModelResponse.elementAt(index);
-              return Container(
-                margin: const EdgeInsets.symmetric(vertical: 7),
-                // height: 60,
-                // width: MediaQuery.of(context).size.width,
-                // decoration: BoxDecoration(
-                //     color: Theme.of(context).primaryColor,
-                //     borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                  child: ListTile(
-                    leading: Text(
-                      '${index + 1}',
-                      style: const TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.bold),
-                    ),
-                    title: Text(
-                      model.invitationcode.tr,
-                      style: const TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.bold),
-                    ),
+      margin: const EdgeInsets.symmetric(horizontal: 15),
+      child: Obx(
+        () => ListView.builder(
+          shrinkWrap: true,
+          // physics: const NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+            LevelitemModel model =
+                controller.levelitemModelResponse.elementAt(index);
+            return Container(
+              margin: const EdgeInsets.symmetric(vertical: 7),
+              // height: 60,
+              // width: MediaQuery.of(context).size.width,
+              // decoration: BoxDecoration(
+              //     color: Theme.of(context).primaryColor,
+              //     borderRadius: BorderRadius.circular(30)),
+              child: Center(
+                child: ListTile(
+                  leading: Text(
+                    '${index + 1} .',
+                    style: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                  title: Text(
+                    model.invitationcode.tr,
+                    style: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                  trailing: Text(
+                    model.staking.tr,
+                    style: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                 ),
-              );
-            },
-            itemCount: controller.levelitemModelResponse.length,
-          ),
-        ));
+              ),
+            );
+          },
+          itemCount: controller.levelitemModelResponse.length,
+        ),
+      ),
+    );
   }
 }
 
@@ -122,7 +171,7 @@ class secondGen extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: Obx(
           () => ListView.builder(
-            // shrinkWrap: true,
+            shrinkWrap: true,
             // physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               LevelitemModel model =
@@ -132,7 +181,7 @@ class secondGen extends StatelessWidget {
                 child: Center(
                   child: ListTile(
                     leading: Text(
-                      '${index + 1}',
+                      '${index + 1} .',
                       style: const TextStyle(
                           fontSize: 15, fontWeight: FontWeight.bold),
                     ),
