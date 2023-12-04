@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/pages/Stack/Stack_Controller.dart';
@@ -1639,32 +1640,16 @@ class txhincome extends GetView<StackController> {
                                         const CountdownTimerDemo(),
                                         const SizedBox(height: 5),
                                         Obx(() => controller
-                                                    .stakeDashboardResponse
-                                                    .value
-                                                    ?.unclaim ==
-                                                0
-                                            ? Container(
-                                                height: 37,
-                                                width: 80,
-                                                decoration: BoxDecoration(
-                                                    color: Colors.red
-                                                        .withOpacity(.7),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15)),
-                                                child: Center(
-                                                  child: Text('Claim Now'.tr,
-                                                      style: GoogleFonts.roboto(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          color: Colors.white)),
-                                                ),
-                                              )
-                                            : InkWell(
+                                                    .claimButtonActive.value ==
+                                                true
+                                            ? InkWell(
                                                 onTap: () {
-                                                  Get.to(StakeClaimDetails());
-                                                  //controller.claimStake();
+                                                  EasyLoading.showToast(
+                                                      'loading...');
+                                                  controller.claimButtonActive
+                                                          .value ==
+                                                      false;
+                                                  // Get.to(StakeClaimDetails());
                                                 },
                                                 child: Container(
                                                   height: 37,
@@ -1685,7 +1670,24 @@ class txhincome extends GetView<StackController> {
                                                                 color: Colors
                                                                     .white)),
                                                   ),
-                                                )))
+                                                ))
+                                            : Container(
+                                                height: 37,
+                                                width: 80,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.red.shade200,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15)),
+                                                child: Center(
+                                                  child: Text('Claim Now'.tr,
+                                                      style: GoogleFonts.roboto(
+                                                          fontSize: 12,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: Colors.white)),
+                                                ),
+                                              ))
                                       ],
                                     ),
                                   ],
@@ -1854,6 +1856,7 @@ class StakeClaimDetails extends StatelessWidget {
             child: Text(
               'Claim'.tr,
               style: GoogleFonts.roboto(
+                color: Colors.white,
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
               ),

@@ -148,7 +148,7 @@ class Receive_List extends GetView {
                         ],
                       ),
                       onTap: () {
-                        Get.to(() => ScanQRChildCur(currencyResponse: element))
+                        Get.to(ScanQRChildCur(currencyResponse: element))
                             ?.then((value) {
                           controller.getBalanceCurrencyList();
                         });

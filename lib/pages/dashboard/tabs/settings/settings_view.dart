@@ -66,7 +66,8 @@ class SettingsView extends GetView<SettingsController> {
                   style: GoogleFonts.roboto(fontSize: 16),
                 ),
                 subtitle: Text(
-                  'Language, Currency, Pop-up notification'.tr,
+                  'Language, Currency, Pop-up notification, Light & Dark Mode'
+                      .tr,
                   style: GoogleFonts.roboto(fontSize: 13),
                 ),
               ),
@@ -546,16 +547,41 @@ class GeneralSetting extends StatelessWidget {
         child: ListView(
           children: [
             const SizedBox(height: 20),
-            Text(
-              'Current Language'.tr,
-              style: GoogleFonts.roboto(fontSize: 20),
+            SizedBox(
+              height: 60,
+              width: MediaQuery.of(context).size.width / 1.2,
+              child: Card(
+                color: Theme.of(context).primaryColor,
+                elevation: 2,
+                shadowColor: Colors.purple[900],
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: MineCell(
+                    title: 'Dark Mode'.tr,
+                    subview: const SizedBox(),
+                    trailing: Obx(() => CupertinoSwitch(
+                          activeColor: Colors.red,
+                          trackColor: Colors.white70,
+                          thumbColor: Colors.white,
+                          value: controller.isdark.value,
+                          onChanged: (value) {
+                            controller.isdark.value = value;
+                            if (controller.isdark.value == false) {
+                              Get.changeThemeMode(ThemeMode.light);
+                            } else {
+                              Get.changeThemeMode(ThemeMode.dark);
+                            }
+                            controller.box
+                                .write('isdark', controller.isdark.value);
+                          },
+                        )),
+                  ),
+                ),
+              ),
             ),
-            const SizedBox(height: 10),
-            Text(
-              'Translate the application to a different\nsupport language'.tr,
-              style: GoogleFonts.roboto(fontSize: 16),
-            ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             InkWell(
               onTap: () {
                 showDialog(

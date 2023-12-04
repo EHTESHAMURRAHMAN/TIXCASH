@@ -88,7 +88,6 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                   currencyResponse: controller.currencyResponse.value,
                 )),
           ),
-          
         ],
         elevation: 0,
       ),
@@ -118,7 +117,9 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                 Text(
                   'Transaction'.tr.toUpperCase(),
                   style: GoogleFonts.roboto(
-                      fontSize: 13, fontWeight: FontWeight.w500),
+                      color: Colors.white,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500),
                 ),
                 // Expanded(child: SizedBox()),
                 const Spacer(),
@@ -131,9 +132,14 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                         Text(
                           'Filter'.tr.toUpperCase(),
                           style: GoogleFonts.roboto(
-                              fontSize: 13, fontWeight: FontWeight.w500),
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500),
                         ),
-                        const Icon(Icons.arrow_drop_down)
+                        const Icon(
+                          Icons.arrow_drop_down,
+                          color: Colors.white,
+                        )
                       ],
                     ),
                     // icon: const Icon(Icons.arrow_drop_down, size: 24,),
@@ -393,10 +399,10 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                                   ),
                                 ),
                                 onTap: () {
-                                  Get.to(() => ScanQRChild(
-                                        currencyResponse:
-                                            controller.currencyResponse.value,
-                                      ))?.then((value) {
+                                  Get.to(ScanQRChild(
+                                    currencyResponse:
+                                        controller.currencyResponse.value,
+                                  ))?.then((value) {
                                     controller.getTransactionList();
                                     controller.getUserFundBalance();
                                   });

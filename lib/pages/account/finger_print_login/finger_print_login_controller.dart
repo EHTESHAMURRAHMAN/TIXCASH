@@ -308,6 +308,46 @@ class FingerPrintLoginController extends GetxController {
     await auth.stopAuthentication();
     _isAuthenticating = false;
   }
+
+  RxBool isAuthenticated = false.obs;
+
+  Future<void> checkBiometrics() async {
+    bool canCheckBiometrics;
+    try {
+      canCheckBiometrics = await auth.canCheckBiometrics;
+    } catch (e) {
+      print(e);
+      return;
+    }
+    if (!canCheckBiometrics) {
+      // Biometrics not available on this device
+      return;
+    }
+    List<BiometricType> availableBiometrics =
+        await auth.getAvailableBiometrics();
+    print('Available biometrics: $availableBiometrics');
+  }
+
+  Future<void> authenticate() async {
+    try {
+      bool authenticated = await auth.authenticate(
+        localizedReason: 'Authenticate to access the app',
+        options: const AuthenticationOptions(
+          stickyAuth: true,
+          biometricOnly: true,
+          useErrorDialogs: true,
+        ),
+      );
+      isAuthenticated.value = authenticated;
+      if (authenticated) {
+        // Biometric authentication successful, proceed with your app logic
+      } else {
+        // Biometric authentication failed or was canceled
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 }
 
 enum _SupportState {

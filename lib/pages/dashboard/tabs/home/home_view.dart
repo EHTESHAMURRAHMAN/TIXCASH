@@ -465,7 +465,7 @@ class HomeView extends GetView<HomeController> {
                                     //     ]),
                                     // onTap: () => Get.to(() => const ScanQRChild()),
                                     onTap: () {
-                                      Get.to(() => ScanQRChildCur(
+                                      Get.to(ScanQRChildCur(
                                               currencyResponse: element))
                                           ?.then((value) {
                                         controller.getBalanceCurrencyList();

@@ -34,6 +34,7 @@ class AppController extends GetxController {
   final isBackup = true.obs;
   final language = 'English'.obs;
   final currency = 'USD'.obs;
+  final darkMode = 0.obs;
   final LocalAuthentication auth = LocalAuthentication();
 
   final isUpdateChecked = false.obs;

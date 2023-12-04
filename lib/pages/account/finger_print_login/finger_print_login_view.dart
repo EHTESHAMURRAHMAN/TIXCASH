@@ -54,7 +54,12 @@ class FingerPrintLoginView extends GetView<FingerPrintLoginController> {
                 height: 100,
               ),
               InkWell(
-                onTap: () {
+                onTap: () async {
+                  // await controller.checkBiometrics();
+                  // if (controller.isAuthenticated.value) {
+                  // } else {
+                  //   await controller.authenticate();
+                  // }
                   controller.authenticateWithBiometrics();
                 },
                 child: const Icon(

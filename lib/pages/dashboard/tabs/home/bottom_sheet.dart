@@ -4,10 +4,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tixcash/api/apis.dart';
 import 'package:tixcash/app_controller.dart';
 import 'package:tixcash/models/user_response.dart';
-import 'package:tixcash/pages/Stack/Stack_Controller.dart';
 import 'package:tixcash/pages/account/create_wallet/import_wallet_view.dart';
 import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
-import 'package:tixcash/pages/dashboard/tabs/invite/controllers/invite_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/settings/settings_controller.dart';
 import 'package:tixcash/shared/constants/colors.dart';
 import 'package:tixcash/shared/constants/storage.dart';
@@ -38,9 +36,6 @@ class _BottomSheetViewState extends State<BottomSheetView> {
     _users = val != null ? userResponseFromJson(val) : [];
     _users.sort((a, b) => a.active == b.active ? 1 : -1);
     if (mounted) setState(() {});
-    // controller1.backupPharse1();
-    // controller2.backupPharse();
-    // StackController().getwhiteliststatus();
   }
 
   @override
@@ -75,9 +70,9 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                       widget.onSelect();
                       controller.getsubs();
                       // controller1.backupPharse1();
-                      controller2.backupPharse();
-                      InviteController().inviteInits();
-                      StackController().getwhiteliststatus();
+                      // controller2.backupPharse();
+                      // InviteController().inviteInits();
+                      // StackController().getwhiteliststatus();
                       controller.getBalanceCurrencyList();
                     });
                   }

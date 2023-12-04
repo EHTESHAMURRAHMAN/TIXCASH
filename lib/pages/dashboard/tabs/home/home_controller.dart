@@ -109,7 +109,6 @@ class HomeController extends GetxController with WidgetsBindingObserver {
   @override
   void onInit() {
     super.onInit();
-    WidgetsBinding.instance.addObserver(this);
     initValues();
   }
 
@@ -120,17 +119,12 @@ class HomeController extends GetxController with WidgetsBindingObserver {
     getBalanceCurrencyList();
     getsubs();
     accountName.value = userInfo?.name ?? '';
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
-  void onClose() {
+  onClose() {
     super.onClose();
-    WidgetsBinding.instance.removeObserver(this);
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
     WidgetsBinding.instance.removeObserver(this);
   }
 
@@ -140,20 +134,33 @@ class HomeController extends GetxController with WidgetsBindingObserver {
   //   initValues();
   // }
 
-  // refreshData() {
-  //   Timer(const Duration(seconds: 6), () {
-  //     initValues();
-  //   });
-  // }
+  refreshData() {
+    initValues();
+  }
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     super.didChangeAppLifecycleState(state);
-    if (state == AppLifecycleState.resumed) {
-      _timer ??= Timer.periodic(const Duration(seconds: 10), (timer) {
-        getBalanceCurrencyList();
-      });
-    } else if (state == AppLifecycleState.inactive) {
-    } else if (state == AppLifecycleState.paused) {}
+    switch (state) {
+      case AppLifecycleState.resumed:
+        _timer ??= Timer.periodic(const Duration(seconds: 10), (timer) {
+          getBalanceCurrencyList();
+        });
+        break;
+      case AppLifecycleState.inactive:
+        null;
+        break;
+      case AppLifecycleState.paused:
+        print('App is closed');
+        break;
+
+      case AppLifecycleState.detached:
+        null;
+        break;
+      case AppLifecycleState.hidden:
+        null;
+        break;
+    }
   }
 
   Future<void> checkBackup() async {

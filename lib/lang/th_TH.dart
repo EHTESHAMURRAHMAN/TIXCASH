@@ -259,8 +259,8 @@ const Map<String, String> th_TH = {
   "Select Premium Plan": "เลือกแผนพรีเมียม",
   "Select Currency": "เลือกสกุลเงิน",
   "General": "ทั่วไป",
-  "Language, Currency, Pop-up notification":
-      "ภาษา สกุลเงิน การแจ้งเตือนแบบป๊อปอัป",
+  "Language, Currency, Pop-up notification, Light & Dark Mode":
+      "ภาษา, สกุลเงิน, การแจ้งเตือนแบบป๊อปอัป, โหมดแสงและความมืด",
   "Security & Privacy": "ความปลอดภัยและความเป็นส่วนตัว",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "วลีสำรอง, คีย์ส่วนตัว, เปลี่ยนรหัสผ่าน, โหมดความปลอดภัย, ปลดล็อคกระเป๋าเงินด้วย, ล็อคอัตโนมัติ",

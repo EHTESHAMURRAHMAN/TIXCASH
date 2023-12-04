@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:tixcash/app_controller.dart';
@@ -11,6 +12,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 class SettingsController extends GetxController {
   final AppController appController = Get.find<AppController>();
   final switchValue = false.obs;
+  final isdark = false.obs;
+  final box = GetStorage();
   final isActived = false.obs;
   final isScanEnable = false.obs;
 
@@ -63,7 +66,7 @@ class SettingsController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-
+    isdark.value = box.read('isdark') ?? false;
     //backupPharse1();
 
     var storage = Get.find<SharedPreferences>();

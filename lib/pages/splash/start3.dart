@@ -48,7 +48,7 @@ class Startview3 extends GetView {
           children: [
             InkWell(
               onTap: () {
-                Get.to(() => const CreateWalletView());
+                Get.to(const CreateWalletView());
               },
               child: Container(
                 height: 45,
@@ -70,7 +70,7 @@ class Startview3 extends GetView {
             const SizedBox(height: 15),
             InkWell(
               onTap: () {
-                Get.to(() => const ImportWalletView());
+                Get.to(const ImportWalletView());
               },
               child: Card(
                 shape: RoundedRectangleBorder(

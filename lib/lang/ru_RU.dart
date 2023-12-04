@@ -254,8 +254,8 @@ const Map<String, String> ru_RU = {
   "Select Premium Plan": "Выберите Премиум-план",
   "Select Currency": "Выберите валюту",
   "General": "Общий",
-  "Language, Currency, Pop-up notification":
-      "Язык, валюта, всплывающее уведомление",
+  "Language, Currency, Pop-up notification, Light & Dark Mode":
+      "Язык, валюта, всплывающее уведомление, светлый и темный режимы",
   "Security & Privacy": "Безопасность и конфиденциальность",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "Резервная фраза, закрытый ключ, смена пароля, режим безопасности, разблокировка кошелька с помощью, автоматическая блокировка",

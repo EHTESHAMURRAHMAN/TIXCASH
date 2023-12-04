@@ -44,7 +44,8 @@ class StackController extends GetxController {
   final isstakeListModellResponse = false.obs;
   final stakeDashboardResponse = Rxn<StakeDashboardResponse>();
   final isstakeDashboardResponse = false.obs;
-
+  final claimButtonActive = false.obs;
+  Timer? timer;
   final isListLoading = true.obs;
   @override
   void onInit() {
@@ -157,8 +158,12 @@ class StackController extends GetxController {
       CommonResponse response = apiResponse.data;
       EasyLoading.showToast(response.message.tr);
       getStakingList();
+      timer ??= Timer.periodic(const Duration(minutes: 1), (timer) {
+        claimButtonActive.value = true;
+      });
       controllerStakeAmount.clear();
       controllerRefral.clear();
+
       response.message == 'Staking Successfully'
           ? Get.toNamed(Routes.STACKINCOME)
           : Get.back();
@@ -179,7 +184,7 @@ class StackController extends GetxController {
       CommonResponse response = apiResponse.data;
       EasyLoading.showToast(response.message.tr);
       getStakingList();
-
+      claimButtonActive.value == false;
       controllerStakeAmount.clear();
       controllerRefral.clear();
       response.message == 'Claim Successfully'.tr

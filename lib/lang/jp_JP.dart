@@ -258,7 +258,8 @@ const Map<String, String> jp_JP = {
   "Select Premium Plan": "プレミアムプランを選択",
   "Select Currency": "通貨を選択",
   "General": "一般",
-  "Language, Currency, Pop-up notification": "言語、通貨、ポップアップ通知",
+  "Language, Currency, Pop-up notification, Light & Dark Mode":
+      "言語、通貨、ポップアップ通知、ライト&ダークモード",
   "Security & Privacy": "セキュリティとプライバシー",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "バックアップフレーズ、プライベートキー、パスワードの変更、セキュリティモード、ウォレットのロック解除、自動ロック",
