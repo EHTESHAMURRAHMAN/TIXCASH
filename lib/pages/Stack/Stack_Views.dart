@@ -16,8 +16,8 @@ class StackViews extends GetView<StackController> {
 
   @override
   Widget build(BuildContext context) {
+    controller.time();
     controller.getstakingDaylist();
-
     final controller1 = Get.put(HomeController());
     return Scaffold(
       appBar: AppBar(

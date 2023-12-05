@@ -50,7 +50,6 @@ class StackController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    time();
     getStakingList();
     getStakingListHistory();
     getstakedate();
@@ -63,11 +62,14 @@ class StackController extends GetxController {
   time() {
     DateTime dt1 = DateTime.now();
     DateTime dt2 = DateTime.parse(
-        stakeDashboardResponse.value?.userclaimdate ?? "2021-12-23 11:47:00");
-
-    if (dt1.isAtSameMomentAs(dt2) || dt1.isAfter(dt2)) {
+        stakeDashboardResponse.value?.userclaimdate ?? "2095-12-05 00:45:00");
+    if (dt1.compareTo(dt2) > 0) {
       activeButton.value = true;
+    } else {
+      activeButton.value = false;
     }
+    print(dt1);
+    print(dt2);
   }
 
   Future<void> stakedashboard() async {

@@ -63,7 +63,7 @@ class StakeDashboardResponse {
         paid: json["paid"],
         unclaim: json["unclaim"],
         apy: json["apy"],
-        userclaimdate: json["userclaimdate"].toString(),
+        userclaimdate: json["userclaimdate"] ?? "2095-12-05 00:45:00",
       );
 
   Map<String, dynamic> toJson() => {

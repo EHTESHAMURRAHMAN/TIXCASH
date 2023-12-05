@@ -393,6 +393,7 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                                   child: Text(
                                     'RECEIVE FUNDS'.tr,
                                     style: GoogleFonts.roboto(
+                                        color: Colors.white,
                                         fontSize: 13,
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FontStyle.normal),

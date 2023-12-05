@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tixcash/pages/Stack/Stack_Controller.dart';
 
 class CountdownTimerDemo extends StatefulWidget {
   const CountdownTimerDemo({Key? key}) : super(key: key);
@@ -9,8 +11,9 @@ class CountdownTimerDemo extends StatefulWidget {
 }
 
 class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
+  StackController controller = Get.put(StackController());
   Timer? countdownTimer;
-  Duration myDuration = const Duration(days: 5);
+  Duration myDuration = const Duration(days: 7);
   @override
   void initState() {
     super.initState();
@@ -35,14 +38,20 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
   @override
   Widget build(BuildContext context) {
     DateTime date = DateTime.now();
-    final moonLanding = DateTime.parse('1969-07-20 23:59:59Z');
+    final moonLanding = DateTime.parse(
+        controller.stakeDashboardResponse.value?.userclaimdate ??
+            "2095-12-05 00:45:00");
+    final diffhr = moonLanding.difference(date).inHours % 24;
+    final diffmn = moonLanding.difference(date).inMinutes % 60;
+    final diffsc = moonLanding.difference(date).inSeconds % 60;
 
-    var now1 = "${moonLanding.hour - date.hour}";
-    var now2 = "${moonLanding.minute - date.minute}";
-    var now3 = "${moonLanding.second - date.second}";
-    var time1 = now1.toString().padLeft(2, "0");
-    var time2 = now2.toString().padLeft(2, "0");
-    var time3 = now3.toString().padLeft(2, "0");
+    // var now1 = "${moonLanding.hour - date.hour}";
+    // var now2 = "${moonLanding.minute - date.minute}";
+    // var now3 = "${moonLanding.second - date.second}";
+
+    var time1 = diffhr.toString().padLeft(2, "0");
+    var time2 = diffmn.toString().padLeft(2, "0");
+    var time3 = diffsc.toString().padLeft(2, "0");
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
