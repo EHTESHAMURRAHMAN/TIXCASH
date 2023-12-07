@@ -179,13 +179,13 @@ const Map<String, String> th_TH = {
   "Welcome to Tixcash Wallet": "ยินดีต้อนรับสู่ Tixcash Wallet",
   "Your Digital passport": "หนังสือเดินทางดิจิทัลของคุณ",
   "Use this wallet to collect and other\napplications running on Tixcash Wallet":
-      "ใช้กระเป๋าเงินนี้เพื่อรวบรวมและ\แอปพลิเคชันอื่นๆ ที่ทำงานบน Tixcash Wallet",
+      "ใช้กระเป๋าเงินนี้เพื่อรวบรวมและแอปพลิเคชันอื่นๆ ที่ทำงานบน Tixcash Wallet",
   "Next": "ต่อไป",
   "Allow us to track your data and\nhelp provide a better\nTixcash Wallet experience":
       "อนุญาตให้เราติดตามข้อมูลของคุณและ\nช่วยมอบประสบการณ์\nTixcash Wallet ที่ดียิ่งขึ้น",
   "We would like to collect data from your session to\nhelp make Tixcash Wallet easier and\nmore fun to use":
       "เราต้องการรวบรวมข้อมูลจากเซสชันของคุณเพื่อช่วย\nทำให้ Tixcash Wallet ง่ายขึ้นและ\nใช้งานสนุกยิ่งขึ้น",
-  "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey\'re totally anonymous and\nwill never be shared with anyone else":
+  "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey're totally anonymous and\nwill never be shared with anyone else":
       "ข้อมูลเหล่านี้รวมถึงพฤติกรรมการใช้งาน เช่น การคลิก\nและการเลื่อน ตลอดจนการวินิจฉัยประสิทธิภาพ\nเป็นข้อมูลนิรนามโดยสิ้นเชิงและ\nจะไม่ถูกแชร์กับบุคคลอื่น",
   "The home of your Funds & your\nNFT collection on TIXCASH Network":
       "แหล่งเงินทุนและคอลเลกชัน\nNFT ของคุณบนเครือข่าย TIXCASH",
@@ -210,11 +210,11 @@ const Map<String, String> th_TH = {
   "Please Note Down Secret Recovery Pharse":
       "โปรดสังเกตขั้นตอนการกู้คืนความลับ",
   "Remember :": "จดจำ :",
-  "● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
+  "● Don't disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
       "● อย่าเปิดเผยวลีกู้คืนความลับให้ใครทราบ เมื่อวลีกู้คืนความลับสูญหาย สินทรัพย์จะไม่สามารถกู้คืนได้",
   "● Please do not backup and save by screenshots or network transmission":
       "● กรุณาอย่าสำรองข้อมูลและบันทึกด้วยภาพหน้าจอหรือการส่งผ่านเครือข่าย",
-  "● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help":
+  "● Don't uninstall the app when in issues, note the recovery phrase first or contact us for help":
       "● อย่าถอนการติดตั้งแอปเมื่อเกิดปัญหา โปรดจดวลีการกู้คืนไว้ก่อนหรือติดต่อเราเพื่อขอความช่วยเหลือ",
   "VERIFY NOW": "ยืนยันตอนนี้",
   "Stake": "เดิมพัน",
@@ -264,7 +264,10 @@ const Map<String, String> th_TH = {
   "Security & Privacy": "ความปลอดภัยและความเป็นส่วนตัว",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "วลีสำรอง, คีย์ส่วนตัว, เปลี่ยนรหัสผ่าน, โหมดความปลอดภัย, ปลดล็อคกระเป๋าเงินด้วย, ล็อคอัตโนมัติ",
-  "Advanced": "ขั้นสูง",
+  "Advance": "ขั้นสูง",
+  "Remove Address": "ลบที่อยู่",
+  "Reset Wallet": "รีเซ็ตกระเป๋าเงิน",
+  "Remove Address, Reset Wallet": "ลบที่อยู่ รีเซ็ตกระเป๋าเงิน",
   "Contact": "ติดต่อ",
   "Get In Touch": "ได้รับการติดต่อ",
   "Share This App, Review The App, Join telegram, Support Center":
@@ -277,7 +280,7 @@ const Map<String, String> th_TH = {
   "DeFi": "เดไฟ",
   "NFTs": "NFT",
   "Assets": "สินทรัพย์",
-  "Embark on your journey with Tixcash Wallet\'s revamped brand identity, tailored to enrich your Web3 experience. Uncover our intuitive layout and much more. Start your journey today":
+  "Embark on your journey with Tixcash Wallet's revamped brand identity, tailored to enrich your Web3 experience. Uncover our intuitive layout and much more. Start your journey today":
       "เริ่มต้นการเดินทางของคุณด้วยเอกลักษณ์ของแบรนด์ที่ปรับปรุงใหม่ของ Tixcash Wallet ซึ่งได้รับการปรับแต่งมาเพื่อเพิ่มประสบการณ์ Web3 ของคุณ ค้นพบรูปแบบที่ใช้งานง่ายของเราและอีกมากมาย เริ่มต้นการเดินทางของคุณวันนี้",
   "Tixcash Services": "บริการ Tixcash",
   "Tixcash Stake": "เดิมพัน Tixcash",
@@ -299,7 +302,7 @@ const Map<String, String> th_TH = {
   "Total\nRewards": "รวม\nรางวัล",
   "Pending\nRewards": "รอดำเนินการ\nรางวัล",
   "Daily\nReward": "รายวัน\nรางวัล",
-  "Staking\nPeriod": "การปักหลัก \ ระยะเวลา",
+  "Staking\nPeriod": "การปักหลัก  ระยะเวลา",
   "Staking Start Date": "วันที่เริ่มต้นการปักหลัก",
   "Staking End Date": "วันที่สิ้นสุดการปักหลัก",
   "Income Report": "รายงานรายได้",
@@ -353,7 +356,7 @@ const Map<String, String> th_TH = {
   "Verify Account": "ตรวจสอบบัญชี",
   "Enter 24 Word Secrate Phrase": "ป้อนวลีลับ 24 คำ",
   "Use this wallet to collect and other\napplications running on tixcash Wallet":
-      "ใช้กระเป๋าสตางค์นี้เพื่อรวบรวมและ\แอปพลิเคชันอื่นๆ ที่ทำงานบน tixcash Wallet",
+      "ใช้กระเป๋าสตางค์นี้เพื่อรวบรวมและแอปพลิเคชันอื่นๆ ที่ทำงานบน tixcash Wallet",
   "The home of your Funds & your\nNFT collection on Tixcash Wallet Network":
       "แหล่งเงินทุนและคอลเลกชัน\nNFT ของคุณบนเครือข่าย tixcash Wallet",
   "Enter Phrase": "ป้อนวลี",
@@ -459,4 +462,18 @@ const Map<String, String> th_TH = {
   "Address Book": "สมุดที่อยู่",
   "Save Your Name & Address & NetWork":
       "บันทึกชื่อและที่อยู่และเครือข่ายของคุณ",
+  "Warning ⚠️": "คำเตือน ⚠️",
+  "Ensure the network matches the withdrawal address and the deposit platform support it, or assets may be lost and never recover.":
+      "ตรวจสอบให้แน่ใจว่าเครือข่ายตรงกับที่อยู่ถอนเงินและแพลตฟอร์มการฝากเงินรองรับ ไม่เช่นนั้นทรัพย์สินอาจสูญหายและไม่สามารถกู้คืนได้",
+  "Next Claim in:": "การเรียกร้องครั้งต่อไปใน",
+  "Hrs": "ชม",
+  "Mins": "นาที",
+  "Secs": "วินาที",
+  "Select Network": "เลือกเครือข่าย",
+  "S.No.": "ส.โน.",
+  "UID": "รหัสผู้ใช้",
+  "Total Staking": "การปักหลักทั้งหมด",
+  "Dark Mode": "โหมดมืด",
+  "No Address": "ไม่มีที่อยู่",
+  "Invalid Address": "ที่อยู่ที่ไม่ถูกต้อง",
 };

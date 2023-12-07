@@ -10,6 +10,7 @@ import 'package:screenshot/screenshot.dart';
 //import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tixcash/models/BackupPhraseresponse.dart';
+import 'package:tixcash/models/common_model.dart';
 import 'package:tixcash/models/currency_response.dart';
 import 'package:tixcash/pages/account/create_account/create_account_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/settings/settings_view.dart';
@@ -33,7 +34,8 @@ class AppController extends GetxController {
   final fundBalanceUSDT = 0.0.obs;
   final isBackup = true.obs;
   final language = 'English'.obs;
-  final currency = 'USD'.obs;
+  final currency1 = 'USD'.obs;
+  final currency = 'CNY'.obs;
   final darkMode = 0.obs;
   final LocalAuthentication auth = LocalAuthentication();
 
@@ -43,6 +45,15 @@ class AppController extends GetxController {
   final backupPResponse = Rxn<BackupPResponse>();
   final isbackupPResponse = false.obs;
   //
+  final List<PopupItem> currencys = [
+    PopupItem(title: 'USD', value: '0'),
+    PopupItem(title: 'EUR', value: '1'),
+    PopupItem(title: 'CNY', value: '2'),
+    PopupItem(title: 'PUB', value: '3'),
+    PopupItem(title: 'JPY', value: '4'),
+    PopupItem(title: 'HKD', value: '5'),
+    PopupItem(title: 'GBP', value: '6'),
+  ];
 
   //____________PUSH NOTIFICATIONS______________
   //late final FirebaseMessaging _messaging;
@@ -185,11 +196,6 @@ class AppController extends GetxController {
     currency.value = locale;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
   void userFundBalance({required String currency}) async {
     if (userInfo == null) return;
     ApiResponse response = await userFundbalanceAPI(userInfo!.id, currency);
@@ -225,9 +231,9 @@ class AppController extends GetxController {
 
   void checkFingerPrint(Function(bool) isAuth) async {
     bool canCheckBiometrics = await auth.canCheckBiometrics;
-    bool _supportState = await auth.isDeviceSupported();
+    bool supportState = await auth.isDeviceSupported();
     bool authenticated = false;
-    if (_supportState) {
+    if (supportState) {
       try {
         // authenticated = await auth.authenticate(
         //     localizedReason:

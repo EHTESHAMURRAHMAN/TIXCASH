@@ -13,6 +13,10 @@ class txhincome extends GetView<StackController> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime dt1 = DateTime.now();
+    DateTime dt2 = DateTime.parse(
+        controller.stakeDashboardResponse.value?.userclaimdate ??
+            "2095-12-05 00:45:00");
     controller.getstakingDaylist();
     controller.stakedashboard();
     return Scaffold(
@@ -54,7 +58,6 @@ class txhincome extends GetView<StackController> {
                           controller.getstakedate();
                           controller.stakedashboard();
                           StackController().getstakingDaylist();
-                          controller.time();
                         }
                       });
                     },
@@ -1639,28 +1642,12 @@ class txhincome extends GetView<StackController> {
                                     const SizedBox(height: 5),
                                     const CountdownTimerDemo(),
                                     const SizedBox(height: 5),
-                                    Obx(() => controller.stakeDashboardResponse
-                                                    .value?.unclaim ==
-                                                0.00 ||
-                                            controller.activeButton.value ==
-                                                false
-                                        ? Container(
-                                            height: 37,
-                                            width: 80,
-                                            decoration: BoxDecoration(
-                                                color: Colors.red.shade200,
-                                                borderRadius:
-                                                    BorderRadius.circular(15)),
-                                            child: Center(
-                                              child: Text('Claim Now'.tr,
-                                                  style: GoogleFonts.roboto(
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      color: Colors.white)),
-                                            ),
-                                          )
-                                        : InkWell(
+                                    dt1.isBefore(DateTime.parse(
+                                                '${controller.stakeDashboardResponse.value?.userclaimdate}')) &&
+                                            controller.stakeDashboardResponse
+                                                    .value?.unclaim !=
+                                                0.0
+                                        ? InkWell(
                                             onTap: () {
                                               Get.to(StakeClaimDetails());
                                             },
@@ -1680,7 +1667,23 @@ class txhincome extends GetView<StackController> {
                                                             FontWeight.w500,
                                                         color: Colors.white)),
                                               ),
-                                            )))
+                                            ))
+                                        : Container(
+                                            height: 37,
+                                            width: 80,
+                                            decoration: BoxDecoration(
+                                                color: Colors.red.shade200,
+                                                borderRadius:
+                                                    BorderRadius.circular(15)),
+                                            child: Center(
+                                              child: Text('Claim Now'.tr,
+                                                  style: GoogleFonts.roboto(
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: Colors.white)),
+                                            ),
+                                          ),
                                   ],
                                 ),
                               ],

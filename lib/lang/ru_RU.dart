@@ -179,7 +179,7 @@ const Map<String, String> ru_RU = {
       "Позвольте нам отслеживать ваши данные и\nчтобы улучшить работу\nTixcash Wallet",
   "We would like to collect data from your session to\nhelp make Tixcash Wallet easier and\nmore fun to use":
       "Мы хотели бы собрать данные о вашем сеансе, чтобы\nсделать Tixcash Wallet проще и\nболее интересным в использовании.",
-  "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey\'re totally anonymous and\nwill never be shared with anyone else":
+  "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey're totally anonymous and\nwill never be shared with anyone else":
       "Эти данные включают поведение пользователя, такое как нажатие\nи прокрутка, а также диагностику производительности.\nОни\nполностью анонимны и\nникогда не будут переданы кому-либо еще.",
   "The home of your Funds & your\nNFT collection on TIXCASH Network":
       "Дом ваших средств и вашей\nNFT-коллекции в сети TIXCASH.",
@@ -204,11 +204,11 @@ const Map<String, String> ru_RU = {
   "Please Note Down Secret Recovery Pharse":
       "Пожалуйста, запишите секретную фазу восстановления",
   "Remember :": "Помнить :",
-  "● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
+  "● Don't disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
       "● Никому не разглашайте секретную фразу восстановления. После утери секретной фразы восстановления активы не могут быть восстановлены.",
   "● Please do not backup and save by screenshots or network transmission":
       "● Пожалуйста, не делайте резервные копии и не сохраняйте снимки экрана или передачу по сети.",
-  "● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help":
+  "● Don't uninstall the app when in issues, note the recovery phrase first or contact us for help":
       "● Не удаляйте приложение при возникновении проблем. Сначала запишите фразу восстановления или свяжитесь с нами для помощи.",
   "VERIFY NOW": "ПОДТВЕРДИТЬ СЕЙЧАС",
   "Stake": "Ставка",
@@ -259,7 +259,10 @@ const Map<String, String> ru_RU = {
   "Security & Privacy": "Безопасность и конфиденциальность",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "Резервная фраза, закрытый ключ, смена пароля, режим безопасности, разблокировка кошелька с помощью, автоматическая блокировка",
-  "Advanced": "Передовой",
+  "Advance": "Передовой",
+  "Remove Address": "Удалить адрес",
+  "Reset Wallet": "Сбросить кошелек",
+  "Remove Address, Reset Wallet": "Удалить адрес, сбросить кошелек",
   "Contact": "Контакт",
   "Get In Touch": "Связаться",
   "Share This App, Review The App, Join telegram, Support Center":
@@ -272,7 +275,7 @@ const Map<String, String> ru_RU = {
   "DeFi": "DeFi",
   "NFTs": "NFT",
   "Assets": "Ресурсы",
-  "Embark on your journey with Tixcash Wallet\'s revamped brand identity, tailored to enrich your Web3 experience. Uncover our intuitive layout and much more. Start your journey today":
+  "Embark on your journey with Tixcash Wallet's revamped brand identity, tailored to enrich your Web3 experience. Uncover our intuitive layout and much more. Start your journey today":
       "Отправьтесь в путешествие с обновленным фирменным стилем Tixcash Wallet, созданным специально для того, чтобы обогатить ваш опыт использования Web3. Откройте для себя наш интуитивно понятный макет и многое другое. Начните свое путешествие сегодня",
   "Tixcash Services": "Услуги Тикскэш",
   "Tixcash Stake": "Ставка",
@@ -477,4 +480,18 @@ const Map<String, String> ru_RU = {
   "Update": "Обновлять",
   "Address Book": "Адресная книга",
   "Save Your Name & Address & NetWork": "Сохраните свое имя, адрес и сеть",
+  "Warning ⚠️": "предупреждение ⚠️",
+  "Ensure the network matches the withdrawal address and the deposit platform support it, or assets may be lost and never recover.":
+      "Убедитесь, что сеть соответствует адресу вывода и платформа депозитов поддерживает его, в противном случае активы могут быть потеряны и никогда не будут восстановлены.",
+  "Next Claim in:": "следующая претензия через",
+  "Hrs": "Часы",
+  "Mins": "Мин",
+  "Secs": "Секунды",
+  "Select Network": "Выберите сеть",
+  "S.No.": "список",
+  "UID": "приглашение",
+  "Total Staking": "Общая ставка",
+  "Dark Mode": "Темный режим",
+  "No Address": "Нет адреса",
+  "Invalid Address": "Неверный адрес",
 };

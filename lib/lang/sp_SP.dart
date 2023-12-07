@@ -210,11 +210,11 @@ const Map<String, String> sp_SP = {
   "Please note down Secret Recovery Phrase":
       "Por favor, anote la Frase de Recuperación Secreta",
   "Remember :": "Recuerde :",
-  "● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
+  "● Don't disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
       "● No divulgue la frase de recuperación secreta a nadie. Una vez perdidos, los activos no se pueden recuperar",
   "● Please do not backup and save by screenshots or network transmission":
       "● Por favor, no haga copias de seguridad y guarde mediante capturas de pantalla o transmisión por red",
-  "● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help":
+  "● Don't uninstall the app when in issues, note the recovery phrase first or contact us for help":
       "● No desinstale la aplicación cuando haya problemas, anote primero la frase de recuperación o contáctenos para obtener ayuda",
   "VERIFY NOW": "VERIFICAR AHORA",
   "Stake": "Participación",
@@ -265,7 +265,10 @@ const Map<String, String> sp_SP = {
   "Security & Privacy": "Seguridad y Privacidad",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "Frase de Respaldo, Clave Privada, Cambiar Contraseña, Modo de Seguridad, Desbloquear Billetera Con, Autobloqueo",
-  "Advanced": "Avanzado",
+  "Advance": "Avanzado",
+  "Remove Address": "Remove Address",
+  "Reset Wallet": "Restablecer billetera",
+  "Remove Address, Reset Wallet": "Eliminar dirección, restablecer billetera",
   "Contact": "Contacto",
   "Get In Touch": "Mantente en Contacto",
   "Share This App, Review The App, Join Telegram, Support Center":
@@ -278,7 +281,7 @@ const Map<String, String> sp_SP = {
   "DeFi": "DeFi",
   "NFTs": "NFTs",
   "Assets": "Activos",
-  "Embark on your journey with Tixcash Wallet\'s revamped brand identity, tailored to enrich your Web3 experience. Uncover our intuitive layout and much more. Start your journey today":
+  "Embark on your journey with Tixcash Wallet's revamped brand identity, tailored to enrich your Web3 experience. Uncover our intuitive layout and much more. Start your journey today":
       "Embárcate en tu viaje con la identidad de marca renovada de Tixcash Wallet, diseñada para enriquecer tu experiencia Web3. Descubre nuestro diseño intuitivo y mucho más. Comienza tu viaje hoy",
   "Tixcash Services": "Servicios de Tixcash",
   "Tixcash Stake": "Estaca Tixcash",
@@ -480,4 +483,18 @@ const Map<String, String> sp_SP = {
   "Update": "Actualizar",
   "Address Book": "Directorio",
   "Save Your Name & Address & NetWork": "Guarde su nombre, dirección y red",
+  "Warning ⚠️": "advertencia ⚠️",
+  "Ensure the network matches the withdrawal address and the deposit platform support it, or assets may be lost and never recover.":
+      "Asegúrese de que la red coincida con la dirección de retiro y que la plataforma de depósito la admita; de lo contrario, los activos podrían perderse y nunca recuperarse.",
+  "Next Claim in:": "siguiente reclamo en",
+  "Hrs": "Horas",
+  "Mins": "Minutos",
+  "Secs": "Segundos",
+  "Select Network": "Seleccione la red",
+  "S.No.": "lista",
+  "UID": "invitación",
+  "Total Staking": "Apuesta total",
+  "Dark Mode": "Modo oscuro",
+  "No Address": "Sin dirección",
+  "Invalid Address": "Dirección inválida",
 };

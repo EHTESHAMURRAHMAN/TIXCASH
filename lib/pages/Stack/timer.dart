@@ -70,7 +70,7 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
             ),
             const SizedBox(height: 3),
             Text(
-              'HRS',
+              'Hrs'.tr,
               style: TextStyle(
                   fontWeight: FontWeight.w400,
                   color: Colors.grey.shade800,
@@ -100,7 +100,7 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
             ),
             const SizedBox(height: 3),
             Text(
-              'MINS',
+              'Mins'.tr,
               style: TextStyle(
                   fontWeight: FontWeight.w400,
                   color: Colors.grey.shade800,
@@ -130,7 +130,7 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
             ),
             const SizedBox(height: 3),
             Text(
-              'SECS',
+              'Secs'.tr,
               style: TextStyle(
                   fontWeight: FontWeight.w400,
                   color: Colors.grey.shade800,

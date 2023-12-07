@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 const Map<String, String> jp_JP = {
   "Not authorized": "許可されていません",
   "scanFingure": "スキャン人物",
@@ -187,7 +185,7 @@ const Map<String, String> jp_JP = {
       "データの追跡を許可し、Tixcash ウォレットのエクスペリエンスを向上させてください",
   "We would like to collect data from your session to\nhelp make Tixcash Wallet easier and\nmore fun to use":
       "Tixcash Wallet を もっと簡単に、そしてもっと楽しく使えるようにするために、あなたのセッションからデータを収集したいと考えています。",
-  "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey\'re totally anonymous and\nwill never be shared with anyone else":
+  "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey're totally anonymous and\nwill never be shared with anyone else":
       "これらのデータには クリックやスクロールなどの使用状況やパフォーマンス診断が含まれます。\nこれらは完全に匿名であり、他の人と共有されることはありません",
   "The home of your Funds & your\nNFT collection on TIXCASH Network":
       "TIXCASH ネットワーク上のファンドと\nNFT コレクションの本拠地",
@@ -211,7 +209,7 @@ const Map<String, String> jp_JP = {
       "あなたの回復フレーズは24語で構成されています。それはあなたのウォレットを復元するために使用されます",
   "Please Note Down Secret Recovery Phrase": "秘密の回復フレーズをメモしてください",
   "Remember :": "覚えておくこと：",
-  "● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
+  "● Don't disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
       "● 秘密の回復フレーズを誰にも漏らさないでください。一旦秘密の回復フレーズが失われると、資産は回収できません",
   "● Please do not backup and save by screenshots or network transmission":
       "● スクリーンショットやネットワーク転送でのバックアップや保存はしないでください",
@@ -263,7 +261,10 @@ const Map<String, String> jp_JP = {
   "Security & Privacy": "セキュリティとプライバシー",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "バックアップフレーズ、プライベートキー、パスワードの変更、セキュリティモード、ウォレットのロック解除、自動ロック",
-  "Advanced": "高度",
+  "Advance": "高度",
+  "Remove Address": "アドレスの削除",
+  "Reset Wallet": "ウォレットをリセット",
+  "Remove Address, Reset Wallet": "アドレスを削除してウォレットをリセット",
   "Contact": "お問い合わせ",
   "Get In Touch": "連絡を取る",
   "Share This App, Review The App, Join Telegram, Support Center":
@@ -470,4 +471,18 @@ const Map<String, String> jp_JP = {
   "Update": "アップデート",
   "Address Book": "住所録",
   "Save Your Name & Address & NetWork": "名前、住所、ネットワークを保存",
+  "Warning ⚠️": "警告 ⚠️",
+  "Ensure the network matches the withdrawal address and the deposit platform support it, or assets may be lost and never recover.":
+      "ネットワークが引き出しアドレスと一致し、入金プラットフォームがそれをサポートしていることを確認してください。そうしないと、資産が失われ、回復できなくなる可能性があります。",
+  "Next Claim in:": "次の請求",
+  "Hrs": "時間",
+  "Mins": "分",
+  "Secs": "秒",
+  "Select Network": "ネットワークの選択",
+  "S.No.": "リスト",
+  "UID": "招待",
+  "Total Staking": "合計ステーキング",
+  "Dark Mode": "ダークモード",
+  "No Address": "住所なし",
+  "Invalid Address": "無効なアドレス",
 };

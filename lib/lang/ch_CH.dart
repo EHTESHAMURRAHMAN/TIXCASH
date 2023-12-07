@@ -75,7 +75,7 @@ const Map<String, String> ch_CH = {
   "Quantity": "数量",
   "No record founded": "没有建立记录",
   "Select Coin": "选择硬币",
-  "Save": "节省",
+  "Save": "确认",
   "param_Balance": "参数_余额",
   "not_backed": "不支持",
   "backup_msg": "备份消息",
@@ -185,7 +185,7 @@ const Map<String, String> ch_CH = {
       "允许我们跟踪您的数据并帮助提供更好的Tixcash Wallet 钱包体验",
   "We would like to collect data from your session to\nhelp make Tixcash Wallet easier and\nmore fun to use":
       "我们希望从您的会话中收集数据，帮助让 Tixcash Wallet 更容易使用，使用起来更有趣",
-  "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey\'re totally anonymous and\nwill never be shared with anyone else":
+  "These data includes usage behavior such as clicking\nand scrolling as well as performance diagnostics.\nthey're totally anonymous and\nwill never be shared with anyone else":
       "这些数据包括使用行为，例如单击和滚动以及性能诊断。它们是完全匿名的，绝不会与其他任何人共享",
   "The home of your Funds & your\nNFT collection on TIXCASH Network":
       "TIXCASH 网络上您的资金和\nNFT 收藏的所在地",
@@ -209,11 +209,11 @@ const Map<String, String> ch_CH = {
       "您的恢复短语由 24 个单词组成。它用于恢复您的钱包",
   "Please Note Down Secret Recovery Pharse": "请记下秘密恢复阶段",
   "Remember :": "记住 ：",
-  "● Don\'t disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
+  "● Don't disclose secret recovery phrase to anyone Once the secret recovery phrase is lost, assets cannot be recovered":
       "● 请勿向任何人透露秘密恢复短语一旦丢失，资产将无法恢复",
   "● Please do not backup and save by screenshots or network transmission":
       "● 请勿通过截图或网络传输方式备份保存",
-  "● Don\'t uninstall the app when in issues, note the recovery phrase first or contact us for help":
+  "● Don't uninstall the app when in issues, note the recovery phrase first or contact us for help":
       "● 出现问题时请勿卸载应用程序，请先记下恢复短语或联系我们寻求帮助",
   "VERIFY NOW": "立即验证",
   "Stake": "质押",
@@ -261,7 +261,10 @@ const Map<String, String> ch_CH = {
   "Security & Privacy": "安全与隐私",
   "Backup Phrase, Private Key, Change Password, Security Mode, Unlock Wallet With, Auto-Lock":
       "备份短语、私钥、更改密码、安全模式、解锁钱包、自动锁定",
-  "Advanced": "高级",
+  "Advance": "高级",
+  "Remove Address": "注销",
+  "Reset Wallet": "重置钱包",
+  "Remove Address, Reset Wallet": "删除地址，重置钱包",
   "Contact": "联系人",
   "Get In Touch": "保持联系",
   "Share This App, Review The App, Join telegram, Support Center":
@@ -274,7 +277,7 @@ const Map<String, String> ch_CH = {
   "DeFi": "DeFi",
   "NFTs": "NFT",
   "Assets": "资产",
-  "Embark on your journey with Tixcash Wallet\'s revamped brand identity, tailored to enrich your Web3 experience. Uncover our intuitive layout and much more. Start your journey today":
+  "Embark on your journey with Tixcash Wallet's revamped brand identity, tailored to enrich your Web3 experience. Uncover our intuitive layout and much more. Start your journey today":
       "使用 Tixcash Wallet 全新的品牌标识踏上您的旅程，专为丰富您的 Web3 体验而量身定制。探索我们直观的布局等等。今天开始您的旅程",
   "Tixcash Services": "Tixcash融合服务",
   "Tixcash Stake": "质押",
@@ -296,7 +299,7 @@ const Map<String, String> ch_CH = {
   "Total\nRewards": "总计\n奖励",
   "Pending\nRewards": "待处理\n奖励",
   "Daily\nReward": "每日\n奖励",
-  "Staking\nPeriod": "质押\周期",
+  "Staking\nPeriod": "质押周期",
   "Staking Start Date": "质押开始日期",
   "Staking End Date": "质押结束日期",
   "Income Report": "收入报告",
@@ -304,7 +307,7 @@ const Map<String, String> ch_CH = {
   "Staked Amount": "质押金额",
   "Total Staking Income": "质押总收入",
   "Paid Days": "带薪天数",
-  "Unclaimed Income": "无人认领的收入",
+  "Unclaimed Income": "未结算收益",
   "Claim Now": "立即确认",
   "Days": "天",
   "Claim": "确认",
@@ -464,4 +467,18 @@ const Map<String, String> ch_CH = {
   "Update": "更新",
   "Address Book": "地址簿",
   "Save Your Name & Address & NetWork": "保存您的姓名、地址和网络",
+  "Warning ⚠️": "警告 ⚠️",
+  "Ensure the network matches the withdrawal address and the deposit platform support it, or assets may be lost and never recover.":
+      "确保网络与提现地址匹配且充值平台支持，否则资产可能会丢失且无法恢复",
+  "Next Claim in:": "下次申领",
+  "Hrs": "小时",
+  "Mins": "分钟",
+  "Secs": "秒",
+  "Select Network": "选择网络",
+  "S.No.": "编号",
+  "UID": "用户识别码",
+  "Total Staking": "总质押",
+  "Dark Mode": "深色模式",
+  "No Address": "无地址",
+  "Invalid Address": "无效地址",
 };

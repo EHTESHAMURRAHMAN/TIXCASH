@@ -29,7 +29,7 @@ class Startview1 extends GetView<SplashController> {
           margin: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -70,12 +70,6 @@ class Startview1 extends GetView<SplashController> {
                                             )),
                                         onTap: () => controller1.updateLocale(
                                             'en', 'US', 'English')),
-                                    // ListTile(
-                                    //   title: Text('Kyrgyz',
-                                    //       style: GoogleFonts.roboto(
-                                    //           fontSize: 14,   color: Colors.white,)),
-                                    //   onTap: () => updateLocale('kg', 'KG', 'Kyrgyz'),
-                                    // ),
                                     ListTile(
                                       title: Text('简体中文',
                                           style: GoogleFonts.roboto(
@@ -96,27 +90,25 @@ class Startview1 extends GetView<SplashController> {
                                     ),
                                     ListTile(
                                       title: Text('Русский',
-                                          style: GoogleFonts.roboto(
-                                              fontSize: 14,
-                                              color: Colors.white)),
+                                          style:
+                                              GoogleFonts.roboto(fontSize: 14)),
                                       onTap: () => controller1.updateLocale(
                                           'ru', 'RU', 'Русский'),
                                     ),
                                     ListTile(
                                       title: Text('日本語',
-                                          style: GoogleFonts.roboto(
-                                              fontSize: 14,
-                                              color: Colors.white)),
+                                          style:
+                                              GoogleFonts.roboto(fontSize: 14)),
                                       onTap: () => controller1.updateLocale(
                                           'jp', 'JP', '日本語'),
                                     ),
-                                    // ListTile(
-                                    //   title: Text('español',
-                                    //       style:
-                                    //           GoogleFonts.roboto(fontSize: 14)),
-                                    //   onTap: () => controller1.updateLocale(
-                                    //       'sp', 'SP', 'español'),
-                                    // ),
+                                    ListTile(
+                                      title: Text('español',
+                                          style:
+                                              GoogleFonts.roboto(fontSize: 14)),
+                                      onTap: () => controller1.updateLocale(
+                                          'sp', 'SP', 'español'),
+                                    ),
                                   ],
                                 ),
                               ));
@@ -140,7 +132,7 @@ class Startview1 extends GetView<SplashController> {
                           //         color: Colors.white,
                           //       ),
                           //     )),
-                          SizedBox(width: 5),
+                          const SizedBox(width: 5),
                           SvgPicture.asset(
                             'assets/SVG_Icons/Ic__arrow_down.svg',
                             color: Colors.white,

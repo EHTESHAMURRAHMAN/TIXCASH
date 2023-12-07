@@ -12,6 +12,7 @@ class StorageConstants {
   static const String locTime = 'loc_time';
   static const String locale = 'locale';
   static const String currency = 'currency';
+  static const String currency1 = 'currency1';
   static const String pauseTime = 'pause_time';
   static const String autoLockVal = 'autolock_val';
   static const String securityVal = 'security_val';

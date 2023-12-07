@@ -111,16 +111,15 @@ class SettingsView extends GetView<SettingsController> {
                 leading: Icon(CupertinoIcons.forward_end_alt,
                     color: Theme.of(context).primaryColor, size: 25),
                 onTap: () {
-                  EasyLoading.showToast('Launching Soon'.tr,
-                      toastPosition: EasyLoadingToastPosition.top);
+                  Get.to(Advance());
                 },
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 title: Text(
-                  'Advanced'.tr,
+                  'Advance'.tr,
                   style: GoogleFonts.roboto(fontSize: 16),
                 ),
                 subtitle: Text(
-                  'Advanced'.tr,
+                  'Remove Address, Reset Wallet'.tr,
                   style: GoogleFonts.roboto(fontSize: 13),
                 ),
               ),
@@ -678,94 +677,217 @@ class GeneralSetting extends StatelessWidget {
                 ),
               ),
             ),
+            //const SizedBox(height: 15),
+            // InkWell(
+            //   onTap: () {
+            //     showDialog(
+            //         context: context,
+            //         builder: (context) => Dialog(
+            //               elevation: 5,
+            //               shadowColor: Theme.of(context).primaryColor,
+            //               shape: RoundedRectangleBorder(
+            //                   borderRadius: BorderRadius.circular(20)),
+            //               child: Column(
+            //                 mainAxisSize: MainAxisSize.min,
+            //                 children: [
+            //                   const SizedBox(height: 15),
+            //                   Text(
+            //                     'Select Currency'.tr,
+            //                     style: GoogleFonts.roboto(
+            //                       fontSize: 15,
+            //                       fontWeight: FontWeight.bold,
+            //                     ),
+            //                   ),
+            //                   const SizedBox(height: 15),
+            //                   const Padding(
+            //                     padding: EdgeInsets.symmetric(horizontal: 15),
+            //                     child: Divider(),
+            //                   ),
+            //                   const SizedBox(height: 5),
+            //                   ListTile(
+            //                     title: Text('USD',
+            //                         style: GoogleFonts.roboto(fontSize: 14)),
+            //                     onTap: () => controller.cLocale('USD'.tr),
+            //                   ),
+            //                   ListTile(
+            //                     title: Text('EUR',
+            //                         style: GoogleFonts.roboto(fontSize: 14)),
+            //                     onTap: () => controller.cLocale('EUR'.tr),
+            //                   ),
+            //                   ListTile(
+            //                     title: Text('CNY',
+            //                         style: GoogleFonts.roboto(fontSize: 14)),
+            //                     onTap: () => controller.cLocale('CNY'.tr),
+            //                   ),
+            //                   ListTile(
+            //                     title: Text('RUB',
+            //                         style: GoogleFonts.roboto(fontSize: 14)),
+            //                     onTap: () => controller.cLocale('RUB'.tr),
+            //                   ),
+            //                   ListTile(
+            //                     title: Text('JPY',
+            //                         style: GoogleFonts.roboto(fontSize: 14)),
+            //                     onTap: () => controller.cLocale('JPY'.tr),
+            //                   ),
+            //                   ListTile(
+            //                     title: Text('HKD',
+            //                         style: GoogleFonts.roboto(fontSize: 14)),
+            //                     onTap: () => controller.cLocale('HKD'.tr),
+            //                   ),
+            //                   ListTile(
+            //                     title: Text('GBP',
+            //                         style: GoogleFonts.roboto(fontSize: 14)),
+            //                     onTap: () => controller.cLocale('GBP'.tr),
+            //                   ),
+            //                 ],
+            //               ),
+            //             ));
+            //   },
+            //   child: SizedBox(
+            //     height: 60,
+            //     width: MediaQuery.of(context).size.width / 1.2,
+            //     child: Card(
+            //       color: Theme.of(context).primaryColor,
+            //       elevation: 2,
+            //       shadowColor: Colors.purple[900],
+            //       shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(30)),
+            //       child: Padding(
+            //         padding: const EdgeInsets.symmetric(horizontal: 15),
+            //         child: MineCell(
+            //           title: 'Currency'.tr,
+            //           subview: Obx(() => Text(
+            //                 controller.appController.currency.value.tr,
+            //                 style: GoogleFonts.roboto(
+            //                     fontSize: 14, color: Colors.white),
+            //               )),
+            //           trailing: SvgPicture.asset(
+            //               'assets/SVG_Icons/Ic__arrow_down.svg'),
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
             const SizedBox(height: 15),
-            InkWell(
-              onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (context) => Dialog(
-                          elevation: 5,
-                          shadowColor: Theme.of(context).primaryColor,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const SizedBox(height: 15),
-                              Text(
-                                'Select Currency'.tr,
-                                style: GoogleFonts.roboto(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              const SizedBox(height: 15),
-                              const Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 15),
-                                child: Divider(),
-                              ),
-                              const SizedBox(height: 5),
-                              ListTile(
-                                title: Text('USD',
-                                    style: GoogleFonts.roboto(fontSize: 14)),
-                                onTap: () => controller.cLocale('USD'.tr),
-                              ),
-                              ListTile(
-                                title: Text('EUR',
-                                    style: GoogleFonts.roboto(fontSize: 14)),
-                                onTap: () => controller.cLocale('EUR'.tr),
-                              ),
-                              ListTile(
-                                title: Text('CNY',
-                                    style: GoogleFonts.roboto(fontSize: 14)),
-                                onTap: () => controller.cLocale('CNY'.tr),
-                              ),
-                              ListTile(
-                                title: Text('RUB',
-                                    style: GoogleFonts.roboto(fontSize: 14)),
-                                onTap: () => controller.cLocale('RUB'.tr),
-                              ),
-                              ListTile(
-                                title: Text('JPY',
-                                    style: GoogleFonts.roboto(fontSize: 14)),
-                                onTap: () => controller.cLocale('JPY'.tr),
-                              ),
-                              ListTile(
-                                title: Text('HKD',
-                                    style: GoogleFonts.roboto(fontSize: 14)),
-                                onTap: () => controller.cLocale('HKD'.tr),
-                              ),
-                              ListTile(
-                                title: Text('GBP',
-                                    style: GoogleFonts.roboto(fontSize: 14)),
-                                onTap: () => controller.cLocale('GBP'.tr),
-                              ),
-                            ],
-                          ),
-                        ));
-              },
-              child: SizedBox(
-                height: 60,
-                width: MediaQuery.of(context).size.width / 1.2,
-                child: Card(
-                  color: Theme.of(context).primaryColor,
-                  elevation: 2,
-                  shadowColor: Colors.purple[900],
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: MineCell(
-                      title: 'Currency'.tr,
-                      subview: Obx(() => Text(
-                            controller.appController.currency.value.tr,
+            SizedBox(
+              height: 60,
+              width: MediaQuery.of(context).size.width / 1.2,
+              child: Card(
+                color: Theme.of(context).primaryColor,
+                elevation: 2,
+                shadowColor: Colors.purple[900],
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: PopupMenuButton(
+                      elevation: 5,
+                      shadowColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Currency'.tr,
                             style: GoogleFonts.roboto(
                                 fontSize: 14, color: Colors.white),
-                          )),
-                      trailing: SvgPicture.asset(
-                          'assets/SVG_Icons/Ic__arrow_down.svg'),
-                    ),
-                  ),
+                          ),
+                          const Spacer(),
+                          Obx(() => Text(
+                                controller.appController.currency.value.tr,
+                                style: GoogleFonts.roboto(
+                                    fontSize: 14, color: Colors.white),
+                              )),
+                          const SizedBox(
+                            width: 24,
+                          ),
+                          SvgPicture.asset(
+                              'assets/SVG_Icons/Ic__arrow_down.svg'),
+                        ],
+                      ),
+                      itemBuilder: (_) => <PopupMenuItem<String>>[
+                            PopupMenuItem<String>(
+                                value: controller.appController.currencys
+                                    .elementAt(0)
+                                    .value,
+                                child: Text(
+                                    controller.appController.currencys
+                                        .elementAt(0)
+                                        .title
+                                        .tr,
+                                    style: GoogleFonts.roboto(fontSize: 14))),
+                            PopupMenuItem<String>(
+                                value: controller.appController.currencys
+                                    .elementAt(1)
+                                    .value,
+                                child: Text(
+                                    controller.appController.currencys
+                                        .elementAt(1)
+                                        .title
+                                        .tr,
+                                    style: GoogleFonts.roboto(fontSize: 14))),
+                            PopupMenuItem<String>(
+                                value: controller.appController.currencys
+                                    .elementAt(2)
+                                    .value,
+                                child: Text(
+                                    controller.appController.currencys
+                                        .elementAt(2)
+                                        .title
+                                        .tr,
+                                    style: GoogleFonts.roboto(fontSize: 14))),
+                            PopupMenuItem<String>(
+                                value: controller.appController.currencys
+                                    .elementAt(3)
+                                    .value,
+                                child: Text(
+                                    controller.appController.currencys
+                                        .elementAt(3)
+                                        .title
+                                        .tr,
+                                    style: GoogleFonts.roboto(fontSize: 14))),
+                            PopupMenuItem<String>(
+                                value: controller.appController.currencys
+                                    .elementAt(4)
+                                    .value,
+                                child: Text(
+                                    controller.appController.currencys
+                                        .elementAt(4)
+                                        .title
+                                        .tr,
+                                    style: GoogleFonts.roboto(fontSize: 14))),
+                            PopupMenuItem<String>(
+                                value: controller.appController.currencys
+                                    .elementAt(5)
+                                    .value,
+                                child: Text(
+                                    controller.appController.currencys
+                                        .elementAt(5)
+                                        .title
+                                        .tr,
+                                    style: GoogleFonts.roboto(fontSize: 14))),
+                            PopupMenuItem<String>(
+                                value: controller.appController.currencys
+                                    .elementAt(6)
+                                    .value,
+                                child: Text(
+                                    controller.appController.currencys
+                                        .elementAt(6)
+                                        .title
+                                        .tr,
+                                    style: GoogleFonts.roboto(fontSize: 14))),
+                          ],
+                      onSelected: (String val) {
+                        controller.appController.currency.value = controller
+                            .appController.currencys
+                            .elementAt(int.parse(val))
+                            .title;
+                        var storage = Get.find<SharedPreferences>();
+                        storage.setString(StorageConstants.currency,
+                            controller.appController.currency.value);
+                        storage.setInt(
+                            StorageConstants.currency1, int.parse(val));
+                      }),
                 ),
               ),
             ),
@@ -1209,6 +1331,215 @@ class Security extends StatelessWidget {
   }
 }
 
+class Advance extends StatelessWidget {
+  Advance({super.key});
+
+  SettingsController controller = Get.put(SettingsController());
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: InkWell(
+            onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios)),
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        title: Text(
+          'Advance'.tr,
+          style: GoogleFonts.roboto(fontSize: 20),
+        ),
+        centerTitle: true,
+      ),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 15),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 60,
+              child: Card(
+                color: Theme.of(context).primaryColor,
+                elevation: 2,
+                shadowColor: Colors.purple[900],
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: MineCell(
+                    title: 'Remove Address'.tr,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 5),
+            InkWell(
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) => Dialog(
+                          // insetPadding: EdgeInsets.symmetric(horizontal: 15),
+
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  const Icon(Icons.warning,
+                                      size: 35, color: Colors.red),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Are You Sure\nYou Want To Erase Your\nWallet?'
+                                        .tr,
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FontStyle.normal,
+                                        color: Colors.red),
+                                  ),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  Text(
+                                    'Your current wallet, accounts and assets will be removed from this app permanently. This action cannot be undone.'
+                                        .tr,
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        fontStyle: FontStyle.normal),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  Text(
+                                    'You can ONLY recover this wallet with your Secret Recovery Phrase TIXCASH WALLET does not have your Secret Recovery Phrase.'
+                                        .tr,
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        fontStyle: FontStyle.normal),
+                                  ),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  InkWell(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(25),
+                                          color: Colors.red),
+                                      height: 50,
+                                      width: MediaQuery.of(context).size.width /
+                                          1.8,
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 25, vertical: 15),
+                                      padding: const EdgeInsets.all(8),
+                                      child: Center(
+                                        child: Text(
+                                          'I understand, continue'.tr,
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    onTap: () {
+                                      controller.appController
+                                          .validateLogin(context, () async {
+                                        SharedPreferences prefs =
+                                            await SharedPreferences
+                                                .getInstance();
+
+                                        prefs.remove('userInfo');
+                                        prefs.remove('user_pass');
+                                        prefs.remove('is_backup');
+                                        prefs.remove('phrase');
+                                        prefs.remove('remind_later');
+                                        prefs.remove('is_fingerprint');
+                                        prefs.remove('is_password');
+                                        prefs.remove('login_type');
+                                        prefs.remove('security_type');
+                                        prefs.remove('loc_time');
+                                        prefs.remove('locale');
+                                        prefs.remove('pause_time');
+                                        prefs.remove('autolock_val');
+                                        prefs.remove('security_val');
+                                        prefs.remove('history_list');
+                                        prefs.remove('last_open');
+                                        exit(0);
+                                      });
+                                    },
+                                  ),
+                                  InkWell(
+                                    onTap: () => Get.back(),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(),
+                                        borderRadius: BorderRadius.circular(25),
+                                      ),
+                                      height: 50,
+                                      width: MediaQuery.of(context).size.width /
+                                          1.8,
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 25, vertical: 15),
+                                      padding: const EdgeInsets.all(8),
+                                      child: Center(
+                                        child: Text(
+                                          'Cancel'.tr,
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ));
+              },
+              child: SizedBox(
+                height: 60,
+                child: Card(
+                  color: Theme.of(context).primaryColor,
+                  elevation: 2,
+                  shadowColor: Colors.purple[900],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: MineCell(
+                      title: 'Reset Wallet'.tr,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class GetinTouch extends StatelessWidget {
   GetinTouch({Key? key}) : super(key: key);
 
@@ -1508,9 +1839,11 @@ class About extends StatelessWidget {
         child: ListView(
           children: [
             InkWell(
-              onTap: () {
-                const url = 'https://www.tixcash.org/';
-                openBrowserUrl(url: url, inApp: true);
+              onTap: () async {
+                final Uri url = Uri.parse('https://www.tixcash.org/');
+                if (!await launchUrl(url)) {
+                  throw Exception('Could not launch $url');
+                }
               },
               child: SizedBox(
                 height: 60,
