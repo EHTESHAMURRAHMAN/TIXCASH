@@ -138,30 +138,30 @@ class HomeController extends GetxController with WidgetsBindingObserver {
     initValues();
   }
 
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    super.didChangeAppLifecycleState(state);
-    switch (state) {
-      case AppLifecycleState.resumed:
-        _timer ??= Timer.periodic(const Duration(seconds: 10), (timer) {
-          getBalanceCurrencyList();
-        });
-        break;
-      case AppLifecycleState.inactive:
-        null;
-        break;
-      case AppLifecycleState.paused:
-        print('App is closed');
-        break;
+  // @override
+  // void didChangeAppLifecycleState(AppLifecycleState state) {
+  //   super.didChangeAppLifecycleState(state);
+  //   switch (state) {
+  //     case AppLifecycleState.resumed:
+  //       _timer ??= Timer.periodic(const Duration(seconds: 10), (timer) {
+  //         getBalanceCurrencyList();
+  //       });
+  //       break;
+  //     case AppLifecycleState.inactive:
+  //       null;
+  //       break;
+  //     case AppLifecycleState.paused:
+  //       print('App is closed');
+  //       break;
 
-      case AppLifecycleState.detached:
-        null;
-        break;
-      case AppLifecycleState.hidden:
-        null;
-        break;
-    }
-  }
+  //     case AppLifecycleState.detached:
+  //       null;
+  //       break;
+  //     case AppLifecycleState.hidden:
+  //       null;
+  //       break;
+  //   }
+  // }
 
   Future<void> checkBackup() async {
     if (userInfo == null) return;

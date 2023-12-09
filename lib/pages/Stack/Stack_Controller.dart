@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import 'package:tixcash/api/apis.dart';
 import 'package:tixcash/models/SponCode.dart';
 import 'package:tixcash/models/StakeDashboardResp.dart';

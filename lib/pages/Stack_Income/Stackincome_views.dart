@@ -1641,10 +1641,7 @@ class txhincome extends GetView<StackController> {
                                     const SizedBox(height: 5),
                                     const CountdownTimerDemo(),
                                     const SizedBox(height: 5),
-                                    dt1.isAfter(dt2) &&
-                                            controller.stakeDashboardResponse
-                                                    .value?.unclaim ==
-                                                0.0
+                                    dt1.isBefore(dt2)
                                         ? Container(
                                             height: 37,
                                             width: 80,
@@ -1662,28 +1659,52 @@ class txhincome extends GetView<StackController> {
                                                       color: Colors.white)),
                                             ),
                                           )
-                                        : InkWell(
-                                            onTap: () {
-                                              Get.to(StakeClaimDetails());
-                                              controller.stakedashboard();
-                                            },
-                                            child: Container(
-                                              height: 37,
-                                              width: 80,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.red,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          15)),
-                                              child: Center(
-                                                child: Text('Claim Now'.tr,
-                                                    style: GoogleFonts.roboto(
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: Colors.white)),
-                                              ),
-                                            ))
+                                        : controller.stakeDashboardResponse
+                                                    .value?.unclaim ==
+                                                0.0
+                                            ? Container(
+                                                height: 37,
+                                                width: 80,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.red
+                                                        .withOpacity(.5),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15)),
+                                                child: Center(
+                                                  child: Text('Claim Now'.tr,
+                                                      style: GoogleFonts.roboto(
+                                                          fontSize: 12,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: Colors.white)),
+                                                ),
+                                              )
+                                            : InkWell(
+                                                onTap: () {
+                                                  Get.to(StakeClaimDetails());
+                                                  controller.stakedashboard();
+                                                },
+                                                child: Container(
+                                                  height: 37,
+                                                  width: 80,
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.red,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15)),
+                                                  child: Center(
+                                                    child: Text('Claim Now'.tr,
+                                                        style:
+                                                            GoogleFonts.roboto(
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                color: Colors
+                                                                    .white)),
+                                                  ),
+                                                ))
                                   ],
                                 ),
                               ],
