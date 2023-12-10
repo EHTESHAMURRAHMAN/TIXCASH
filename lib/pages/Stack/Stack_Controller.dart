@@ -44,7 +44,9 @@ class StackController extends GetxController {
   final stakeDashboardResponse = Rxn<StakeDashboardResponse>();
   final isstakeDashboardResponse = false.obs;
   final isListLoading = true.obs;
+  final userclaim = ''.obs;
   final activeButton = false.obs;
+  DateTime dt1 = DateTime.now();
 
   @override
   void onInit() {
@@ -55,20 +57,10 @@ class StackController extends GetxController {
     getsponcode();
     getwhiteliststatus();
     getstakingDaylist();
-    stakedashboard();
   }
 
-  time() {
-    DateTime dt1 = DateTime.now();
-    DateTime dt2 = DateTime.parse(
-        stakeDashboardResponse.value?.userclaimdate ?? "2095-12-05 00:45:00");
-    if (dt1.compareTo(dt2) > 0) {
-      activeButton.value = true;
-    } else {
-      activeButton.value = false;
-    }
-    print(dt1);
-    print(dt2);
+  refreshData() {
+    stakedashboard();
   }
 
   Future<void> stakedashboard() async {
@@ -157,7 +149,6 @@ class StackController extends GetxController {
       'userid': userInfo!.id,
       "amount": double.parse(controllerStakeAmount.text),
       "staketype": selectid.value,
-      // "efrellcode": controllerRefral.text,r
     };
 
     print(jsonEncode(body));

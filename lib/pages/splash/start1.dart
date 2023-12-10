@@ -90,22 +90,25 @@ class Startview1 extends GetView<SplashController> {
                                     ),
                                     ListTile(
                                       title: Text('Русский',
-                                          style:
-                                              GoogleFonts.roboto(fontSize: 14)),
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              color: Colors.white)),
                                       onTap: () => controller1.updateLocale(
                                           'ru', 'RU', 'Русский'),
                                     ),
                                     ListTile(
                                       title: Text('日本語',
-                                          style:
-                                              GoogleFonts.roboto(fontSize: 14)),
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              color: Colors.white)),
                                       onTap: () => controller1.updateLocale(
                                           'jp', 'JP', '日本語'),
                                     ),
                                     ListTile(
                                       title: Text('español',
-                                          style:
-                                              GoogleFonts.roboto(fontSize: 14)),
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 14,
+                                              color: Colors.white)),
                                       onTap: () => controller1.updateLocale(
                                           'sp', 'SP', 'español'),
                                     ),

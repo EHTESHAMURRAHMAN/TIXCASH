@@ -134,9 +134,9 @@ class HomeController extends GetxController with WidgetsBindingObserver {
   //   initValues();
   // }
 
-  refreshData() {
-    initValues();
-  }
+  // refreshData() {
+  //   initValues();
+  // }
 
   // @override
   // void didChangeAppLifecycleState(AppLifecycleState state) {

@@ -404,13 +404,15 @@ class HomeView extends GetView<HomeController> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          const Icon(Icons.arrow_upward),
+                                          const Icon(Icons.arrow_upward,
+                                              color: Colors.white),
                                           const SizedBox(
                                             width: 16,
                                           ),
                                           Text(
                                             'Send'.tr,
                                             style: GoogleFonts.roboto(
+                                                color: Colors.white,
                                                 fontSize: 13,
                                                 fontWeight: FontWeight.w400),
                                           )
@@ -446,13 +448,15 @@ class HomeView extends GetView<HomeController> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          const Icon(Icons.arrow_downward),
+                                          const Icon(Icons.arrow_downward,
+                                              color: Colors.white),
                                           const SizedBox(
                                             width: 16,
                                           ),
                                           Text(
                                             'Receive'.tr,
                                             style: GoogleFonts.roboto(
+                                                color: Colors.white,
                                                 fontSize: 13,
                                                 fontWeight: FontWeight.w400),
                                           )

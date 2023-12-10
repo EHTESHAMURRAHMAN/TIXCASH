@@ -16,7 +16,6 @@ class StackViews extends GetView<StackController> {
 
   @override
   Widget build(BuildContext context) {
-    controller.time();
     controller.getstakingDaylist();
     final controller1 = Get.put(HomeController());
     return Scaffold(
@@ -42,10 +41,9 @@ class StackViews extends GetView<StackController> {
             children: [
               InkWell(
                 splashColor: Colors.white,
-                onTap: () {
-                  Get.toNamed(Routes.STACKINCOME);
-
-                  ///Get.to(stakingIncome());
+                onTap: () async {
+                  controller.stakedashboard();
+                  await Get.toNamed(Routes.STACKINCOME);
                 },
                 child: Container(
                   height: 50,
@@ -154,7 +152,6 @@ class StackViews extends GetView<StackController> {
                             controller.getstakingDaylist();
                             controller.getstakedate();
                             controller.stakedashboard();
-                            controller.time();
                           }
                         });
                       },

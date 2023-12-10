@@ -13,7 +13,6 @@ class txhincome extends GetView<StackController> {
 
   @override
   Widget build(BuildContext context) {
-    DateTime dt1 = DateTime.now();
     DateTime dt2 = DateTime.parse(
         controller.stakeDashboardResponse.value?.userclaimdate ??
             "2095-12-05 00:45:00");
@@ -832,9 +831,9 @@ class txhincome extends GetView<StackController> {
                       ],
                     ),
                   )
-                : SingleChildScrollView(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                : RefreshIndicator(
+                    onRefresh: () => controller.refreshData(),
+                    child: ListView(
                       children: [
                         Container(
                             padding: const EdgeInsets.all(10),
@@ -1641,7 +1640,7 @@ class txhincome extends GetView<StackController> {
                                     const SizedBox(height: 5),
                                     const CountdownTimerDemo(),
                                     const SizedBox(height: 5),
-                                    dt1.isBefore(dt2)
+                                    controller.dt1.isAfter(dt2)
                                         ? Container(
                                             height: 37,
                                             width: 80,
