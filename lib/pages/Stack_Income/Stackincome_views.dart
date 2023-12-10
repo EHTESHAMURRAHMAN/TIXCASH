@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,14 +10,54 @@ import 'package:tixcash/pages/dashboard/tabs/send_tyv/send_tyv_controller.dart';
 import 'package:tixcash/shared/constants/colors.dart';
 import 'package:tixcash/shared/utils/common_widget.dart';
 
-class txhincome extends GetView<StackController> {
+class txhincome extends StatefulWidget {
   const txhincome({Key? key}) : super(key: key);
 
   @override
+  State<txhincome> createState() => txhincomeState();
+}
+
+class txhincomeState extends State<txhincome> {
+  StackController controller = Get.put(StackController());
+
+  Timer? countdownTimer;
+  Duration myDuration = const Duration(days: 7);
+  @override
+  void initState() {
+    super.initState();
+    startTimer();
+  }
+
+  void startTimer() {
+    countdownTimer =
+        Timer.periodic(const Duration(seconds: 1), (_) => setCountDown());
+  }
+
+  void setCountDown() {
+    const reduceSecondsBy = 1;
+    if (mounted) {
+      setState(() {
+        final seconds = myDuration.inSeconds - reduceSecondsBy;
+        myDuration = Duration(seconds: seconds);
+      });
+    }
+  }
+
+  Future<void> refreshData() async {
+    await Future.delayed(const Duration(seconds: 1));
+    controller.stakedashboard();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    DateTime dt1 = DateTime.now();
     DateTime dt2 = DateTime.parse(
         controller.stakeDashboardResponse.value?.userclaimdate ??
-            "2095-12-05 00:45:00");
+            "2023-12-11 00:16:00");
+    setState(() {
+      dt1;
+      dt2;
+    });
 
     return Scaffold(
       appBar: AppBar(
@@ -832,7 +874,7 @@ class txhincome extends GetView<StackController> {
                     ),
                   )
                 : RefreshIndicator(
-                    onRefresh: () => controller.refreshData(),
+                    onRefresh: () => refreshData(),
                     child: ListView(
                       children: [
                         Container(
@@ -1640,7 +1682,7 @@ class txhincome extends GetView<StackController> {
                                     const SizedBox(height: 5),
                                     const CountdownTimerDemo(),
                                     const SizedBox(height: 5),
-                                    controller.dt1.isAfter(dt2)
+                                    dt1.isBefore(dt2)
                                         ? Container(
                                             height: 37,
                                             width: 80,

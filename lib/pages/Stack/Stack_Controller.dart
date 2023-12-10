@@ -46,7 +46,6 @@ class StackController extends GetxController {
   final isListLoading = true.obs;
   final userclaim = ''.obs;
   final activeButton = false.obs;
-  DateTime dt1 = DateTime.now();
 
   @override
   void onInit() {
@@ -57,9 +56,6 @@ class StackController extends GetxController {
     getsponcode();
     getwhiteliststatus();
     getstakingDaylist();
-  }
-
-  refreshData() {
     stakedashboard();
   }
 

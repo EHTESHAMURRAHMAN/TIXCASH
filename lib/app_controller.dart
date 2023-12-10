@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 //import 'package:local_auth/auth_strings.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:screenshot/screenshot.dart';
 //import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,6 +16,7 @@ import 'package:tixcash/models/currency_response.dart';
 import 'package:tixcash/pages/account/create_account/create_account_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/settings/settings_view.dart';
 import 'package:tixcash/routes/app_pages.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'api/apis.dart';
 import 'shared/shared.dart';
 import 'package:collection/collection.dart';
@@ -677,52 +679,72 @@ class AppController extends GetxController {
     // checkFingerPrint(is)
   }
 
-/*  void getAppVersion(context)async{
-
-    if(!isUpdateChecked.value){
+  void getAppVersion(context) async {
+    if (!isUpdateChecked.value) {
       PackageInfo packageInfo = await PackageInfo.fromPlatform();
       String appName = packageInfo.appName;
       String packageName = packageInfo.packageName;
       String version = packageInfo.version;
       String buildNumber = packageInfo.buildNumber;
       firmwareVersion.value = 'V$version$buildNumber';
-      printLog(appName+'\t'+packageName+'\t'+version+'\t'+buildNumber);
+      printLog('$appName\t$packageName\t$version\t$buildNumber');
 
       ApiResponse response = await getAppVersionAPI();
-      if(response.status){
-        String biuldno    = response.data['biuldno'];
-        String versionno  = response.data['versionno'];
+      if (response.status) {
+        String biuldno = response.data['biuldno'];
+        String versionno = response.data['versionno'];
 
-        printLog(biuldno+'\t\t'+versionno);
+        printLog('$biuldno\t\t$versionno');
 
-        if(double.parse(biuldno)>double.parse(buildNumber)){
-          showDialog(context: context, builder: (context) => Dialog(
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const SizedBox(height: 16,),
-                  const Text('Update app'),
-
-                  const SizedBox(height: 16,),
-                  const Text('New version of application is available\nupdate app to get new features'),
-
-                  const SizedBox(height: 16,),
-                  Row(children: [
-                    Expanded(child: TextButton(onPressed: (){
-                      Get.back();
-                    }, child: const Text('Cancel'))),
-                    Expanded(child: ElevatedButton(onPressed: (){
-                      Get.back();
-                      launch('https://play.google.com/store/apps/details?id=com.wallet.line');
-                    }, child: const Text('Update'))),
-                  ],)
-                ],),),
-          ));
+        if (double.parse(biuldno) > double.parse(buildNumber)) {
+          showDialog(
+              context: context,
+              builder: (context) => Dialog(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18)),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 12),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          const Text('Update app'),
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          const Text(
+                              'New version of application is available\nupdate app to get new features'),
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                  child: TextButton(
+                                      onPressed: () {
+                                        Get.back();
+                                      },
+                                      child: const Text('Cancel'))),
+                              Expanded(
+                                  child: ElevatedButton(
+                                      onPressed: () {
+                                        Get.back();
+                                        launch(
+                                            'https://play.google.com/store/apps/details?id=com.wallet.line');
+                                      },
+                                      child: const Text('Update'))),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ));
         }
       }
       isUpdateChecked.value = true;
     }
-  }*/
+  }
 }

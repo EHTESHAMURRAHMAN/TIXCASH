@@ -25,6 +25,8 @@ class DashboardView extends StatefulWidget {
 
 class _bottomnavigationbarState extends State<DashboardView> {
   DashboardController controller = Get.put(DashboardController());
+  final AppController appController = Get.find<AppController>();
+
   int currentTab = 0;
   // ignore: non_constant_identifier_names
   final List<Widget> Sceens = [
@@ -35,13 +37,12 @@ class _bottomnavigationbarState extends State<DashboardView> {
     SettingsView(),
   ];
 
-  //
-
   Widget currentScreen = const HomeView();
-//
+
   final PageStorageBucket bucket = PageStorageBucket();
   @override
   Widget build(BuildContext context) {
+    appController.getAppVersion(context);
     return WillPopScope(
       onWillPop: _backPressed,
       child: Scaffold(
@@ -294,7 +295,7 @@ class DashboardView1 extends GetView<DashboardController> {
 
   // @override
   // Widget build(BuildContext context) {
-  //   //appController.getAppVersion(context);
+
   //   // controller.updateBottomIndex(0);
   //   return WillPopScope(
   //     onWillPop: _backPressed,

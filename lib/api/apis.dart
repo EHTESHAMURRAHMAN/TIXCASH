@@ -124,9 +124,6 @@ Future<ApiResponse> getCurrencyPairPriceAPI(
   }
 }
 
-// https://block.linechain.org/api/account/getcurrencypairprice/USDT-TRC20/LINE
-
-// http://api.xpertgain.io/api/account/getAppVersion
 Future<ApiResponse> getAppVersionAPI() async {
   try {
     String url = '$BASEAPI/account/getAppVersion';
@@ -156,7 +153,6 @@ Future<ApiResponse> getProfileAPI(id) async {
     }
     final response = await http.get(Uri.parse(url), headers: headers);
     if (response.statusCode == 200) {
-      // UserResponse data = userResponseFromJson(response.body);
       UserResponse data = userFromJson(response.body);
       saveUserData(data);
       return ApiResponse(status: true, data: data, message: SUCCESS);
