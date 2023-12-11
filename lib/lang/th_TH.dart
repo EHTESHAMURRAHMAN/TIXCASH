@@ -12,6 +12,9 @@ const Map<String, String> th_TH = {
   "TIX Scan": "สแกน TIX",
   "TIX Market": "TIX ตลาด",
   "Contact Support": "ติดต่อฝ่ายสนับสนุน",
+  "New version of application is available\nupdate app to get new features":
+      "มีแอปพลิเคชันเวอร์ชันใหม่ให้บริการแล้ว\nอัปเดตแอปเพื่อรับคุณลักษณะใหม่ๆ",
+  "Update app": "อัปเดตแอป",
   "SETTINGS": "การตั้งค่า",
   "Commission Fee": "ค่านายหน้า",
   "Add Store": "เพิ่มร้านค้า",

@@ -9,6 +9,9 @@ const Map<String, String> ru_RU = {
   "TIX Balance": "TIX баланс",
   "My Wallet": "Мой кошелек",
   "SKAN QR": "Получить TIX",
+  "New version of application is available\nupdate app to get new features":
+      "Доступна новая версия приложения\nобновите приложение, чтобы получить новые функции",
+  "Update app": "Обновить приложение",
   "TIX Scan": "TIX Scan",
   "TIX Market": "TIX маркет",
   "Contact Support": "Служба поддержки",

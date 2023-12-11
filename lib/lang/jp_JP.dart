@@ -6,6 +6,9 @@ const Map<String, String> jp_JP = {
   "Cancel": "キャンセル",
   "CANCEL": "キャンセル",
   "Enter correct password": "正しいパスワードを入力してください",
+  "New version of application is available\nupdate app to get new features":
+      "新しいバージョンのアプリケーションが利用可能です\n新しい機能を入手するにはアプリを更新してください",
+  "Update app": "アプリを更新する",
   "CONFIRM": "確認する",
   "TIX Balance": "TIX残高",
   "My Wallet": "私の財布",

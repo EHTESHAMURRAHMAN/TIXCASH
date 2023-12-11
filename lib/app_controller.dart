@@ -711,12 +711,13 @@ class AppController extends GetxController {
                           const SizedBox(
                             height: 16,
                           ),
-                          const Text('Update app'),
+                          Text('Update app'.tr),
                           const SizedBox(
                             height: 16,
                           ),
-                          const Text(
-                              'New version of application is available\nupdate app to get new features'),
+                          Text(
+                              'New version of application is available\nupdate app to get new features'
+                                  .tr),
                           const SizedBox(
                             height: 16,
                           ),
@@ -727,7 +728,7 @@ class AppController extends GetxController {
                                       onPressed: () {
                                         Get.back();
                                       },
-                                      child: const Text('Cancel'))),
+                                      child: Text('Cancel'.tr))),
                               Expanded(
                                   child: ElevatedButton(
                                       onPressed: () {
@@ -735,7 +736,7 @@ class AppController extends GetxController {
                                         launch(
                                             'https://play.google.com/store/apps/details?id=com.wallet.line');
                                       },
-                                      child: const Text('Update'))),
+                                      child: Text('Update'.tr))),
                             ],
                           )
                         ],

@@ -11,6 +11,9 @@ const Map<String, String> sp_SP = {
   "My Wallet": "Mi billetera",
   "SKAN QR": "Escanear QR",
   "TIX Scan": "Escaneo de TIX",
+  "New version of application is available\nupdate app to get new features":
+      "Hay una nueva versión de la aplicación disponible\nactualice la aplicación para obtener nuevas funciones",
+  "Update app": "Actualizar aplicación",
   "TIX Market": "Mercado de TIX",
   "Contact Support": "Contactar soporte",
   "SETTINGS": "Configuraciones",

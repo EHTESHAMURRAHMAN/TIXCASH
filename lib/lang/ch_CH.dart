@@ -6,6 +6,9 @@ const Map<String, String> ch_CH = {
   "Cancel": "取消",
   "CANCEL": "取消",
   "Enter correct password": "输入正确的密码",
+  "New version of application is available\nupdate app to get new features":
+      "新版本的应用程序可用\n更新应用程序以获得新功能",
+  "Update app": "更新应用程序",
   "CONFIRM": "确认",
   "TIX Balance": "TIX 余额",
   "My Wallet": "我的钱包",
