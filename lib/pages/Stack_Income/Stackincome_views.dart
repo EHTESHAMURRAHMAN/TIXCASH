@@ -50,6 +50,7 @@ class txhincomeState extends State<txhincome> {
 
   @override
   Widget build(BuildContext context) {
+    controller.getstakingDaylist();
     DateTime dt1 = DateTime.now();
     DateTime dt2 = DateTime.parse(
         controller.stakeDashboardResponse.value?.userclaimdate ??
@@ -1722,9 +1723,10 @@ class txhincomeState extends State<txhincome> {
                                                 ),
                                               )
                                             : InkWell(
-                                                onTap: () {
+                                                onTap: () async {
                                                   Get.to(StakeClaimDetails());
-                                                  controller.stakedashboard();
+                                                  await controller
+                                                      .stakedashboard();
                                                 },
                                                 child: Container(
                                                   height: 37,
