@@ -33,7 +33,7 @@ import 'package:tixcash/shared/constants/storage.dart';
 const String SUCCESS = 'success';
 const String ERROR = 'failure';
 // const String BASE = 'http://block.linechain.org';
-const String BASE = 'http://api.tixcash.org';
+const String BASE = 'http://txhapi.tixcash.org';
 // const String BASE = 'https://block.linechain.org';
 const String BASEAPI = '$BASE/api';
 const String BASE_IMAGE = '$BASE/Icon/';
