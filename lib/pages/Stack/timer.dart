@@ -40,18 +40,16 @@ class _CountdownTimerDemoState extends State<CountdownTimerDemo> {
     DateTime date = DateTime.now();
     final moonLanding = DateTime.parse(
         controller.stakeDashboardResponse.value?.userclaimdate ??
-            "2095-12-05 00:45:00");
+            "0000-00-00 00:00:00");
+
     final diffhr = moonLanding.difference(date).inHours % 24;
     final diffmn = moonLanding.difference(date).inMinutes % 60;
     final diffsc = moonLanding.difference(date).inSeconds % 60;
 
-    // var now1 = "${moonLanding.hour - date.hour}";
-    // var now2 = "${moonLanding.minute - date.minute}";
-    // var now3 = "${moonLanding.second - date.second}";
-
     var time1 = diffhr.toString().padLeft(2, "0");
     var time2 = diffmn.toString().padLeft(2, "0");
     var time3 = diffsc.toString().padLeft(2, "0");
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

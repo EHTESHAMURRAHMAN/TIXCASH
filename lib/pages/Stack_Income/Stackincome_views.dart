@@ -54,7 +54,7 @@ class txhincomeState extends State<txhincome> {
     DateTime dt1 = DateTime.now();
     DateTime dt2 = DateTime.parse(
         controller.stakeDashboardResponse.value?.userclaimdate ??
-            "2023-12-11 00:16:00");
+            "0000-00-00 00:00:00");
     setState(() {
       dt1;
       dt2;
@@ -1761,6 +1761,7 @@ class txhincomeState extends State<txhincome> {
   }
 }
 
+// ignore: must_be_immutable
 class StakeClaimDetails extends StatelessWidget {
   StakeClaimDetails({Key? key}) : super(key: key);
 
