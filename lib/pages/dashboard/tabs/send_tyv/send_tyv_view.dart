@@ -929,6 +929,7 @@ class SendDetails extends StatelessWidget {
                 child: Text(
                   'Confirm'.tr,
                   style: GoogleFonts.roboto(
+                    
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),

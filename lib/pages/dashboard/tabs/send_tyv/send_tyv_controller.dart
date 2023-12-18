@@ -130,7 +130,8 @@ class SendTyvController extends GetxController {
         currency: currencyResponse.value?.currency ?? 'TXH',
       );
     } else {
-      EasyLoading.showToast(response.data['message'] ?? ''.tr);
+      Get.snackbar('Error', 'Something went wrong try again',
+          backgroundColor: Colors.red);
     }
   }
 
