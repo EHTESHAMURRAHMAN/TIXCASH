@@ -1226,26 +1226,36 @@ Future<ApiResponse> claimstakingrewardAPI(body) async {
   }
 }
 
-@override
-Future<ApiResponse> getWorldCurrencyAPI() async {
-  try {
-    String url =
-        'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_luCgX11cUnrzrBwxDOnj2xXiRdcJr1tDPO3O2pka';
-    if (kDebugMode) {
-      print(url);
-    }
-    final response = await http.get(Uri.parse(url), headers: headers);
-    if (response.statusCode == 200) {
-      WorldCurrencyResponse data = worldCurrencyResponseFromJson(response.body);
+// currency World
+//
+//
+//
+//
+//
+//
+//
 
-      return ApiResponse(status: true, data: data, message: SUCCESS);
-    } else {
-      return ApiResponse(status: false, data: response.body, message: ERROR);
-    }
-  } catch (e) {
-    return ApiResponse(status: false, data: {''}, message: e.toString());
-  }
-}
+
+// @override
+// Future<ApiResponse> getWorldCurrencyAPI() async {
+//   try {
+//     String url =
+//         'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_luCgX11cUnrzrBwxDOnj2xXiRdcJr1tDPO3O2pka';
+//     if (kDebugMode) {
+//       print(url);
+//     }
+//     final response = await http.get(Uri.parse(url), headers: headers);
+//     if (response.statusCode == 200) {
+//       WorldCurrencyResponse data = worldCurrencyResponseFromJson(response.body);
+
+//       return ApiResponse(status: true, data: data, message: SUCCESS);
+//     } else {
+//       return ApiResponse(status: false, data: response.body, message: ERROR);
+//     }
+//   } catch (e) {
+//     return ApiResponse(status: false, data: {''}, message: e.toString());
+//   }
+// }
 // getprivatekey
 
 Future<ApiResponse> getPrivateKeyAPI() async {

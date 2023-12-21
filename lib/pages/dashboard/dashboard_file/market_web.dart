@@ -124,8 +124,8 @@ class _marketqState extends State<marketq> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Image.network(
-                                "https://coinmarketcap.com/apple-touch-icon.png",
+                              Image.asset(
+                                "assets/icons/CoinMarketCap.png",
                                 height: 30,
                               ),
                               const SizedBox(width: 15),
@@ -177,8 +177,8 @@ class _marketqState extends State<marketq> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Image.network(
-                                "https://seeklogo.com/images/T/tradingview-logo-501309F1AA-seeklogo.com.png",
+                              Image.asset(
+                                "assets/icons/Trading.png",
                                 height: 18,
                               ),
                               const SizedBox(width: 15),

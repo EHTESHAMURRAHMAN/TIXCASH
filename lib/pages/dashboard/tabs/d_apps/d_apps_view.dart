@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tixcash/pages/dashboard/tabs/d_apps/trone_browser.dart';
-import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/invite/views/invite_view.dart';
 import 'package:tixcash/shared/shared.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -17,7 +16,6 @@ class DAppsView extends GetView<DAppsController> {
 
   @override
   Widget build(BuildContext context) {
-    final homeCtrl = Get.put(HomeController());
     //String textValue = '';
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -189,7 +187,9 @@ class DAppsView extends GetView<DAppsController> {
                         children: [
                           InkWell(
                             onTap: () {
-                              homeCtrl.subscriptionResponse.value?.pid == 0
+                              controller.homeCtrl.subscriptionResponse.value
+                                          ?.pid ==
+                                      0
                                   ? stakePopup(context)
                                   : Get.to(stakingIncome());
                             },
@@ -475,8 +475,8 @@ class DAppsView extends GetView<DAppsController> {
                                 child: Row(
                                   children: [
                                     const SizedBox(width: 8),
-                                    Image.network(
-                                      'https://s2.coinmarketcap.com/static/img/coins/200x200/7186.png',
+                                    Image.asset(
+                                      'assets/icons/Pancakeswap.png',
                                       height: 35,
                                       width: 35,
                                     ),
@@ -516,8 +516,8 @@ class DAppsView extends GetView<DAppsController> {
                                   child: Row(
                                     children: [
                                       const SizedBox(width: 8),
-                                      Image.network(
-                                        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Uniswap_Logo.svg/1200px-Uniswap_Logo.svg.png',
+                                      Image.asset(
+                                        'assets/icons/Uniswap.png',
                                         height: 35,
                                         width: 35,
                                       ),
@@ -562,8 +562,8 @@ class DAppsView extends GetView<DAppsController> {
                                   child: Row(
                                     children: [
                                       const SizedBox(width: 8),
-                                      Image.network(
-                                        'https://miro.medium.com/v2/resize:fit:1400/1*TJp7SItIYcHFKtOLbcAeeQ.png',
+                                      Image.asset(
+                                        'assets/icons/Curve.png',
                                         height: 35,
                                         width: 35,
                                       ),
@@ -604,8 +604,8 @@ class DAppsView extends GetView<DAppsController> {
                                   child: Row(
                                     children: [
                                       const SizedBox(width: 8),
-                                      Image.network(
-                                        'https://static.vecteezy.com/system/resources/previews/024/092/590/original/1inch-network-1inch-glass-crypto-coin-3d-illustration-free-png.png',
+                                      Image.asset(
+                                        'assets/icons/1inch.png',
                                         height: 35,
                                         width: 35,
                                       ),
@@ -643,8 +643,8 @@ class DAppsView extends GetView<DAppsController> {
                                   child: Row(
                                     children: [
                                       const SizedBox(width: 8),
-                                      Image.network(
-                                        'https://cdn-icons-png.flaticon.com/512/6001/6001662.png',
+                                      Image.asset(
+                                        'assets/icons/Yearn.png',
                                         height: 35,
                                         width: 35,
                                       ),
@@ -674,8 +674,8 @@ class DAppsView extends GetView<DAppsController> {
                                   child: Row(
                                     children: [
                                       const SizedBox(width: 8),
-                                      Image.network(
-                                        'https://s2.coinmarketcap.com/static/img/coins/200x200/6758.png',
+                                      Image.asset(
+                                        'assets/icons/Sushi.png',
                                         height: 35,
                                         width: 35,
                                       ),

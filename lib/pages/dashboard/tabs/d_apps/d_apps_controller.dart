@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tixcash/api/apis.dart';
-import 'package:tixcash/models/subscriptionReponse.dart';
 import 'package:tixcash/pages/dashboard/dashboard_file/dashboard_controller.dart';
+import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
 import 'package:tixcash/shared/constants/storage.dart';
 
 class DAppsController extends GetxController {
+  final homeCtrl = Get.put(HomeController());
   final DashboardController dashboardController =
       Get.isRegistered() ? Get.find() : Get.put(DashboardController());
 

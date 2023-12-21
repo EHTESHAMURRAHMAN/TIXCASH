@@ -456,74 +456,76 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
               ),
               Row(
                 children: [
-                  Obx(() => controller.appController.currency.value == 'EUR'
-                      ? Text(
-                          (controller.fundBalance *
-                                  double.parse(
-                                      '${controller.homecontroller.worldCurrency.value?.EUR ?? 0.0}'))
-                              .toStringAsFixed(4),
+                  Obx(() =>
+                      // controller.appController.currency.value == 'EUR'
+                      //     ? Text(
+                      //         (controller.fundBalance *
+                      //                 double.parse(
+                      //                     '${controller.homecontroller.worldCurrency.value?.EUR ?? 0.0}'))
+                      //             .toStringAsFixed(4),
+                      //         style: GoogleFonts.roboto(
+                      //           fontSize: 24,
+                      //           fontWeight: FontWeight.w600,
+                      //         ))
+                      //     : controller.appController.currency.value == 'CNY'
+                      //         ? Text(
+                      //             (controller.fundBalance *
+                      //                     double.parse(
+                      //                         '${controller.homecontroller.worldCurrency.value?.CNY ?? 0.0}'))
+                      //                 .toStringAsFixed(4),
+                      //             style: GoogleFonts.roboto(
+                      //               fontSize: 24,
+                      //               fontWeight: FontWeight.w600,
+                      //             ))
+                      //         : controller.appController.currency.value == 'RUB'
+                      //             ? Text(
+                      //                 (controller.fundBalance *
+                      //                         double.parse(
+                      //                             '${controller.homecontroller.worldCurrency.value?.RUB ?? 0.0}'))
+                      //                     .toStringAsFixed(4),
+                      //                 style: GoogleFonts.roboto(
+                      //                   fontSize: 24,
+                      //                   fontWeight: FontWeight.w600,
+                      //                 ))
+                      //             : controller.appController.currency.value == 'JPY'
+                      //                 ? Text(
+                      //                     (controller.fundBalance *
+                      //                             double.parse(
+                      //                                 '${controller.homecontroller.worldCurrency.value?.JPY ?? 0.0}'))
+                      //                         .toStringAsFixed(4),
+                      //                     style: GoogleFonts.roboto(
+                      //                       fontSize: 24,
+                      //                       fontWeight: FontWeight.w600,
+                      //                     ))
+                      //                 : controller.appController.currency.value ==
+                      //                         'HKD'
+                      //                     ? Text(
+                      //                         (controller.fundBalance *
+                      //                                 double.parse(
+                      //                                     '${controller.homecontroller.worldCurrency.value?.HKD ?? 0.0}'))
+                      //                             .toStringAsFixed(4),
+                      //                         style: GoogleFonts.roboto(
+                      //                           fontSize: 24,
+                      //                           fontWeight: FontWeight.w600,
+                      //                         ))
+                      //                     : controller.appController.currency
+                      //                                 .value ==
+                      //                             'GBP'
+                      //                         ? Text(
+                      //                             (controller.fundBalance *
+                      //                                     double.parse(
+                      //                                         '${controller.homecontroller.worldCurrency.value?.GBP ?? 0.0}'))
+                      //                                 .toStringAsFixed(4),
+                      //                             style: GoogleFonts.roboto(
+                      //                               fontSize: 24,
+                      //                               fontWeight: FontWeight.w600,
+                      //                             ))
+                      //                         :
+                      Text('${controller.fundBalance}',
                           style: GoogleFonts.roboto(
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
-                          ))
-                      : controller.appController.currency.value == 'CNY'
-                          ? Text(
-                              (controller.fundBalance *
-                                      double.parse(
-                                          '${controller.homecontroller.worldCurrency.value?.CNY ?? 0.0}'))
-                                  .toStringAsFixed(4),
-                              style: GoogleFonts.roboto(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
-                              ))
-                          : controller.appController.currency.value == 'RUB'
-                              ? Text(
-                                  (controller.fundBalance *
-                                          double.parse(
-                                              '${controller.homecontroller.worldCurrency.value?.RUB ?? 0.0}'))
-                                      .toStringAsFixed(4),
-                                  style: GoogleFonts.roboto(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w600,
-                                  ))
-                              : controller.appController.currency.value == 'JPY'
-                                  ? Text(
-                                      (controller.fundBalance *
-                                              double.parse(
-                                                  '${controller.homecontroller.worldCurrency.value?.JPY ?? 0.0}'))
-                                          .toStringAsFixed(4),
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.w600,
-                                      ))
-                                  : controller.appController.currency.value ==
-                                          'HKD'
-                                      ? Text(
-                                          (controller.fundBalance *
-                                                  double.parse(
-                                                      '${controller.homecontroller.worldCurrency.value?.HKD ?? 0.0}'))
-                                              .toStringAsFixed(4),
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 24,
-                                            fontWeight: FontWeight.w600,
-                                          ))
-                                      : controller.appController.currency
-                                                  .value ==
-                                              'GBP'
-                                          ? Text(
-                                              (controller.fundBalance *
-                                                      double.parse(
-                                                          '${controller.homecontroller.worldCurrency.value?.GBP ?? 0.0}'))
-                                                  .toStringAsFixed(4),
-                                              style: GoogleFonts.roboto(
-                                                fontSize: 24,
-                                                fontWeight: FontWeight.w600,
-                                              ))
-                                          : Text('${controller.fundBalance}',
-                                              style: GoogleFonts.roboto(
-                                                fontSize: 24,
-                                                fontWeight: FontWeight.w600,
-                                              ))),
+                          ))),
                   // Obx(() => Text('${controller.fundBalance}',
                   //     style: GoogleFonts.roboto(
                   //       fontSize: 24,
@@ -531,54 +533,55 @@ class TransactionHistoryView extends GetView<TransactionHistoryController> {
                   //       fontWeight: FontWeight.w600,
                   //     ))),
                   const SizedBox(width: 8),
-                  Obx(() => controller.appController.currency.value == 'EUR'
-                      ? Text('€${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
+                  Obx(() =>
+                      // controller.appController.currency.value == 'EUR'
+                      //     ? Text('€${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
+                      //         style: GoogleFonts.roboto(
+                      //             fontSize: 18,
+                      //             fontWeight: FontWeight.bold,
+                      //             color: const Color(0xFF40C4FF)))
+                      //     : controller.appController.currency.value == 'CNY'
+                      //         ? Text('¥${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
+                      //             style: GoogleFonts.roboto(
+                      //                 fontSize: 18,
+                      //                 fontWeight: FontWeight.bold,
+                      //                 color: const Color(0xFF40C4FF)))
+                      //         : controller.appController.currency.value == 'RUB'
+                      //             ? Text('₽${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
+                      //                 style: GoogleFonts.roboto(
+                      //                     fontSize: 18,
+                      //                     fontWeight: FontWeight.bold,
+                      //                     color: const Color(0xFF40C4FF)))
+                      //             : controller.appController.currency.value == 'JPY'
+                      //                 ? Text(
+                      //                     '¥${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
+                      //                     style: GoogleFonts.roboto(
+                      //                         fontSize: 18,
+                      //                         fontWeight: FontWeight.bold,
+                      //                         color: const Color(0xFF40C4FF)))
+                      //                 : controller.appController.currency.value ==
+                      //                         'HKD'
+                      //                     ? Text(
+                      //                         'HK\$${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
+                      //                         style: GoogleFonts.roboto(
+                      //                             fontSize: 18,
+                      //                             fontWeight: FontWeight.bold,
+                      //                             color: const Color(0xFF40C4FF)))
+                      //                     : controller.appController.currency.value ==
+                      //                             'GBP'
+                      //                         ? Text(
+                      //                             '£${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
+                      //                             style: GoogleFonts.roboto(
+                      //                                 fontSize: 18,
+                      //                                 fontWeight: FontWeight.bold,
+                      //                                 color:
+                      //                                     const Color(0xFF40C4FF)))
+                      //                         :
+                      Text('\$${controller.fundBalanceUSDT}',
                           style: GoogleFonts.roboto(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: const Color(0xFF40C4FF)))
-                      : controller.appController.currency.value == 'CNY'
-                          ? Text('¥${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
-                              style: GoogleFonts.roboto(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: const Color(0xFF40C4FF)))
-                          : controller.appController.currency.value == 'RUB'
-                              ? Text('₽${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: const Color(0xFF40C4FF)))
-                              : controller.appController.currency.value == 'JPY'
-                                  ? Text(
-                                      '¥${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
-                                      style: GoogleFonts.roboto(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          color: const Color(0xFF40C4FF)))
-                                  : controller.appController.currency.value ==
-                                          'HKD'
-                                      ? Text(
-                                          'HK\$${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
-                                          style: GoogleFonts.roboto(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold,
-                                              color: const Color(0xFF40C4FF)))
-                                      : controller.appController.currency.value ==
-                                              'GBP'
-                                          ? Text(
-                                              '£${(controller.fundBalanceUSDT * double.parse('${controller.homecontroller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
-                                              style: GoogleFonts.roboto(
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.bold,
-                                                  color:
-                                                      const Color(0xFF40C4FF)))
-                                          : Text(
-                                              '\$${controller.fundBalanceUSDT}',
-                                              style: GoogleFonts.roboto(
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: const Color(0xFF40C4FF)))),
+                              color: const Color(0xFF40C4FF)))),
                   // Obx(() => Text('\$${controller.fundBalanceUSDT}',
                   //     style: GoogleFonts.roboto(
                   //         fontSize: 18,

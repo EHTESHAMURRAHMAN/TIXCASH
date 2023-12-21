@@ -93,71 +93,73 @@ class HomeView extends GetView<HomeController> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Obx(() => controller.appController.currency.value == 'EUR'
-                      ? Text(
-                          '€ ${controller.isShowBalance.value ? '••••••' : controller.totalEUR.value.toStringAsFixed(4)}',
-                          maxLines: 1,
-                          style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                              color: Colors.white),
-                        )
-                      : controller.appController.currency.value == 'CNY'
-                          ? Text(
-                              '¥ ${controller.isShowBalance.value ? '••••••' : controller.totalCNY.value.toStringAsFixed(4)}',
-                              maxLines: 1,
-                              style: GoogleFonts.roboto(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 30,
-                                  color: Colors.white),
-                            )
-                          : controller.appController.currency.value == 'RUB'
-                              ? Text(
-                                  '₽ ${controller.isShowBalance.value ? '••••••' : controller.totalRUB.value.toStringAsFixed(4)}',
-                                  maxLines: 1,
-                                  style: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 30,
-                                      color: Colors.white),
-                                )
-                              : controller.appController.currency.value == 'JPY'
-                                  ? Text(
-                                      '¥ ${controller.isShowBalance.value ? '••••••' : controller.totalJPY.value.toStringAsFixed(4)}',
-                                      maxLines: 1,
-                                      style: GoogleFonts.roboto(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 30,
-                                          color: Colors.white),
-                                    )
-                                  : controller.appController.currency.value ==
-                                          'HKD'
-                                      ? Text(
-                                          'HK\$ ${controller.isShowBalance.value ? '••••••' : controller.totalHKD.value.toStringAsFixed(4)}',
-                                          maxLines: 1,
-                                          style: GoogleFonts.roboto(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 30,
-                                              color: Colors.white),
-                                        )
-                                      : controller.appController.currency
-                                                  .value ==
-                                              'GBP'
-                                          ? Text(
-                                              '£ ${controller.isShowBalance.value ? '••••••' : controller.totalGBP.value.toStringAsFixed(4)}',
-                                              maxLines: 1,
-                                              style: GoogleFonts.roboto(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 30,
-                                                  color: Colors.white),
-                                            )
-                                          : Text(
-                                              '\$${controller.isShowBalance.value ? '••••••' : controller.totalUSD.value.toStringAsFixed(4)}',
-                                              maxLines: 1,
-                                              style: GoogleFonts.roboto(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 30,
-                                                  color: Colors.white),
-                                            )),
+                  Obx(() =>
+                      //   controller.appController.currency.value == 'EUR'
+                      // ? Text(
+                      //     '€ ${controller.isShowBalance.value ? '••••••' : controller.totalEUR.value.toStringAsFixed(4)}',
+                      //     maxLines: 1,
+                      //     style: GoogleFonts.roboto(
+                      //         fontWeight: FontWeight.bold,
+                      //         fontSize: 30,
+                      //         color: Colors.white),
+                      //   )
+                      // : controller.appController.currency.value == 'CNY'
+                      //     ? Text(
+                      //         '¥ ${controller.isShowBalance.value ? '••••••' : controller.totalCNY.value.toStringAsFixed(4)}',
+                      //         maxLines: 1,
+                      //         style: GoogleFonts.roboto(
+                      //             fontWeight: FontWeight.bold,
+                      //             fontSize: 30,
+                      //             color: Colors.white),
+                      //       )
+                      //     : controller.appController.currency.value == 'RUB'
+                      //         ? Text(
+                      //             '₽ ${controller.isShowBalance.value ? '••••••' : controller.totalRUB.value.toStringAsFixed(4)}',
+                      //             maxLines: 1,
+                      //             style: GoogleFonts.roboto(
+                      //                 fontWeight: FontWeight.bold,
+                      //                 fontSize: 30,
+                      //                 color: Colors.white),
+                      //           )
+                      //         : controller.appController.currency.value == 'JPY'
+                      //             ? Text(
+                      //                 '¥ ${controller.isShowBalance.value ? '••••••' : controller.totalJPY.value.toStringAsFixed(4)}',
+                      //                 maxLines: 1,
+                      //                 style: GoogleFonts.roboto(
+                      //                     fontWeight: FontWeight.bold,
+                      //                     fontSize: 30,
+                      //                     color: Colors.white),
+                      //               )
+                      //             : controller.appController.currency.value ==
+                      //                     'HKD'
+                      //                 ? Text(
+                      //                     'HK\$ ${controller.isShowBalance.value ? '••••••' : controller.totalHKD.value.toStringAsFixed(4)}',
+                      //                     maxLines: 1,
+                      //                     style: GoogleFonts.roboto(
+                      //                         fontWeight: FontWeight.bold,
+                      //                         fontSize: 30,
+                      //                         color: Colors.white),
+                      //                   )
+                      //                 : controller.appController.currency
+                      //                             .value ==
+                      //                         'GBP'
+                      //                     ? Text(
+                      //                         '£ ${controller.isShowBalance.value ? '••••••' : controller.totalGBP.value.toStringAsFixed(4)}',
+                      //                         maxLines: 1,
+                      //                         style: GoogleFonts.roboto(
+                      //                             fontWeight: FontWeight.bold,
+                      //                             fontSize: 30,
+                      //                             color: Colors.white),
+                      //                       )
+                      //                     :
+                      Text(
+                        '\$${controller.isShowBalance.value ? '••••••' : controller.totalUSD.value.toStringAsFixed(4)}',
+                        maxLines: 1,
+                        style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                            color: Colors.white),
+                      )),
                   // Text(
                   //   '\$'.tr,
                   //   style: GoogleFonts.roboto(
@@ -486,7 +488,7 @@ class HomeView extends GetView<HomeController> {
 
                               // The child of the Slidable is what the user sees when the
                               // component is not dragged.
-                              child: Container(
+                              child: SizedBox(
                                   //padding: const EdgeInsets.symmetric(vertical: 8),
                                   // decoration: const BoxDecoration(
                                   //     border: Border(
@@ -501,196 +503,188 @@ class HomeView extends GetView<HomeController> {
                                       element.currency,
                                       style: GoogleFonts.roboto(fontSize: 16),
                                     ),
-                                    Obx(
-                                      () => controller.appController.currency
-                                                  .value ==
-                                              'EUR'
-                                          ? Text(
-                                              '€${(element.price * double.parse('${controller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
-                                              style: GoogleFonts.roboto(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w400),
-                                            )
-                                          : controller.appController.currency
-                                                      .value ==
-                                                  'CNY'
-                                              ? Text(
-                                                  '¥${(element.price * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
-                                                  style: GoogleFonts.roboto(
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.w400),
-                                                )
-                                              : controller.appController
-                                                          .currency.value ==
-                                                      'RUB'
-                                                  ? Text(
-                                                      '₽${(element.price * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
-                                                      style: GoogleFonts.roboto(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.w400),
-                                                    )
-                                                  : controller.appController
-                                                              .currency.value ==
-                                                          'JPY'
-                                                      ? Text(
-                                                          '¥${(element.price * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
-                                                          style: GoogleFonts
-                                                              .roboto(
-                                                                  fontSize: 12,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w400),
-                                                        )
-                                                      : controller
-                                                                  .appController
-                                                                  .currency
-                                                                  .value ==
-                                                              'HKD'
-                                                          ? Text(
-                                                              'HK\$${(element.price * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
-                                                              style: GoogleFonts.roboto(
-                                                                  fontSize: 12,
-                                                                  color: Colors
-                                                                      .black,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w400),
-                                                            )
-                                                          : controller
-                                                                      .appController
-                                                                      .currency
-                                                                      .value ==
-                                                                  'GBP'
-                                                              ? Text(
-                                                                  '£${(element.price * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
-                                                                  style: GoogleFonts.roboto(
-                                                                      fontSize:
-                                                                          12,
-                                                                      color: Colors
-                                                                          .black,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400),
-                                                                )
-                                                              : Text(
-                                                                  '\$${element.price.toStringAsFixed(4)}',
-                                                                  style: GoogleFonts.roboto(
-                                                                      fontSize:
-                                                                          12,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400),
-                                                                ),
+
+                                    // controller.appController.currency
+                                    //             .value ==
+                                    //         'EUR'
+                                    //     ? Text(
+                                    //         '€${(element.price * double.parse('${controller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
+                                    //         style: GoogleFonts.roboto(
+                                    //             fontSize: 12,
+                                    //             fontWeight: FontWeight.w400),
+                                    //       )
+                                    //     : controller.appController.currency
+                                    //                 .value ==
+                                    //             'CNY'
+                                    //         ? Text(
+                                    //             '¥${(element.price * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
+                                    //             style: GoogleFonts.roboto(
+                                    //                 fontSize: 12,
+                                    //                 fontWeight:
+                                    //                     FontWeight.w400),
+                                    //           )
+                                    //         : controller.appController
+                                    //                     .currency.value ==
+                                    //                 'RUB'
+                                    //             ? Text(
+                                    //                 '₽${(element.price * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
+                                    //                 style: GoogleFonts.roboto(
+                                    //                     fontSize: 12,
+                                    //                     fontWeight:
+                                    //                         FontWeight.w400),
+                                    //               )
+                                    //             : controller.appController
+                                    //                         .currency.value ==
+                                    //                     'JPY'
+                                    //                 ? Text(
+                                    //                     '¥${(element.price * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
+                                    //                     style: GoogleFonts
+                                    //                         .roboto(
+                                    //                             fontSize: 12,
+                                    //                             fontWeight:
+                                    //                                 FontWeight
+                                    //                                     .w400),
+                                    //                   )
+                                    //                 : controller
+                                    //                             .appController
+                                    //                             .currency
+                                    //                             .value ==
+                                    //                         'HKD'
+                                    //                     ? Text(
+                                    //                         'HK\$${(element.price * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
+                                    //                         style: GoogleFonts.roboto(
+                                    //                             fontSize: 12,
+                                    //                             color: Colors
+                                    //                                 .black,
+                                    //                             fontWeight:
+                                    //                                 FontWeight
+                                    //                                     .w400),
+                                    //                       )
+                                    //                     : controller
+                                    //                                 .appController
+                                    //                                 .currency
+                                    //                                 .value ==
+                                    //                             'GBP'
+                                    //                         ? Text(
+                                    //                             '£${(element.price * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
+                                    //                             style: GoogleFonts.roboto(
+                                    //                                 fontSize:
+                                    //                                     12,
+                                    //                                 color: Colors
+                                    //                                     .black,
+                                    //                                 fontWeight:
+                                    //                                     FontWeight
+                                    //                                         .w400),
+                                    //                           )
+                                    //                         :
+                                    Text(
+                                      '\$${element.price.toStringAsFixed(4)}',
+                                      style: GoogleFonts.roboto(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400),
                                     ),
                                   ],
                                 ),
                                 trailing: Column(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    Obx(() => Text(
-                                          controller.isShowBalance.value
-                                              ? '••••••'
-                                              : element.balance
-                                                  .toStringAsFixed(4),
-                                          style: GoogleFonts.roboto(
-                                            fontSize: 18,
-                                          ),
-                                        )),
+                                    Text(
+                                      controller.isShowBalance.value
+                                          ? '••••••'
+                                          : element.balance.toStringAsFixed(4),
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                      ),
+                                    ),
                                     //  '\$${element.usdvalue.toStringAsFixed(3)}',
 
-                                    Obx(
-                                      () => controller.appController.currency
-                                                  .value ==
-                                              'EUR'
-                                          ? Text(
-                                              '€${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
-                                              style: GoogleFonts.roboto(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w400,
-                                                color: const Color(0xFF40C4FF),
-                                              ))
-                                          : controller.appController.currency
-                                                      .value ==
-                                                  'CNY'
-                                              ? Text(
-                                                  '¥${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
-                                                  style: GoogleFonts.roboto(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w400,
-                                                    color:
-                                                        const Color(0xFF40C4FF),
-                                                  ))
-                                              : controller.appController
-                                                          .currency.value ==
-                                                      'RUB'
-                                                  ? Text(
-                                                      '₽${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
-                                                      style: GoogleFonts.roboto(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        color: const Color(
-                                                            0xFF40C4FF),
-                                                      ))
-                                                  : controller.appController
-                                                              .currency.value ==
-                                                          'JPY'
-                                                      ? Text(
-                                                          '¥${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
-                                                          style: GoogleFonts
-                                                              .roboto(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight.w400,
-                                                            color: const Color(
-                                                                0xFF40C4FF),
-                                                          ))
-                                                      : controller
-                                                                  .appController
-                                                                  .currency
-                                                                  .value ==
-                                                              'HKD'
-                                                          ? Text(
-                                                              'HK\$${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
-                                                              style: GoogleFonts
-                                                                  .roboto(
-                                                                fontSize: 14,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w400,
-                                                                color: const Color(
-                                                                    0xFF40C4FF),
-                                                              ))
-                                                          : controller
-                                                                      .appController
-                                                                      .currency
-                                                                      .value ==
-                                                                  'GBP'
-                                                              ? Text(
-                                                                  '£${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
-                                                                  style: GoogleFonts
-                                                                      .roboto(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                    color: const Color(
-                                                                        0xFF40C4FF),
-                                                                  ))
-                                                              : Text('\$${controller.isShowBalance.value ? '••••••' : element.usdvalue.toStringAsFixed(4)}',
-                                                                  style: GoogleFonts.roboto(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                    color: const Color(
-                                                                        0xFF40C4FF),
-                                                                  )),
-                                    ),
+                                    // controller.appController.currency
+                                    //             .value ==
+                                    //         'EUR'
+                                    //     ? Text(
+                                    //         '€${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.EUR ?? 0.0}')).toStringAsFixed(4)}',
+                                    //         style: GoogleFonts.roboto(
+                                    //           fontSize: 14,
+                                    //           fontWeight: FontWeight.w400,
+                                    //           color: const Color(0xFF40C4FF),
+                                    //         ))
+                                    //     : controller.appController.currency
+                                    //                 .value ==
+                                    //             'CNY'
+                                    //         ? Text(
+                                    //             '¥${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
+                                    //             style: GoogleFonts.roboto(
+                                    //               fontSize: 14,
+                                    //               fontWeight: FontWeight.w400,
+                                    //               color:
+                                    //                   const Color(0xFF40C4FF),
+                                    //             ))
+                                    //         : controller.appController
+                                    //                     .currency.value ==
+                                    //                 'RUB'
+                                    //             ? Text(
+                                    //                 '₽${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
+                                    //                 style: GoogleFonts.roboto(
+                                    //                   fontSize: 14,
+                                    //                   fontWeight:
+                                    //                       FontWeight.w400,
+                                    //                   color: const Color(
+                                    //                       0xFF40C4FF),
+                                    //                 ))
+                                    //             : controller.appController
+                                    //                         .currency.value ==
+                                    //                     'JPY'
+                                    //                 ? Text(
+                                    //                     '¥${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
+                                    //                     style: GoogleFonts
+                                    //                         .roboto(
+                                    //                       fontSize: 14,
+                                    //                       fontWeight:
+                                    //                           FontWeight.w400,
+                                    //                       color: const Color(
+                                    //                           0xFF40C4FF),
+                                    //                     ))
+                                    //                 : controller
+                                    //                             .appController
+                                    //                             .currency
+                                    //                             .value ==
+                                    //                         'HKD'
+                                    //                     ? Text(
+                                    //                         'HK\$${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
+                                    //                         style: GoogleFonts
+                                    //                             .roboto(
+                                    //                           fontSize: 14,
+                                    //                           fontWeight:
+                                    //                               FontWeight
+                                    //                                   .w400,
+                                    //                           color: const Color(
+                                    //                               0xFF40C4FF),
+                                    //                         ))
+                                    //                     : controller
+                                    //                                 .appController
+                                    //                                 .currency
+                                    //                                 .value ==
+                                    //                             'GBP'
+                                    //                         ? Text(
+                                    //                             '£${controller.isShowBalance.value ? '••••••' : (element.usdvalue * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
+                                    //                             style: GoogleFonts
+                                    //                                 .roboto(
+                                    //                               fontSize:
+                                    //                                   14,
+                                    //                               fontWeight:
+                                    //                                   FontWeight
+                                    //                                       .w400,
+                                    //                               color: const Color(
+                                    //                                   0xFF40C4FF),
+                                    //                             ))
+                                    //                         :
+                                    Text(
+                                        '\$${controller.isShowBalance.value ? '••••••' : element.usdvalue.toStringAsFixed(4)}',
+                                        style: GoogleFonts.roboto(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: const Color(0xFF40C4FF),
+                                        )),
                                   ],
                                 ),
                                 onTap: () {

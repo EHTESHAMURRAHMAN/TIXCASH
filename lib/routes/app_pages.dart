@@ -73,7 +73,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.Dashboard,
-      page: () => DashboardView(),
+      page: () => const DashboardView(),
       binding: DashboardBinding(),
     ),
     GetPage(

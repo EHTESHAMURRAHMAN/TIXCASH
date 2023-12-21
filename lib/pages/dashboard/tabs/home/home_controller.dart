@@ -90,22 +90,22 @@ class HomeController extends GetxController with WidgetsBindingObserver {
   final isBalanceLoading = true.obs;
 
   final totalUSD = 0.0.obs;
-  final totalEUR = 0.0.obs;
-  final totalCNY = 0.0.obs;
-  final totalRUB = 0.0.obs;
-  final totalJPY = 0.0.obs;
-  final totalHKD = 0.0.obs;
-  final totalGBP = 0.0.obs;
+  // final totalEUR = 0.0.obs;
+  // final totalCNY = 0.0.obs;
+  // final totalRUB = 0.0.obs;
+  // final totalJPY = 0.0.obs;
+  // final totalHKD = 0.0.obs;
+  // final totalGBP = 0.0.obs;
 
   final subscriptionResponse = Rxn<SubscriptionResponse>();
   final issubscriptionResponse = false.obs;
-  final worldCurrency = Rxn<WorldCurrency>();
+  //final worldCurrency = Rxn<WorldCurrency>();
 
   final editingController = TextEditingController();
 
   final accountName = ''.obs;
 
-  Timer? _timer;
+  //Timer? _timer;
   @override
   void onInit() {
     super.onInit();
@@ -115,7 +115,7 @@ class HomeController extends GetxController with WidgetsBindingObserver {
   initValues() {
     checkBackup();
     userFundBalance();
-    getUsdBalance1();
+    // getUsdBalance1();
     getBalanceCurrencyList();
     getsubs();
     accountName.value = userInfo?.name ?? '';
@@ -204,13 +204,13 @@ class HomeController extends GetxController with WidgetsBindingObserver {
     }
   }
 
-  void getUsdBalance1() async {
-    ApiResponse apiResponse = await getWorldCurrencyAPI();
-    if (apiResponse.status) {
-      WorldCurrencyResponse response = apiResponse.data;
-      worldCurrency.value = response.data;
-    } else {}
-  }
+  // void getUsdBalance1() async {
+  //   ApiResponse apiResponse = await getWorldCurrencyAPI();
+  //   if (apiResponse.status) {
+  //     WorldCurrencyResponse response = apiResponse.data;
+  //     worldCurrency.value = response.data;
+  //   } else {}
+  // }
 
   Future<void> getBalanceCurrencyList({currency = 'TXH'}) async {
     if (userInfo == null) return;
@@ -221,41 +221,41 @@ class HomeController extends GetxController with WidgetsBindingObserver {
     isCurrencyListResponse.value = true;
     appController.userFundBalance(currency: currency);
     double total = 0.0;
-    double total1 = 0.0;
-    double total2 = 0.0;
-    double total3 = 0.0;
-    double total4 = 0.0;
-    double total5 = 0.0;
-    double total6 = 0.0;
+    // double total1 = 0.0;
+    // double total2 = 0.0;
+    // double total3 = 0.0;
+    // double total4 = 0.0;
+    // double total5 = 0.0;
+    // double total6 = 0.0;
 
     for (var element in currencyListResponse) {
       total += element.price * element.balance;
-      total1 += element.price *
-          element.balance *
-          double.parse('${worldCurrency.value?.EUR ?? 0.0}');
-      total2 += element.price *
-          element.balance *
-          double.parse('${worldCurrency.value?.CNY ?? 0.0}');
-      total3 += element.price *
-          element.balance *
-          double.parse('${worldCurrency.value?.RUB ?? 0.0}');
-      total4 += element.price *
-          element.balance *
-          double.parse('${worldCurrency.value?.JPY ?? 0.0}');
-      total5 += element.price *
-          element.balance *
-          double.parse('${worldCurrency.value?.HKD ?? 0.0}');
-      total6 += element.price *
-          element.balance *
-          double.parse('${worldCurrency.value?.GBP ?? 0.0}');
+      // total1 += element.price *
+      //     element.balance *
+      //     double.parse('${worldCurrency.value?.EUR ?? 0.0}');
+      // total2 += element.price *
+      //     element.balance *
+      //     double.parse('${worldCurrency.value?.CNY ?? 0.0}');
+      // total3 += element.price *
+      //     element.balance *
+      //     double.parse('${worldCurrency.value?.RUB ?? 0.0}');
+      // total4 += element.price *
+      //     element.balance *
+      //     double.parse('${worldCurrency.value?.JPY ?? 0.0}');
+      // total5 += element.price *
+      //     element.balance *
+      //     double.parse('${worldCurrency.value?.HKD ?? 0.0}');
+      // total6 += element.price *
+      //     element.balance *
+      //     double.parse('${worldCurrency.value?.GBP ?? 0.0}');
     }
     totalUSD.value = total;
-    totalEUR.value = total1;
-    totalCNY.value = total2;
-    totalRUB.value = total3;
-    totalJPY.value = total4;
-    totalHKD.value = total5;
-    totalGBP.value = total6;
+    // totalEUR.value = total1;
+    // totalCNY.value = total2;
+    // totalRUB.value = total3;
+    // totalJPY.value = total4;
+    // totalHKD.value = total5;
+    // totalGBP.value = total6;
 
     // for (var element in currencyListResponse) {
     //   total += element.price * element.balance;

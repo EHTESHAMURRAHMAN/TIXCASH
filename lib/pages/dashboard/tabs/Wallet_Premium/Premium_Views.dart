@@ -13,10 +13,7 @@ class PremiumViews extends GetView<PremiumController> {
 
   @override
   Widget build(BuildContext context) {
-    controller.isActived.value = controller.rcontroller.text.isEmpty;
-    controller.getsubs();
-    controller.refreshData();
-    controller.getpremiumList();
+    //controller.isActived.value = controller.rcontroller.text.isEmpty;
     return Scaffold(
         appBar: AppBar(
           systemOverlayStyle: const SystemUiOverlayStyle(

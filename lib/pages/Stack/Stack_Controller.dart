@@ -13,9 +13,11 @@ import 'package:tixcash/models/stackingList.dart';
 import 'package:tixcash/models/stackingListHistory.dart';
 import 'package:tixcash/models/whiteList_Resp.dart';
 import 'package:tixcash/pages/Stack/Stack_Views.dart';
+import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
 import 'package:tixcash/routes/app_pages.dart';
 
 class StackController extends GetxController {
+  final controller1 = Get.put(HomeController());
   final selectStakeDays = ''.obs;
   final selectid = 0.obs;
   final controllerStakeAmount = TextEditingController();

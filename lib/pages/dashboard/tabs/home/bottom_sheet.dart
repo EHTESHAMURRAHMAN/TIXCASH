@@ -392,7 +392,7 @@ class _BottomSheetViewState extends State<BottomSheetView> {
 //                     style: const TextStyle(fontSize: 14))),
 //             TextButton(
 //                 onPressed: () {
-//                   Get.to(() => const ImportWalletView(
+//                   Get.to(const ImportWalletView(
 //                         isImportWallet: true,
 //                       ));
 //                 },

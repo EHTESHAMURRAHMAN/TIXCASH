@@ -871,7 +871,7 @@ class BottomIconCellBar extends GetView<DashboardController> {
 // //                                   ],
 // //                                 ),
 // //                               ),
-// //                               onTap: () => Get.to(() => const ScanQRChild()),
+// //                               onTap: () => Get.to(const ScanQRChild()),
 // //                             ),
 // //                           ],
 // //                         ),

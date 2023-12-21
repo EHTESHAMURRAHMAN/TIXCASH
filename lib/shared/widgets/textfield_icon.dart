@@ -39,8 +39,11 @@ class _TextFieldIconState extends State<TextFieldIcon> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(bottom: 8),
-        padding: EdgeInsets.only(left: 8, right: 8),
+        margin: const EdgeInsets.only(bottom: 8),
+        padding: const EdgeInsets.only(left: 8, right: 8),
+        decoration: BoxDecoration(
+            color: ColorConstants.white.withOpacity(0.15),
+            borderRadius: BorderRadius.circular(8)),
         child: Row(
           children: [
             Expanded(
@@ -84,10 +87,7 @@ class _TextFieldIconState extends State<TextFieldIcon> {
                         : Colors.white12,
                   )
           ],
-        ),
-        decoration: BoxDecoration(
-            color: ColorConstants.white.withOpacity(0.15),
-            borderRadius: BorderRadius.circular(8)));
+        ));
   }
 }
 

@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/models/stackingListHistory.dart';
 import 'package:tixcash/pages/Stack/Stack_Controller.dart';
-import 'package:tixcash/pages/dashboard/tabs/home/home_controller.dart';
 import 'package:tixcash/pages/dashboard/tabs/send_tyv/send_tyv_controller.dart';
 import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/constants/colors.dart';
@@ -16,8 +15,6 @@ class StackViews extends GetView<StackController> {
 
   @override
   Widget build(BuildContext context) {
-    controller.getstakingDaylist();
-    final controller1 = Get.put(HomeController());
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -121,7 +118,9 @@ class StackViews extends GetView<StackController> {
                             fontWeight: FontWeight.w500,
                           )),
                       const SizedBox(width: 8),
-                      Text(controller1.totalUSD.value.toStringAsFixed(2),
+                      Text(
+                          controller.controller1.totalUSD.value
+                              .toStringAsFixed(2),
                           style: GoogleFonts.roboto(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,

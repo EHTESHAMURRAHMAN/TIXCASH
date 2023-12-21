@@ -677,220 +677,130 @@ class GeneralSetting extends StatelessWidget {
                 ),
               ),
             ),
-            //const SizedBox(height: 15),
-            // InkWell(
-            //   onTap: () {
-            //     showDialog(
-            //         context: context,
-            //         builder: (context) => Dialog(
-            //               elevation: 5,
-            //               shadowColor: Theme.of(context).primaryColor,
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(20)),
-            //               child: Column(
-            //                 mainAxisSize: MainAxisSize.min,
-            //                 children: [
-            //                   const SizedBox(height: 15),
-            //                   Text(
-            //                     'Select Currency'.tr,
-            //                     style: GoogleFonts.roboto(
-            //                       fontSize: 15,
-            //                       fontWeight: FontWeight.bold,
-            //                     ),
-            //                   ),
-            //                   const SizedBox(height: 15),
-            //                   const Padding(
-            //                     padding: EdgeInsets.symmetric(horizontal: 15),
-            //                     child: Divider(),
-            //                   ),
-            //                   const SizedBox(height: 5),
-            //                   ListTile(
-            //                     title: Text('USD',
-            //                         style: GoogleFonts.roboto(fontSize: 14)),
-            //                     onTap: () => controller.cLocale('USD'.tr),
-            //                   ),
-            //                   ListTile(
-            //                     title: Text('EUR',
-            //                         style: GoogleFonts.roboto(fontSize: 14)),
-            //                     onTap: () => controller.cLocale('EUR'.tr),
-            //                   ),
-            //                   ListTile(
-            //                     title: Text('CNY',
-            //                         style: GoogleFonts.roboto(fontSize: 14)),
-            //                     onTap: () => controller.cLocale('CNY'.tr),
-            //                   ),
-            //                   ListTile(
-            //                     title: Text('RUB',
-            //                         style: GoogleFonts.roboto(fontSize: 14)),
-            //                     onTap: () => controller.cLocale('RUB'.tr),
-            //                   ),
-            //                   ListTile(
-            //                     title: Text('JPY',
-            //                         style: GoogleFonts.roboto(fontSize: 14)),
-            //                     onTap: () => controller.cLocale('JPY'.tr),
-            //                   ),
-            //                   ListTile(
-            //                     title: Text('HKD',
-            //                         style: GoogleFonts.roboto(fontSize: 14)),
-            //                     onTap: () => controller.cLocale('HKD'.tr),
-            //                   ),
-            //                   ListTile(
-            //                     title: Text('GBP',
-            //                         style: GoogleFonts.roboto(fontSize: 14)),
-            //                     onTap: () => controller.cLocale('GBP'.tr),
-            //                   ),
-            //                 ],
-            //               ),
-            //             ));
-            //   },
-            //   child: SizedBox(
-            //     height: 60,
-            //     width: MediaQuery.of(context).size.width / 1.2,
-            //     child: Card(
-            //       color: Theme.of(context).primaryColor,
-            //       elevation: 2,
-            //       shadowColor: Colors.purple[900],
-            //       shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(30)),
-            //       child: Padding(
-            //         padding: const EdgeInsets.symmetric(horizontal: 15),
-            //         child: MineCell(
-            //           title: 'Currency'.tr,
-            //           subview: Obx(() => Text(
-            //                 controller.appController.currency.value.tr,
+
+            // const SizedBox(height: 15),
+            // SizedBox(
+            //   height: 60,
+            //   width: MediaQuery.of(context).size.width / 1.2,
+            //   child: Card(
+            //     color: Theme.of(context).primaryColor,
+            //     elevation: 2,
+            //     shadowColor: Colors.purple[900],
+            //     shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(30)),
+            //     child: Padding(
+            //       padding: const EdgeInsets.symmetric(horizontal: 15),
+            //       child: PopupMenuButton(
+            //           elevation: 5,
+            //           shadowColor: Colors.red,
+            //           shape: RoundedRectangleBorder(
+            //               borderRadius: BorderRadius.circular(15)),
+            //           child: Row(
+            //             children: [
+            //               Text(
+            //                 'Currency'.tr,
             //                 style: GoogleFonts.roboto(
             //                     fontSize: 14, color: Colors.white),
-            //               )),
-            //           trailing: SvgPicture.asset(
-            //               'assets/SVG_Icons/Ic__arrow_down.svg'),
-            //         ),
-            //       ),
+            //               ),
+            //               const Spacer(),
+            //               Obx(() => Text(
+            //                     controller.appController.currency.value.tr,
+            //                     style: GoogleFonts.roboto(
+            //                         fontSize: 14, color: Colors.white),
+            //                   )),
+            //               const SizedBox(
+            //                 width: 24,
+            //               ),
+            //               SvgPicture.asset(
+            //                   'assets/SVG_Icons/Ic__arrow_down.svg'),
+            //             ],
+            //           ),
+            //           itemBuilder: (_) => <PopupMenuItem<String>>[
+            //                 PopupMenuItem<String>(
+            //                     value: controller.appController.currencys
+            //                         .elementAt(0)
+            //                         .value,
+            //                     child: Text(
+            //                         controller.appController.currencys
+            //                             .elementAt(0)
+            //                             .title
+            //                             .tr,
+            //                         style: GoogleFonts.roboto(fontSize: 14))),
+            //                 PopupMenuItem<String>(
+            //                     value: controller.appController.currencys
+            //                         .elementAt(1)
+            //                         .value,
+            //                     child: Text(
+            //                         controller.appController.currencys
+            //                             .elementAt(1)
+            //                             .title
+            //                             .tr,
+            //                         style: GoogleFonts.roboto(fontSize: 14))),
+            //                 PopupMenuItem<String>(
+            //                     value: controller.appController.currencys
+            //                         .elementAt(2)
+            //                         .value,
+            //                     child: Text(
+            //                         controller.appController.currencys
+            //                             .elementAt(2)
+            //                             .title
+            //                             .tr,
+            //                         style: GoogleFonts.roboto(fontSize: 14))),
+            //                 PopupMenuItem<String>(
+            //                     value: controller.appController.currencys
+            //                         .elementAt(3)
+            //                         .value,
+            //                     child: Text(
+            //                         controller.appController.currencys
+            //                             .elementAt(3)
+            //                             .title
+            //                             .tr,
+            //                         style: GoogleFonts.roboto(fontSize: 14))),
+            //                 PopupMenuItem<String>(
+            //                     value: controller.appController.currencys
+            //                         .elementAt(4)
+            //                         .value,
+            //                     child: Text(
+            //                         controller.appController.currencys
+            //                             .elementAt(4)
+            //                             .title
+            //                             .tr,
+            //                         style: GoogleFonts.roboto(fontSize: 14))),
+            //                 PopupMenuItem<String>(
+            //                     value: controller.appController.currencys
+            //                         .elementAt(5)
+            //                         .value,
+            //                     child: Text(
+            //                         controller.appController.currencys
+            //                             .elementAt(5)
+            //                             .title
+            //                             .tr,
+            //                         style: GoogleFonts.roboto(fontSize: 14))),
+            //                 PopupMenuItem<String>(
+            //                     value: controller.appController.currencys
+            //                         .elementAt(6)
+            //                         .value,
+            //                     child: Text(
+            //                         controller.appController.currencys
+            //                             .elementAt(6)
+            //                             .title
+            //                             .tr,
+            //                         style: GoogleFonts.roboto(fontSize: 14))),
+            //               ],
+            //           onSelected: (String val) {
+            //             controller.appController.currency.value = controller
+            //                 .appController.currencys
+            //                 .elementAt(int.parse(val))
+            //                 .title;
+            //             var storage = Get.find<SharedPreferences>();
+            //             storage.setString(StorageConstants.currency,
+            //                 controller.appController.currency.value);
+            //             storage.setInt(
+            //                 StorageConstants.currency1, int.parse(val));
+            //           }),
             //     ),
             //   ),
             // ),
-            const SizedBox(height: 15),
-            SizedBox(
-              height: 60,
-              width: MediaQuery.of(context).size.width / 1.2,
-              child: Card(
-                color: Theme.of(context).primaryColor,
-                elevation: 2,
-                shadowColor: Colors.purple[900],
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: PopupMenuButton(
-                      elevation: 5,
-                      shadowColor: Colors.red,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Row(
-                        children: [
-                          Text(
-                            'Currency'.tr,
-                            style: GoogleFonts.roboto(
-                                fontSize: 14, color: Colors.white),
-                          ),
-                          const Spacer(),
-                          Obx(() => Text(
-                                controller.appController.currency.value.tr,
-                                style: GoogleFonts.roboto(
-                                    fontSize: 14, color: Colors.white),
-                              )),
-                          const SizedBox(
-                            width: 24,
-                          ),
-                          SvgPicture.asset(
-                              'assets/SVG_Icons/Ic__arrow_down.svg'),
-                        ],
-                      ),
-                      itemBuilder: (_) => <PopupMenuItem<String>>[
-                            PopupMenuItem<String>(
-                                value: controller.appController.currencys
-                                    .elementAt(0)
-                                    .value,
-                                child: Text(
-                                    controller.appController.currencys
-                                        .elementAt(0)
-                                        .title
-                                        .tr,
-                                    style: GoogleFonts.roboto(fontSize: 14))),
-                            PopupMenuItem<String>(
-                                value: controller.appController.currencys
-                                    .elementAt(1)
-                                    .value,
-                                child: Text(
-                                    controller.appController.currencys
-                                        .elementAt(1)
-                                        .title
-                                        .tr,
-                                    style: GoogleFonts.roboto(fontSize: 14))),
-                            PopupMenuItem<String>(
-                                value: controller.appController.currencys
-                                    .elementAt(2)
-                                    .value,
-                                child: Text(
-                                    controller.appController.currencys
-                                        .elementAt(2)
-                                        .title
-                                        .tr,
-                                    style: GoogleFonts.roboto(fontSize: 14))),
-                            PopupMenuItem<String>(
-                                value: controller.appController.currencys
-                                    .elementAt(3)
-                                    .value,
-                                child: Text(
-                                    controller.appController.currencys
-                                        .elementAt(3)
-                                        .title
-                                        .tr,
-                                    style: GoogleFonts.roboto(fontSize: 14))),
-                            PopupMenuItem<String>(
-                                value: controller.appController.currencys
-                                    .elementAt(4)
-                                    .value,
-                                child: Text(
-                                    controller.appController.currencys
-                                        .elementAt(4)
-                                        .title
-                                        .tr,
-                                    style: GoogleFonts.roboto(fontSize: 14))),
-                            PopupMenuItem<String>(
-                                value: controller.appController.currencys
-                                    .elementAt(5)
-                                    .value,
-                                child: Text(
-                                    controller.appController.currencys
-                                        .elementAt(5)
-                                        .title
-                                        .tr,
-                                    style: GoogleFonts.roboto(fontSize: 14))),
-                            PopupMenuItem<String>(
-                                value: controller.appController.currencys
-                                    .elementAt(6)
-                                    .value,
-                                child: Text(
-                                    controller.appController.currencys
-                                        .elementAt(6)
-                                        .title
-                                        .tr,
-                                    style: GoogleFonts.roboto(fontSize: 14))),
-                          ],
-                      onSelected: (String val) {
-                        controller.appController.currency.value = controller
-                            .appController.currencys
-                            .elementAt(int.parse(val))
-                            .title;
-                        var storage = Get.find<SharedPreferences>();
-                        storage.setString(StorageConstants.currency,
-                            controller.appController.currency.value);
-                        storage.setInt(
-                            StorageConstants.currency1, int.parse(val));
-                      }),
-                ),
-              ),
-            ),
             const SizedBox(height: 15),
             SizedBox(
               height: 60,
@@ -2652,7 +2562,7 @@ class About extends StatelessWidget {
 //                 const SizedBox(
 //                   height: 16,
 //                 ),
-//                 // MineCell(title: 'Terms and Conditions'.tr, onPressed: () => Get.to(() => const TermsPolicy(title: 'Terms of Service', fileName: 'TYV_Terms_Conditions')),),
+//                 // MineCell(title: 'Terms and Conditions'.tr, onPressed: () => Get.to(const TermsPolicy(title: 'Terms of Service', fileName: 'TYV_Terms_Conditions')),),
 //                 MineCell(
 //                   title: 'About TIXCASH WALLET'.tr,
 //                   onPressed: () async {
