@@ -677,130 +677,129 @@ class GeneralSetting extends StatelessWidget {
                 ),
               ),
             ),
-
-            // const SizedBox(height: 15),
-            // SizedBox(
-            //   height: 60,
-            //   width: MediaQuery.of(context).size.width / 1.2,
-            //   child: Card(
-            //     color: Theme.of(context).primaryColor,
-            //     elevation: 2,
-            //     shadowColor: Colors.purple[900],
-            //     shape: RoundedRectangleBorder(
-            //         borderRadius: BorderRadius.circular(30)),
-            //     child: Padding(
-            //       padding: const EdgeInsets.symmetric(horizontal: 15),
-            //       child: PopupMenuButton(
-            //           elevation: 5,
-            //           shadowColor: Colors.red,
-            //           shape: RoundedRectangleBorder(
-            //               borderRadius: BorderRadius.circular(15)),
-            //           child: Row(
-            //             children: [
-            //               Text(
-            //                 'Currency'.tr,
-            //                 style: GoogleFonts.roboto(
-            //                     fontSize: 14, color: Colors.white),
-            //               ),
-            //               const Spacer(),
-            //               Obx(() => Text(
-            //                     controller.appController.currency.value.tr,
-            //                     style: GoogleFonts.roboto(
-            //                         fontSize: 14, color: Colors.white),
-            //                   )),
-            //               const SizedBox(
-            //                 width: 24,
-            //               ),
-            //               SvgPicture.asset(
-            //                   'assets/SVG_Icons/Ic__arrow_down.svg'),
-            //             ],
-            //           ),
-            //           itemBuilder: (_) => <PopupMenuItem<String>>[
-            //                 PopupMenuItem<String>(
-            //                     value: controller.appController.currencys
-            //                         .elementAt(0)
-            //                         .value,
-            //                     child: Text(
-            //                         controller.appController.currencys
-            //                             .elementAt(0)
-            //                             .title
-            //                             .tr,
-            //                         style: GoogleFonts.roboto(fontSize: 14))),
-            //                 PopupMenuItem<String>(
-            //                     value: controller.appController.currencys
-            //                         .elementAt(1)
-            //                         .value,
-            //                     child: Text(
-            //                         controller.appController.currencys
-            //                             .elementAt(1)
-            //                             .title
-            //                             .tr,
-            //                         style: GoogleFonts.roboto(fontSize: 14))),
-            //                 PopupMenuItem<String>(
-            //                     value: controller.appController.currencys
-            //                         .elementAt(2)
-            //                         .value,
-            //                     child: Text(
-            //                         controller.appController.currencys
-            //                             .elementAt(2)
-            //                             .title
-            //                             .tr,
-            //                         style: GoogleFonts.roboto(fontSize: 14))),
-            //                 PopupMenuItem<String>(
-            //                     value: controller.appController.currencys
-            //                         .elementAt(3)
-            //                         .value,
-            //                     child: Text(
-            //                         controller.appController.currencys
-            //                             .elementAt(3)
-            //                             .title
-            //                             .tr,
-            //                         style: GoogleFonts.roboto(fontSize: 14))),
-            //                 PopupMenuItem<String>(
-            //                     value: controller.appController.currencys
-            //                         .elementAt(4)
-            //                         .value,
-            //                     child: Text(
-            //                         controller.appController.currencys
-            //                             .elementAt(4)
-            //                             .title
-            //                             .tr,
-            //                         style: GoogleFonts.roboto(fontSize: 14))),
-            //                 PopupMenuItem<String>(
-            //                     value: controller.appController.currencys
-            //                         .elementAt(5)
-            //                         .value,
-            //                     child: Text(
-            //                         controller.appController.currencys
-            //                             .elementAt(5)
-            //                             .title
-            //                             .tr,
-            //                         style: GoogleFonts.roboto(fontSize: 14))),
-            //                 PopupMenuItem<String>(
-            //                     value: controller.appController.currencys
-            //                         .elementAt(6)
-            //                         .value,
-            //                     child: Text(
-            //                         controller.appController.currencys
-            //                             .elementAt(6)
-            //                             .title
-            //                             .tr,
-            //                         style: GoogleFonts.roboto(fontSize: 14))),
-            //               ],
-            //           onSelected: (String val) {
-            //             controller.appController.currency.value = controller
-            //                 .appController.currencys
-            //                 .elementAt(int.parse(val))
-            //                 .title;
-            //             var storage = Get.find<SharedPreferences>();
-            //             storage.setString(StorageConstants.currency,
-            //                 controller.appController.currency.value);
-            //             storage.setInt(
-            //                 StorageConstants.currency1, int.parse(val));
-            //           }),
-            //     ),
-            //   ),
-            // ),
+            const SizedBox(height: 15),
+            SizedBox(
+              height: 60,
+              width: MediaQuery.of(context).size.width / 1.2,
+              child: Card(
+                color: Theme.of(context).primaryColor,
+                elevation: 2,
+                shadowColor: Colors.purple[900],
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: PopupMenuButton(
+                      elevation: 5,
+                      shadowColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Currency'.tr,
+                            style: GoogleFonts.roboto(
+                                fontSize: 14, color: Colors.white),
+                          ),
+                          const Spacer(),
+                          Obx(() => Text(
+                                controller.appController.currency.value.tr,
+                                style: GoogleFonts.roboto(
+                                    fontSize: 14, color: Colors.white),
+                              )),
+                          const SizedBox(
+                            width: 24,
+                          ),
+                          SvgPicture.asset(
+                              'assets/SVG_Icons/Ic__arrow_down.svg'),
+                        ],
+                      ),
+                      itemBuilder: (_) => <PopupMenuItem<String>>[
+                            PopupMenuItem<String>(
+                                value: controller.appController.currencyss
+                                    .elementAt(0)
+                                    .value,
+                                child: Text(
+                                    controller.appController.currencyss
+                                        .elementAt(0)
+                                        .title
+                                        .tr,
+                                    style: GoogleFonts.roboto(fontSize: 14))),
+                            // PopupMenuItem<String>(
+                            //     value: controller.appController.currencys
+                            //         .elementAt(1)
+                            //         .value,
+                            //     child: Text(
+                            //         controller.appController.currencys
+                            //             .elementAt(1)
+                            //             .title
+                            //             .tr,
+                            //         style: GoogleFonts.roboto(fontSize: 14))),
+                            // PopupMenuItem<String>(
+                            //     value: controller.appController.currencys
+                            //         .elementAt(2)
+                            //         .value,
+                            //     child: Text(
+                            //         controller.appController.currencys
+                            //             .elementAt(2)
+                            //             .title
+                            //             .tr,
+                            //         style: GoogleFonts.roboto(fontSize: 14))),
+                            // PopupMenuItem<String>(
+                            //     value: controller.appController.currencys
+                            //         .elementAt(3)
+                            //         .value,
+                            //     child: Text(
+                            //         controller.appController.currencys
+                            //             .elementAt(3)
+                            //             .title
+                            //             .tr,
+                            //         style: GoogleFonts.roboto(fontSize: 14))),
+                            // PopupMenuItem<String>(
+                            //     value: controller.appController.currencys
+                            //         .elementAt(4)
+                            //         .value,
+                            //     child: Text(
+                            //         controller.appController.currencys
+                            //             .elementAt(4)
+                            //             .title
+                            //             .tr,
+                            //         style: GoogleFonts.roboto(fontSize: 14))),
+                            // PopupMenuItem<String>(
+                            //     value: controller.appController.currencys
+                            //         .elementAt(5)
+                            //         .value,
+                            //     child: Text(
+                            //         controller.appController.currencys
+                            //             .elementAt(5)
+                            //             .title
+                            //             .tr,
+                            //         style: GoogleFonts.roboto(fontSize: 14))),
+                            // PopupMenuItem<String>(
+                            //     value: controller.appController.currencys
+                            //         .elementAt(6)
+                            //         .value,
+                            //     child: Text(
+                            //         controller.appController.currencys
+                            //             .elementAt(6)
+                            //             .title
+                            //             .tr,
+                            //         style: GoogleFonts.roboto(fontSize: 14))),
+                          ],
+                      onSelected: (String val) {
+                        controller.appController.currency.value = controller
+                            .appController.currencyss
+                            .elementAt(int.parse(val))
+                            .title;
+                        var storage = Get.find<SharedPreferences>();
+                        storage.setString(StorageConstants.currency,
+                            controller.appController.currency.value);
+                        storage.setInt(
+                            StorageConstants.currency1, int.parse(val));
+                      }),
+                ),
+              ),
+            ),
             const SizedBox(height: 15),
             SizedBox(
               height: 60,

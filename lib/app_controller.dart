@@ -47,14 +47,17 @@ class AppController extends GetxController {
   final backupPResponse = Rxn<BackupPResponse>();
   final isbackupPResponse = false.obs;
   //
-  final List<PopupItem> currencys = [
+  // final List<PopupItem> currencys = [
+  //   PopupItem(title: 'USD', value: '0'),
+  //   PopupItem(title: 'EUR', value: '1'),
+  //   PopupItem(title: 'CNY', value: '2'),
+  //   PopupItem(title: 'PUB', value: '3'),
+  //   PopupItem(title: 'JPY', value: '4'),
+  //   PopupItem(title: 'HKD', value: '5'),
+  //   PopupItem(title: 'GBP', value: '6'),
+  // ];
+  final List<PopupItem> currencyss = [
     PopupItem(title: 'USD', value: '0'),
-    PopupItem(title: 'EUR', value: '1'),
-    PopupItem(title: 'CNY', value: '2'),
-    PopupItem(title: 'PUB', value: '3'),
-    PopupItem(title: 'JPY', value: '4'),
-    PopupItem(title: 'HKD', value: '5'),
-    PopupItem(title: 'GBP', value: '6'),
   ];
 
   //____________PUSH NOTIFICATIONS______________
@@ -731,10 +734,14 @@ class AppController extends GetxController {
                                       child: Text('Cancel'.tr))),
                               Expanded(
                                   child: ElevatedButton(
-                                      onPressed: () {
+                                      onPressed: () async {
                                         Get.back();
-                                        launch(
-                                            'https://play.google.com/store/apps/details?id=com.wallet.line');
+                                        final Uri url = Uri.parse(
+                                            'https://www.tixcash.org/');
+                                        if (!await launchUrl(url)) {
+                                          throw Exception(
+                                              'Could not launch $url');
+                                        }
                                       },
                                       child: Text('Update'.tr))),
                             ],
