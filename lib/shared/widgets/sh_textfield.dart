@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
 import '../shared.dart';
 
-enum VALIDATE {
-  USER,
-  EMAIL,
-  PASSWORD,
-  PHONE,
-  ADDRESS,
-  DOB,
-  CIVIL,
-  OTP,
-  PNUMBER
-}
+enum VALIDATE { USER, EMAIL, PASSWORD, PHONE, ADDRESS, DOB, CIVIL, OTP, PNUMBER }
 
 // class AppTextField extends GetView<AppTextFieldController> {
 //   final TextEditingController? mController;
@@ -168,8 +158,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 hintText: widget.hintText,
                 border: InputBorder.none,
                 labelStyle: const TextStyle(color: Colors.white70),
-                hintStyle:
-                    const TextStyle(color: Colors.white38, fontSize: 12)),
+                hintStyle: const TextStyle(color: Colors.white38, fontSize: 12)),
           ),
         ),
         !_isValid && _value.isNotEmpty && widget.valText != null
@@ -221,9 +210,8 @@ class _AppTextFieldState extends State<AppTextField> {
 
 //
   bool validEmail(emailAddress) {
-    bool emailValid = RegExp(
-            r"^[a-zA-Z0-9.a-zA-Z0-9.#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-        .hasMatch(emailAddress);
+    bool emailValid =
+        RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(emailAddress);
     return emailValid;
   }
 

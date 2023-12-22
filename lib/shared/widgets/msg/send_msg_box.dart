@@ -20,8 +20,8 @@ class SendMsgBox extends MsgBox {
         children: [
           Flexible(
             child: Container(
-              padding: EdgeInsets.all(14),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(14),
+              decoration: const BoxDecoration(
                 color: Color(0XFF98E165),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(18),
@@ -31,32 +31,32 @@ class SendMsgBox extends MsgBox {
               ),
               child: Text(
                 message,
-                style: TextStyle(color: Colors.black, fontSize: 14),
+                style: const TextStyle(color: Colors.black, fontSize: 14),
               ),
             ),
           ),
-          CustomPaint(painter: MsgArrowPainter(Color(0XFF98E165))),
-          SizedBox(width: 10),
+          CustomPaint(painter: MsgArrowPainter(const Color(0XFF98E165))),
+          const SizedBox(width: 10),
           CachedNetworkImage(
             width: 46,
             height: 46,
             fit: BoxFit.fill,
             imageUrl: 'https://reqres.in/img/faces/1-image.jpg',
-            placeholder: (context, url) => Image(
+            placeholder: (context, url) => const Image(
               image: AssetImage('assets/images/icon_success.png'),
             ),
-            errorWidget: (context, url, error) => Icon(Icons.error),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ],
       ),
     );
 
     return Padding(
-      padding: EdgeInsets.only(right: 10.0, left: 50, top: 15, bottom: 5),
+      padding: const EdgeInsets.only(right: 10.0, left: 50, top: 15, bottom: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           messageTextGroup,
         ],
       ),

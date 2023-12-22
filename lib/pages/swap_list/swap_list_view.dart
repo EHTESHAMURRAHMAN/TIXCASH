@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/models/swap_currencies.dart';
 import 'package:tixcash/shared/widgets/common_widgets.dart';
-
-import 'swap_list_controller.dart';
 import 'swap_list_controller.dart';
 
 class SwapListView extends GetView<SwapListController> {

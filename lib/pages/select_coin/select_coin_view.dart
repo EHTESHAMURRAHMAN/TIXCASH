@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/pages/select_coin/select_coin_controller.dart';
-import 'package:tixcash/routes/app_pages.dart';
 import 'package:tixcash/shared/shared.dart';
 
 class SelectCoinView extends GetView<SelectCoinController> {

@@ -18,41 +18,41 @@ class TransfersView extends GetView<TyvScanController> {
           child: Row(
             children: [
               Expanded(
+                flex: 20,
                 child: Text(
                   'Txn Hash'.tr,
                   style: GoogleFonts.roboto(
                       fontSize: 13, fontWeight: FontWeight.w500),
                 ),
-                flex: 20,
               ),
               Expanded(
+                  flex: 25,
                   child: Text(
                     'Age'.tr,
                     style: GoogleFonts.roboto(
                         fontSize: 13, fontWeight: FontWeight.w500),
-                  ),
-                  flex: 25),
+                  )),
               Expanded(
+                  flex: 20,
                   child: Text(
                     'From'.tr,
                     style: GoogleFonts.roboto(
                         fontSize: 13, fontWeight: FontWeight.w500),
-                  ),
-                  flex: 20),
+                  )),
               Expanded(
+                  flex: 20,
                   child: Text(
                     'To'.tr,
                     style: GoogleFonts.roboto(
                         fontSize: 13, fontWeight: FontWeight.w500),
-                  ),
-                  flex: 20),
+                  )),
               Expanded(
+                  flex: 15,
                   child: Text(
                     'Quantity'.tr,
                     style: GoogleFonts.roboto(
                         fontSize: 13, fontWeight: FontWeight.w500),
-                  ),
-                  flex: 15),
+                  )),
             ],
           ),
         ),
@@ -73,14 +73,15 @@ class TransfersView extends GetView<TyvScanController> {
                             width: 4,
                           ),
                           Expanded(
+                            flex: 20,
                             child: Text(
                               element.txthash,
                               style: GoogleFonts.roboto(
                                   fontSize: 13, fontWeight: FontWeight.w400),
                             ),
-                            flex: 20,
                           ),
                           Expanded(
+                              flex: 25,
                               child: Container(
                                 margin:
                                     const EdgeInsets.symmetric(horizontal: 4),
@@ -93,16 +94,16 @@ class TransfersView extends GetView<TyvScanController> {
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal),
                                 ),
-                              ),
-                              flex: 25),
+                              )),
                           Expanded(
+                              flex: 20,
                               child: Text(
                                 element.fromAdress,
                                 style: GoogleFonts.roboto(
                                     fontSize: 13, fontWeight: FontWeight.w400),
-                              ),
-                              flex: 20),
+                              )),
                           Expanded(
+                              flex: 25,
                               child: Container(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 4),
@@ -114,16 +115,15 @@ class TransfersView extends GetView<TyvScanController> {
                                       fontSize: 13,
                                       fontWeight: FontWeight.w400),
                                 ),
-                              ),
-                              flex: 25),
+                              )),
                           Expanded(
+                              flex: 15,
                               child: Text(
                                 '${element.credit > 0 ? element.credit : element.debit}',
                                 style: GoogleFonts.roboto(
                                     fontSize: 13, fontWeight: FontWeight.w400),
                                 textAlign: TextAlign.center,
-                              ),
-                              flex: 15),
+                              )),
                         ],
                       ),
                     );

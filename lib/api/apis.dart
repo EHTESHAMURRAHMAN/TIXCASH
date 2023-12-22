@@ -1,4 +1,4 @@
-// ignore_for_file: dead_code
+// ignore_for_file: dead_code, constant_identifier_names
 
 import 'dart:convert';
 import 'package:flutter/foundation.dart';

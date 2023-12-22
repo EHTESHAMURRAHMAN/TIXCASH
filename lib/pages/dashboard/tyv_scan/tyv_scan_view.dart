@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -139,6 +138,7 @@ class TyvScanView extends GetView<TyvScanController> {
                                                 padding:
                                                     const EdgeInsets.symmetric(
                                                         horizontal: 4),
+                                                color: Colors.transparent,
                                                 child: Text(
                                                   element.transactionDate,
                                                   style: GoogleFonts.roboto(
@@ -148,7 +148,6 @@ class TyvScanView extends GetView<TyvScanController> {
                                                       fontStyle:
                                                           FontStyle.normal),
                                                 ),
-                                                color: Colors.transparent,
                                               )),
                                           Expanded(
                                               flex: 20,
@@ -166,14 +165,14 @@ class TyvScanView extends GetView<TyvScanController> {
                                                       .symmetric(horizontal: 4),
                                                   margin: const EdgeInsets
                                                       .symmetric(horizontal: 4),
+                                                  color: Colors.transparent,
                                                   child: Text(
                                                     element.toAddress,
                                                     style: GoogleFonts.roboto(
                                                         fontSize: 13,
                                                         fontWeight:
                                                             FontWeight.w400),
-                                                  ),
-                                                  color: Colors.transparent)),
+                                                  ))),
                                           Expanded(
                                               flex: 15,
                                               child: Text(

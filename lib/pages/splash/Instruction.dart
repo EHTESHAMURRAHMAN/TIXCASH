@@ -1,7 +1,5 @@
 // ignore_for_file: unrelated_type_equality_checks
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:tixcash/pages/account/create_wallet/create_wallet_controller.dart';
 
@@ -69,8 +67,8 @@ class CreateWalletView extends GetView<CreateWalletController> {
                     title: Text(
                         'If I lose my Secret Recovery Phrase my assets will be gone'
                             .tr,
-                        style:
-                            TextStyle(color: Color(0xff1680ee), fontSize: 14)),
+                        style: const TextStyle(
+                            color: Color(0xff1680ee), fontSize: 14)),
                     checkColor: Colors.white,
                     activeColor: const Color(0xff1680ee),
                   )),
@@ -99,8 +97,8 @@ class CreateWalletView extends GetView<CreateWalletController> {
                     title: Text(
                         'If I share my Secret Recovery Phrase to others my assets will be stolen'
                             .tr,
-                        style:
-                            TextStyle(color: Color(0xff1680ee), fontSize: 14)),
+                        style: const TextStyle(
+                            color: Color(0xff1680ee), fontSize: 14)),
                     checkColor: Colors.white,
                     activeColor: const Color(0xff1680ee),
                   )),
@@ -129,8 +127,8 @@ class CreateWalletView extends GetView<CreateWalletController> {
                     title: Text(
                         'It is my responsibilities to keep the Secret Recovery Phrase safe'
                             .tr,
-                        style:
-                            TextStyle(color: Color(0xff1680ee), fontSize: 14)),
+                        style: const TextStyle(
+                            color: Color(0xff1680ee), fontSize: 14)),
                     checkColor: Colors.white,
                     activeColor: const Color(0xff1680ee),
                   )),
@@ -159,7 +157,7 @@ class CreateWalletView extends GetView<CreateWalletController> {
                       child: Center(
                         child: Text(
                           'Generate Mnemonic'.tr,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
@@ -182,7 +180,7 @@ class CreateWalletView extends GetView<CreateWalletController> {
                         child: Center(
                           child: Text(
                             'Generate Mnemonic'.tr,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),

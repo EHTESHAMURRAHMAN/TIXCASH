@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/pages/dashboard/home_navigation/home_navigation_view.dart';
 import 'package:tixcash/routes/app_pages.dart';
-import 'package:tixcash/shared/constants/colors.dart';
 import 'package:tixcash/shared/shared.dart';
 import 'package:tixcash/shared/utils/sa_textstyles.dart';
 
@@ -23,7 +20,7 @@ class CommissionFeeView extends GetView<CommissionFeeController> {
         children: [
           Expanded(
               child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
             child: ListView(
               children: [
                 Text(
@@ -42,7 +39,7 @@ class CommissionFeeView extends GetView<CommissionFeeController> {
                   controllerFee: controller.controllerFeeMoreIntern,
                 ),
 
-                Divider(),
+                const Divider(),
 
                 const SizedBox(
                   height: 16,

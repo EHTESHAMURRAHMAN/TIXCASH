@@ -23,20 +23,20 @@ class SARoundedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onPressed,
       child: Container(
         height: height,
         width: width,
         padding: padding ?? const EdgeInsets.all(8),
         margin: margin ?? const EdgeInsets.all(4),
-        child: Center(
-          child: child,
-        ),
         decoration: BoxDecoration(
           color: color ?? ColorConstants.white.withOpacity(0.1),
           borderRadius: BorderRadius.circular(height / 2),
         ),
+        child: Center(
+          child: child,
+        ),
       ),
-      onTap: onPressed,
     );
   }
 }

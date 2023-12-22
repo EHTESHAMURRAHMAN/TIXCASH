@@ -454,7 +454,7 @@ class TopMenu extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(width: 30),
+        const SizedBox(width: 30),
         InkWell(
           onTap: () => Get.to(Receive_List()),
           child: Column(
@@ -488,7 +488,7 @@ class TopMenu extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(width: 30),
+        const SizedBox(width: 30),
         InkWell(
           onTap: () async {
             Get.to(SwapView());

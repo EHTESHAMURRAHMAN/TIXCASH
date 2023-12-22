@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tixcash/pages/dashboard/scan_qr/scan_qr_child_view_cur.dart';
@@ -64,81 +63,79 @@ class Receive_List extends GetView {
                               fontSize: 18,
                             ),
                           ),
-                          Obx(
-                            () =>
 
-                                // controller.appController.currency.value ==
-                                //         'EUR'
-                                //     ? Text(
-                                //         '€${(element.usdvalue * 0.94).toStringAsFixed(4)}',
-                                //         style: GoogleFonts.roboto(
-                                //           fontSize: 14,
-                                //           fontWeight: FontWeight.w400,
-                                //           color: const Color(0xFF40C4FF),
-                                //         ))
-                                //     : controller.appController.currency.value ==
-                                //             'CNY'
-                                //         ? Text(
-                                //             '¥${(element.usdvalue * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
-                                //             style: GoogleFonts.roboto(
-                                //               fontSize: 14,
-                                //               fontWeight: FontWeight.w400,
-                                //               color: const Color(0xFF40C4FF),
-                                //             ))
-                                //         : controller.appController.currency.value ==
-                                //                 'RUB'
-                                //             ? Text(
-                                //                 '₽${(element.usdvalue * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
-                                //                 style: GoogleFonts.roboto(
-                                //                   fontSize: 14,
-                                //                   fontWeight: FontWeight.w400,
-                                //                   color: const Color(0xFF40C4FF),
-                                //                 ))
-                                //             : controller.appController.currency
-                                //                         .value ==
-                                //                     'JPY'
-                                //                 ? Text(
-                                //                     '¥${(element.usdvalue * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
-                                //                     style: GoogleFonts.roboto(
-                                //                       fontSize: 14,
-                                //                       fontWeight: FontWeight.w400,
-                                //                       color:
-                                //                           const Color(0xFF40C4FF),
-                                //                     ))
-                                //                 : controller.appController.currency
-                                //                             .value ==
-                                //                         'HKD'
-                                //                     ? Text(
-                                //                         'HK\$${(element.usdvalue * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
-                                //                         style: GoogleFonts.roboto(
-                                //                           fontSize: 14,
-                                //                           fontWeight:
-                                //                               FontWeight.w400,
-                                //                           color: const Color(
-                                //                               0xFF40C4FF),
-                                //                         ))
-                                //                     : controller.appController
-                                //                                 .currency.value ==
-                                //                             'GBP'
-                                //                         ? Text(
-                                //                             '£${(element.usdvalue * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
-                                //                             style:
-                                //                                 GoogleFonts.roboto(
-                                //                               fontSize: 14,
-                                //                               fontWeight:
-                                //                                   FontWeight.w400,
-                                //                               color: const Color(
-                                //                                   0xFF40C4FF),
-                                //                             ))
-                                //                         :
+                          // controller.appController.currency.value ==
+                          //         'EUR'
+                          //     ? Text(
+                          //         '€${(element.usdvalue * 0.94).toStringAsFixed(4)}',
+                          //         style: GoogleFonts.roboto(
+                          //           fontSize: 14,
+                          //           fontWeight: FontWeight.w400,
+                          //           color: const Color(0xFF40C4FF),
+                          //         ))
+                          //     : controller.appController.currency.value ==
+                          //             'CNY'
+                          //         ? Text(
+                          //             '¥${(element.usdvalue * double.parse('${controller.worldCurrency.value?.CNY ?? 0.0}')).toStringAsFixed(4)}',
+                          //             style: GoogleFonts.roboto(
+                          //               fontSize: 14,
+                          //               fontWeight: FontWeight.w400,
+                          //               color: const Color(0xFF40C4FF),
+                          //             ))
+                          //         : controller.appController.currency.value ==
+                          //                 'RUB'
+                          //             ? Text(
+                          //                 '₽${(element.usdvalue * double.parse('${controller.worldCurrency.value?.RUB ?? 0.0}')).toStringAsFixed(4)}',
+                          //                 style: GoogleFonts.roboto(
+                          //                   fontSize: 14,
+                          //                   fontWeight: FontWeight.w400,
+                          //                   color: const Color(0xFF40C4FF),
+                          //                 ))
+                          //             : controller.appController.currency
+                          //                         .value ==
+                          //                     'JPY'
+                          //                 ? Text(
+                          //                     '¥${(element.usdvalue * double.parse('${controller.worldCurrency.value?.JPY ?? 0.0}')).toStringAsFixed(4)}',
+                          //                     style: GoogleFonts.roboto(
+                          //                       fontSize: 14,
+                          //                       fontWeight: FontWeight.w400,
+                          //                       color:
+                          //                           const Color(0xFF40C4FF),
+                          //                     ))
+                          //                 : controller.appController.currency
+                          //                             .value ==
+                          //                         'HKD'
+                          //                     ? Text(
+                          //                         'HK\$${(element.usdvalue * double.parse('${controller.worldCurrency.value?.HKD ?? 0.0}')).toStringAsFixed(4)}',
+                          //                         style: GoogleFonts.roboto(
+                          //                           fontSize: 14,
+                          //                           fontWeight:
+                          //                               FontWeight.w400,
+                          //                           color: const Color(
+                          //                               0xFF40C4FF),
+                          //                         ))
+                          //                     : controller.appController
+                          //                                 .currency.value ==
+                          //                             'GBP'
+                          //                         ? Text(
+                          //                             '£${(element.usdvalue * double.parse('${controller.worldCurrency.value?.GBP ?? 0.0}')).toStringAsFixed(4)}',
+                          //                             style:
+                          //                                 GoogleFonts.roboto(
+                          //                               fontSize: 14,
+                          //                               fontWeight:
+                          //                                   FontWeight.w400,
+                          //                               color: const Color(
+                          //                                   0xFF40C4FF),
+                          //                             ))
+                          //                         :
 
-                                Text('\$${element.usdvalue.toStringAsFixed(4)}',
-                                    style: GoogleFonts.roboto(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                      color: const Color(0xFF40C4FF),
-                                    )),
-                          ),
+                          Text('\$${element.usdvalue.toStringAsFixed(4)}',
+                              style: GoogleFonts.roboto(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xFF40C4FF),
+                              )),
+
                           // Text('\$${element.usdvalue.toStringAsFixed(3)}',
                           //     style: GoogleFonts.roboto(
                           //       fontSize: 14,
